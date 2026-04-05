@@ -309,10 +309,10 @@ export default function App() {
                   <div className="p-8">
                     <SectionTitle eyebrow="Contact" title="Une page contact déjà structurée" text="Coordonnées, message de contact et espace newsletter peuvent être branchés ensuite à un vrai formulaire." />
                     <div className="mt-6 space-y-4 text-sm text-slate-600">
-                      <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-500" /> Liège, Belgique</div>
-                      <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-500" /> Coordination terrain : Matadi, RDC</div>
-                      <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-orange-500" /> info@proddeko.org</div>
-                      <div className="flex items-center gap-3"><Phone className="h-4 w-4 text-orange-500" /> +32 XX XXX XX XX</div>
+                      <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-500" /> Welkenraedt, Belgique</div>
+                      <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-500" /> Coordination terrain : Kinzau-Mvuete, RDC</div>
+                      <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-orange-500" /> contact@proddeko.online</div>
+                      <div className="flex items-center gap-3"><Phone className="h-4 w-4 text-orange-500" /> +32 488 84 46 98</div>
                     </div>
                     <form onSubmit={handleSubmit} className="mt-8 grid gap-3">
                       <input name="name" value={formData.name} onChange={handleChange} className="rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder="Votre nom" required />
