@@ -351,9 +351,9 @@ export default function App() {
           <div>
             <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Coordonnées</div>
             <ul className="mt-5 space-y-3 text-sm text-slate-600">
-              <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Liège, Belgique</li>
-              <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Matadi, RDC</li>
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> info@proddeko.org</li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Welkenraedt, Belgique</li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Kinzau-Mvuete, RDC</li>
+              <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact@proddeko.online</li>
             </ul>
           </div>
           <div>
