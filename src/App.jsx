@@ -140,13 +140,13 @@ export default function App() {
   };
 
   const renderPage = () => {
-    if (page === "about") return (
+    if (page === "about") return null; 
       <div className="p-10 max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">À propos de PRODDEKO</h1>
         <p className="text-lg text-slate-600">PRODDEKO-Belgique est une organisation engagée dans la solidarité internationale, le développement durable et la gouvernance éthique entre la Belgique et la RDC.</p>
       </div>
     );
-    if (page === "projects") return (
+    if (page === "projects") {
       <div className="p-10 max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Nos projets</h1>
         <div className="grid gap-6">
