@@ -481,27 +481,14 @@ function MenuItem({ label, items, onSelect }) {
           {items.map((item) => {
             const Icon = item.icon || ChevronDown;
             return (
-              <button
-                key={item.page}
-                onClick={() => onSelect(item.page)}
-                className="flex items-start gap-3 rounded-2xl p-4 text-left transition hover:bg-slate-50"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-blue-950">{item.label}</div>
-                  <div className="mt-1 text-xs leading-5 text-slate-500">{item.description}</div>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
-
+              
+<button
+  onClick={() => setMobileMenuOpen(true)}
+  className="xl:hidden rounded-lg border px-3 py-2 text-sm"
+>
+  Menu
+</button>
+              
 function MobileMenu({ open, onClose, onSelect }) {
   if (!open) return null;
 
