@@ -503,7 +503,344 @@ function MenuItem({ label, items, onSelect }) {
 }
 function MobileMenu({ open, onClose, onSelect }) {
   if (!open) return null;
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
+          <a
+            href="#accueil"
+            onClick={(e) => {
+              e.preventDefault();
+              setPage("home");
+              setMobileMenuOpen(false);
+            }}
+            className="flex min-w-0 items-center gap-4"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-sm">
+              {logoError ? (
+                <div className="flex h-full w-full items-center justify-center bg-blue-950 text-sm font-black text-white">
+                  PB
+                </div>
+              ) : (
+                <img
+                  src={ASSETS.logo}
+                  alt="Logo PRODDEKO"
+                  className="h-full w-full object-contain"
+                  onError={() => setLogoError(true)}
+                />
+              )}
+            </div>
 
+            <div className="min-w-0">
+              <div className="text-xl font-extrabold tracking-tight text-blue-950">
+                PRODDEKO-Belgique
+              </div>
+              <div className="hidden text-sm text-slate-600 md:block">
+                Solidarité internationale • Développement durable • Gouvernance éthique
+              </div>
+            </div>
+          </a>
+
+          <nav className="hidden items-center gap-4 lg:flex xl:gap-6">
+            <button
+              onClick={() => setPage("home")}
+              className="text-sm font-semibold text-slate-700 transition hover:text-orange-600"
+            >
+              Accueil
+            </button>
+
+            {Array.from(new Map(navItems.map((i) => [i.label, i])).values()).map((item) => (
+              <MenuItem key={item.label} {...item} onSelect={setPage} />
+            ))}
+          </nav>
+
+          <div className="flex shrink-0 items-center gap-3">
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 lg:hidden"
+            >
+              Menu
+            </button>
+
+            <button
+              onClick={() => setPage("contact-form")}
+              className="hidden rounded-full border border-blue-950 px-5 py-2 text-sm font-semibold text-blue-950 transition hover:bg-blue-50 md:block"
+            >
+              Nous contacter
+            </button>
+
+            <button
+              onClick={() => setPage("don")}
+              className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600"
+            >
+              Faire un don
+            </button>
+          </div>
+        </div>
+
+        <MobileMenu
+          open={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
+          onSelect={(p) => {
+            setPage(p);
+            setMobileMenuOpen(false);
+          }}
+        />
+      </header>
+
+      {renderPage() || (
+        <>
+          <section className="relative overflow-hidden bg-gradient-to-r from-blue-950 via-black to-orange-950 px-6 py-20 text-white lg:px-8">
+            <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+              <div>
+                <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-slate-100">
+                  Belgique • RDC • Afrique • Europe
+                </div>
+                <h1 className="mt-8 max-w-4xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+                  Agir ensemble pour un développement durable, solidaire et transparent
+                </h1>
+                <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-200">
+                  PRODDEKO-Belgique agit entre la Belgique et la RDC pour renforcer la dignité humaine, la gouvernance éthique,
+                  l’éducation citoyenne et le co-développement avec les communautés.
+                </p>
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <button
+                    onClick={() => setPage("projects")}
+                    className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
+                  >
+                    Découvrir nos projets
+                  </button>
+                  <button
+                    onClick={() => setPage("partners")}
+                    className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                  >
+                    Devenir partenaire
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                {stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-[2rem] border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur"
+                  >
+                    <div className="text-3xl font-black text-orange-300 md:text-5xl">{stat.value}</div>
+                    <div className="mt-3 text-lg text-slate-100">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <SectionTitle
+              eyebrow="Nos actions"
+              title="Des actions complémentaires au service du bien commun"
+              text="PRODDEKO-Belgique articule gouvernance, éducation, solidarité internationale et développement durable dans une approche cohérente, utile et ancrée dans les réalités locales."
+            />
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {actionCards.map((card) => (
+                <InfoCard key={card.title} {...card} />
+              ))}
+            </div>
+          </section>
+
+          <section className="bg-slate-50 py-20">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <SectionTitle
+                eyebrow="Nos territoires d’intervention"
+                title="Une présence multi-territoriale entre ancrage local et ouverture internationale"
+                text="Nos actions se déploient dans plusieurs provinces de la RDC ainsi qu’en Belgique, en Europe et en Afrique centrale."
+              />
+              <div className="mt-10 flex flex-wrap gap-3">
+                {territories.map((territory) => (
+                  <span
+                    key={territory}
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
+                  >
+                    {territory}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-2">
+              <div>
+                <SectionTitle
+                  eyebrow="Partenaires et réseaux"
+                  title="Un écosystème de coopération stratégique"
+                  text="Des institutions, ONG et universités renforcent la portée, la crédibilité et la qualité de nos interventions."
+                />
+                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {partners.map((partner) => (
+                    <div key={partner} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm">
+                      {partner}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <SectionTitle
+                  eyebrow="Universités partenaires"
+                  title="Des liens académiques au service de l’innovation"
+                  text="La coopération avec les universités renforce la recherche-action, la formation et l’expertise."
+                />
+                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {universities.map((university) => (
+                    <div key={university} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm">
+                      {university}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-blue-950 py-20 text-white">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <SectionTitle
+                eyebrow="Anticorruption"
+                title="Une gouvernance locale plus transparente et plus responsable"
+                text="Nous accompagnons des dispositifs concrets de prévention, de suivi citoyen et de promotion de l’intégrité."
+                light
+              />
+              <div className="mt-10 grid gap-4 md:grid-cols-2">
+                {antiCorruption.map((item) => (
+                  <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-slate-100">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+              <div>
+                <SectionTitle
+                  eyebrow="Coordonnées"
+                  title="Entrer en relation avec PRODDEKO-Belgique"
+                  text="Coordonnées, message de contact et espace newsletter sont intégrés dans un espace de contact structuré et accessible."
+                />
+                <div className="mt-6 space-y-4 text-sm text-slate-600">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-4 w-4 text-orange-500" />
+                    Welkenraedt, Belgique
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-4 w-4 text-orange-500" />
+                    Coordination terrain : Kinzau-Mvuete, RDC
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-4 w-4 text-orange-500" />
+                    contact@proddeko.online
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-4 w-4 text-orange-500" />
+                    +32 488 84 46 98
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
+                <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Nous écrire</div>
+                <h3 className="mt-3 text-2xl font-black text-blue-950">Formulaire de contact</h3>
+                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold text-slate-700">Nom</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold text-slate-700">E-mail</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold text-slate-700">Message</label>
+                    <textarea
+                      rows="5"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
+                  >
+                    Envoyer
+                  </button>
+                  {status ? <p className="text-sm text-slate-600">{status}</p> : null}
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <footer className="border-t border-slate-200 bg-slate-50">
+            <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
+              <div>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-sm">
+                    {logoError ? (
+                      <div className="flex h-full w-full items-center justify-center bg-blue-950 text-xs font-black text-white">PB</div>
+                    ) : (
+                      <img src={ASSETS.logo} alt="Logo PRODDEKO" className="h-full w-full object-contain" onError={() => setLogoError(true)} />
+                    )}
+                  </div>
+                  <div>
+                    <div className="text-lg font-black text-blue-950">PRODDEKO-Belgique</div>
+                    <div className="text-sm text-slate-500">Solidarité internationale • Développement durable • Gouvernance éthique</div>
+                  </div>
+                </div>
+                <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">
+                  PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC et d’autres territoires partenaires pour soutenir des actions utiles, durables et transparentes.
+                </p>
+              </div>
+
+              <div>
+                <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Coordonnées</div>
+                <ul className="mt-5 space-y-3 text-sm text-slate-600">
+                  <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Welkenraedt, Belgique</li>
+                  <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Kinzau-Mvuete, RDC</li>
+                  <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact@proddeko.online</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Navigation rapide</div>
+                <div className="mt-5 space-y-3 text-sm text-slate-600">
+                  <button onClick={() => setPage("about")} className="block transition hover:text-orange-500">À propos</button>
+                  <button onClick={() => setPage("projects")} className="block transition hover:text-orange-500">Projets</button>
+                  <button onClick={() => setPage("don")} className="block transition hover:text-orange-500">Faire un don</button>
+                  <button onClick={() => setPage("contact-form")} className="block transition hover:text-orange-500">Contact</button>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </>
+      )}
+    </div>
+  );
+}
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/50 lg:hidden">
       <div className="absolute right-0 top-0 h-full w-full max-w-md overflow-y-auto bg-white p-6 shadow-2xl">
