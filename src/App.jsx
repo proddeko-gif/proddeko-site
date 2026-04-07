@@ -501,7 +501,69 @@ function MenuItem({ label, items, onSelect }) {
     </div>
   );
 }
+function MobileMenu({ open, onClose, onSelect }) {
+  if (!open) return null;
 
+  return (
+    <div className="fixed inset-0 z-50 bg-slate-950/50 lg:hidden">
+      <div className="absolute right-0 top-0 h-full w-full max-w-md overflow-y-auto bg-white p-6 shadow-2xl">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <div className="text-lg font-black text-blue-950">Menu</div>
+            <div className="text-sm text-slate-500">Navigation PRODDEKO-Belgique</div>
+          </div>
+          <button
+            onClick={onClose}
+            className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700"
+          >
+            Fermer
+          </button>
+        </div>
+
+        <div className="space-y-4">
+          <button
+            onClick={() => {
+              onSelect("home");
+              onClose();
+            }}
+            className="w-full rounded-2xl bg-slate-50 px-4 py-3 text-left text-sm font-semibold text-slate-700"
+          >
+            Accueil
+          </button>
+
+          {navItems.map((group) => (
+            <div key={group.label} className="rounded-3xl border border-slate-200 p-4">
+              <div className="mb-3 text-sm font-black text-blue-950">{group.label}</div>
+              <div className="space-y-2">
+                {group.items.map((item) => {
+                  const Icon = item.icon || ChevronDown;
+                  return (
+                    <button
+                      key={item.page}
+                      onClick={() => {
+                        onSelect(item.page);
+                        onClose();
+                      }}
+                      className="flex w-full items-start gap-3 rounded-2xl px-3 py-3 text-left transition hover:bg-slate-50"
+                    >
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-slate-800">{item.label}</div>
+                        <div className="mt-1 text-xs leading-5 text-slate-500">{item.description}</div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 function SectionTitle({ eyebrow, title, text, light = false }) {
   return (
     <div className="max-w-3xl">
