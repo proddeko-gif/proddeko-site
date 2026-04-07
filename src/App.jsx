@@ -782,9 +782,88 @@ export default function ProddekoBelgiqueSite() {
             </button>
           </div>
         </div>
-        <MobileMenu open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} onSelect={setPage} />
-      </header>
+        <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
+    <a
+      href="#accueil"
+      onClick={(e) => {
+        e.preventDefault();
+        setPage("home");
+        setMobileMenuOpen(false);
+      }}
+      className="flex min-w-0 items-center gap-4"
+    >
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-sm">
+        {logoError ? (
+          <div className="flex h-full w-full items-center justify-center bg-blue-950 text-sm font-black text-white">
+            PB
+          </div>
+        ) : (
+          <img
+            src={ASSETS.logo}
+            alt="Logo PRODDEKO"
+            className="h-full w-full object-contain"
+            onError={() => setLogoError(true)}
+          />
+        )}
+      </div>
 
+      <div className="min-w-0">
+        <div className="text-xl font-extrabold tracking-tight text-blue-950">
+          PRODDEKO-Belgique
+        </div>
+        <div className="hidden text-sm text-slate-600 md:block">
+          Solidarité internationale • Développement durable • Gouvernance éthique
+        </div>
+      </div>
+    </a>
+
+    <nav className="hidden items-center gap-4 lg:flex xl:gap-6">
+      <button
+        onClick={() => setPage("home")}
+        className="text-sm font-semibold text-slate-700 transition hover:text-orange-600"
+      >
+        Accueil
+      </button>
+
+      {Array.from(new Map(navItems.map((i) => [i.label, i])).values()).map((item) => (
+        <MenuItem key={item.label} {...item} onSelect={setPage} />
+      ))}
+    </nav>
+
+    <div className="flex shrink-0 items-center gap-3">
+      <button
+        onClick={() => setMobileMenuOpen(true)}
+        className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 lg:hidden"
+      >
+        Menu
+      </button>
+
+      <button
+        onClick={() => setPage("contact-form")}
+        className="hidden rounded-full border border-blue-950 px-5 py-2 text-sm font-semibold text-blue-950 transition hover:bg-blue-50 md:block"
+      >
+        Nous contacter
+      </button>
+
+      <button
+        onClick={() => setPage("don")}
+        className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600"
+      >
+        Faire un don
+      </button>
+    </div>
+  </div>
+
+  <MobileMenu
+    open={mobileMenuOpen}
+    onClose={() => setMobileMenuOpen(false)}
+    onSelect={(p) => {
+      setPage(p);
+      setMobileMenuOpen(false);
+    }}
+  />
+</header>
       <main>
         {renderPage() || (
         <>
