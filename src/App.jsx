@@ -400,28 +400,6 @@ L’impact recherché s’inscrit dans une logique de transformation systémique
       }
     ]
   },
-      {
-        title: "Objectifs spécifiques",
-        body: "Renforcer les capacités locales, promouvoir la gouvernance éthique, développer des initiatives économiques durables et soutenir l’engagement citoyen."
-      },
-      {
-        title: "Résultats attendus",
-        body: "Communautés renforcées, transparence accrue, initiatives locales durables et participation citoyenne active."
-      },
-      {
-        title: "Approche",
-        body: "Co-construction, participation citoyenne, innovation sociale et ancrage territorial."
-      },
-      {
-        title: "Indicateurs",
-        body: "Bénéficiaires, participation, projets soutenus, dispositifs de gouvernance."
-      },
-      {
-        title: "Durabilité",
-        body: "Appropriation locale, renforcement des capacités et impact durable."
-      }
-    ]
-  },
 
   values: {
     title: "Nos valeurs",
