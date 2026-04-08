@@ -58,7 +58,7 @@ const navItems = [
     label: "Projets",
     items: [
       { label: "Projets en cours", page: "projects", description: "Portefeuille d’actions et résultats visibles", icon: Globe },
-      { label: "Projets à soutenir", page: "projects-support", description: "Priorités nécessitant des appuis", icon: HeartHandshake },
+      { label: "Appel à financement", page: "financing", description: "Priorités d’investissement, cofinancement et partenariat bailleur", icon: HeartHandshake },
       { label: "Impact", page: "projects-impact", description: "Chiffres clés et portée des interventions", icon: Users },
       { label: "Partenaires", page: "partners", description: "Institutions, ONG et réseaux associés", icon: Handshake },
     ],
@@ -198,6 +198,102 @@ const testimonials = [
 ];
 
 const pageDetails = {
+
+  logframe: {
+    title: "Cadre logique (Logframe UE)",
+    eyebrow: "Outil de pilotage stratégique",
+    text: "Présentation structurée du cadre logique conforme aux standards bailleurs (UE, ENABEL, UNOPS).",
+    sections: [
+      {
+        title: "Objectif global",
+        body: "Amélioration durable des conditions de vie via gouvernance, inclusion et développement local."
+      },
+      {
+        title: "Objectif spécifique",
+        body: "Renforcement des capacités locales et de la participation citoyenne."
+      },
+      {
+        title: "Résultats",
+        body: "Acteurs formés, dispositifs de gouvernance opérationnels, initiatives durables déployées."
+      },
+      {
+        title: "Indicateurs",
+        body: "Nombre de bénéficiaires, taux de participation, projets réalisés, dispositifs actifs."
+      },
+      {
+        title: "Sources de vérification",
+        body: "Rapports, enquêtes terrain, outils numériques de suivi, audits externes."
+      },
+      {
+        title: "Hypothèses / Risques",
+        body: "Stabilité institutionnelle, engagement des parties prenantes, accès terrain sécurisé."
+      }
+    ]
+  },
+
+  financing: {
+    title: "Appel à financement",
+    eyebrow: "Donors page • Partenariats & cofinancement",
+    text: "PRODDEKO-Belgique recherche des partenaires techniques et financiers souhaitant soutenir des programmes territoriaux à fort impact en gouvernance, éducation citoyenne, eau-hygiène-assainissement, agriculture durable et innovation responsable. Notre approche combine ancrage local, co-construction, transparence financière et logique de pérennisation.",
+    sections: [
+      {
+        title: "Pourquoi investir avec PRODDEKO-Belgique ?",
+        body: "Notre valeur ajoutée réside dans notre capacité à articuler diaspora, acteurs locaux, institutions et partenaires académiques autour de projets concrets, mesurables et adaptés aux réalités des territoires. Nous privilégions des dispositifs de mise en œuvre responsables, avec redevabilité, suivi participatif, ancrage communautaire et perspective de réplication."
+      },
+      {
+        title: "Axes ouverts au financement",
+        body: "Les opportunités de financement concernent notamment : (1) gouvernance éthique et suivi citoyen ; (2) éducation citoyenne, jeunesse et leadership ; (3) accès à l’eau, hygiène et assainissement écologique ; (4) agriculture durable et résilience territoriale ; (5) outils numériques participatifs, gouvernance responsable de l’innovation et systèmes locaux d’alerte et de coordination."
+      },
+      {
+        title: "Types de partenariat recherchés",
+        body: "Nous recherchons des subventions institutionnelles, des cofinancements de projets, des partenariats programmatiques pluriannuels, des fonds pilotes pour l’innovation, des partenariats académiques appliqués ainsi que des appuis en expertise, équipement, formation et accompagnement stratégique."
+      },
+      {
+        title: "Montages financiers possibles",
+        body: "PRODDEKO-Belgique peut intervenir dans des schémas de financement variés : projet pilote, subvention affectée, cofinancement multi-acteurs, consortium, appui à l’amorçage, financement de réplication ou enveloppe dédiée au renforcement institutionnel. Les contributions peuvent couvrir les activités, l’ingénierie de projet, le suivi-évaluation, la formation, les équipements et la pérennisation."
+      },
+      {
+        title: "Garanties de redevabilité",
+        body: "Chaque partenariat s’appuie sur une logique claire d’objectifs, résultats, indicateurs, suivi budgétaire et reporting. Nous privilégions des mécanismes de traçabilité, de validation terrain, de suivi participatif, d’auditabilité et de communication régulière avec les bailleurs et partenaires."
+      },
+      {
+        title: "Exemples de besoins prioritaires",
+        body: "Financement de programmes d’éducation citoyenne et de gouvernance locale ; soutien à des dispositifs eau-hygiène-assainissement dans les écoles et centres de santé ; appui aux projets d’agriculture durable et de résilience ; soutien à des pilotes numériques responsables ; renforcement organisationnel et territorial des structures partenaires locales."
+      },
+      {
+        title: "Partenaires ciblés",
+        body: "Cette page s’adresse aux fondations, agences de coopération, bailleurs publics, institutions académiques, ONG internationales, entreprises engagées, diaspora solidaire et mécanismes de financement mixte souhaitant soutenir des interventions crédibles, contextualisées et orientées impact."
+      },
+      {
+        title: "Entrer en discussion",
+        body: "Nous sommes disponibles pour partager une note conceptuelle, un cadre logique, un budget indicatif, un plan de mise en œuvre, une matrice de résultats ou une proposition de consortium adaptée à vos priorités. Pour toute prise de contact : contact@proddeko.online • Welkenraedt, Belgique • Coordination terrain : Kinzau-Mvuete, RDC."
+      }
+    ]
+  },
+
+  partners: {
+    title: "Partenaires stratégiques",
+    eyebrow: "Écosystème institutionnel",
+    text: "PRODDEKO-Belgique s’inscrit dans un réseau multi-acteurs international.",
+    sections: [
+      {
+        title: "Institutions",
+        body: "Coopération avec agences publiques, ambassades et programmes internationaux."
+      },
+      {
+        title: "ONG & Réseaux",
+        body: "Collaboration avec ONG européennes et africaines pour des actions coordonnées."
+      },
+      {
+        title: "Académique",
+        body: "Partenariats universitaires pour recherche, innovation et formation."
+      },
+      {
+        title: "Valeur ajoutée",
+        body: "Effet levier, crédibilité institutionnelle et mutualisation des ressources."
+      }
+    ]
+  },
   about: {
     title: "Qui sommes-nous ?",
     eyebrow: "Présentation institutionnelle",
@@ -254,8 +350,56 @@ En mobilisant les ressources de la diaspora, les partenariats institutionnels et
     sections: [
       {
         title: "Objectif global",
-        body: "Améliorer durablement les conditions de vie des populations en renforçant la gouvernance locale et la participation citoyenne."
+        body: `Contribuer à l’amélioration durable des conditions de vie des populations en République Démocratique du Congo, en renforçant la gouvernance locale, la participation citoyenne et les dynamiques de développement endogène.`
       },
+      {
+        title: "Objectifs spécifiques",
+        body: `Renforcer les capacités des acteurs locaux (organisations communautaires, jeunes, femmes, autorités locales) afin d’améliorer la gouvernance territoriale et la participation citoyenne.
+
+Soutenir le développement d’initiatives économiques et sociales durables, notamment dans les secteurs de l’agriculture, du numérique, de l’éducation et de l’entrepreneuriat local.
+
+Promouvoir une culture d’intégrité, de transparence et de redevabilité à travers des dispositifs de gouvernance éthique et de suivi citoyen.`
+      },
+      {
+        title: "Résultats attendus",
+        body: `Les capacités organisationnelles et techniques des acteurs locaux sont renforcées.
+
+Les mécanismes de gouvernance locale et de participation citoyenne sont opérationnels et inclusifs.
+
+Des initiatives économiques et sociales durables sont mises en œuvre et consolidées.
+
+La transparence, la redevabilité et la culture d’intégrité sont renforcées au niveau local.`
+      },
+      {
+        title: "Indicateurs clés",
+        body: `Nombre de bénéficiaires directs et indirects appuyés.
+
+Taux de participation des femmes et des jeunes dans les dispositifs de gouvernance.
+
+Nombre d’initiatives locales soutenues et pérennisées.
+
+Existence et utilisation effective de mécanismes de suivi citoyen et de redevabilité.
+
+Nombre de sessions de formation et d’actions de sensibilisation réalisées.`
+      },
+      {
+        title: "Approche méthodologique",
+        body: `Approche de co-construction avec les communautés locales et les partenaires institutionnels.
+
+Ancrage territorial fort et adaptation aux réalités locales.
+
+Mobilisation de la diaspora comme levier stratégique de compétences et de ressources.
+
+Utilisation d’outils participatifs et numériques pour renforcer la transparence et l’engagement citoyen.`
+      },
+      {
+        title: "Durabilité et impact",
+        body: `Les actions sont conçues pour garantir une appropriation locale, un transfert de compétences et une autonomie progressive des acteurs bénéficiaires.
+
+L’impact recherché s’inscrit dans une logique de transformation systémique et durable, alignée sur les Objectifs de Développement Durable (ODD) et les priorités des territoires d’intervention.`
+      }
+    ]
+  },
       {
         title: "Objectifs spécifiques",
         body: "Renforcer les capacités locales, promouvoir la gouvernance éthique, développer des initiatives économiques durables et soutenir l’engagement citoyen."
