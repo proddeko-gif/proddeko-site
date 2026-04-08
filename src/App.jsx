@@ -205,11 +205,11 @@ const pageDetails = {
     sections: [
       {
         title: "Vision et engagement",
-        body: "PRODDEKO-Belgique inscrit son action dans une vision stratégique de développement durable, inclusif et endogène, fondée sur la justice sociale, la cohésion communautaire et la préservation des écosystèmes. L’organisation promeut des dynamiques territoriales capables de renforcer durablement les capacités locales, en articulant innovation sociale, participation citoyenne et gouvernance responsable.
+        body: `PRODDEKO-Belgique inscrit son action dans une vision stratégique de développement durable, inclusif et endogène, fondée sur la justice sociale, la cohésion communautaire et la préservation des écosystèmes. L’organisation promeut des dynamiques territoriales capables de renforcer durablement les capacités locales, en articulant innovation sociale, participation citoyenne et gouvernance responsable.
 
 Son engagement repose sur une approche systémique des enjeux de développement, intégrant à la fois les dimensions économiques, sociales, environnementales et institutionnelles. À ce titre, la gouvernance éthique, la transparence, la redevabilité et l’implication active des communautés sont considérées comme des leviers structurants de transformation.
 
-En mobilisant les ressources de la diaspora, les partenariats institutionnels et les savoirs locaux, PRODDEKO-Belgique contribue à co-construire des solutions adaptées aux réalités des territoires, avec une attention particulière portée à l’autonomisation des populations, notamment des femmes et des jeunes, ainsi qu’à la résilience des systèmes locaux face aux défis contemporains."
+En mobilisant les ressources de la diaspora, les partenariats institutionnels et les savoirs locaux, PRODDEKO-Belgique contribue à co-construire des solutions adaptées aux réalités des territoires, avec une attention particulière portée à l’autonomisation des populations, notamment des femmes et des jeunes, ainsi qu’à la résilience des systèmes locaux face aux défis contemporains.`
       },
       {
         title: "Mission",
