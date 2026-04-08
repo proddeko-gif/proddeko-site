@@ -199,57 +199,83 @@ const testimonials = [
 
 const pageDetails = {
   about: {
-  title: "Qui sommes-nous ?",
-  eyebrow: "Présentation institutionnelle",
-  text: "PRODDEKO-Belgique est une association sans but lucratif de droit belge, fondée par des membres de la diaspora congolaise, engagée dans la solidarité internationale et le co-développement entre la Belgique et la République Démocratique du Congo. Elle agit comme un pont citoyen mobilisant savoirs, ressources et dynamiques locales afin de construire un développement durable, inclusif et éthique.",
-  sections: [
-    {
-      title: "Vision et engagement",
-      body: "PRODDEKO-Belgique inscrit son action dans une vision stratégique de développement durable, inclusif et endogène, fondée sur la justice sociale, la cohésion communautaire et la préservation des écosystèmes. L’organisation promeut des dynamiques territoriales capables de renforcer durablement les capacités locales, en articulant innovation sociale, participation citoyenne et gouvernance responsable.\n\nSon engagement repose sur une approche systémique des enjeux de développement, intégrant à la fois les dimensions économiques, sociales, environnementales et institutionnelles. À ce titre, la gouvernance éthique, la transparence, la redevabilité et l’implication active des communautés sont considérées comme des leviers structurants de transformation.\n\nEn mobilisant les ressources de la diaspora, les partenariats institutionnels et les savoirs locaux, PRODDEKO-Belgique contribue à co-construire des solutions adaptées aux réalités des territoires, avec une attention particulière portée à l’autonomisation des populations, notamment des femmes et des jeunes, ainsi qu’à la résilience des systèmes locaux face aux défis contemporains (climat, pauvreté, gouvernance, inégalités)."
-    },
-    {
-      title: "Mission",
-      body: "L’association soutient les initiatives locales en RDC dans des domaines clés tels que l’agriculture durable, la gouvernance territoriale, l’éducation citoyenne, le numérique et l’autonomisation des femmes et des jeunes. En Belgique, elle développe des actions d’éducation à la citoyenneté mondiale et de plaidoyer pour une coopération équitable et responsable."
-    },
-    {
-      title: "Positionnement stratégique",
-      body: "PRODDEKO-Belgique agit comme une interface entre la diaspora congolaise, les partenaires institutionnels européens et les acteurs locaux en RDC. Elle privilégie une approche de co-construction, basée sur l’écoute des besoins locaux, la réciprocité et la coresponsabilité entre partenaires du Nord et du Sud."
-    },
-    {
-      title: "Gouvernance participative",
-      body: "La gouvernance repose sur trois instances principales : une Assemblée Générale inclusive et souveraine, un Conseil d’Administration assurant le pilotage stratégique, et un Comité Opérationnel en charge de la mise en œuvre des projets. À cela s’ajoutent des comités locaux de pilotage en RDC, impliquant directement les bénéficiaires et partenaires de terrain."
-    },
-    {
-      title: "Domaines d’intervention",
-      body: "Les actions couvrent plusieurs secteurs : agroécologie et agriculture familiale, gouvernance et lutte contre la corruption, éducation citoyenne, transition numérique éthique, autonomisation des femmes et des jeunes, ainsi que renforcement des capacités locales."
-    },
-    {
-      title: "Approche opérationnelle",
-      body: "L’organisation développe des projets co-construits avec les communautés locales, intégrant des mécanismes de suivi participatif, de redevabilité et d’évaluation. Elle favorise l’innovation sociale, notamment à travers des outils numériques participatifs et des dynamiques de mobilisation citoyenne."
-    },
-    {
-      title: "Ancrage territorial et publics cibles",
-      body: "PRODDEKO-Belgique intervient principalement dans des zones rurales et périurbaines en RDC, notamment au Kongo Central et à Kinshasa, auprès d’agriculteurs, de jeunes, de femmes et d’organisations locales. En Belgique, elle s’adresse à la diaspora, aux citoyens, aux institutions et aux acteurs associatifs engagés."
-    },
-    {
-      title: "Partenariats et réseaux",
-      body: "L’organisation collabore avec des ONG, des institutions publiques, des universités et des réseaux citoyens en Belgique et en RDC, notamment CNCD–11.11.11, Entraide & Fraternité, des universités belges et congolaises, ainsi que des plateformes locales de développement durable."
-    },
-    {
-      title: "Valeur ajoutée",
-      body: "La force de PRODDEKO-Belgique réside dans son ancrage diasporique, sa capacité à articuler expertise internationale et réalités locales, ainsi que dans son engagement pour une gouvernance transparente, participative et orientée vers l’impact durable."
-    }
-  ]
-},
+    title: "Qui sommes-nous ?",
+    eyebrow: "Présentation institutionnelle",
+    text: "PRODDEKO-Belgique est une association sans but lucratif de droit belge, fondée par des membres de la diaspora congolaise, engagée dans la solidarité internationale et le co-développement entre la Belgique et la République Démocratique du Congo. Elle agit comme un pont citoyen mobilisant savoirs, ressources et dynamiques locales afin de construire un développement durable, inclusif et éthique.",
+    sections: [
+      {
+        title: "Vision et engagement",
+        body: "PRODDEKO-Belgique inscrit son action dans une vision stratégique de développement durable, inclusif et endogène, fondée sur la justice sociale, la cohésion communautaire et la préservation des écosystèmes. L’organisation promeut des dynamiques territoriales capables de renforcer durablement les capacités locales, en articulant innovation sociale, participation citoyenne et gouvernance responsable.
+
+Son engagement repose sur une approche systémique des enjeux de développement, intégrant à la fois les dimensions économiques, sociales, environnementales et institutionnelles. À ce titre, la gouvernance éthique, la transparence, la redevabilité et l’implication active des communautés sont considérées comme des leviers structurants de transformation.
+
+En mobilisant les ressources de la diaspora, les partenariats institutionnels et les savoirs locaux, PRODDEKO-Belgique contribue à co-construire des solutions adaptées aux réalités des territoires, avec une attention particulière portée à l’autonomisation des populations, notamment des femmes et des jeunes, ainsi qu’à la résilience des systèmes locaux face aux défis contemporains."
+      },
+      {
+        title: "Mission",
+        body: "L’association soutient les initiatives locales en RDC dans des domaines clés tels que l’agriculture durable, la gouvernance territoriale, l’éducation citoyenne, le numérique et l’autonomisation des femmes et des jeunes. En Belgique, elle développe des actions d’éducation à la citoyenneté mondiale et de plaidoyer pour une coopération équitable et responsable."
+      },
+      {
+        title: "Positionnement stratégique",
+        body: "PRODDEKO-Belgique agit comme une interface entre la diaspora congolaise, les partenaires institutionnels européens et les acteurs locaux en RDC. Elle privilégie une approche de co-construction, basée sur l’écoute des besoins locaux, la réciprocité et la coresponsabilité entre partenaires du Nord et du Sud."
+      },
+      {
+        title: "Gouvernance participative",
+        body: "La gouvernance repose sur trois instances principales : une Assemblée Générale inclusive et souveraine, un Conseil d’Administration assurant le pilotage stratégique, et un Comité Opérationnel en charge de la mise en œuvre des projets. À cela s’ajoutent des comités locaux de pilotage en RDC, impliquant directement les bénéficiaires et partenaires de terrain."
+      },
+      {
+        title: "Domaines d’intervention",
+        body: "Les actions couvrent plusieurs secteurs : agroécologie et agriculture familiale, gouvernance et lutte contre la corruption, éducation citoyenne, transition numérique éthique, autonomisation des femmes et des jeunes, ainsi que renforcement des capacités locales."
+      },
+      {
+        title: "Approche opérationnelle",
+        body: "L’organisation développe des projets co-construits avec les communautés locales, intégrant des mécanismes de suivi participatif, de redevabilité et d’évaluation. Elle favorise l’innovation sociale, notamment à travers des outils numériques participatifs et des dynamiques de mobilisation citoyenne."
+      },
+      {
+        title: "Ancrage territorial et publics cibles",
+        body: "PRODDEKO-Belgique intervient principalement dans des zones rurales et périurbaines en RDC, notamment au Kongo Central et à Kinshasa, auprès d’agriculteurs, de jeunes, de femmes et d’organisations locales. En Belgique, elle s’adresse à la diaspora, aux citoyens, aux institutions et aux acteurs associatifs engagés."
+      },
+      {
+        title: "Partenariats et réseaux",
+        body: "L’organisation collabore avec des ONG, des institutions publiques, des universités et des réseaux citoyens en Belgique et en RDC, notamment CNCD–11.11.11, Entraide & Fraternité, des universités belges et congolaises, ainsi que des plateformes locales de développement durable."
+      },
+      {
+        title: "Valeur ajoutée",
+        body: "La force de PRODDEKO-Belgique réside dans son ancrage diasporique, sa capacité à articuler expertise internationale et réalités locales, ainsi que dans son engagement pour une gouvernance transparente, participative et orientée vers l’impact durable."
+      }
+    ]
+  },
+
   mission: {
     title: "Notre mission",
-    eyebrow: "Orientation stratégique",
-    text: "Promouvoir un développement durable, inclusif et participatif en renforçant les capacités locales et l’engagement citoyen.",
+    eyebrow: "Cadre stratégique (niveau bailleur)",
+    text: "Contribuer à un développement durable, inclusif et participatif en RDC, en renforçant les capacités locales, la gouvernance éthique et l’engagement citoyen, dans une logique de co-développement entre la Belgique et les territoires d’intervention.",
     image: ASSETS.hero,
     sections: [
-      { title: "Finalité", body: "Améliorer durablement les conditions de vie via des projets utiles et structurants." },
-      { title: "Méthode", body: "Co-construction avec partenaires, bénéficiaires et institutions." },
-      { title: "Ambition", body: "Renforcer autonomie, transparence et résilience des territoires." }
+      {
+        title: "Objectif global",
+        body: "Améliorer durablement les conditions de vie des populations en renforçant la gouvernance locale et la participation citoyenne."
+      },
+      {
+        title: "Objectifs spécifiques",
+        body: "Renforcer les capacités locales, promouvoir la gouvernance éthique, développer des initiatives économiques durables et soutenir l’engagement citoyen."
+      },
+      {
+        title: "Résultats attendus",
+        body: "Communautés renforcées, transparence accrue, initiatives locales durables et participation citoyenne active."
+      },
+      {
+        title: "Approche",
+        body: "Co-construction, participation citoyenne, innovation sociale et ancrage territorial."
+      },
+      {
+        title: "Indicateurs",
+        body: "Bénéficiaires, participation, projets soutenus, dispositifs de gouvernance."
+      },
+      {
+        title: "Durabilité",
+        body: "Appropriation locale, renforcement des capacités et impact durable."
+      }
     ]
   },
 
