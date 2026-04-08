@@ -297,7 +297,6 @@ const pageDetails = {
     title: "Qui sommes-nous ?",
     eyebrow: "Présentation institutionnelle",
     text: "PRODDEKO-Belgique est une association sans but lucratif de droit belge, fondée par des membres de la diaspora congolaise, engagée dans la solidarité internationale et le co-développement entre la Belgique et la République Démocratique du Congo. Elle agit comme un pont citoyen mobilisant savoirs, ressources et dynamiques locales afin de construire un développement durable, inclusif et éthique.",
-    image: ASSETS.about,
     sections: [
       {
         title: "Vision et engagement",
