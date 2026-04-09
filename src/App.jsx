@@ -80,22 +80,25 @@ const actionCards = [
   {
     icon: Globe,
     title: "Développement durable",
-    text: "Appui aux initiatives locales, renforcement communautaire, transition écologique et projets à impact durable.",
+    text: "PRODDEKO-Belgique accompagne des dynamiques territoriales de développement durable fondées sur le renforcement des capacités locales, la résilience communautaire et la valorisation des ressources endogènes. Ses interventions soutiennent des initiatives structurantes dans les domaines de l’agroécologie, de l’accès aux services essentiels, de la transition écologique et de l’économie locale, en favorisant des modèles durables, inclusifs et adaptés aux réalités des territoires.",
   },
   {
     icon: GraduationCap,
     title: "Éducation citoyenne",
-    text: "Sensibilisation, formation, plaidoyer et accompagnement de jeunes et d’acteurs locaux engagés.",
+    text: "PRODDEKO-Belgique développe des programmes d’éducation à la citoyenneté active visant à renforcer les capacités critiques, l’engagement civique et le leadership des jeunes, des femmes et des acteurs communautaires. À travers des formations, ateliers participatifs et dispositifs de sensibilisation, l’organisation contribue à l’émergence d’une culture démocratique, responsable et orientée vers le bien commun."
+  },
   },
   {
     icon: ShieldCheck,
     title: "Gouvernance éthique",
-    text: "Promotion de la redevabilité, participation citoyenne et suivi communautaire des projets et services.",
+    text: "L’organisation promeut des pratiques de gouvernance éthique fondées sur la transparence, la redevabilité et le contrôle citoyen. Elle met en place des mécanismes de suivi participatif, d’accès à l’information et de dialogue entre citoyens et institutions, afin de renforcer la qualité des services publics et la confiance entre acteurs."
+  },
   },
   {
     icon: Handshake,
     title: "Solidarité internationale",
-    text: "Mise en lien des dynamiques citoyennes entre la Belgique, la RDC et d’autres pays partenaires.",
+    text: "PRODDEKO-Belgique inscrit son action dans une logique de solidarité internationale fondée sur le co-développement et la réciprocité. Elle facilite la mise en relation entre diaspora, acteurs locaux, institutions et partenaires internationaux afin de co-construire des initiatives durables, renforcer les synergies territoriales et favoriser le transfert de compétences et de ressources."
+  },
   },
 ];
 
@@ -1196,17 +1199,64 @@ const renderPage = () => {
           </section>
 
           <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <SectionTitle
-              eyebrow="Nos actions"
-              title="Des actions complémentaires au service du bien commun"
-              text="PRODDEKO-Belgique articule gouvernance, éducation, solidarité internationale et développement durable dans une approche cohérente, utile et ancrée dans les réalités locales."
-            />
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {actionCards.map((card) => (
-                <InfoCard key={card.title} {...card} />
-              ))}
+  <SectionTitle
+    eyebrow="Nos actions"
+    title="Des programmes structurés à fort impact"
+    text="PRODDEKO-Belgique déploie des interventions intégrées combinant gouvernance, éducation, développement durable et solidarité internationale, avec des résultats mesurables et une approche alignée sur les standards bailleurs."
+  />
+
+  {/* KPIs */}
+  <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {[
+      { value: "200 000+", label: "bénéficiaires" },
+      { value: "10+", label: "territoires" },
+      { value: "25+", label: "projets soutenus" },
+      { value: "85%", label: "taux d’impact local" },
+    ].map((kpi) => (
+      <div key={kpi.label} className="rounded-3xl border bg-white p-6 shadow-sm">
+        <div className="text-3xl font-black text-orange-500">{kpi.value}</div>
+        <div className="mt-2 text-sm text-slate-600">{kpi.label}</div>
+      </div>
+    ))}
+  </div>
+
+  {/* Actions détaillées */}
+  <div className="mt-12 grid gap-6 lg:grid-cols-2">
+    {actionCards.map((card, i) => {
+      const Icon = card.icon;
+      return (
+        <div key={card.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+              <Icon className="h-6 w-6" />
             </div>
-          </section>
+            <div>
+              <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+                Programme {String(i + 1).padStart(2, "0")}
+              </div>
+              <h3 className="mt-2 text-xl font-black text-blue-950">{card.title}</h3>
+            </div>
+          </div>
+
+          <p className="mt-5 text-sm leading-7 text-slate-600">{card.text}</p>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              "Objectifs opérationnels",
+              "Résultats attendus",
+              "Indicateurs clés",
+              "Bénéficiaires cibles",
+            ].map((item) => (
+              <div key={item} className="rounded-xl bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
 
           <section className="bg-slate-50 py-20">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
