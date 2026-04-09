@@ -80,26 +80,23 @@ const actionCards = [
   {
     icon: Globe,
     title: "Développement durable",
-    text: "PRODDEKO-Belgique accompagne des dynamiques territoriales de développement durable fondées sur le renforcement des capacités locales, la résilience communautaire et la valorisation des ressources endogènes. Ses interventions soutiennent des initiatives structurantes dans les domaines de l’agroécologie, de l’accès aux services essentiels, de la transition écologique et de l’économie locale, en favorisant des modèles durables, inclusifs et adaptés aux réalités des territoires.",
+    text: "PRODDEKO-Belgique accompagne des dynamiques territoriales de développement durable fondées sur le renforcement des capacités locales, la résilience communautaire et la valorisation des ressources endogènes."
   },
   {
     icon: GraduationCap,
     title: "Éducation citoyenne",
-    text: "PRODDEKO-Belgique développe des programmes d’éducation à la citoyenneté active visant à renforcer les capacités critiques, l’engagement civique et le leadership des jeunes, des femmes et des acteurs communautaires. À travers des formations, ateliers participatifs et dispositifs de sensibilisation, l’organisation contribue à l’émergence d’une culture démocratique, responsable et orientée vers le bien commun."
-  },
+    text: "Programmes de formation, leadership et citoyenneté active pour renforcer l’engagement des jeunes et des communautés."
   },
   {
     icon: ShieldCheck,
     title: "Gouvernance éthique",
-    text: "L’organisation promeut des pratiques de gouvernance éthique fondées sur la transparence, la redevabilité et le contrôle citoyen. Elle met en place des mécanismes de suivi participatif, d’accès à l’information et de dialogue entre citoyens et institutions, afin de renforcer la qualité des services publics et la confiance entre acteurs."
-  },
+    text: "Mécanismes de redevabilité, transparence et participation citoyenne pour améliorer la gouvernance locale."
   },
   {
     icon: Handshake,
     title: "Solidarité internationale",
-    text: "PRODDEKO-Belgique inscrit son action dans une logique de solidarité internationale fondée sur le co-développement et la réciprocité. Elle facilite la mise en relation entre diaspora, acteurs locaux, institutions et partenaires internationaux afin de co-construire des initiatives durables, renforcer les synergies territoriales et favoriser le transfert de compétences et de ressources."
-  },
-  },
+    text: "Co-développement entre diaspora, acteurs locaux et partenaires internationaux."
+  }
 ];
 
 const antiCorruption = [
@@ -204,6 +201,50 @@ const testimonials = [
 ];
 
 const pageDetails = {
+
+  "action-sustainable": {
+    title: "Programme Développement durable",
+    eyebrow: "Programme 01",
+    text: "Renforcement des systèmes locaux durables et résilients.",
+    sections: [
+      { title: "Objectifs", body: "Renforcer les capacités locales et promouvoir des pratiques durables." },
+      { title: "Résultats", body: "Communautés plus résilientes et initiatives locales renforcées." },
+      { title: "Indicateurs", body: "Nombre de projets durables, bénéficiaires, adoption des pratiques." }
+    ]
+  },
+
+  "action-education": {
+    title: "Programme Éducation citoyenne",
+    eyebrow: "Programme 02",
+    text: "Renforcement de la citoyenneté active et du leadership.",
+    sections: [
+      { title: "Objectifs", body: "Former des citoyens engagés et responsables." },
+      { title: "Résultats", body: "Participation accrue et leadership local renforcé." },
+      { title: "Indicateurs", body: "Nombre de formations, participants, initiatives citoyennes." }
+    ]
+  },
+
+  "action-governance": {
+    title: "Programme Gouvernance éthique",
+    eyebrow: "Programme 03",
+    text: "Promotion de la transparence et de la redevabilité.",
+    sections: [
+      { title: "Objectifs", body: "Renforcer la transparence et la participation citoyenne." },
+      { title: "Résultats", body: "Amélioration de la gouvernance locale." },
+      { title: "Indicateurs", body: "Dispositifs mis en place, participation citoyenne." }
+    ]
+  },
+
+  "action-solidarity": {
+    title: "Programme Solidarité internationale",
+    eyebrow: "Programme 04",
+    text: "Renforcement des partenariats et du co-développement.",
+    sections: [
+      { title: "Objectifs", body: "Créer des synergies entre territoires et acteurs." },
+      { title: "Résultats", body: "Partenariats renforcés et projets collaboratifs." },
+      { title: "Indicateurs", body: "Nombre de partenariats, projets co-développés." }
+    ]
+  },
 
   logframe: {
     title: "Cadre logique (Logframe UE)",
@@ -1013,6 +1054,92 @@ const renderPage = () => {
               <p className="mt-4 text-sm leading-7 text-slate-600">{section.body}</p>
             </div>
           ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ===== PAGES PROGRAMMES (fiche bailleur) =====
+  if (page.startsWith("action-") && pageDetails[page]) {
+    const content = pageDetails[page];
+
+    return (
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <SectionTitle
+          eyebrow={content.eyebrow}
+          title={content.title}
+          text={content.text}
+        />
+
+        {/* CTA dossier */}
+        <div className="mt-6 flex flex-wrap gap-3">
+          <button className="rounded-full bg-blue-950 px-5 py-2 text-sm font-semibold text-white hover:bg-slate-900">Télécharger note conceptuelle (PDF)</button>
+          <button className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700">Contacter pour financement</button>
+        </div>
+
+        {/* KPIs programme */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { value: "5 000+", label: "bénéficiaires" },
+            { value: "3 ans", label: "durée" },
+            { value: "€150k", label: "budget estimé" },
+            { value: "3 zones", label: "zones d’intervention" },
+          ].map((kpi) => (
+            <div key={kpi.label} className="rounded-3xl border bg-white p-6 shadow-sm">
+              <div className="text-3xl font-black text-orange-500">{kpi.value}</div>
+              <div className="mt-2 text-sm text-slate-600">{kpi.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Sections logframe */}
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {content.sections?.map((section, i) => (
+            <div key={i} className="rounded-3xl border bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-bold text-blue-950">{section.title}</h3>
+              <p className="mt-3 text-sm text-slate-600">{section.body}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Carte + partenaires */}
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+            <h3 className="text-xl font-black text-blue-950">Zones d’intervention</h3>
+            <div className="mt-4 rounded-2xl bg-slate-50 p-6 text-sm text-slate-600">
+              Kongo Central • Kinshasa • Kwilu • Nord-Kivu
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+            <h3 className="text-xl font-black text-blue-950">Partenaires impliqués</h3>
+            <div className="mt-4 flex flex-wrap gap-2 text-sm">
+              {partners.slice(0,4).map(p => (
+                <span key={p} className="rounded-full bg-slate-50 px-3 py-1">{p}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Budget */}
+        <div className="mt-14 rounded-[2rem] border bg-white p-8 shadow-sm">
+          <h3 className="text-xl font-black text-blue-950">Budget indicatif</h3>
+          <div className="mt-6 grid gap-4 md:grid-cols-3 text-sm">
+            <div className="rounded-xl bg-slate-50 p-4">Activités : 60%</div>
+            <div className="rounded-xl bg-slate-50 p-4">Suivi-évaluation : 15%</div>
+            <div className="rounded-xl bg-slate-50 p-4">Coordination : 25%</div>
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div className="mt-14 rounded-[2rem] border bg-white p-8 shadow-sm">
+          <h3 className="text-xl font-black text-blue-950">Calendrier indicatif</h3>
+          <div className="mt-6 grid gap-4 md:grid-cols-4 text-sm">
+            <div className="rounded-xl bg-slate-50 p-4">Phase 1 : Diagnostic</div>
+            <div className="rounded-xl bg-slate-50 p-4">Phase 2 : Déploiement</div>
+            <div className="rounded-xl bg-slate-50 p-4">Phase 3 : Suivi</div>
+            <div className="rounded-xl bg-slate-50 p-4">Phase 4 : Évaluation</div>
+          </div>
         </div>
       </div>
     );
