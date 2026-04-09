@@ -80,22 +80,22 @@ const actionCards = [
   {
     icon: Globe,
     title: "Développement durable",
-    text: "PRODDEKO-Belgique accompagne des dynamiques territoriales de développement durable fondées sur le renforcement des capacités locales, la résilience communautaire et la valorisation des ressources endogènes."
+    text: "PRODDEKO-Belgique met en œuvre des programmes territoriaux de développement durable visant à renforcer la résilience des communautés, la gestion durable des ressources et l’autonomie économique locale, dans une logique d’impact mesurable et de pérennisation des actions."
   },
   {
     icon: GraduationCap,
     title: "Éducation citoyenne",
-    text: "Programmes de formation, leadership et citoyenneté active pour renforcer l’engagement des jeunes et des communautés."
+    text: "L’organisation développe des dispositifs structurés de formation et de sensibilisation destinés à renforcer la citoyenneté active, le leadership local et la participation démocratique, en particulier auprès des jeunes et des femmes."
   },
   {
     icon: ShieldCheck,
     title: "Gouvernance éthique",
-    text: "Mécanismes de redevabilité, transparence et participation citoyenne pour améliorer la gouvernance locale."
+    text: "PRODDEKO-Belgique promeut des mécanismes de transparence, de redevabilité et de suivi citoyen afin d’améliorer la qualité de la gouvernance locale et de renforcer la confiance entre institutions et populations."
   },
   {
     icon: Handshake,
     title: "Solidarité internationale",
-    text: "Co-développement entre diaspora, acteurs locaux et partenaires internationaux."
+    text: "À travers une approche de co-développement, l’organisation facilite la coopération entre diaspora, acteurs locaux et partenaires internationaux pour co-construire des solutions durables adaptées aux réalités des territoires."
   }
 ];
 
