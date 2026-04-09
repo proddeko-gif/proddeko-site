@@ -14,6 +14,9 @@ import {
   HeartHandshake,
   Landmark,
   Phone,
+  CheckCircle2,
+  Scale,
+  Sparkles,
 } from "lucide-react";
 
 // ⚠️ Vérifie que les images existent bien dans /public/images
@@ -404,11 +407,38 @@ L’impact recherché s’inscrit dans une logique de transformation systémique
   values: {
     title: "Nos valeurs",
     eyebrow: "Référentiel d’action",
-    text: "Dignité humaine, transparence, responsabilité, participation citoyenne et solidarité internationale.",
+    text: "Le référentiel d’action de PRODDEKO-Belgique repose sur des principes éthiques, organisationnels et territoriaux qui structurent l’ensemble de ses interventions. Ces valeurs guident la conception des projets, la relation avec les communautés, la gestion des ressources et les partenariats, dans une logique de co-développement, de redevabilité et d’impact durable.",
     sections: [
-      { title: "Dignité", body: "Respect des personnes et de leur capacité d’agir." },
-      { title: "Transparence", body: "Clarté, redevabilité et gestion responsable." },
-      { title: "Solidarité", body: "Coopération équilibrée et non verticale." }
+      {
+        title: "Dignité humaine",
+        body: `PRODDEKO-Belgique place la dignité humaine au cœur de son action. Chaque personne est considérée non comme bénéficiaire passive, mais comme sujet de droits, acteur de changement et partenaire du développement. Cette valeur implique le respect des identités, des parcours, des savoirs locaux et de la capacité d’initiative des communautés.
+
+Dans les projets portés par l’organisation, la dignité se traduit par une attention particulière aux groupes les plus exposés aux vulnérabilités — notamment les enfants, les femmes, les jeunes et les ménages fragilisés — ainsi qu’à la qualité concrète des réponses apportées : accès à l’eau, à l’assainissement, à l’éducation, à l’information, à la participation et à des conditions de vie plus sûres et plus justes.`
+      },
+      {
+        title: "Transparence et redevabilité",
+        body: `La transparence constitue un engagement central de gouvernance. PRODDEKO-Belgique défend une gestion claire, traçable et responsable des ressources financières, matérielles et humaines. Elle privilégie des mécanismes de suivi, d’évaluation, de documentation et de restitution qui permettent aux partenaires, communautés, institutions et bailleurs de comprendre les décisions, d’apprécier les résultats et d’exercer un regard critique sur l’action menée.
+
+Cette exigence de redevabilité se reflète également dans les dispositifs promus par l’organisation : participation citoyenne, suivi communautaire, mécanismes de recours, contrôle local, auditabilité des processus et diffusion d’informations utiles. La transparence n’est pas seulement un principe de gestion ; elle est un levier de confiance, de légitimité et d’efficacité collective.`
+      },
+      {
+        title: "Solidarité internationale et co-développement",
+        body: `PRODDEKO-Belgique défend une solidarité internationale fondée sur la réciprocité, l’écoute mutuelle et la coresponsabilité. L’organisation rejette les approches verticales ou paternalistes et privilégie des partenariats équilibrés entre acteurs de la diaspora, communautés locales, institutions publiques, ONG, universités et réseaux citoyens.
+
+Cette solidarité se concrétise dans une logique de co-développement : les dynamiques entre la Belgique et la RDC sont pensées comme des relations de construction commune, d’apprentissage partagé et de mise en valeur des expertises locales. Elle vise à créer des passerelles durables entre territoires, compétences, ressources et initiatives utiles au bien commun.`
+      },
+      {
+        title: "Participation citoyenne et appropriation locale",
+        body: `La participation citoyenne est considérée comme une condition de pertinence, de légitimité et de durabilité des projets. PRODDEKO-Belgique veille à ce que les communautés, organisations locales, relais de terrain, jeunes, femmes et acteurs publics puissent contribuer à la définition des priorités, à la mise en œuvre des actions et au suivi des résultats.
+
+Cette valeur traduit la conviction que les changements durables ne peuvent être imposés de l’extérieur. Ils doivent être portés, compris et appropriés localement. L’organisation favorise donc des méthodologies de co-construction, d’écoute active, de retour d’expérience et de renforcement des capacités locales.`
+      },
+      {
+        title: "Responsabilité, durabilité et innovation utile",
+        body: `PRODDEKO-Belgique inscrit son action dans une logique de responsabilité et d’impact durable. Chaque intervention doit produire des effets concrets, mesurables et soutenables dans le temps, tout en respectant les réalités sociales, culturelles, institutionnelles et environnementales des territoires d’intervention.
+
+L’organisation valorise une innovation utile, c’est-à-dire des solutions adaptées, appropriables et gouvernées de manière responsable — qu’il s’agisse d’outils numériques participatifs, de dispositifs locaux de gouvernance, de pratiques d’assainissement écologique ou de mécanismes de coordination multi-acteurs. Cette orientation s’inscrit dans une démarche d’amélioration continue et d’alignement avec les Objectifs de Développement Durable.`
+      }
     ]
   },
 
@@ -685,8 +715,22 @@ export default function ProddekoBelgiqueSite() {
       setStatus("Erreur réseau ❌");
     }
   };
+const valueIcons = {
+  "Dignité humaine": HeartHandshake,
+  "Transparence et redevabilité": ShieldCheck,
+  "Solidarité internationale et co-développement": Handshake,
+  "Participation citoyenne et appropriation locale": Users,
+  "Responsabilité, durabilité et innovation utile": Sparkles,
+};
+
+const governanceIcons = {
+  "Assemblée Générale": Users,
+  "Conseil d’Administration": Landmark,
+  "Comité opérationnel": ShieldCheck,
+};
+
 const renderPage = () => {
-  // ✅ IMPORTANT : ne rien afficher pour l'accueil
+  // IMPORTANT : ne rien afficher pour l'accueil
   if (page === "home") return null;
 
   // ===== PAGE PROJETS (premium) =====
@@ -760,6 +804,161 @@ const renderPage = () => {
               </button>
             </div>
           ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ===== PAGE VALEURS (layout premium UE) =====
+  if (page === "values" && pageDetails.values) {
+    const content = pageDetails.values;
+
+    return (
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <SectionTitle
+              eyebrow={content.eyebrow}
+              title={content.title}
+              text={content.text}
+            />
+
+            <div className="mt-8 rounded-[2rem] border border-slate-200 bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-8 text-white shadow-2xl">
+              <div className="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
+                Cadre éthique
+              </div>
+              <h3 className="mt-5 text-2xl font-black tracking-tight">
+                Un socle de principes pour des interventions crédibles, responsables et durables
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-200">
+                Nos valeurs structurent la relation avec les communautés, la gouvernance des projets,
+                la gestion des ressources, les mécanismes de redevabilité et la qualité des partenariats.
+              </p>
+
+              <div className="mt-8 space-y-3">
+                {[
+                  "Approche centrée sur les droits et la dignité",
+                  "Transparence, auditabilité et redevabilité",
+                  "Partenariats équitables et co-développement",
+                  "Participation citoyenne et appropriation locale",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-300" />
+                    <span className="text-sm leading-6 text-slate-100">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {content.sections?.map((section, i) => {
+              const Icon = valueIcons[section.title] || Scale;
+              return (
+                <div
+                  key={i}
+                  className={`rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg ${
+                    i === 0 ? "md:col-span-2" : ""
+                  }`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+                        Principe {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <h3 className="mt-2 text-xl font-black tracking-tight text-blue-950">
+                        {section.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="mt-5 text-sm leading-7 text-slate-600 whitespace-pre-line">
+                    {section.body}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ===== PAGE GOUVERNANCE (layout premium UE) =====
+  if (page === "governance" && pageDetails.governance) {
+    const content = pageDetails.governance;
+
+    return (
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <SectionTitle
+              eyebrow={content.eyebrow}
+              title={content.title}
+              text={content.text}
+            />
+
+            <div className="mt-8 rounded-[2rem] border border-slate-200 bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-8 text-white shadow-2xl">
+              <div className="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
+                Architecture institutionnelle
+              </div>
+              <h3 className="mt-5 text-2xl font-black tracking-tight">
+                Une gouvernance participative, responsable et orientée résultats
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-200">
+                La gouvernance de PRODDEKO-Belgique articule orientation stratégique, supervision,
+                mise en œuvre opérationnelle et redevabilité, dans une logique de transparence,
+                d’inclusion et d’ancrage territorial entre la Belgique et la RDC.
+              </p>
+
+              <div className="mt-8 space-y-3">
+                {[
+                  "Décision collégiale et supervision stratégique",
+                  "Redevabilité institutionnelle et transparence de gestion",
+                  "Coordination opérationnelle avec relais territoriaux",
+                  "Participation des parties prenantes et appropriation locale",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-300" />
+                    <span className="text-sm leading-6 text-slate-100">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {content.sections?.map((section, i) => {
+              const Icon = governanceIcons[section.title] || Scale;
+              return (
+                <div
+                  key={i}
+                  className={`rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg ${
+                    i === 0 ? "md:col-span-2" : ""
+                  }`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+                        Instance {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <h3 className="mt-2 text-xl font-black tracking-tight text-blue-950">
+                        {section.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="mt-5 text-sm leading-7 text-slate-600 whitespace-pre-line">
+                    {section.body}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
