@@ -205,44 +205,96 @@ const pageDetails = {
   "action-sustainable": {
     title: "Programme Développement durable",
     eyebrow: "Programme 01",
-    text: "Renforcement des systèmes locaux durables et résilients.",
+    text: "PRODDEKO-Belgique accompagne des trajectoires territoriales de développement durable visant à renforcer la résilience communautaire, la gestion responsable des ressources et l’amélioration durable des conditions de vie dans les zones d’intervention.",
     sections: [
-      { title: "Objectifs", body: "Renforcer les capacités locales et promouvoir des pratiques durables." },
-      { title: "Résultats", body: "Communautés plus résilientes et initiatives locales renforcées." },
-      { title: "Indicateurs", body: "Nombre de projets durables, bénéficiaires, adoption des pratiques." }
+      {
+        title: "Objectifs stratégiques",
+        body: "Renforcer les capacités locales en matière de développement durable, promouvoir des pratiques agroécologiques et soutenir des initiatives économiques et communautaires capables d’améliorer durablement les moyens d’existence."
+      },
+      {
+        title: "Résultats attendus",
+        body: "Des communautés mieux organisées, des pratiques durables adoptées à l’échelle locale, une meilleure résilience face aux vulnérabilités économiques et environnementales, ainsi qu’une appropriation renforcée des actions par les acteurs territoriaux."
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de bénéficiaires directs et indirects ; nombre d’initiatives locales soutenues ; taux d’adoption des pratiques durables ; niveau de participation communautaire ; évolution de la résilience des ménages et structures accompagnés."
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Agriculteurs, jeunes, femmes, organisations communautaires, structures locales de développement et populations vulnérables engagées dans des dynamiques de transformation durable."
+      }
     ]
   },
 
   "action-education": {
     title: "Programme Éducation citoyenne",
     eyebrow: "Programme 02",
-    text: "Renforcement de la citoyenneté active et du leadership.",
+    text: "Le programme Éducation citoyenne vise à développer une citoyenneté active, critique et responsable, à travers des dispositifs de formation, de sensibilisation et de mobilisation centrés sur les jeunes, les femmes et les acteurs communautaires.",
     sections: [
-      { title: "Objectifs", body: "Former des citoyens engagés et responsables." },
-      { title: "Résultats", body: "Participation accrue et leadership local renforcé." },
-      { title: "Indicateurs", body: "Nombre de formations, participants, initiatives citoyennes." }
+      {
+        title: "Objectifs stratégiques",
+        body: "Renforcer les capacités citoyennes, développer le leadership local et promouvoir une culture démocratique fondée sur la participation, la responsabilité et l’engagement pour le bien commun."
+      },
+      {
+        title: "Résultats attendus",
+        body: "Une amélioration mesurable de la participation citoyenne, un renforcement du leadership local, une meilleure compréhension des droits et devoirs civiques, ainsi qu’une implication accrue des jeunes et des femmes dans les dynamiques collectives."
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de formations organisées ; nombre de participants ; taux de participation des jeunes et des femmes ; nombre d’initiatives citoyennes lancées ; niveau d’engagement communautaire observé après intervention."
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Jeunes, femmes, leaders communautaires, organisations locales, établissements éducatifs et relais de terrain engagés dans des actions de sensibilisation et de participation citoyenne."
+      }
     ]
   },
 
   "action-governance": {
     title: "Programme Gouvernance éthique",
     eyebrow: "Programme 03",
-    text: "Promotion de la transparence et de la redevabilité.",
+    text: "Ce programme renforce les mécanismes locaux de transparence, de redevabilité et de participation citoyenne afin d’améliorer la qualité de la gouvernance territoriale et la confiance entre institutions et populations.",
     sections: [
-      { title: "Objectifs", body: "Renforcer la transparence et la participation citoyenne." },
-      { title: "Résultats", body: "Amélioration de la gouvernance locale." },
-      { title: "Indicateurs", body: "Dispositifs mis en place, participation citoyenne." }
+      {
+        title: "Objectifs stratégiques",
+        body: "Promouvoir des pratiques de gouvernance éthique, renforcer les mécanismes de suivi citoyen et améliorer la qualité du dialogue entre autorités locales, organisations communautaires et citoyens."
+      },
+      {
+        title: "Résultats attendus",
+        body: "Des dispositifs de redevabilité opérationnels, une participation citoyenne accrue, une meilleure circulation de l’information publique et un renforcement progressif de la confiance institutionnelle au niveau local."
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de mécanismes de suivi mis en place ; nombre de citoyens impliqués ; fréquence des espaces de dialogue ; niveau d’accès à l’information ; qualité perçue de la gouvernance locale."
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Collectivités locales, organisations de la société civile, relais communautaires, jeunes engagés, femmes leaders, autorités locales et citoyens impliqués dans les processus de gouvernance."
+      }
     ]
   },
 
   "action-solidarity": {
     title: "Programme Solidarité internationale",
     eyebrow: "Programme 04",
-    text: "Renforcement des partenariats et du co-développement.",
+    text: "PRODDEKO-Belgique développe une solidarité internationale fondée sur le co-développement, la réciprocité et la mobilisation conjointe des ressources de la diaspora, des partenaires institutionnels et des acteurs locaux.",
     sections: [
-      { title: "Objectifs", body: "Créer des synergies entre territoires et acteurs." },
-      { title: "Résultats", body: "Partenariats renforcés et projets collaboratifs." },
-      { title: "Indicateurs", body: "Nombre de partenariats, projets co-développés." }
+      {
+        title: "Objectifs stratégiques",
+        body: "Créer des synergies durables entre la Belgique, la RDC et les partenaires internationaux, renforcer les partenariats multi-acteurs et favoriser le transfert de compétences, de ressources et d’innovations utiles aux territoires."
+      },
+      {
+        title: "Résultats attendus",
+        body: "Des partenariats consolidés, des initiatives co-construites entre acteurs du Nord et du Sud, une meilleure mobilisation de la diaspora et une augmentation de la capacité collective à soutenir des projets à fort impact territorial."
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de partenariats actifs ; nombre de projets co-développés ; volume de ressources mobilisées ; niveau d’implication des partenaires et de la diaspora ; qualité des mécanismes de coordination."
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Diaspora congolaise, organisations locales, collectivités, institutions publiques, partenaires techniques, universités, ONG et communautés bénéficiaires engagées dans des dynamiques de coopération."
+      }
     ]
   },
 
