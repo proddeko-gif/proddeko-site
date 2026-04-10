@@ -445,7 +445,7 @@ const pageDetails = {
       },
       {
         title: "Entrer en discussion",
-        body: "Nous sommes disponibles pour partager une note conceptuelle, un cadre logique, un budget indicatif, un plan de mise en œuvre, une matrice de résultats ou une proposition de consortium adaptée à vos priorités. Pour toute prise de contact : contact@proddeko.online • Welkenraedt, Belgique • Coordination terrain : Kinzau-Mvuete, RDC."
+        body: "Nous sommes disponibles pour partager une note conceptuelle, un cadre logique, un budget indicatif, un plan de mise en œuvre, une matrice de résultats ou une proposition de consortium adaptée à vos priorités. Pour toute prise de contact : admin@proddeko.online • Welkenraedt, Belgique • Coordination terrain : Kinzau-Mvuete, RDC."
       }
     ]
   },
@@ -1617,7 +1617,7 @@ const renderPage = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-4 w-4 text-orange-500" />
-                    contact@proddeko.online
+                    admin@proddeko.online
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-4 w-4 text-orange-500" />
@@ -1701,7 +1701,7 @@ const renderPage = () => {
                 <ul className="mt-5 space-y-3 text-sm text-slate-600">
                   <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Welkenraedt, Belgique</li>
                   <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Kinzau-Mvuete, RDC</li>
-                  <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact@proddeko.online</li>
+                  <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> admin@proddeko.online</li>
                 </ul>
               </div>
 
