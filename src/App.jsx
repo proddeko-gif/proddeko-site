@@ -203,6 +203,26 @@ const testimonials = [
 const pageDetails = {
 
   "action-sustainable": {
+    meta: {
+      beneficiaries: "12 000+",
+      duration: "36 mois",
+      budget: "€ 280 000",
+      zones: "4 territoires",
+      geography: "Kongo Central • Kinshasa • Kwilu • zones rurales partenaires",
+      partners: ["ENABEL", "Fondation Roi Baudouin", "Université Kongo", "Organisations communautaires locales"],
+      budgetBreakdown: [
+        "Activités terrain et accompagnement : 58%",
+        "Formation, outillage et équipements : 17%",
+        "Suivi-évaluation et capitalisation : 10%",
+        "Coordination et gestion : 15%"
+      ],
+      timeline: [
+        "Phase 1 : Diagnostic territorial et concertation",
+        "Phase 2 : Déploiement des actions et renforcement de capacités",
+        "Phase 3 : Suivi, ajustements et consolidation",
+        "Phase 4 : Évaluation, capitalisation et pérennisation"
+      ]
+    },
     title: "Programme Développement durable",
     eyebrow: "Programme 01",
     text: "PRODDEKO-Belgique accompagne des trajectoires territoriales de développement durable visant à renforcer la résilience communautaire, la gestion responsable des ressources et l’amélioration durable des conditions de vie dans les zones d’intervention.",
@@ -227,6 +247,26 @@ const pageDetails = {
   },
 
   "action-education": {
+    meta: {
+      beneficiaries: "8 500+",
+      duration: "24 mois",
+      budget: "€ 195 000",
+      zones: "3 territoires",
+      geography: "Kinshasa • Kongo Central • espaces éducatifs partenaires",
+      partners: ["CNCD–11.11.11", "UCLouvain", "Établissements éducatifs", "Relais communautaires"],
+      budgetBreakdown: [
+        "Formations, ateliers et contenus pédagogiques : 52%",
+        "Mobilisation citoyenne et accompagnement : 18%",
+        "Suivi-évaluation et documentation : 12%",
+        "Coordination et gestion : 18%"
+      ],
+      timeline: [
+        "Phase 1 : Conception pédagogique et mobilisation",
+        "Phase 2 : Mise en œuvre des formations et sensibilisations",
+        "Phase 3 : Appui aux initiatives citoyennes",
+        "Phase 4 : Évaluation des changements de comportement"
+      ]
+    },
     title: "Programme Éducation citoyenne",
     eyebrow: "Programme 02",
     text: "Le programme Éducation citoyenne vise à développer une citoyenneté active, critique et responsable, à travers des dispositifs de formation, de sensibilisation et de mobilisation centrés sur les jeunes, les femmes et les acteurs communautaires.",
@@ -251,6 +291,26 @@ const pageDetails = {
   },
 
   "action-governance": {
+    meta: {
+      beneficiaries: "6 000+",
+      duration: "30 mois",
+      budget: "€ 240 000",
+      zones: "3 collectivités",
+      geography: "Kongo Central • Kinshasa • collectivités locales pilotes",
+      partners: ["UNOPS", "Entraide & Fraternité", "Autorités locales", "OSC partenaires"],
+      budgetBreakdown: [
+        "Mécanismes de redevabilité et dialogue public : 47%",
+        "Renforcement de capacités et sensibilisation : 20%",
+        "Outils de suivi et documentation : 13%",
+        "Coordination, suivi et gouvernance : 20%"
+      ],
+      timeline: [
+        "Phase 1 : Analyse institutionnelle et cartographie des parties prenantes",
+        "Phase 2 : Mise en place des mécanismes de suivi citoyen",
+        "Phase 3 : Dialogue public, accompagnement et ajustements",
+        "Phase 4 : Évaluation de la gouvernance et capitalisation"
+      ]
+    },
     title: "Programme Gouvernance éthique",
     eyebrow: "Programme 03",
     text: "Ce programme renforce les mécanismes locaux de transparence, de redevabilité et de participation citoyenne afin d’améliorer la qualité de la gouvernance territoriale et la confiance entre institutions et populations.",
@@ -275,6 +335,26 @@ const pageDetails = {
   },
 
   "action-solidarity": {
+    meta: {
+      beneficiaries: "4 000+",
+      duration: "24 mois",
+      budget: "€ 175 000",
+      zones: "Belgique • RDC",
+      geography: "Welkenraedt • Kinshasa • Kongo Central • réseaux de diaspora",
+      partners: ["Caritas International", "Diaspora congolaise", "Universités partenaires", "ONG alliées"],
+      budgetBreakdown: [
+        "Animation de partenariats et co-développement : 40%",
+        "Mobilisation de compétences et appui technique : 22%",
+        "Événements, plaidoyer et coordination : 18%",
+        "Suivi, documentation et gestion : 20%"
+      ],
+      timeline: [
+        "Phase 1 : Mise en réseau et cadrage des partenariats",
+        "Phase 2 : Déploiement des initiatives conjointes",
+        "Phase 3 : Renforcement des synergies et transfert de compétences",
+        "Phase 4 : Consolidation, plaidoyer et réplication"
+      ]
+    },
     title: "Programme Solidarité internationale",
     eyebrow: "Programme 04",
     text: "PRODDEKO-Belgique développe une solidarité internationale fondée sur le co-développement, la réciprocité et la mobilisation conjointe des ressources de la diaspora, des partenaires institutionnels et des acteurs locaux.",
@@ -1114,6 +1194,7 @@ const renderPage = () => {
   // ===== PAGES PROGRAMMES (fiche bailleur) =====
   if (page.startsWith("action-") && pageDetails[page]) {
     const content = pageDetails[page];
+    const meta = content.meta || {};
 
     return (
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
@@ -1132,10 +1213,10 @@ const renderPage = () => {
         {/* KPIs programme */}
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { value: "5 000+", label: "bénéficiaires" },
-            { value: "3 ans", label: "durée" },
-            { value: "€150k", label: "budget estimé" },
-            { value: "3 zones", label: "zones d’intervention" },
+            { value: meta.beneficiaries || "5 000+", label: "bénéficiaires" },
+            { value: meta.duration || "3 ans", label: "durée" },
+            { value: meta.budget || "€150k", label: "budget estimé" },
+            { value: meta.zones || "3 zones", label: "zones d’intervention" },
           ].map((kpi) => (
             <div key={kpi.label} className="rounded-3xl border bg-white p-6 shadow-sm">
               <div className="text-3xl font-black text-orange-500">{kpi.value}</div>
@@ -1159,14 +1240,14 @@ const renderPage = () => {
           <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
             <h3 className="text-xl font-black text-blue-950">Zones d’intervention</h3>
             <div className="mt-4 rounded-2xl bg-slate-50 p-6 text-sm text-slate-600">
-              Kongo Central • Kinshasa • Kwilu • Nord-Kivu
+              {meta.geography || "Kongo Central • Kinshasa • Kwilu • Nord-Kivu"}
             </div>
           </div>
 
           <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
             <h3 className="text-xl font-black text-blue-950">Partenaires impliqués</h3>
             <div className="mt-4 flex flex-wrap gap-2 text-sm">
-              {partners.slice(0,4).map(p => (
+              {(meta.partners || partners.slice(0,4)).map(p => (
                 <span key={p} className="rounded-full bg-slate-50 px-3 py-1">{p}</span>
               ))}
             </div>
@@ -1176,21 +1257,29 @@ const renderPage = () => {
         {/* Budget */}
         <div className="mt-14 rounded-[2rem] border bg-white p-8 shadow-sm">
           <h3 className="text-xl font-black text-blue-950">Budget indicatif</h3>
-          <div className="mt-6 grid gap-4 md:grid-cols-3 text-sm">
-            <div className="rounded-xl bg-slate-50 p-4">Activités : 60%</div>
-            <div className="rounded-xl bg-slate-50 p-4">Suivi-évaluation : 15%</div>
-            <div className="rounded-xl bg-slate-50 p-4">Coordination : 25%</div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4 text-sm">
+            {(meta.budgetBreakdown || [
+              "Activités : 60%",
+              "Suivi-évaluation : 15%",
+              "Coordination : 25%",
+            ]).map((item) => (
+              <div key={item} className="rounded-xl bg-slate-50 p-4">{item}</div>
+            ))}
           </div>
         </div>
 
         {/* Timeline */}
         <div className="mt-14 rounded-[2rem] border bg-white p-8 shadow-sm">
           <h3 className="text-xl font-black text-blue-950">Calendrier indicatif</h3>
-          <div className="mt-6 grid gap-4 md:grid-cols-4 text-sm">
-            <div className="rounded-xl bg-slate-50 p-4">Phase 1 : Diagnostic</div>
-            <div className="rounded-xl bg-slate-50 p-4">Phase 2 : Déploiement</div>
-            <div className="rounded-xl bg-slate-50 p-4">Phase 3 : Suivi</div>
-            <div className="rounded-xl bg-slate-50 p-4">Phase 4 : Évaluation</div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4 text-sm">
+            {(meta.timeline || [
+              "Phase 1 : Diagnostic",
+              "Phase 2 : Déploiement",
+              "Phase 3 : Suivi",
+              "Phase 4 : Évaluation",
+            ]).map((item) => (
+              <div key={item} className="rounded-xl bg-slate-50 p-4">{item}</div>
+            ))}
           </div>
         </div>
       </div>
