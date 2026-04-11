@@ -905,9 +905,445 @@ const governanceIcons = {
   "Comité opérationnel": ShieldCheck,
 };
 
-const renderPage = () => {
-  // IMPORTANT : ne rien afficher pour l'accueil
-  if (page === "home") return null;
+{renderPage() || (
+  <>
+    <section className="relative overflow-hidden bg-slate-950 text-white">
+      <div className="absolute inset-0">
+        <img
+          src={ASSETS.hero}
+          alt="PRODDEKO-Belgique"
+          className="h-full w-full object-cover opacity-35"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-slate-950/70 to-orange-950/70" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div>
+            <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-semibold text-slate-100 backdrop-blur">
+              Belgique • RDC • Co-développement • Gouvernance éthique
+            </div>
+            <h1 className="mt-8 max-w-5xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+              Une action institutionnelle durable entre territoires, citoyens et partenaires
+            </h1>
+            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-200">
+              PRODDEKO-Belgique agit comme un pont entre la Belgique et la RDC pour renforcer la dignité humaine,
+              la gouvernance responsable, la participation citoyenne et des dynamiques locales de transformation durable.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <button
+                onClick={() => setPage("projects")}
+                className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
+              >
+                Découvrir nos programmes
+              </button>
+              <button
+                onClick={() => setPage("financing")}
+                className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+              >
+                Appel à financement
+              </button>
+            </div>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-[2rem] border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur"
+              >
+                <div className="text-3xl font-black text-orange-300 md:text-5xl">{stat.value}</div>
+                <div className="mt-3 text-lg text-slate-100">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="border-b border-slate-200 bg-white">
+      <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 md:grid-cols-2 xl:grid-cols-4 lg:px-8">
+        {[
+          { value: "200 000+", label: "bénéficiaires directs" },
+          { value: "25+", label: "initiatives et projets soutenus" },
+          { value: "8+", label: "partenaires stratégiques" },
+          { value: "2 continents", label: "ancrage Belgique–Afrique" },
+        ].map((item) => (
+          <div key={item.label} className="rounded-3xl border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm">
+            <div className="text-3xl font-black text-orange-500">{item.value}</div>
+            <div className="mt-2 text-sm text-slate-600">{item.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div className="overflow-hidden rounded-[2rem] border border-slate-200 shadow-xl">
+          <img src={ASSETS.about} alt="Présentation PRODDEKO" className="h-full min-h-[420px] w-full object-cover" />
+        </div>
+        <div>
+          <SectionTitle
+            eyebrow="Qui nous sommes"
+            title="Une ONG de co-développement ancrée entre la Belgique et la RDC"
+            text="PRODDEKO-Belgique mobilise la diaspora, les partenaires institutionnels, les acteurs locaux et les communautés pour concevoir des interventions durables, participatives et orientées résultats."
+          />
+          <div className="mt-8 space-y-5 text-base leading-8 text-slate-600">
+            <p>
+              L’organisation agit comme une interface stratégique entre territoires, savoirs locaux, innovation sociale et coopération internationale.
+              Elle privilégie des réponses co-construites, adaptées aux réalités locales et alignées sur les principes de transparence, de redevabilité et d’impact durable.
+            </p>
+            <p>
+              Son action couvre la gouvernance éthique, l’éducation citoyenne, le développement durable, la solidarité internationale et l’appui aux initiatives communautaires.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <button onClick={() => setPage("about")} className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white">
+              Lire la présentation institutionnelle
+            </button>
+            <button onClick={() => setPage("mission")} className="rounded-full border border-slate-200 px-6 py-3 text-sm font-bold text-slate-700">
+              Notre mission
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionTitle
+          eyebrow="Nos programmes"
+          title="Des actions complémentaires au service du bien commun"
+          text="PRODDEKO-Belgique déploie des programmes structurés, suivis et documentés, inspirés d’une logique cadre bailleur et d’une forte appropriation territoriale."
+        />
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {[
+            { ...actionCards[0], page: "action-sustainable" },
+            { ...actionCards[1], page: "action-education" },
+            { ...actionCards[2], page: "action-governance" },
+            { ...actionCards[3], page: "action-solidarity" },
+          ].map((card, i) => {
+            const Icon = card.icon;
+            return (
+              <button
+                key={card.title}
+                onClick={() => setPage(card.page)}
+                className="rounded-[2rem] border border-slate-200 bg-white p-8 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+                        Programme {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <h3 className="mt-2 text-2xl font-black text-blue-950">{card.title}</h3>
+                    </div>
+                  </div>
+                  <ArrowRight className="h-5 w-5 shrink-0 text-slate-400" />
+                </div>
+
+                <p className="mt-5 text-sm leading-7 text-slate-600">{card.text}</p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {[
+                    "Objectifs opérationnels",
+                    "Résultats attendus",
+                    "Indicateurs clés",
+                    "Bénéficiaires cibles",
+                  ].map((item) => (
+                    <div key={item} className="rounded-xl bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
+        <div>
+          <SectionTitle
+            eyebrow="Impact et résultats"
+            title="Des résultats visibles, suivis et documentés"
+            text="L’organisation privilégie une approche orientée résultats, fondée sur des indicateurs, des mécanismes de suivi et une lecture territoriale de l’impact."
+          />
+          <div className="mt-8 space-y-4">
+            {[
+              "Portée géographique entre Belgique, RDC et réseaux partenaires",
+              "Bénéficiaires directs et indirects suivis dans la durée",
+              "Dispositifs de gouvernance, formation et accompagnement déployés",
+              "Approche traçable, participative et compatible avec les exigences bailleurs",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
+                <span className="text-sm leading-6 text-slate-600">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {[
+            { title: "Portée géographique", text: "Présence en Belgique, ancrage en RDC et coopération avec des réseaux en Afrique et en Europe." },
+            { title: "Bénéficiaires cibles", text: "Jeunes, femmes, communautés locales, organisations citoyennes, autorités locales et diaspora engagée." },
+            { title: "Qualité des résultats", text: "Actions suivies, capitalisées et pensées pour produire des effets concrets, mesurables et reproductibles." },
+            { title: "Logique bailleur", text: "Objectifs, résultats, indicateurs, partenaires, budget et redevabilité intégrés dans les programmes." },
+          ].map((card) => (
+            <div key={card.title} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+              <h3 className="text-xl font-black text-blue-950">{card.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{card.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-blue-950 py-20 text-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionTitle
+          eyebrow="Territoires d’intervention"
+          title="Une présence multi-territoriale entre ancrage local et ouverture internationale"
+          text="Nos actions se déploient dans plusieurs provinces de la RDC ainsi qu’en Belgique, en Europe et en Afrique centrale."
+          light
+        />
+        <div className="mt-10 flex flex-wrap gap-3">
+          {territories.map((territory) => (
+            <span
+              key={territory}
+              className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100"
+            >
+              {territory}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div className="grid gap-10 lg:grid-cols-2">
+        <div>
+          <SectionTitle
+            eyebrow="Partenaires et réseau"
+            title="Un écosystème de coopération stratégique"
+            text="Des institutions, ONG et universités renforcent la portée, la crédibilité et la qualité de nos interventions."
+          />
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {partners.map((partner) => (
+              <div key={partner} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm">
+                {partner}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <SectionTitle
+            eyebrow="Universités partenaires"
+            title="Recherche, formation et innovation au service de l’action"
+            text="La coopération académique renforce la recherche-action, la capitalisation, la formation et l’expertise."
+          />
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {universities.map((university) => (
+              <div key={university} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm">
+                {university}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-gradient-to-r from-blue-950 via-slate-950 to-orange-950 py-20 text-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <SectionTitle
+              eyebrow="Soutenir / financer"
+              title="Soutenir des actions concrètes, durables et traçables"
+              text="PRODDEKO-Belgique recherche des partenaires financiers, philanthropiques et citoyens désireux d’appuyer des programmes à fort impact territorial."
+              light
+            />
+            <div className="mt-8 flex flex-wrap gap-4">
+              <button onClick={() => setPage("don")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white">
+                Faire un don
+              </button>
+              <button onClick={() => setPage("financing")} className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white">
+                Voir l’appel à financement
+              </button>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/10 p-8 backdrop-blur">
+            <div className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">Coordonnées bancaires</div>
+            <div className="mt-5 space-y-3 text-sm text-slate-100">
+              <div><strong>IBAN :</strong> BE52 0341 7896 9409</div>
+              <div><strong>BIC :</strong> GEBABEBB</div>
+              <div><strong>Compte :</strong> PRODDEKO PROGRAMMES DE DEVELOPPEMENT DURABLE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <SectionTitle
+        eyebrow="Actualités et ressources"
+        title="Des contenus, publications et initiatives à suivre"
+        text="Une organisation crédible documente ses actions, diffuse ses ressources et partage l’évolution de ses programmes."
+      />
+      <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        {[
+          {
+            title: "Actualité terrain",
+            text: "Suivi d’initiatives locales, activités communautaires et dynamique territoriale entre Belgique et RDC.",
+          },
+          {
+            title: "Note conceptuelle",
+            text: "Document de présentation stratégique destiné aux partenaires, bailleurs et institutions intéressés.",
+          },
+          {
+            title: "Appel à partenariat",
+            text: "Opportunités de cofinancement, consortium, accompagnement technique et soutien à la pérennisation.",
+          },
+        ].map((card) => (
+          <div key={card.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 className="text-xl font-black text-blue-950">{card.title}</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">{card.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section className="border-t border-slate-200 bg-slate-50 py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+          <div>
+            <SectionTitle
+              eyebrow="Entrer en relation"
+              title="Contacter PRODDEKO-Belgique"
+              text="Coordonnées, message de contact et orientation donateur/partenaire dans un espace clair, accessible et professionnel."
+            />
+            <div className="mt-6 space-y-4 text-sm text-slate-600">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 text-orange-500" />
+                Welkenraedt, Belgique
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 text-orange-500" />
+                Coordination terrain : Kinzau-Mvuete, RDC
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-4 w-4 text-orange-500" />
+                admin@proddeko.online
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-orange-500" />
+                +32 488 84 46 98
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
+            <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Nous écrire</div>
+            <h3 className="mt-3 text-2xl font-black text-blue-950">Formulaire de contact</h3>
+            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+              <div>
+                <label className="mb-2 block text-sm font-semibold text-slate-700">Nom</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-semibold text-slate-700">E-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-semibold text-slate-700">Message</label>
+                <textarea
+                  rows="5"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                />
+              </div>
+              <button
+                type="submit"
+                className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
+              >
+                Envoyer
+              </button>
+              {status ? <p className="text-sm text-slate-600">{status}</p> : null}
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer className="border-t border-slate-200 bg-slate-50">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
+        <div>
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-sm">
+              {logoError ? (
+                <div className="flex h-full w-full items-center justify-center bg-blue-950 text-xs font-black text-white">PB</div>
+              ) : (
+                <img src={ASSETS.logo} alt="Logo PRODDEKO" className="h-full w-full object-contain" onError={() => setLogoError(true)} />
+              )}
+            </div>
+            <div>
+              <div className="text-lg font-black text-blue-950">PRODDEKO-Belgique</div>
+              <div className="text-sm text-slate-500">Solidarité internationale • Développement durable • Gouvernance éthique</div>
+            </div>
+          </div>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">
+            PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC et d’autres territoires partenaires pour soutenir des actions utiles, durables et transparentes.
+          </p>
+        </div>
+
+        <div>
+          <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Coordonnées</div>
+          <ul className="mt-5 space-y-3 text-sm text-slate-600">
+            <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Welkenraedt, Belgique</li>
+            <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Kinzau-Mvuete, RDC</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> admin@proddeko.online</li>
+          </ul>
+        </div>
+
+        <div>
+          <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Navigation rapide</div>
+          <div className="mt-5 space-y-3 text-sm text-slate-600">
+            <button onClick={() => setPage("about")} className="block transition hover:text-orange-500">À propos</button>
+            <button onClick={() => setPage("projects")} className="block transition hover:text-orange-500">Projets</button>
+            <button onClick={() => setPage("don")} className="block transition hover:text-orange-500">Faire un don</button>
+            <button onClick={() => setPage("contact-form")} className="block transition hover:text-orange-500">Contact</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </>
+)}
 
   // ===== PAGE PROJETS (premium) =====
   if (page === "projects") {
