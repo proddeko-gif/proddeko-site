@@ -961,29 +961,77 @@ const renderPage = () => {
 
   // ===== PAGE DON =====
   if (page === "don") {
-    return (
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <SectionTitle
-          eyebrow="Soutenir"
-          title="Faire un don pour un impact concret"
-          text="Votre contribution permet de financer des actions utiles et durables."
-        />
+  return (
+    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <SectionTitle
+        eyebrow="Soutenir"
+        title="Faire un don pour un impact concret"
+        text="Votre contribution permet de financer des actions utiles et durables."
+      />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {donationTiers.map((tier) => (
-            <div key={tier.title} className="rounded-3xl border bg-white p-8 text-center shadow-sm">
-              <div className="text-3xl font-black text-orange-500">{tier.amount}</div>
-              <h3 className="mt-3 text-xl font-bold text-blue-950">{tier.title}</h3>
-              <p className="mt-3 text-sm text-slate-600">{tier.text}</p>
-              <button className="mt-6 rounded-full bg-blue-950 px-5 py-3 text-sm text-white">
-                Donner
-              </button>
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {donationTiers.map((tier) => (
+          <div key={tier.title} className="rounded-3xl border bg-white p-8 text-center shadow-sm">
+            <div className="text-3xl font-black text-orange-500">{tier.amount}</div>
+            <h3 className="mt-3 text-xl font-bold text-blue-950">{tier.title}</h3>
+            <p className="mt-3 text-sm text-slate-600">{tier.text}</p>
+
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-left text-sm">
+              <div className="font-semibold text-slate-700">Coordonnées bancaires</div>
+              <div className="mt-2 space-y-1 text-slate-600">
+                <div><strong>IBAN :</strong> BE52 0341 7896 9409</div>
+                <div><strong>BIC :</strong> GEBABEBB</div>
+                <div><strong>Compte :</strong> PRODDEKO PROGRAMMES DE DEVELOPPEMENT DURABLE</div>
+              </div>
             </div>
-          ))}
+
+            <div className="mt-6 flex flex-col items-center gap-3">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=BE52034178969409"
+                alt="QR paiement PRODDEKO"
+                className="rounded-lg border"
+              />
+              <span className="text-xs text-slate-500">Scanner pour enregistrer le paiement</span>
+            </div>
+
+            <a
+              href="mailto:admin@proddeko.online?subject=Don%20PRODDEKO&body=Bonjour,%20je%20souhaite%20faire%20un%20don%20de%20${encodeURIComponent(
+                tier.amount
+              )}.%20Merci%20de%20m’indiquer%20la%20référence%20de%20virement%20à%20utiliser."
+              className="mt-6 inline-block rounded-full bg-blue-950 px-5 py-3 text-sm text-white"
+            >
+              Donner
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+        <h3 className="text-xl font-black text-blue-950">Virement bancaire</h3>
+        <p className="mt-3 text-sm leading-7 text-slate-600">
+          Vous pouvez soutenir directement PRODDEKO-Belgique par virement bancaire. Merci d’indiquer
+          en communication : <strong>Don PRODDEKO</strong> ou de nous écrire à{" "}
+          <strong>admin@proddeko.online</strong> pour un suivi personnalisé.
+        </p>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-3 text-sm">
+          <div className="rounded-2xl bg-slate-50 p-4">
+            <div className="font-semibold text-slate-700">IBAN</div>
+            <div className="mt-2 text-slate-600">BE52 0341 7896 9409</div>
+          </div>
+          <div className="rounded-2xl bg-slate-50 p-4">
+            <div className="font-semibold text-slate-700">BIC</div>
+            <div className="mt-2 text-slate-600">GEBABEBB</div>
+          </div>
+          <div className="rounded-2xl bg-slate-50 p-4">
+            <div className="font-semibold text-slate-700">Nom du compte</div>
+            <div className="mt-2 text-slate-600">PRODDEKO PROGRAMMES DE DEVELOPPEMENT DURABLE</div>
+          </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   // ===== PAGE VALEURS (layout premium UE) =====
   if (page === "values" && pageDetails.values) {
