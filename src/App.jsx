@@ -18,7 +18,6 @@ import {
   Users,
   X,
 } from "lucide-react";
-
 const SITE = {
   name: "PRODDEKO-Belgique",
   tagline:
@@ -32,14 +31,12 @@ const SITE = {
   drcLocation: "Kinzau-Mvuete, RDC",
   logo: "/images/proddeko-logo.png?v=2",
 };
-
 const stats = [
   { value: "200 000+", label: "bénéficiaires directs" },
   { value: "10+", label: "zones et pays d’action" },
   { value: "8+", label: "partenaires stratégiques" },
   { value: "6", label: "universités partenaires" },
 ];
-
 const territories = [
   "Kongo Central",
   "Kinshasa",
@@ -52,7 +49,6 @@ const territories = [
   "Congo-Brazzaville",
   "Cameroun",
 ];
-
 const partners = [
   "Fondation Roi Baudouin",
   "ENABEL",
@@ -63,7 +59,6 @@ const partners = [
   "Entraide & Fraternité",
   "Laguzze-JPN95",
 ];
-
 const universities = [
   "ULiège",
   "UCLouvain",
@@ -72,7 +67,6 @@ const universities = [
   "ISAV Matadi",
   "ISDR-Kinzau-Mvuete",
 ];
-
 const donationTiers = [
   {
     amount: "25 €",
@@ -90,7 +84,6 @@ const donationTiers = [
     text: "Participer au financement d’un micro-projet local ou d’une activité structurante.",
   },
 ];
-
 const actionCards = [
   {
     icon: Globe,
@@ -117,7 +110,6 @@ const actionCards = [
     text: "Co-développement entre Belgique et RDC, mobilisation de la diaspora et partenariats multi-acteurs à fort impact.",
   },
 ];
-
 const navItems = [
   {
     label: "À propos",
@@ -154,7 +146,6 @@ const navItems = [
     ],
   },
 ];
-
 const pageContent = {
   about: {
     eyebrow: "Présentation institutionnelle",
@@ -179,7 +170,6 @@ const pageContent = {
       },
     ],
   },
-
   mission: {
     eyebrow: "Cadre stratégique",
     title: "Notre mission",
@@ -203,7 +193,6 @@ const pageContent = {
       },
     ],
   },
-
   values: {
     eyebrow: "Référentiel d’action",
     title: "Nos valeurs",
@@ -231,7 +220,6 @@ const pageContent = {
       },
     ],
   },
-
   governance: {
     eyebrow: "Organisation",
     title: "Notre gouvernance",
@@ -251,7 +239,6 @@ const pageContent = {
       },
     ],
   },
-
   partners: {
     eyebrow: "Écosystème institutionnel",
     title: "Partenaires stratégiques",
@@ -275,7 +262,6 @@ const pageContent = {
       },
     ],
   },
-
   "projects-impact": {
     eyebrow: "Résultats et portée",
     title: "Notre impact",
@@ -299,7 +285,6 @@ const pageContent = {
       },
     ],
   },
-
   financing: {
     eyebrow: "Donors page",
     title: "Appel à financement",
@@ -323,7 +308,6 @@ const pageContent = {
       },
     ],
   },
-
   "contact-info": {
     eyebrow: "Contact",
     title: "Coordonnées",
@@ -335,7 +319,6 @@ const pageContent = {
       { title: "Téléphone", body: SITE.phone },
     ],
   },
-
   "action-sustainable": {
     eyebrow: "Programme 01",
     title: "Programme Développement durable",
@@ -371,7 +354,6 @@ const pageContent = {
       "Calendrier : Diagnostic • Déploiement • Consolidation • Évaluation",
     ],
   },
-
   "action-education": {
     eyebrow: "Programme 02",
     title: "Programme Éducation citoyenne",
@@ -407,7 +389,6 @@ const pageContent = {
       "Calendrier : Conception • Mise en œuvre • Appui aux initiatives • Évaluation",
     ],
   },
-
   "action-governance": {
     eyebrow: "Programme 03",
     title: "Programme Gouvernance éthique",
@@ -443,7 +424,6 @@ const pageContent = {
       "Calendrier : Analyse • Mise en place • Dialogue • Évaluation",
     ],
   },
-
   "action-solidarity": {
     eyebrow: "Programme 04",
     title: "Programme Solidarité internationale",
@@ -480,7 +460,6 @@ const pageContent = {
     ],
   },
 };
-
 function PageHero({ eyebrow, title, text }) {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
@@ -488,7 +467,6 @@ function PageHero({ eyebrow, title, text }) {
     </div>
   );
 }
-
 function ContentGrid({ cards, iconMap }) {
   return (
     <div className="mt-12 grid gap-6 md:grid-cols-2">
