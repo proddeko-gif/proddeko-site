@@ -148,7 +148,6 @@ const navItems = [
     ],
   },
   {
-    <!-- Section Projet Kilengi - à intégrer dans le site -->
 <section id="projet-kilengi" class="project-section">
   <div class="container">
     <div class="project-header">
