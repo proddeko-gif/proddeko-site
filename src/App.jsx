@@ -148,7 +148,8 @@ const navItems = [
     ],
   },
   {
-<section id="projet-kilengi" class="project-section">
+
+    <section id="projet-kilengi" class="project-section">
   <div class="container">
     <div class="project-header">
       <span class="project-badge">Projet réalisé / Réhabilitation en cours</span>
