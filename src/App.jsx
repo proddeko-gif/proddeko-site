@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   BookOpen,
@@ -525,74 +525,150 @@ function SectionTitle({ eyebrow, title, text, light = false }) {
 }
 
 function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
+  const wrapperRef = useRef(null);
+  const openTimeoutRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
+
+  const isOpen = activeMenu === group.label;
+
+  const clearTimers = () => {
+    if (openTimeoutRef.current) {
+      clearTimeout(openTimeoutRef.current);
+      openTimeoutRef.current = null;
+    }
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const openMenu = () => {
+    clearTimers();
+    openTimeoutRef.current = setTimeout(() => {
+      setActiveMenu(group.label);
+    }, 60);
+  };
+
+  const closeMenu = () => {
+    clearTimers();
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveMenu((current) => (current === group.label ? null : current));
+    }, 220);
+  };
+
+  const toggleMenu = () => {
+    clearTimers();
+    setActiveMenu((current) => (current === group.label ? null : group.label));
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!wrapperRef.current) return;
+      if (!wrapperRef.current.contains(event.target)) {
+        setActiveMenu((current) => (current === group.label ? null : current));
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setActiveMenu((current) => (current === group.label ? null : current));
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+      clearTimers();
+    };
+  }, [group.label, setActiveMenu]);
+
   return (
     <div
+      ref={wrapperRef}
       className="relative"
-      onMouseEnter={() => setActiveMenu(group.label)}
-      onMouseLeave={() => setActiveMenu(null)}
+      onMouseEnter={openMenu}
+      onMouseLeave={closeMenu}
     >
       <button
+        type="button"
+        onClick={toggleMenu}
+        onFocus={openMenu}
+        aria-haspopup="true"
+        aria-expanded={isOpen}
         className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold transition ${
-          activeMenu === group.label
+          isOpen
             ? "bg-slate-100 text-blue-950"
             : "text-slate-700 hover:bg-slate-50 hover:text-orange-600"
         }`}
       >
         {group.label}
-        <ChevronDown className="h-4 w-4" />
+        <ChevronDown
+          className={`h-4 w-4 transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </button>
 
-      {activeMenu === group.label ? (
-        <div className="absolute left-1/2 top-full z-30 mt-4 w-[620px] -translate-x-1/2 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.16)]">
-          <div className="grid grid-cols-[1.1fr_0.9fr]">
-            <div className="p-6">
-              <div className="mb-4 border-b border-slate-100 pb-4">
-                <div className="text-sm font-black uppercase tracking-[0.2em] text-orange-500">
-                  {group.label}
+      {isOpen ? (
+        <div className="absolute left-1/2 top-full z-30 mt-1 w-[620px] -translate-x-1/2 pt-3">
+          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.16)]">
+            <div className="grid grid-cols-[1.1fr_0.9fr]">
+              <div className="p-6">
+                <div className="mb-4 border-b border-slate-100 pb-4">
+                  <div className="text-sm font-black uppercase tracking-[0.2em] text-orange-500">
+                    {group.label}
+                  </div>
+                  <div className="mt-2 text-2xl font-black tracking-tight text-blue-950">
+                    Navigation stratégique
+                  </div>
                 </div>
-                <div className="mt-2 text-2xl font-black tracking-tight text-blue-950">
-                  Navigation stratégique
-                </div>
-              </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                {group.items.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <button
-                      key={item.page}
-                      onClick={() => {
-                        setPage(item.page);
-                        setActiveMenu(null);
-                      }}
-                      className="flex items-start gap-4 rounded-[1.25rem] bg-slate-50/70 p-4 text-left transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
-                    >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold text-blue-950">{item.label}</div>
-                        <div className="mt-1 text-xs leading-5 text-slate-500">
-                          {item.page}
+                <div className="grid grid-cols-2 gap-3">
+                  {group.items.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={item.page}
+                        type="button"
+                        onClick={() => {
+                          setPage(item.page);
+                          setActiveMenu(null);
+                        }}
+                        onFocus={openMenu}
+                        className="flex items-start gap-4 rounded-[1.25rem] bg-slate-50/70 p-4 text-left transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      >
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+                          <Icon className="h-5 w-5" />
                         </div>
-                      </div>
-                    </button>
-                  );
-                })}
+                        <div>
+                          <div className="text-sm font-bold text-blue-950">
+                            {item.label}
+                          </div>
+                          <div className="mt-1 text-xs leading-5 text-slate-500">
+                            {item.page}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
 
-            <div className="bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-6 text-white">
-              <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
-                {SITE.name}
+              <div className="bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-6 text-white">
+                <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
+                  {SITE.name}
+                </div>
+                <h3 className="mt-5 text-2xl font-black leading-tight tracking-tight">
+                  Une action institutionnelle ancrée dans les territoires
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-200">
+                  Nos programmes articulent gouvernance, participation citoyenne,
+                  innovation sociale et partenariats durables entre la Belgique et la RDC.
+                </p>
               </div>
-              <h3 className="mt-5 text-2xl font-black leading-tight tracking-tight">
-                Une action institutionnelle ancrée dans les territoires
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-200">
-                Nos programmes articulent gouvernance, participation citoyenne,
-                innovation sociale et partenariats durables entre la Belgique et la RDC.
-              </p>
             </div>
           </div>
         </div>
@@ -764,7 +840,7 @@ export default function App() {
   const [status, setStatus] = useState("");
 
   const currentContent = pageContent[page] || null;
-  const topNav = useState(() => navItems)[0];
+  const topNav = navItems;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -779,6 +855,12 @@ export default function App() {
       `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
     window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+  };
+
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+    setActiveMenu(null);
+    setMobileOpen(false);
   };
 
   const renderPage = () => {
@@ -825,7 +907,8 @@ export default function App() {
                 <h3 className="mt-3 text-xl font-bold text-blue-950">{p.title}</h3>
                 <p className="mt-3 text-sm text-slate-600">{p.text}</p>
                 <button
-                  onClick={() => setPage("don")}
+                  type="button"
+                  onClick={() => handlePageChange("don")}
                   className="mt-5 rounded-full bg-orange-500 px-4 py-2 text-sm text-white"
                 >
                   Soutenir
@@ -960,10 +1043,8 @@ export default function App() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
           <button
-            onClick={() => {
-              setPage("home");
-              setMobileOpen(false);
-            }}
+            type="button"
+            onClick={() => handlePageChange("home")}
             className="flex min-w-0 items-center gap-4 text-left"
           >
             <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-sm">
@@ -985,10 +1066,8 @@ export default function App() {
 
           <nav className="hidden items-center gap-4 lg:flex xl:gap-6">
             <button
-              onClick={() => {
-                setPage("home");
-                setActiveMenu(null);
-              }}
+              type="button"
+              onClick={() => handlePageChange("home")}
               className="text-sm font-semibold text-slate-700 transition hover:text-orange-600"
             >
               Accueil
@@ -1000,13 +1079,14 @@ export default function App() {
                 group={group}
                 activeMenu={activeMenu}
                 setActiveMenu={setActiveMenu}
-                setPage={setPage}
+                setPage={handlePageChange}
               />
             ))}
           </nav>
 
           <div className="flex shrink-0 items-center gap-3">
             <button
+              type="button"
               onClick={() => setMobileOpen((v) => !v)}
               className="rounded-full border border-slate-200 p-2 text-slate-700 lg:hidden"
             >
@@ -1014,14 +1094,16 @@ export default function App() {
             </button>
 
             <button
-              onClick={() => setPage("contact-form")}
+              type="button"
+              onClick={() => handlePageChange("contact-form")}
               className="hidden rounded-full border border-blue-950 px-5 py-2 text-sm font-semibold text-blue-950 transition hover:bg-blue-50 md:block"
             >
               Nous contacter
             </button>
 
             <button
-              onClick={() => setPage("don")}
+              type="button"
+              onClick={() => handlePageChange("don")}
               className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600"
             >
               Faire un don
@@ -1033,10 +1115,8 @@ export default function App() {
           <div className="border-t border-slate-200 bg-white lg:hidden">
             <div className="space-y-4 px-6 py-5">
               <button
-                onClick={() => {
-                  setPage("home");
-                  setMobileOpen(false);
-                }}
+                type="button"
+                onClick={() => handlePageChange("home")}
                 className="block w-full text-left text-sm font-semibold text-slate-700"
               >
                 Accueil
@@ -1051,10 +1131,8 @@ export default function App() {
                       return (
                         <button
                           key={item.page}
-                          onClick={() => {
-                            setPage(item.page);
-                            setMobileOpen(false);
-                          }}
+                          type="button"
+                          onClick={() => handlePageChange(item.page)}
                           className="flex w-full items-start gap-3 rounded-2xl px-3 py-3 text-left transition hover:bg-slate-50"
                         >
                           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
@@ -1105,14 +1183,16 @@ export default function App() {
 
                   <div className="mt-10 flex flex-wrap gap-4">
                     <button
-                      onClick={() => setPage("projects")}
+                      type="button"
+                      onClick={() => handlePageChange("projects")}
                       className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
                     >
                       Découvrir nos programmes
                     </button>
 
                     <button
-                      onClick={() => setPage("financing")}
+                      type="button"
+                      onClick={() => handlePageChange("financing")}
                       className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
                     >
                       Appel à financement
@@ -1190,14 +1270,16 @@ export default function App() {
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <button
-                    onClick={() => setPage("about")}
+                    type="button"
+                    onClick={() => handlePageChange("about")}
                     className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white"
                   >
                     Lire la présentation institutionnelle
                   </button>
 
                   <button
-                    onClick={() => setPage("mission")}
+                    type="button"
+                    onClick={() => handlePageChange("mission")}
                     className="rounded-full border border-slate-200 px-6 py-3 text-sm font-bold text-slate-700"
                   >
                     Notre mission
@@ -1221,7 +1303,8 @@ export default function App() {
                   return (
                     <button
                       key={card.title}
-                      onClick={() => setPage(card.page)}
+                      type="button"
+                      onClick={() => handlePageChange(card.page)}
                       className="rounded-[2rem] border border-slate-200 bg-white p-8 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -1385,13 +1468,15 @@ export default function App() {
                   />
                   <div className="mt-8 flex flex-wrap gap-4">
                     <button
-                      onClick={() => setPage("don")}
+                      type="button"
+                      onClick={() => handlePageChange("don")}
                       className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white"
                     >
                       Faire un don
                     </button>
                     <button
-                      onClick={() => setPage("financing")}
+                      type="button"
+                      onClick={() => handlePageChange("financing")}
                       className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white"
                     >
                       Voir l’appel à financement
@@ -1404,9 +1489,15 @@ export default function App() {
                     Coordonnées bancaires
                   </div>
                   <div className="mt-5 space-y-3 text-sm text-slate-100">
-                    <div><strong>IBAN :</strong> {SITE.iban}</div>
-                    <div><strong>BIC :</strong> {SITE.bic}</div>
-                    <div><strong>Compte :</strong> {SITE.accountName}</div>
+                    <div>
+                      <strong>IBAN :</strong> {SITE.iban}
+                    </div>
+                    <div>
+                      <strong>BIC :</strong> {SITE.bic}
+                    </div>
+                    <div>
+                      <strong>Compte :</strong> {SITE.accountName}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1552,16 +1643,32 @@ export default function App() {
                   Navigation rapide
                 </div>
                 <div className="mt-5 space-y-3 text-sm text-slate-600">
-                  <button onClick={() => setPage("about")} className="block transition hover:text-orange-500">
+                  <button
+                    type="button"
+                    onClick={() => handlePageChange("about")}
+                    className="block transition hover:text-orange-500"
+                  >
                     À propos
                   </button>
-                  <button onClick={() => setPage("projects")} className="block transition hover:text-orange-500">
+                  <button
+                    type="button"
+                    onClick={() => handlePageChange("projects")}
+                    className="block transition hover:text-orange-500"
+                  >
                     Projets
                   </button>
-                  <button onClick={() => setPage("don")} className="block transition hover:text-orange-500">
+                  <button
+                    type="button"
+                    onClick={() => handlePageChange("don")}
+                    className="block transition hover:text-orange-500"
+                  >
                     Faire un don
                   </button>
-                  <button onClick={() => setPage("contact-form")} className="block transition hover:text-orange-500">
+                  <button
+                    type="button"
+                    onClick={() => handlePageChange("contact-form")}
+                    className="block transition hover:text-orange-500"
+                  >
                     Contact
                   </button>
                 </div>
