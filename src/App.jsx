@@ -779,12 +779,16 @@ function KilengiProjectSection() {
             </p>
 
             <figure className="mt-6">
-              <img
-                src="/images/projets/kilengi/schema-electrique-kilengi.png"
-                alt="Schéma électrique du système solaire hybride du Centre de Santé de Kilengi"
-                loading="lazy"
-                className="block w-full rounded-3xl border border-slate-200 bg-white"
-              />
+  <img
+    src="/schema-kilengi.png"
+    alt="Schéma électrique du système solaire hybride du Centre de Santé de Kilengi"
+    loading="lazy"
+    className="block w-full rounded-3xl border border-slate-200 bg-white p-3 shadow-sm"
+  />
+  <figcaption className="mt-3 text-sm text-slate-500">
+    Schéma de principe du système solaire hybride recommandé pour la remise en service du site.
+  </figcaption>
+</figure>
               <figcaption className="mt-3 text-sm text-slate-500">
                 Schéma de principe du système solaire hybride recommandé pour la
                 remise en service du site.
