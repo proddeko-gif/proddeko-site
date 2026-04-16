@@ -148,211 +148,6 @@ const navItems = [
     ],
   },
   {
-
-    <section id="projet-kilengi" class="project-section">
-  <div class="container">
-    <div class="project-header">
-      <span class="project-badge">Projet réalisé / Réhabilitation en cours</span>
-      <h2>Centre de Santé de Référence de Kilengi</h2>
-      <p class="project-intro">
-        Réhabilitation d’un système solaire installé en 2019. Le besoin actuel porte sur le renouvellement
-        complet du stockage énergétique, les 20 batteries existantes étant désormais hors d’usage.
-      </p>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-content">
-        <div class="info-card">
-          <h3>Contexte</h3>
-          <p>
-            Le système solaire du centre de santé assurait l’alimentation des circuits essentiels : accueil,
-            médecine, éclairage et pompage. Après plusieurs années d’exploitation, le parc batteries est arrivé
-            en fin de vie et nécessite un remplacement ou une modernisation par une solution lithium.
-          </p>
-        </div>
-
-        <div class="info-card">
-          <h3>Schéma électrique du système</h3>
-          <p>
-            Le schéma ci-dessous présente l’architecture recommandée : panneaux solaires, régulateur MPPT,
-            onduleur/chargeur hybride, protections AC/DC et banque de batteries lithium 48V.
-          </p>
-
-          <figure class="schema-figure">
-            <img
-              src="images/projets/kilengi/schema-electrique-kilengi.png"
-              alt="Schéma électrique du système solaire hybride du Centre de Santé de Kilengi"
-              loading="lazy"
-            />
-            <figcaption>
-              Schéma de principe du système solaire hybride recommandé pour la remise en service du site.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <aside class="project-sidebar">
-        <div class="side-card">
-          <h3>Éléments principaux</h3>
-          <ul>
-            <li>Panneaux solaires : environ 3 kWc</li>
-            <li>Régulateur de charge MPPT</li>
-            <li>Onduleur / chargeur hybride 5 kVA</li>
-            <li>Banque de batteries lithium ~20 kWh</li>
-            <li>Protections AC/DC et mise à la terre</li>
-          </ul>
-        </div>
-
-        <div class="side-card">
-          <h3>Demande actuelle</h3>
-          <ul>
-            <li>Renouvellement des 20 batteries hors d’usage</li>
-            <li>Étude comparative avec solution lithium</li>
-            <li>Remise en service sécurisée du système</li>
-          </ul>
-        </div>
-
-        <div class="side-card highlight">
-          <h3>Recommandation</h3>
-          <p>
-            Opter pour une solution lithium LiFePO4, plus durable, avec protections adaptées et contrôle du
-            système pour sécuriser l’alimentation des services de santé.
-          </p>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<style>
-  .project-section {
-    padding: 72px 20px;
-    background: #f7f9fc;
-    color: #1f2937;
-  }
-
-  .project-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .project-header {
-    max-width: 780px;
-    margin-bottom: 40px;
-  }
-
-  .project-badge {
-    display: inline-block;
-    margin-bottom: 14px;
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: #e8f1ff;
-    color: #0f4c81;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  }
-
-  .project-header h2 {
-    margin: 0 0 16px;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-    color: #0f172a;
-  }
-
-  .project-intro {
-    margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #475569;
-  }
-
-  .project-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
-    gap: 28px;
-    align-items: start;
-  }
-
-  .project-content,
-  .project-sidebar {
-    display: grid;
-    gap: 24px;
-  }
-
-  .info-card,
-  .side-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  }
-
-  .info-card h3,
-  .side-card h3 {
-    margin: 0 0 14px;
-    font-size: 1.2rem;
-    color: #0f172a;
-  }
-
-  .info-card p,
-  .side-card p,
-  .side-card li {
-    color: #475569;
-    line-height: 1.75;
-  }
-
-  .side-card ul {
-    margin: 0;
-    padding-left: 18px;
-  }
-
-  .side-card.highlight {
-    background: linear-gradient(135deg, #0f4c81, #166534);
-    border: none;
-  }
-
-  .side-card.highlight h3,
-  .side-card.highlight p {
-    color: #ffffff;
-  }
-
-  .schema-figure {
-    margin: 24px 0 0;
-  }
-
-  .schema-figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 18px;
-    border: 1px solid #dbe3ee;
-    background: #ffffff;
-  }
-
-  .schema-figure figcaption {
-    margin-top: 12px;
-    font-size: 0.95rem;
-    color: #64748b;
-  }
-
-  @media (max-width: 900px) {
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .project-section {
-      padding: 56px 16px;
-    }
-
-    .info-card,
-    .side-card {
-      padding: 22px;
-    }
-  }
-</style>
-
     label: "Contact",
     items: [
       { label: "Coordonnées", page: "contact-info", icon: MapPin },
@@ -855,7 +650,7 @@ function ActionPage({ content }) {
 
       <div className="mt-14 rounded-[2rem] border bg-white p-8 shadow-sm">
         <h3 className="text-xl font-black text-blue-950">Informations complémentaires</h3>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4 text-sm">
+        <div className="mt-6 grid gap-4 text-sm md:grid-cols-2 xl:grid-cols-4">
           {content.details.map((item) => (
             <div key={item} className="rounded-xl bg-slate-50 p-4 text-slate-600">
               {item}
@@ -864,6 +659,96 @@ function ActionPage({ content }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function KilengiProjectSection() {
+  return (
+    <section id="projet-kilengi" className="py-16">
+      <div className="grid gap-7 lg:grid-cols-[1.8fr_0.9fr]">
+        <div className="grid gap-6">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-xl font-black tracking-tight text-blue-950">
+              Projet : Centre de Santé de Référence de Kilengi
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Réhabilitation d’un système solaire installé en 2019. Aujourd’hui,
+              les 20 batteries sont hors d’usage. Le projet vise la remise en
+              service complète avec une solution durable pour sécuriser
+              l’alimentation électrique du centre de santé.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-xl font-black tracking-tight text-blue-950">
+              Contexte
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Le système solaire assurait l’alimentation des services essentiels :
+              accueil, médecine, éclairage, équipements prioritaires et pompage.
+              Après plusieurs années d’exploitation, le parc batteries est arrivé
+              en fin de vie et nécessite un remplacement ou une modernisation
+              par une solution lithium.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-xl font-black tracking-tight text-blue-950">
+              Schéma électrique du système
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Le schéma ci-dessous présente l’architecture recommandée :
+              panneaux solaires, régulateur MPPT, onduleur/chargeur hybride,
+              protections AC/DC et banque de batteries lithium 48V.
+            </p>
+
+            <figure className="mt-6">
+              <img
+                src="/images/projets/kilengi/schema-electrique-kilengi.png"
+                alt="Schéma électrique du système solaire hybride du Centre de Santé de Kilengi"
+                loading="lazy"
+                className="block w-full rounded-3xl border border-slate-200 bg-white"
+              />
+              <figcaption className="mt-3 text-sm text-slate-500">
+                Schéma de principe du système solaire hybride recommandé pour la
+                remise en service du site.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <aside className="grid gap-6">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-lg font-black text-blue-950">Éléments principaux</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-600">
+              <li>Panneaux solaires : environ 3 kWc</li>
+              <li>Régulateur de charge MPPT</li>
+              <li>Onduleur / chargeur hybride 5 kVA</li>
+              <li>Banque de batteries lithium ~20 kWh</li>
+              <li>Protections AC/DC et mise à la terre</li>
+            </ul>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-lg font-black text-blue-950">Demande actuelle</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-600">
+              <li>Renouvellement des 20 batteries hors d’usage</li>
+              <li>Étude comparative avec solution lithium</li>
+              <li>Remise en service sécurisée du système</li>
+            </ul>
+          </div>
+
+          <div className="rounded-[2rem] bg-gradient-to-br from-blue-950 via-slate-950 to-emerald-800 p-7 text-white shadow-sm">
+            <h3 className="text-lg font-black">Recommandation</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-100">
+              Opter pour une solution lithium LiFePO4, plus durable, avec
+              protections adaptées et contrôle du système pour sécuriser
+              l’alimentation des services de santé.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
   );
 }
 
@@ -879,7 +764,6 @@ export default function App() {
   const [status, setStatus] = useState("");
 
   const currentContent = pageContent[page] || null;
-
   const topNav = useState(() => navItems)[0];
 
   const handleChange = (e) => {
@@ -949,6 +833,8 @@ export default function App() {
               </div>
             ))}
           </div>
+
+          <KilengiProjectSection />
         </div>
       );
     }
@@ -1252,7 +1138,7 @@ export default function App() {
           </section>
 
           <section className="border-b border-slate-200 bg-white">
-            <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 md:grid-cols-2 xl:grid-cols-4 lg:px-8">
+            <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 md:grid-cols-2 lg:px-8 xl:grid-cols-4">
               {[
                 { value: "200 000+", label: "bénéficiaires directs" },
                 { value: "25+", label: "initiatives et projets soutenus" },
