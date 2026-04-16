@@ -924,6 +924,51 @@ function KilengiProjectSection() {
       </div>
     </section>
   );
+}              
+<figcaption className="mt-3 text-sm text-slate-500">
+                Schéma de principe du système solaire hybride recommandé pour la remise en service du site.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <aside className="grid gap-6">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-lg font-black text-blue-950">
+              Éléments principaux
+            </h3>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-600">
+              <li>Panneaux solaires : environ 3 kWc</li>
+              <li>Régulateur de charge MPPT</li>
+              <li>Onduleur / chargeur hybride 5 kVA</li>
+              <li>Banque de batteries lithium ~20 kWh</li>
+              <li>Protections AC/DC et mise à la terre</li>
+            </ul>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-lg font-black text-blue-950">
+              Demande actuelle
+            </h3>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-600">
+              <li>Renouvellement des 20 batteries hors d’usage</li>
+              <li>Étude comparative avec solution lithium</li>
+              <li>Remise en service sécurisée du système</li>
+            </ul>
+          </div>
+
+          <div className="rounded-[2rem] bg-gradient-to-br from-blue-950 via-slate-950 to-emerald-800 p-7 text-white shadow-sm">
+            <h3 className="text-lg font-black">Recommandation</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-100">
+              Opter pour une solution lithium LiFePO4, plus durable, avec
+              protections adaptées et contrôle du système pour sécuriser
+              l’alimentation des services de santé.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
 }
 
         <aside className="grid gap-6">
