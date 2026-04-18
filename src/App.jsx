@@ -279,17 +279,17 @@ function Hero({ setPage }) {
             src={src}
             alt={`Projet Kilengi ${index + 1}`}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-35" : "opacity-0"
+              index === currentSlide ? "opacity-85" : "opacity-0"
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/92 via-slate-950/78 to-orange-950/78" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/40 via-slate-950/20 to-orange-950/30" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
-            <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-semibold text-slate-100 backdrop-blur">
+            <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-slate-100 backdrop-blur">
               Belgique • RDC • Co-développement • Solidarité internationale
             </div>
 
@@ -297,7 +297,7 @@ function Hero({ setPage }) {
               Une action durable entre territoires, citoyens et partenaires
             </h1>
 
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-200">
+            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-100">
               Découvrez en images le projet de réhabilitation du Centre de Santé
               de Référence de Kilengi, documenté à chaque étape du chantier.
             </p>
