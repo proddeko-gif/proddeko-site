@@ -127,18 +127,20 @@ function SectionTitle({ eyebrow, title, text, light = false, center = false }) {
 }
 
 function Header({ page, setPage, mobileOpen, setMobileOpen }) {
-  const navButtonClass =
-    "rounded-full px-4 py-2 text-sm font-semibold transition hover:bg-slate-100";
+  const navItems = [
+    { key: "home", label: "Accueil" },
+    { key: "projects", label: "Projet Kilengi" },
+  ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
         <button
           type="button"
           onClick={() => setPage("home")}
-          className="flex items-center gap-3 text-left"
+          className="flex min-w-0 items-center gap-3 text-left"
         >
-          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             <img
               src={SITE.logo}
               alt="Logo PRODDEKO-Belgique"
@@ -146,8 +148,8 @@ function Header({ page, setPage, mobileOpen, setMobileOpen }) {
             />
           </div>
 
-          <div>
-            <div className="text-lg font-black tracking-tight text-blue-950">
+          <div className="min-w-0">
+            <div className="text-2xl font-black tracking-tight text-blue-950">
               {SITE.name}
             </div>
             <div className="hidden text-sm text-slate-500 md:block">
@@ -156,38 +158,37 @@ function Header({ page, setPage, mobileOpen, setMobileOpen }) {
           </div>
         </button>
 
-        <nav className="hidden items-center gap-2 lg:flex">
-          <button
-            type="button"
-            onClick={() => setPage("home")}
-            className={`${navButtonClass} ${
-              page === "home" ? "bg-slate-100 text-blue-950" : "text-slate-700"
-            }`}
-          >
-            Accueil
-          </button>
-          <button
-            type="button"
-            onClick={() => setPage("projects")}
-            className={`${navButtonClass} ${
-              page === "projects"
-                ? "bg-slate-100 text-blue-950"
-                : "text-slate-700"
-            }`}
-          >
-            Projet Kilengi
-          </button>
+        <nav className="hidden items-center gap-3 lg:flex">
+          {navItems.map((item) => {
+            const active = page === item.key;
+            return (
+              <button
+                key={item.key}
+                type="button"
+                onClick={() => setPage(item.key)}
+                className={`rounded-full px-5 py-3 text-sm font-bold transition ${
+                  active
+                    ? "bg-slate-100 text-blue-950 shadow-sm"
+                    : "text-slate-700 hover:bg-slate-100 hover:text-blue-950"
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
+
           <a
             href={KILENGI.reportPdf}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+            className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50 hover:text-blue-950"
           >
             Rapport PDF
           </a>
+
           <a
             href={`mailto:${SITE.email}`}
-            className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white transition hover:bg-orange-600"
+            className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-orange-600"
           >
             Nous contacter
           </a>
@@ -197,34 +198,33 @@ function Header({ page, setPage, mobileOpen, setMobileOpen }) {
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
           className="rounded-full border border-slate-200 p-2 text-slate-700 lg:hidden"
+          aria-label="Ouvrir le menu"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {mobileOpen ? (
-        <div className="border-t border-slate-200 bg-white px-6 py-4 lg:hidden">
+        <div className="border-t border-slate-200 bg-white px-4 py-4 lg:hidden">
           <div className="flex flex-col gap-3">
-            <button
-              type="button"
-              onClick={() => {
-                setPage("home");
-                setMobileOpen(false);
-              }}
-              className="rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-700"
-            >
-              Accueil
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setPage("projects");
-                setMobileOpen(false);
-              }}
-              className="rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-700"
-            >
-              Projet Kilengi
-            </button>
+            {navItems.map((item) => (
+              <button
+                key={item.key}
+                type="button"
+                onClick={() => {
+                  setPage(item.key);
+                  setMobileOpen(false);
+                }}
+                className={`rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition ${
+                  page === item.key
+                    ? "border-slate-300 bg-slate-100 text-blue-950"
+                    : "border-slate-200 text-slate-700 hover:bg-slate-50"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+
             <a
               href={KILENGI.reportPdf}
               target="_blank"
@@ -232,6 +232,13 @@ function Header({ page, setPage, mobileOpen, setMobileOpen }) {
               className="rounded-2xl border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700"
             >
               Rapport PDF
+            </a>
+
+            <a
+              href={`mailto:${SITE.email}`}
+              className="rounded-2xl bg-orange-500 px-4 py-3 text-sm font-semibold text-white"
+            >
+              Nous contacter
             </a>
           </div>
         </div>
