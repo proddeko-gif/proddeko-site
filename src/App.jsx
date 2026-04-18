@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
+  ArrowLeft,
   ArrowRight,
   CheckCircle2,
   Download,
@@ -25,7 +26,6 @@ const SITE = {
   locationBelgium: "Welkenraedt, Belgique",
   locationDRC: "Kinzau-Mvuete, RDC",
   logo: "/images/proddeko-logo.png",
-  hero: "/images/proddeko-hero.jpg",
 };
 
 const KILENGI = {
@@ -241,15 +241,49 @@ function Header({ page, setPage, mobileOpen, setMobileOpen }) {
 }
 
 function Hero({ setPage }) {
+  const heroSlides = useMemo(
+    () => [
+      ...KILENGI.during.slice(0, 6),
+      ...KILENGI.after.slice(0, 2),
+      ...KILENGI.before.slice(0, 2),
+    ],
+    []
+  );
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (!heroSlides.length) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [heroSlides.length]);
+
+  const goPrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const goNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
   return (
     <section className="relative overflow-hidden bg-slate-950 text-white">
       <div className="absolute inset-0">
-        <img
-          src={SITE.hero}
-          alt={SITE.name}
-          className="h-full w-full object-cover opacity-35"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-slate-950/70 to-orange-950/70" />
+        {heroSlides.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Projet Kilengi ${index + 1}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-35" : "opacity-0"
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/92 via-slate-950/78 to-orange-950/78" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
@@ -264,9 +298,8 @@ function Hero({ setPage }) {
             </h1>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-200">
-              PRODDEKO-Belgique agit comme passerelle entre la Belgique et la RDC
-              pour soutenir des projets utiles, documentés et structurants, au
-              service des communautés.
+              Découvrez en images le projet de réhabilitation du Centre de Santé
+              de Référence de Kilengi, documenté à chaque étape du chantier.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -302,6 +335,40 @@ function Hero({ setPage }) {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-10 flex items-center gap-4">
+          <button
+            type="button"
+            onClick={goPrev}
+            className="rounded-full border border-white/20 bg-white/10 p-3 text-white transition hover:bg-white/20"
+            aria-label="Image précédente"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </button>
+
+          <div className="flex items-center gap-2">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2.5 w-2.5 rounded-full transition ${
+                  index === currentSlide ? "bg-orange-400" : "bg-white/35"
+                }`}
+                aria-label={`Aller à l’image ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={goNext}
+            className="rounded-full border border-white/20 bg-white/10 p-3 text-white transition hover:bg-white/20"
+            aria-label="Image suivante"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </section>
