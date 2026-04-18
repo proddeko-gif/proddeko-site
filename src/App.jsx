@@ -34,6 +34,44 @@ const SITE = {
   hero: "/images/proddeko-hero.jpg",
 };
 
+const KILENGI = {
+  hero: "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
+  reportPdf: "/docs/CS-Kilengi_Rapport_photos.pdf",
+  budgetDocument: "/images/projects/kilengi/CS-Kilengi_Peinture-2.jpeg",
+  gallery: {
+    before: [
+      "/images/projects/kilengi/before/kilengi-avant-01.jpg",
+      "/images/projects/kilengi/before/kilengi-avant-02.jpg",
+      "/images/projects/kilengi/before/kilengi-avant-03.jpg",
+    ],
+    during: [
+      "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_01.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_2.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_3-2.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_4-2.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_5.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_6.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_7-2.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_9-2.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_11.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_12.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_13.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_14.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_15.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_16.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_17-2.jpeg",
+      "/images/projects/kilengi/CS-Kilengi_avril-22_18.jpeg",
+    ],
+    after: [
+      "/images/projects/kilengi/after/kilengi-apres-01.jpg",
+      "/images/projects/kilengi/after/kilengi-apres-02.jpg",
+      "/images/projects/kilengi/after/kilengi-apres-03.jpg",
+      "/images/projects/kilengi/after/kilengi-apres-04.jpg",
+    ],
+  },
+};
+
 const stats = [
   { value: "200 000+", label: "bénéficiaires directs" },
   { value: "10+", label: "zones et pays d’action" },
@@ -750,33 +788,124 @@ function ActionPage({ content }) {
   );
 }
 
+function GalleryGrid({ images, title }) {
+  return (
+    <div>
+      <div className="mb-5 flex items-center justify-between gap-4">
+        <h4 className="text-lg font-black text-blue-950">{title}</h4>
+        <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+          {images.length} visuels
+        </div>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {images.map((src, index) => (
+          <figure
+            key={`${title}-${src}-${index}`}
+            className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm"
+          >
+            <img
+              src={src}
+              alt={`${title} Kilengi ${index + 1}`}
+              loading="lazy"
+              className="h-64 w-full object-cover transition duration-300 hover:scale-[1.02]"
+            />
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function KilengiProjectSection() {
   return (
     <section id="projet-kilengi" className="py-16">
-      <div className="grid gap-7 lg:grid-cols-[1.8fr_0.9fr]">
+      <div className="rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm lg:p-8">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div>
+            <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">
+              Projet en cours
+            </div>
+            <h3 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-4xl">
+              Électrification du Centre de Santé de Référence de Kilengi
+            </h3>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              PRODDEKO-Belgique documente et valorise le chantier du Centre de Santé
+              de Référence de Kilengi à travers une page projet dédiée, une galerie
+              photographique complète et des pièces documentaires destinées à renforcer
+              la visibilité du projet et la mobilisation des partenaires.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm">
+              {[
+                "Réhabilitation et électrification",
+                "Travaux documentés",
+                "Suivi visuel du chantier",
+                "Appui au financement",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-slate-200 bg-white px-4 py-2 font-semibold text-slate-700"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href={KILENGI.reportPdf}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
+              >
+                Voir le rapport photo
+              </a>
+              <a
+                href={KILENGI.budgetDocument}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50"
+              >
+                Voir le devis illustratif
+              </a>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
+            <img
+              src={KILENGI.hero}
+              alt="Travaux de réhabilitation du Centre de Santé de Référence de Kilengi"
+              loading="lazy"
+              className="h-full min-h-[320px] w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 grid gap-7 lg:grid-cols-[1.8fr_0.9fr]">
         <div className="grid gap-6">
           <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
             <h3 className="text-xl font-black tracking-tight text-blue-950">
-              Projet : Centre de Santé de Référence de Kilengi
+              Présentation du projet
             </h3>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Réhabilitation d’un système solaire installé en 2019. Aujourd’hui,
-              les 20 batteries sont hors d’usage. Le projet vise la remise en
-              service complète avec une solution durable pour sécuriser
-              l’alimentation électrique du centre de santé.
+              Le projet met en lumière les travaux réalisés sur le site de Kilengi :
+              interventions sur la toiture et les charpentes, aménagement des abords,
+              maçonnerie, finitions, réhabilitation des accès et amélioration générale
+              du cadre du centre de santé. Les photos montrent clairement l’évolution
+              du chantier et la mobilisation des équipes sur le terrain.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
             <h3 className="text-xl font-black tracking-tight text-blue-950">
-              Contexte
+              Contexte énergétique et infrastructurel
             </h3>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Le système solaire assurait l’alimentation des services essentiels :
-              accueil, médecine, éclairage, équipements prioritaires et pompage.
-              Après plusieurs années d’exploitation, le parc batteries est arrivé
-              en fin de vie et nécessite un remplacement ou une modernisation
-              par une solution lithium.
+              En complément des travaux visibles sur le bâtiment principal, la démarche
+              de PRODDEKO-Belgique vise à remettre en service une alimentation électrique
+              durable pour les services essentiels du centre. Cela comprend l’analyse de
+              la solution existante, la sécurisation du système et la préparation d’une
+              solution technique fiable pour renforcer la continuité des soins.
             </p>
           </div>
 
@@ -786,9 +915,9 @@ function KilengiProjectSection() {
             </h3>
 
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Le schéma ci-dessous présente l’architecture recommandée :
-              panneaux solaires, régulateur MPPT, onduleur/chargeur hybride,
-              protections AC/DC et banque de batteries lithium 48V.
+              Le schéma ci-dessous présente l’architecture recommandée : panneaux
+              solaires, régulateur MPPT, onduleur/chargeur hybride, protections AC/DC
+              et banque de batteries lithium 48V.
             </p>
 
             <img
@@ -823,21 +952,95 @@ function KilengiProjectSection() {
               Demande actuelle
             </h3>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-600">
-              <li>Renouvellement des 20 batteries hors d’usage</li>
+              <li>Renouvellement des batteries hors d’usage</li>
               <li>Étude comparative avec solution lithium</li>
               <li>Remise en service sécurisée du système</li>
+              <li>Valorisation visuelle du projet sur proddeko.online</li>
+            </ul>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-lg font-black text-blue-950">
+              Contenus publiables
+            </h3>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-600">
+              <li>Photos du chantier téléchargées</li>
+              <li>Rapport PDF avant / pendant / après</li>
+              <li>Photo du devis comme document visuel</li>
+              <li>Texte de mise en contexte du projet</li>
             </ul>
           </div>
 
           <div className="rounded-[2rem] bg-gradient-to-br from-blue-950 via-slate-950 to-emerald-800 p-7 text-white shadow-sm">
             <h3 className="text-lg font-black">Recommandation</h3>
             <p className="mt-4 text-sm leading-7 text-slate-100">
-              Opter pour une solution lithium LiFePO4, plus durable, avec
-              protections adaptées et contrôle du système pour sécuriser
-              l’alimentation des services de santé.
+              Utiliser cette galerie sur la page d’accueil et sur la page “Projets en cours”
+              pour montrer l’évolution du chantier, rassurer les partenaires et améliorer
+              la crédibilité du projet auprès des donateurs et bailleurs.
             </p>
           </div>
         </aside>
+      </div>
+
+      <div className="mt-10 space-y-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <GalleryGrid images={KILENGI.gallery.during.slice(0, 6)} title="Sélection de photos mises en avant" />
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <GalleryGrid images={KILENGI.gallery.before} title="Avant les travaux" />
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <GalleryGrid images={KILENGI.gallery.during} title="Pendant les travaux" />
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <GalleryGrid images={KILENGI.gallery.after} title="Après les travaux" />
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">
+              Pièce documentaire
+            </div>
+            <h3 className="mt-3 text-xl font-black text-blue-950">
+              Devis visuel du chantier
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Cette image peut être utilisée dans la page projet pour illustrer le budget,
+              la préparation des travaux et l’approche de transparence documentaire de PRODDEKO-Belgique.
+            </p>
+            <img
+              src={KILENGI.budgetDocument}
+              alt="Devis des travaux du chantier Kilengi"
+              loading="lazy"
+              className="mt-6 w-full rounded-[1.5rem] border border-slate-200 object-cover shadow-sm"
+            />
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-7 shadow-sm">
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">
+              Intégration web
+            </div>
+            <h3 className="mt-3 text-xl font-black text-blue-950">
+              Organisation conseillée des fichiers
+            </h3>
+            <div className="mt-5 rounded-2xl bg-slate-950 p-5 text-sm leading-7 text-slate-100">
+              /public/images/projects/kilengi/
+              <br />
+              /public/images/projects/kilengi/before/
+              <br />
+              /public/images/projects/kilengi/after/
+              <br />
+              /public/docs/CS-Kilengi_Rapport_photos.pdf
+            </div>
+            <p className="mt-5 text-sm leading-7 text-slate-600">
+              Conservez des noms de fichiers simples, sans espaces ni caractères spéciaux,
+              pour éviter les erreurs de chargement sur proddeko.online.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -876,6 +1079,9 @@ export default function App() {
     setPage(newPage);
     setActiveMenu(null);
     setMobileOpen(false);
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const renderPage = () => {
@@ -887,7 +1093,7 @@ export default function App() {
           <SectionTitle
             eyebrow="Projets"
             title="Des initiatives concrètes à fort impact"
-            text="PRODDEKO-Belgique conçoit et met en œuvre des projets structurants en gouvernance, éducation et co-développement."
+            text="PRODDEKO-Belgique conçoit et met en œuvre des projets structurants en gouvernance, éducation, co-développement et réhabilitation d’infrastructures communautaires."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -912,9 +1118,9 @@ export default function App() {
                 tag: "Éducation",
               },
               {
-                title: "Co-développement Belgique–RDC",
-                text: "Passerelles entre diaspora, partenaires locaux, institutions et communautés bénéficiaires.",
-                tag: "Solidarité",
+                title: "Projet Kilengi",
+                text: "Documentation photographique et valorisation du chantier d’électrification et de réhabilitation du centre de santé.",
+                tag: "Infrastructure",
               },
             ].map((p) => (
               <div key={p.title} className="rounded-3xl border bg-white p-6 shadow-sm">
@@ -923,10 +1129,10 @@ export default function App() {
                 <p className="mt-3 text-sm text-slate-600">{p.text}</p>
                 <button
                   type="button"
-                  onClick={() => handlePageChange("don")}
+                  onClick={() => handlePageChange(p.title === "Projet Kilengi" ? "projects" : "don")}
                   className="mt-5 rounded-full bg-orange-500 px-4 py-2 text-sm text-white"
                 >
-                  Soutenir
+                  {p.title === "Projet Kilengi" ? "Voir le projet" : "Soutenir"}
                 </button>
               </div>
             ))}
@@ -1323,6 +1529,58 @@ export default function App() {
                   >
                     Notre mission
                   </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-slate-50 py-20">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <SectionTitle
+                eyebrow="Projet mis en avant"
+                title="Centre de Santé de Référence de Kilengi"
+                text="Le site met en avant le chantier de Kilengi grâce à une grande image, un accès direct au projet et des documents de référence consultables en ligne."
+              />
+
+              <div className="mt-12 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+                <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
+                  <img
+                    src={KILENGI.hero}
+                    alt="Travaux en cours au Centre de Santé de Référence de Kilengi"
+                    loading="lazy"
+                    className="h-full min-h-[420px] w-full object-cover"
+                  />
+                </div>
+
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+                  <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+                    Projet en cours
+                  </div>
+                  <h3 className="mt-3 text-3xl font-black text-blue-950">
+                    Réhabilitation et électrification de Kilengi
+                  </h3>
+                  <p className="mt-5 text-sm leading-7 text-slate-600">
+                    Cette section d’accueil valorise les travaux réalisés et documentés
+                    sur le centre de santé : toiture, maçonnerie, aménagements, suivi
+                    du chantier, rapport photo et éléments budgétaires illustratifs.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-4">
+                    <button
+                      type="button"
+                      onClick={() => handlePageChange("projects")}
+                      className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white"
+                    >
+                      Voir le projet Kilengi
+                    </button>
+                    <a
+                      href={KILENGI.reportPdf}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700"
+                    >
+                      Ouvrir le rapport photo
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
