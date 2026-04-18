@@ -29,7 +29,7 @@ const SITE = {
 };
 
 const KILENGI = {
-  title: "Électrification du Centre de Santé de Référence de Kilengi",
+  title: "Réhabilitation du Centre de Santé de Référence de Kilengi",
   subtitle:
     "Réhabilitation énergétique, sécurisation de l’alimentation électrique et valorisation documentaire du chantier.",
   hero: "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
@@ -498,8 +498,8 @@ function KilengiProjectPage() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 {[
-                  "Électrification",
                   "Réhabilitation",
+                  "Énergie durable",
                   "Suivi photographique",
                   "Transparence documentaire",
                 ].map((item) => (
