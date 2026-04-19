@@ -40,6 +40,48 @@ const SITE = {
   logo: "/images/proddeko-logo.png",
 };
 
+const KILENGI = {
+  title: "Réhabilitation du Centre de Santé de Référence de Kilengi",
+  subtitle:
+    "Réhabilitation énergétique, sécurisation de l’alimentation électrique et valorisation documentaire du chantier.",
+  hero: "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
+  schema: "/schema-kilengi.png",
+  reportPdf: "/docs/CS-Kilengi_Rapport_photos.pdf",
+  budgetDocument: "/images/projects/kilengi/CS-Kilengi_Cout-total-activites.png",
+  before: [
+    "/images/projects/kilengi/before/kilengi-avant-01.jpg",
+    "/images/projects/kilengi/before/kilengi-avant-02.jpg",
+    "/images/projects/kilengi/before/kilengi-avant-03.jpg",
+  ],
+  during: [
+    "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_01.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_2.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_3-2.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_4-2.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_5.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_6.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_7-2.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_9-2.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_11.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_12.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_13.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_14.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_15.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_16.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_17-2.jpeg",
+    "/images/projects/kilengi/CS-Kilengi_avril-22_18.jpeg",
+  ],
+  after: [
+    "/images/projects/kilengi/after/kilengi-apres-01.png",
+    "/images/projects/kilengi/after/kilengi-apres-02.png",
+    "/images/projects/kilengi/after/kilengi-apres-03.png",
+    "/images/projects/kilengi/after/kilengi-apres-04.png",
+    "/images/projects/kilengi/after/kilengi-apres-05.png",
+    "/images/projects/kilengi/after/kilengi-apres-06.png",
+  ],
+};
+
 const stats = [
   { value: "200 000+", label: "bénéficiaires accompagnés" },
   { value: "10+", label: "zones et pays d’action" },
@@ -97,49 +139,6 @@ const donationTiers = [
     text: "Participer au financement d’un micro-projet local ou d’une activité structurante.",
   },
 ];
-
-const KILENGI = {
-  title: "Réhabilitation du Centre de Santé de Référence de Kilengi",
-  subtitle:
-    "Réhabilitation énergétique, sécurisation de l’alimentation électrique et valorisation documentaire du chantier.",
-  hero: "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
-  schema: "/schema-kilengi.png",
-  reportPdf: "/docs/CS-Kilengi_Rapport_photos.pdf",
-  budgetDocument: "/images/projects/kilengi/CS-Kilengi_Cout-total-activites.png",
-  before: [
-    "/images/projects/kilengi/before/kilengi-avant-01.jpg",
-    "/images/projects/kilengi/before/kilengi-avant-02.jpg",
-    "/images/projects/kilengi/before/kilengi-avant-03.jpg",
-    "/images/projects/kilengi/before/kilengi-avant-04.jpg",
-    "/images/projects/kilengi/before/kilengi-avant-05.jpg",
-  ],
-  during: [
-    "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_01.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_2.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_3-2.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_4-2.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_5.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_6.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_7-2.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_9-2.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_11.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_12.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_13.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_14.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_15.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_16.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_17-2.jpeg",
-    "/images/projects/kilengi/CS-Kilengi_avril-22_18.jpeg",
-  ],
-  after: [
-    "/images/projects/kilengi/after/kilengi-apres-01.png",
-    "/images/projects/kilengi/after/kilengi-apres-02.png",
-    "/images/projects/kilengi/after/kilengi-apres-03.png",
-    "/images/projects/kilengi/after/kilengi-apres-04.png",
-    "/images/projects/kilengi/after/kilengi-apres-05.png",
-  ],
-};
 
 const impactPoints = [
   "Réhabilitation d’une infrastructure de santé essentielle",
@@ -360,7 +359,7 @@ const pageContent = {
     ],
   },
   financing: {
-    eyebrow: "Donors page",
+    eyebrow: "Appui financier",
     title: "Appel à financement",
     text: "PRODDEKO-Belgique recherche des partenaires techniques et financiers souhaitant soutenir des programmes territoriaux à fort impact.",
     cards: [
@@ -393,151 +392,11 @@ const pageContent = {
       { title: "Téléphone", body: SITE.phone },
     ],
   },
-  "action-sustainable": {
-    eyebrow: "Programme 01",
-    title: "Programme Développement durable",
-    text: "PRODDEKO-Belgique accompagne des trajectoires territoriales de développement durable visant à renforcer la résilience communautaire, la gestion responsable des ressources et l’amélioration durable des conditions de vie.",
-    metrics: [
-      { value: "12 000+", label: "bénéficiaires" },
-      { value: "36 mois", label: "durée" },
-      { value: "€ 280 000", label: "budget estimé" },
-      { value: "4 territoires", label: "zones d’intervention" },
-    ],
-    cards: [
-      {
-        title: "Objectifs stratégiques",
-        body: "Renforcer les capacités locales, promouvoir des pratiques agroécologiques et soutenir des initiatives économiques et communautaires durables.",
-      },
-      {
-        title: "Résultats attendus",
-        body: "Communautés mieux organisées, pratiques durables adoptées et meilleure résilience face aux vulnérabilités.",
-      },
-      {
-        title: "Indicateurs clés",
-        body: "Nombre de bénéficiaires directs et indirects, nombre d’initiatives soutenues et taux d’adoption des pratiques durables.",
-      },
-      {
-        title: "Bénéficiaires cibles",
-        body: "Agriculteurs, jeunes, femmes, organisations communautaires et populations vulnérables.",
-      },
-    ],
-    details: [
-      "Zones d’intervention : Kongo Central • Kinshasa • Kwilu • zones rurales partenaires",
-      "Partenaires impliqués : ENABEL • Fondation Roi Baudouin • Université Kongo • organisations communautaires locales",
-      "Budget indicatif : Activités terrain 58% • Formation 17% • Suivi-évaluation 10% • Coordination 15%",
-      "Calendrier : Diagnostic • Déploiement • Consolidation • Évaluation",
-    ],
-  },
-  "action-education": {
-    eyebrow: "Programme 02",
-    title: "Programme Éducation citoyenne",
-    text: "Le programme Éducation citoyenne vise à développer une citoyenneté active, critique et responsable à travers des dispositifs de formation, de sensibilisation et de mobilisation.",
-    metrics: [
-      { value: "8 500+", label: "bénéficiaires" },
-      { value: "24 mois", label: "durée" },
-      { value: "€ 195 000", label: "budget estimé" },
-      { value: "3 territoires", label: "zones d’intervention" },
-    ],
-    cards: [
-      {
-        title: "Objectifs stratégiques",
-        body: "Renforcer les capacités citoyennes, développer le leadership local et promouvoir une culture démocratique fondée sur la participation.",
-      },
-      {
-        title: "Résultats attendus",
-        body: "Amélioration de la participation citoyenne, renforcement du leadership local et implication accrue des jeunes et des femmes.",
-      },
-      {
-        title: "Indicateurs clés",
-        body: "Nombre de formations, nombre de participants, taux de participation des jeunes et des femmes et initiatives citoyennes lancées.",
-      },
-      {
-        title: "Bénéficiaires cibles",
-        body: "Jeunes, femmes, leaders communautaires, organisations locales, établissements éducatifs et relais de terrain.",
-      },
-    ],
-    details: [
-      "Zones d’intervention : Kinshasa • Kongo Central • espaces éducatifs partenaires",
-      "Partenaires impliqués : CNCD–11.11.11 • UCLouvain • établissements éducatifs • relais communautaires",
-      "Budget indicatif : Formations 52% • Mobilisation 18% • Documentation 12% • Coordination 18%",
-      "Calendrier : Conception • Mise en œuvre • Appui aux initiatives • Évaluation",
-    ],
-  },
-  "action-governance": {
-    eyebrow: "Programme 03",
-    title: "Programme Gouvernance éthique",
-    text: "Ce programme renforce les mécanismes locaux de transparence, de redevabilité et de participation citoyenne afin d’améliorer la qualité de la gouvernance territoriale.",
-    metrics: [
-      { value: "6 000+", label: "bénéficiaires" },
-      { value: "30 mois", label: "durée" },
-      { value: "€ 240 000", label: "budget estimé" },
-      { value: "3 collectivités", label: "zones d’intervention" },
-    ],
-    cards: [
-      {
-        title: "Objectifs stratégiques",
-        body: "Promouvoir des pratiques de gouvernance éthique, renforcer les mécanismes de suivi citoyen et améliorer le dialogue entre autorités locales et citoyens.",
-      },
-      {
-        title: "Résultats attendus",
-        body: "Dispositifs de redevabilité opérationnels, participation citoyenne accrue et meilleure circulation de l’information publique.",
-      },
-      {
-        title: "Indicateurs clés",
-        body: "Nombre de mécanismes mis en place, nombre de citoyens impliqués, fréquence des espaces de dialogue et niveau d’accès à l’information.",
-      },
-      {
-        title: "Bénéficiaires cibles",
-        body: "Collectivités locales, organisations de la société civile, relais communautaires, jeunes engagés, femmes leaders et citoyens.",
-      },
-    ],
-    details: [
-      "Zones d’intervention : Kongo Central • Kinshasa • collectivités locales pilotes",
-      "Partenaires impliqués : UNOPS • Entraide & Fraternité • autorités locales • OSC partenaires",
-      "Budget indicatif : Redevabilité 47% • Sensibilisation 20% • Outils 13% • Gouvernance 20%",
-      "Calendrier : Analyse • Mise en place • Dialogue • Évaluation",
-    ],
-  },
-  "action-solidarity": {
-    eyebrow: "Programme 04",
-    title: "Programme Solidarité internationale",
-    text: "PRODDEKO-Belgique développe une solidarité internationale fondée sur le co-développement, la réciprocité et la mobilisation conjointe des ressources de la diaspora et des partenaires.",
-    metrics: [
-      { value: "4 000+", label: "bénéficiaires" },
-      { value: "24 mois", label: "durée" },
-      { value: "€ 175 000", label: "budget estimé" },
-      { value: "Belgique • RDC", label: "zones d’intervention" },
-    ],
-    cards: [
-      {
-        title: "Objectifs stratégiques",
-        body: "Créer des synergies durables entre la Belgique, la RDC et les partenaires internationaux, et favoriser le transfert de compétences et de ressources.",
-      },
-      {
-        title: "Résultats attendus",
-        body: "Partenariats consolidés, initiatives co-construites et meilleure mobilisation de la diaspora.",
-      },
-      {
-        title: "Indicateurs clés",
-        body: "Nombre de partenariats actifs, nombre de projets co-développés et volume de ressources mobilisées.",
-      },
-      {
-        title: "Bénéficiaires cibles",
-        body: "Diaspora congolaise, organisations locales, collectivités, institutions publiques, universités, ONG et communautés bénéficiaires.",
-      },
-    ],
-    details: [
-      "Zones d’intervention : Welkenraedt • Kinshasa • Kongo Central • réseaux de diaspora",
-      "Partenaires impliqués : Caritas International • diaspora congolaise • universités partenaires • ONG alliées",
-      "Budget indicatif : Animation 40% • Appui technique 22% • Coordination 18% • Suivi 20%",
-      "Calendrier : Réseautage • Déploiement • Renforcement • Consolidation",
-    ],
-  },
 };
 
-function SectionTitle({ eyebrow, title, text, light = false, center = false }) {
+function SectionTitle({ eyebrow, title, text, light = false }) {
   return (
-    <div className={`${center ? "mx-auto text-center" : ""} max-w-3xl`}>
+    <div className="max-w-3xl">
       {eyebrow ? (
         <div
           className={`text-sm font-bold uppercase tracking-[0.22em] ${
@@ -580,8 +439,20 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
         setActiveMenu((current) => (current === group.label ? null : current));
       }
     };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setActiveMenu((current) => (current === group.label ? null : current));
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
   }, [group.label, setActiveMenu]);
 
   return (
@@ -773,6 +644,7 @@ function Header({
 
             {navItems.map((group) => {
               const isOpen = activeMenu === group.label;
+
               return (
                 <div key={group.label} className="rounded-2xl border border-slate-200 p-4">
                   <button
@@ -1401,7 +1273,7 @@ function KilengiProjectPage() {
                 Schéma technique
               </div>
               <h3 className="mt-2 text-xl font-black text-blue-950">
-                Architecture recommandée du système
+                Schéma électrique du système
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-600">
                 Le schéma ci-dessous présente une architecture type intégrant les
@@ -1412,13 +1284,13 @@ function KilengiProjectPage() {
               <button
                 type="button"
                 onClick={() =>
-                  openLightbox(KILENGI.schema, "Schéma technique du système Kilengi")
+                  openLightbox(KILENGI.schema, "Schéma électrique du système")
                 }
                 className="mt-6 block w-full overflow-hidden rounded-[1.5rem] border border-slate-200"
               >
                 <img
                   src={KILENGI.schema}
-                  alt="Schéma du système solaire de Kilengi"
+                  alt="Schéma électrique du système"
                   className="w-full bg-white object-contain"
                 />
               </button>
@@ -1726,268 +1598,356 @@ export default function App() {
     window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
   };
 
-  const renderPage = () => {
-    if (page === "home") {
-      return (
-        <>
-          <Hero setPage={handlePageChange} />
-          <HomePreview setPage={handlePageChange} />
+  const renderHome = () => (
+    <>
+      <Hero setPage={handlePageChange} />
+      <HomePreview setPage={handlePageChange} />
 
-          <section className="bg-slate-50 py-20">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <SectionTitle
-                eyebrow="Nos programmes"
-                title="Des actions complémentaires au service du bien commun"
-                text="PRODDEKO-Belgique déploie des programmes structurés, suivis et documentés, inspirés d’une logique cadre bailleur et d’une forte appropriation territoriale."
-              />
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionTitle
+            eyebrow="Nos programmes"
+            title="Des actions complémentaires au service du bien commun"
+            text="PRODDEKO-Belgique déploie des programmes structurés, suivis et documentés, inspirés d’une logique cadre bailleur et d’une forte appropriation territoriale."
+          />
 
-              <div className="mt-12 grid gap-6 lg:grid-cols-2">
-                {actionCards.map((card, i) => {
-                  const Icon = card.icon;
-                  return (
-                    <button
-                      key={card.title}
-                      type="button"
-                      onClick={() => handlePageChange(card.page)}
-                      className="rounded-[2rem] border border-slate-200 bg-white p-8 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex items-start gap-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
-                            <Icon className="h-6 w-6" />
-                          </div>
-
-                          <div>
-                            <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
-                              Programme {String(i + 1).padStart(2, "0")}
-                            </div>
-                            <h3 className="mt-2 text-2xl font-black text-blue-950">
-                              {card.title}
-                            </h3>
-                          </div>
-                        </div>
-
-                        <ArrowRight className="h-5 w-5 shrink-0 text-slate-400" />
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {actionCards.map((card, i) => {
+              const Icon = card.icon;
+              return (
+                <button
+                  key={card.title}
+                  type="button"
+                  onClick={() => handlePageChange(card.page)}
+                  className="rounded-[2rem] border border-slate-200 bg-white p-8 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+                        <Icon className="h-6 w-6" />
                       </div>
 
-                      <p className="mt-5 text-sm leading-7 text-slate-600">
-                        {card.text}
-                      </p>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
+                      <div>
+                        <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+                          Programme {String(i + 1).padStart(2, "0")}
+                        </div>
+                        <h3 className="mt-2 text-2xl font-black text-blue-950">
+                          {card.title}
+                        </h3>
+                      </div>
+                    </div>
 
-          <section className="bg-blue-950 py-20 text-white">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <ArrowRight className="h-5 w-5 shrink-0 text-slate-400" />
+                  </div>
+
+                  <p className="mt-5 text-sm leading-7 text-slate-600">
+                    {card.text}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-blue-950 py-20 text-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionTitle
+            eyebrow="Territoires d’intervention"
+            title="Une présence multi-territoriale entre ancrage local et ouverture internationale"
+            text="Nos actions se déploient dans plusieurs provinces de la RDC ainsi qu’en Belgique, en Europe et en Afrique centrale."
+            light
+          />
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            {territories.map((territory) => (
+              <span
+                key={territory}
+                className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100"
+              >
+                {territory}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div>
+            <SectionTitle
+              eyebrow="Partenaires et réseau"
+              title="Un écosystème de coopération stratégique"
+              text="Des institutions, ONG et universités renforcent la portée, la crédibilité et la qualité de nos interventions."
+            />
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {partnersList.map((partner) => (
+                <div
+                  key={partner}
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm"
+                >
+                  {partner}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <SectionTitle
+              eyebrow="Universités partenaires"
+              title="Recherche, formation et innovation au service de l’action"
+              text="La coopération académique renforce la recherche-action, la capitalisation, la formation et l’expertise."
+            />
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {universities.map((university) => (
+                <div
+                  key={university}
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm"
+                >
+                  {university}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-r from-blue-950 via-slate-950 to-orange-950 py-20 text-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
               <SectionTitle
-                eyebrow="Territoires d’intervention"
-                title="Une présence multi-territoriale entre ancrage local et ouverture internationale"
-                text="Nos actions se déploient dans plusieurs provinces de la RDC ainsi qu’en Belgique, en Europe et en Afrique centrale."
+                eyebrow="Soutenir / financer"
+                title="Soutenir des actions concrètes, durables et traçables"
+                text="PRODDEKO-Belgique recherche des partenaires financiers, philanthropiques et citoyens désireux d’appuyer des programmes à fort impact territorial."
                 light
               />
-
-              <div className="mt-10 flex flex-wrap gap-3">
-                {territories.map((territory) => (
-                  <span
-                    key={territory}
-                    className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100"
-                  >
-                    {territory}
-                  </span>
-                ))}
+              <div className="mt-8 flex flex-wrap gap-4">
+                <button
+                  type="button"
+                  onClick={() => handlePageChange("don")}
+                  className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white"
+                >
+                  Faire un don
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handlePageChange("financing")}
+                  className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white"
+                >
+                  Voir l’appel à financement
+                </button>
               </div>
             </div>
-          </section>
 
-          <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-2">
-              <div>
-                <SectionTitle
-                  eyebrow="Partenaires et réseau"
-                  title="Un écosystème de coopération stratégique"
-                  text="Des institutions, ONG et universités renforcent la portée, la crédibilité et la qualité de nos interventions."
-                />
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {partnersList.map((partner) => (
-                    <div
-                      key={partner}
-                      className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm"
-                    >
-                      {partner}
-                    </div>
-                  ))}
-                </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/10 p-8 backdrop-blur">
+              <div className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">
+                Coordonnées bancaires
               </div>
-
-              <div>
-                <SectionTitle
-                  eyebrow="Universités partenaires"
-                  title="Recherche, formation et innovation au service de l’action"
-                  text="La coopération académique renforce la recherche-action, la capitalisation, la formation et l’expertise."
-                />
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {universities.map((university) => (
-                    <div
-                      key={university}
-                      className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm"
-                    >
-                      {university}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="bg-gradient-to-r from-blue-950 via-slate-950 to-orange-950 py-20 text-white">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div className="mt-5 space-y-3 text-sm text-slate-100">
                 <div>
-                  <SectionTitle
-                    eyebrow="Soutenir / financer"
-                    title="Soutenir des actions concrètes, durables et traçables"
-                    text="PRODDEKO-Belgique recherche des partenaires financiers, philanthropiques et citoyens désireux d’appuyer des programmes à fort impact territorial."
-                    light
-                  />
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <button
-                      type="button"
-                      onClick={() => handlePageChange("don")}
-                      className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white"
-                    >
-                      Faire un don
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handlePageChange("financing")}
-                      className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white"
-                    >
-                      Voir l’appel à financement
-                    </button>
-                  </div>
+                  <strong>IBAN :</strong> {SITE.iban}
                 </div>
-
-                <div className="rounded-[2rem] border border-white/10 bg-white/10 p-8 backdrop-blur">
-                  <div className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">
-                    Coordonnées bancaires
-                  </div>
-                  <div className="mt-5 space-y-3 text-sm text-slate-100">
-                    <div>
-                      <strong>IBAN :</strong> {SITE.iban}
-                    </div>
-                    <div>
-                      <strong>BIC :</strong> {SITE.bic}
-                    </div>
-                    <div>
-                      <strong>Compte :</strong> {SITE.accountName}
-                    </div>
-                  </div>
+                <div>
+                  <strong>BIC :</strong> {SITE.bic}
+                </div>
+                <div>
+                  <strong>Compte :</strong> {SITE.accountName}
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <SectionTitle
-              eyebrow="Entrer en relation"
-              title="Contacter PRODDEKO-Belgique"
-              text="Coordonnées, message de contact et orientation donateur/partenaire dans un espace clair, accessible et professionnel."
-            />
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <SectionTitle
+          eyebrow="Entrer en relation"
+          title="Contacter PRODDEKO-Belgique"
+          text="Coordonnées, message de contact et orientation donateur/partenaire dans un espace clair, accessible et professionnel."
+        />
 
-            <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+          <div>
+            <div className="space-y-4 text-sm text-slate-600">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 text-orange-500" />
+                {SITE.belgiumLocation}
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 text-orange-500" />
+                Coordination terrain : {SITE.drcLocation}
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-4 w-4 text-orange-500" />
+                {SITE.email}
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-orange-500" />
+                {SITE.phone}
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
+            <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
+              Nous écrire
+            </div>
+            <h3 className="mt-3 text-2xl font-black text-blue-950">
+              Formulaire de contact
+            </h3>
+
+            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div>
-                <div className="space-y-4 text-sm text-slate-600">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-orange-500" />
-                    {SITE.belgiumLocation}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-orange-500" />
-                    Coordination terrain : {SITE.drcLocation}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 text-orange-500" />
-                    {SITE.email}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 text-orange-500" />
-                    {SITE.phone}
-                  </div>
-                </div>
+                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                  Nom
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                />
               </div>
 
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
-                <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
-                  Nous écrire
-                </div>
-                <h3 className="mt-3 text-2xl font-black text-blue-950">
-                  Formulaire de contact
-                </h3>
-
-                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-                  <div>
-                    <label className="mb-2 block text-sm font-semibold text-slate-700">
-                      Nom
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-sm font-semibold text-slate-700">
-                      E-mail
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-sm font-semibold text-slate-700">
-                      Message
-                    </label>
-                    <textarea
-                      rows="5"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
-                  >
-                    Envoyer
-                  </button>
-
-                  {status ? <p className="text-sm text-slate-600">{status}</p> : null}
-                </form>
+              <div>
+                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                  E-mail
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                />
               </div>
+
+              <div>
+                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                  Message
+                </label>
+                <textarea
+                  rows="5"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
+              >
+                Envoyer
+              </button>
+
+              {status ? <p className="text-sm text-slate-600">{status}</p> : null}
+            </form>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+
+  const renderContactForm = () => (
+    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <SectionTitle
+        eyebrow="Contact"
+        title="Formulaire de contact"
+        text="Écrivez-nous directement pour une prise de contact, un partenariat ou une demande d’information."
+      />
+
+      <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+        <div>
+          <div className="space-y-4 text-sm text-slate-600">
+            <div className="flex items-center gap-3">
+              <MapPin className="h-4 w-4 text-orange-500" />
+              {SITE.belgiumLocation}
             </div>
-          </section>
-        </>
-      );
-    }
+            <div className="flex items-center gap-3">
+              <MapPin className="h-4 w-4 text-orange-500" />
+              Coordination terrain : {SITE.drcLocation}
+            </div>
+            <div className="flex items-center gap-3">
+              <Mail className="h-4 w-4 text-orange-500" />
+              {SITE.email}
+            </div>
+            <div className="flex items-center gap-3">
+              <Phone className="h-4 w-4 text-orange-500" />
+              {SITE.phone}
+            </div>
+          </div>
+        </div>
 
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-700">
+                Nom
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-700">
+                E-mail
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-700">
+                Message
+              </label>
+              <textarea
+                rows="5"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
+            >
+              Envoyer
+            </button>
+
+            {status ? <p className="text-sm text-slate-600">{status}</p> : null}
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderPage = () => {
+    if (page === "home") return renderHome();
     if (page === "projects") return <KilengiProjectPage />;
     if (page === "don") return <DonationPage />;
+    if (page === "contact-form") return renderContactForm();
 
     if (
       page === "action-sustainable" ||
@@ -1998,99 +1958,9 @@ export default function App() {
       return <ActionPage content={currentContent} />;
     }
 
-    if (page === "contact-form") {
-      return (
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <SectionTitle
-            eyebrow="Contact"
-            title="Formulaire de contact"
-            text="Écrivez-nous directement pour une prise de contact, un partenariat ou une demande d’information."
-          />
-
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
-            <div>
-              <div className="space-y-4 text-sm text-slate-600">
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-orange-500" />
-                  {SITE.belgiumLocation}
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-orange-500" />
-                  Coordination terrain : {SITE.drcLocation}
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-orange-500" />
-                  {SITE.email}
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-orange-500" />
-                  {SITE.phone}
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-700">
-                    Nom
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-700">
-                    E-mail
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-700">
-                    Message
-                  </label>
-                  <textarea
-                    rows="5"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
-                >
-                  Envoyer
-                </button>
-
-                {status ? <p className="text-sm text-slate-600">{status}</p> : null}
-              </form>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
     if (currentContent) return <StandardPage content={currentContent} />;
 
-    return null;
+    return renderHome();
   };
 
   return (
