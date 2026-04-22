@@ -13,6 +13,7 @@ import {
   HeartHandshake,
   Image as ImageIcon,
   Landmark,
+  Leaf,
   Mail,
   MapPin,
   Menu,
@@ -24,7 +25,6 @@ import {
   X,
   Zap,
   ZoomIn,
-  Leaf,
   Droplets,
 } from "lucide-react";
 
@@ -1052,188 +1052,6 @@ function HomeProjects({ setPage }) {
   );
 }
 
-function StandardPage({ content }) {
-  return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
-      <SectionTitle eyebrow={content.eyebrow} title={content.title} text={content.text} />
-
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
-        {content.cards.map((card, i) => (
-          <div
-            key={`${card.title}-${i}`}
-            className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm"
-          >
-            <h3 className="text-xl font-black tracking-tight text-blue-950">
-              {card.title}
-            </h3>
-            <p className="mt-4 whitespace-pre-line text-sm leading-7 text-slate-600">
-              {card.body}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ActionPage({ content }) {
-  return (
-    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-      <SectionTitle eyebrow={content.eyebrow} title={content.title} text={content.text} />
-
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {content.metrics.map((item) => (
-          <div key={item.label} className="rounded-3xl border bg-white p-6 shadow-sm">
-            <div className="text-3xl font-black text-orange-500">{item.value}</div>
-            <div className="mt-2 text-sm text-slate-600">{item.label}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
-        {content.cards.map((card, i) => (
-          <div key={`${card.title}-${i}`} className="rounded-3xl border bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-bold text-blue-950">{card.title}</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-600">{card.body}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-14 rounded-[2rem] border bg-white p-8 shadow-sm">
-        <h3 className="text-xl font-black text-blue-950">Informations complémentaires</h3>
-        <div className="mt-6 grid gap-4 text-sm md:grid-cols-2 xl:grid-cols-4">
-          {content.details.map((item) => (
-            <div key={item} className="rounded-xl bg-slate-50 p-4 text-slate-600">
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function DonationPage() {
-  return (
-    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-      <SectionTitle
-        eyebrow="Soutenir"
-        title="Faire un don pour un impact concret"
-        text="Votre contribution soutient des actions utiles, traçables et durables au service des communautés accompagnées par PRODDEKO-Belgique."
-      />
-
-      <div className="mt-8 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-8 text-white shadow-2xl">
-          <div className="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
-            Paiement sécurisé
-          </div>
-          <h3 className="mt-5 text-3xl font-black tracking-tight">
-            Soutenir PRODDEKO-Belgique en toute confiance
-          </h3>
-          <p className="mt-4 text-sm leading-7 text-slate-200">
-            Vos contributions peuvent être effectuées par virement bancaire,
-            avec des coordonnées institutionnelles vérifiées.
-          </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
-                IBAN
-              </div>
-              <div className="mt-2 text-lg font-bold">{SITE.iban}</div>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
-                BIC
-              </div>
-              <div className="mt-2 text-lg font-bold">{SITE.bic}</div>
-            </div>
-          </div>
-
-          <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
-              Nom du compte
-            </div>
-            <div className="mt-2 text-base font-semibold leading-7">
-              {SITE.accountName}
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
-          <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
-            Don rapide
-          </div>
-          <h3 className="mt-3 text-2xl font-black text-blue-950">
-            Choisir un niveau de contribution
-          </h3>
-
-          <div className="mt-8 space-y-4">
-            {donationTiers.map((tier) => (
-              <div
-                key={tier.title}
-                className="rounded-2xl border border-slate-200 p-5 transition hover:border-orange-200 hover:shadow-sm"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-2xl font-black text-orange-500">
-                      {tier.amount}
-                    </div>
-                    <h4 className="mt-1 text-lg font-bold text-blue-950">
-                      {tier.title}
-                    </h4>
-                  </div>
-                  <a
-                    href={`mailto:${SITE.email}?subject=Don%20PRODDEKO%20-${encodeURIComponent(
-                      tier.amount
-                    )}`}
-                    className="rounded-full bg-blue-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-900"
-                  >
-                    Donner
-                  </a>
-                </div>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {tier.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ImageLightbox({ src, title, onClose }) {
-  if (!src) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4"
-      onClick={onClose}
-    >
-      <div
-        className="relative max-h-[95vh] w-full max-w-6xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 text-slate-800 shadow"
-        >
-          <X className="h-5 w-5" />
-        </button>
-
-        <img
-          src={src}
-          alt={title}
-          className="max-h-[95vh] w-full rounded-2xl bg-white object-contain"
-        />
-      </div>
-    </div>
-  );
-}
-
 function GalleryCard({ src, alt, onOpen }) {
   return (
     <button
@@ -1284,6 +1102,36 @@ function GallerySection({ title, eyebrow, images, onOpen }) {
         ))}
       </div>
     </section>
+  );
+}
+
+function ImageLightbox({ src, title, onClose }) {
+  if (!src) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-h-[95vh] w-full max-w-6xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 text-slate-800 shadow"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        <img
+          src={src}
+          alt={title}
+          className="max-h-[95vh] w-full rounded-2xl bg-white object-contain"
+        />
+      </div>
+    </div>
   );
 }
 
@@ -1730,6 +1578,158 @@ function BomaProjectPage() {
   );
 }
 
+function StandardPage({ content }) {
+  return (
+    <div className="mx-auto max-w-6xl px-6 py-16">
+      <SectionTitle eyebrow={content.eyebrow} title={content.title} text={content.text} />
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {content.cards.map((card, i) => (
+          <div
+            key={`${card.title}-${i}`}
+            className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm"
+          >
+            <h3 className="text-xl font-black tracking-tight text-blue-950">
+              {card.title}
+            </h3>
+            <p className="mt-4 whitespace-pre-line text-sm leading-7 text-slate-600">
+              {card.body}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ActionPage({ content }) {
+  return (
+    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <SectionTitle eyebrow={content.eyebrow} title={content.title} text={content.text} />
+
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {content.metrics.map((item) => (
+          <div key={item.label} className="rounded-3xl border bg-white p-6 shadow-sm">
+            <div className="text-3xl font-black text-orange-500">{item.value}</div>
+            <div className="mt-2 text-sm text-slate-600">{item.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {content.cards.map((card, i) => (
+          <div key={`${card.title}-${i}`} className="rounded-3xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-bold text-blue-950">{card.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">{card.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-14 rounded-[2rem] border bg-white p-8 shadow-sm">
+        <h3 className="text-xl font-black text-blue-950">Informations complémentaires</h3>
+        <div className="mt-6 grid gap-4 text-sm md:grid-cols-2 xl:grid-cols-4">
+          {content.details.map((item) => (
+            <div key={item} className="rounded-xl bg-slate-50 p-4 text-slate-600">
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DonationPage() {
+  return (
+    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <SectionTitle
+        eyebrow="Soutenir"
+        title="Faire un don pour un impact concret"
+        text="Votre contribution soutient des actions utiles, traçables et durables au service des communautés accompagnées par PRODDEKO-Belgique."
+      />
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-8 text-white shadow-2xl">
+          <div className="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
+            Paiement sécurisé
+          </div>
+          <h3 className="mt-5 text-3xl font-black tracking-tight">
+            Soutenir PRODDEKO-Belgique en toute confiance
+          </h3>
+          <p className="mt-4 text-sm leading-7 text-slate-200">
+            Vos contributions peuvent être effectuées par virement bancaire,
+            avec des coordonnées institutionnelles vérifiées.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
+                IBAN
+              </div>
+              <div className="mt-2 text-lg font-bold">{SITE.iban}</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
+                BIC
+              </div>
+              <div className="mt-2 text-lg font-bold">{SITE.bic}</div>
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">
+              Nom du compte
+            </div>
+            <div className="mt-2 text-base font-semibold leading-7">
+              {SITE.accountName}
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
+          <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
+            Don rapide
+          </div>
+          <h3 className="mt-3 text-2xl font-black text-blue-950">
+            Choisir un niveau de contribution
+          </h3>
+
+          <div className="mt-8 space-y-4">
+            {donationTiers.map((tier) => (
+              <div
+                key={tier.title}
+                className="rounded-2xl border border-slate-200 p-5 transition hover:border-orange-200 hover:shadow-sm"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="text-2xl font-black text-orange-500">
+                      {tier.amount}
+                    </div>
+                    <h4 className="mt-1 text-lg font-bold text-blue-950">
+                      {tier.title}
+                    </h4>
+                  </div>
+                  <a
+                    href={`mailto:${SITE.email}?subject=Don%20PRODDEKO%20-${encodeURIComponent(
+                      tier.amount
+                    )}`}
+                    className="rounded-full bg-blue-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-900"
+                  >
+                    Donner
+                  </a>
+                </div>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {tier.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Footer({ setPage }) {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
@@ -1750,9 +1750,9 @@ function Footer({ setPage }) {
           </div>
 
           <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">
-            PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la
-            RDC et d’autres territoires partenaires pour soutenir des actions
-            utiles, durables et transparentes.
+            PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC
+            et d’autres territoires partenaires pour soutenir des actions utiles,
+            durables et transparentes.
           </p>
         </div>
 
