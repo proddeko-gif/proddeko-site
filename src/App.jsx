@@ -24,6 +24,8 @@ import {
   X,
   Zap,
   ZoomIn,
+  Leaf,
+  Droplets,
 } from "lucide-react";
 
 const SITE = {
@@ -80,6 +82,24 @@ const KILENGI = {
     "/images/projects/kilengi/after/kilengi-apres-05.png",
     "/images/projects/kilengi/after/kilengi-apres-06.png",
   ],
+};
+
+const BOMA = {
+  title: "Projet maraîcher et irrigation communautaire de Boma",
+  subtitle:
+    "Appui aux maraîchers, organisation communautaire et amélioration durable de l’accès à l’eau pour la production locale.",
+  hero: "/images/projects/boma/boma-01.jpg",
+  gallery: [
+    "/images/projects/boma/boma-01.jpg",
+    "/images/projects/boma/boma-02.jpg",
+    "/images/projects/boma/boma-03.jpg",
+    "/images/projects/boma/boma-04.jpg",
+    "/images/projects/boma/boma-05.jpg",
+    "/images/projects/boma/boma-06.jpg",
+    "/images/projects/boma/boma-07.jpg",
+    "/images/projects/boma/boma-08.jpg",
+  ],
+  schema: "/images/projects/boma/boma-croquis-irrigation.jpg",
 };
 
 const stats = [
@@ -140,21 +160,6 @@ const donationTiers = [
   },
 ];
 
-const impactPoints = [
-  "Réhabilitation d’une infrastructure de santé essentielle",
-  "Sécurisation de l’alimentation électrique pour les services prioritaires",
-  "Documentation visuelle du chantier avant, pendant et après les travaux",
-  "Appui à la crédibilité du projet auprès des partenaires et bailleurs",
-];
-
-const technicalItems = [
-  "Panneaux solaires",
-  "Régulateur de charge MPPT",
-  "Onduleur / chargeur hybride",
-  "Banque de batteries lithium",
-  "Protections AC/DC et mise à la terre",
-];
-
 const actionCards = [
   {
     icon: Globe,
@@ -204,7 +209,8 @@ const navItems = [
   {
     label: "Projets",
     items: [
-      { label: "Projet Kilengi", page: "projects", icon: Zap },
+      { label: "Projet Kilengi", page: "project-kilengi", icon: Zap },
+      { label: "Projet Boma", page: "project-boma", icon: Leaf },
       { label: "Notre impact", page: "projects-impact", icon: Users },
       { label: "Partenaires", page: "partners", icon: Handshake },
       { label: "Appel à financement", page: "financing", icon: Sparkles },
@@ -369,7 +375,7 @@ const pageContent = {
       },
       {
         title: "Axes ouverts au financement",
-        body: "Gouvernance éthique, éducation citoyenne, eau-hygiène-assainissement, agriculture durable, innovation responsable et systèmes locaux de coordination.",
+        body: "Santé communautaire, gouvernance éthique, éducation citoyenne, agriculture durable, eau, innovation responsable et systèmes locaux de coordination.",
       },
       {
         title: "Types de partenariat recherchés",
@@ -390,6 +396,146 @@ const pageContent = {
       { title: "Coordination terrain", body: SITE.drcLocation },
       { title: "Email", body: SITE.email },
       { title: "Téléphone", body: SITE.phone },
+    ],
+  },
+  "action-sustainable": {
+    eyebrow: "Programme 01",
+    title: "Programme Développement durable",
+    text: "PRODDEKO-Belgique accompagne des trajectoires territoriales de développement durable visant à renforcer la résilience communautaire, la gestion responsable des ressources et l’amélioration durable des conditions de vie.",
+    metrics: [
+      { value: "12 000+", label: "bénéficiaires" },
+      { value: "36 mois", label: "durée" },
+      { value: "€ 280 000", label: "budget estimé" },
+      { value: "4 territoires", label: "zones d’intervention" },
+    ],
+    cards: [
+      {
+        title: "Objectifs stratégiques",
+        body: "Renforcer les capacités locales, promouvoir des pratiques agroécologiques et soutenir des initiatives économiques et communautaires durables.",
+      },
+      {
+        title: "Résultats attendus",
+        body: "Communautés mieux organisées, pratiques durables adoptées et meilleure résilience face aux vulnérabilités.",
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de bénéficiaires directs et indirects, nombre d’initiatives soutenues et taux d’adoption des pratiques durables.",
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Agriculteurs, jeunes, femmes, organisations communautaires et populations vulnérables.",
+      },
+    ],
+    details: [
+      "Zones d’intervention : Kongo Central • Kinshasa • Kwilu • zones rurales partenaires",
+      "Partenaires impliqués : ENABEL • Fondation Roi Baudouin • Université Kongo • organisations communautaires locales",
+      "Budget indicatif : Activités terrain 58% • Formation 17% • Suivi-évaluation 10% • Coordination 15%",
+      "Calendrier : Diagnostic • Déploiement • Consolidation • Évaluation",
+    ],
+  },
+  "action-education": {
+    eyebrow: "Programme 02",
+    title: "Programme Éducation citoyenne",
+    text: "Le programme Éducation citoyenne vise à développer une citoyenneté active, critique et responsable à travers des dispositifs de formation, de sensibilisation et de mobilisation.",
+    metrics: [
+      { value: "8 500+", label: "bénéficiaires" },
+      { value: "24 mois", label: "durée" },
+      { value: "€ 195 000", label: "budget estimé" },
+      { value: "3 territoires", label: "zones d’intervention" },
+    ],
+    cards: [
+      {
+        title: "Objectifs stratégiques",
+        body: "Renforcer les capacités citoyennes, développer le leadership local et promouvoir une culture démocratique fondée sur la participation.",
+      },
+      {
+        title: "Résultats attendus",
+        body: "Amélioration de la participation citoyenne, renforcement du leadership local et implication accrue des jeunes et des femmes.",
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de formations, nombre de participants, taux de participation des jeunes et des femmes et initiatives citoyennes lancées.",
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Jeunes, femmes, leaders communautaires, organisations locales, établissements éducatifs et relais de terrain.",
+      },
+    ],
+    details: [
+      "Zones d’intervention : Kinshasa • Kongo Central • espaces éducatifs partenaires",
+      "Partenaires impliqués : CNCD–11.11.11 • UCLouvain • établissements éducatifs • relais communautaires",
+      "Budget indicatif : Formations 52% • Mobilisation 18% • Documentation 12% • Coordination 18%",
+      "Calendrier : Conception • Mise en œuvre • Appui aux initiatives • Évaluation",
+    ],
+  },
+  "action-governance": {
+    eyebrow: "Programme 03",
+    title: "Programme Gouvernance éthique",
+    text: "Ce programme renforce les mécanismes locaux de transparence, de redevabilité et de participation citoyenne afin d’améliorer la qualité de la gouvernance territoriale.",
+    metrics: [
+      { value: "6 000+", label: "bénéficiaires" },
+      { value: "30 mois", label: "durée" },
+      { value: "€ 240 000", label: "budget estimé" },
+      { value: "3 collectivités", label: "zones d’intervention" },
+    ],
+    cards: [
+      {
+        title: "Objectifs stratégiques",
+        body: "Promouvoir des pratiques de gouvernance éthique, renforcer les mécanismes de suivi citoyen et améliorer le dialogue entre autorités locales et citoyens.",
+      },
+      {
+        title: "Résultats attendus",
+        body: "Dispositifs de redevabilité opérationnels, participation citoyenne accrue et meilleure circulation de l’information publique.",
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de mécanismes mis en place, nombre de citoyens impliqués, fréquence des espaces de dialogue et niveau d’accès à l’information.",
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Collectivités locales, organisations de la société civile, relais communautaires, jeunes engagés, femmes leaders et citoyens.",
+      },
+    ],
+    details: [
+      "Zones d’intervention : Kongo Central • Kinshasa • collectivités locales pilotes",
+      "Partenaires impliqués : UNOPS • Entraide & Fraternité • autorités locales • OSC partenaires",
+      "Budget indicatif : Redevabilité 47% • Sensibilisation 20% • Outils 13% • Gouvernance 20%",
+      "Calendrier : Analyse • Mise en place • Dialogue • Évaluation",
+    ],
+  },
+  "action-solidarity": {
+    eyebrow: "Programme 04",
+    title: "Programme Solidarité internationale",
+    text: "PRODDEKO-Belgique développe une solidarité internationale fondée sur le co-développement, la réciprocité et la mobilisation conjointe des ressources de la diaspora et des partenaires.",
+    metrics: [
+      { value: "4 000+", label: "bénéficiaires" },
+      { value: "24 mois", label: "durée" },
+      { value: "€ 175 000", label: "budget estimé" },
+      { value: "Belgique • RDC", label: "zones d’intervention" },
+    ],
+    cards: [
+      {
+        title: "Objectifs stratégiques",
+        body: "Créer des synergies durables entre la Belgique, la RDC et les partenaires internationaux, et favoriser le transfert de compétences et de ressources.",
+      },
+      {
+        title: "Résultats attendus",
+        body: "Partenariats consolidés, initiatives co-construites et meilleure mobilisation de la diaspora.",
+      },
+      {
+        title: "Indicateurs clés",
+        body: "Nombre de partenariats actifs, nombre de projets co-développés et volume de ressources mobilisées.",
+      },
+      {
+        title: "Bénéficiaires cibles",
+        body: "Diaspora congolaise, organisations locales, collectivités, institutions publiques, universités, ONG et communautés bénéficiaires.",
+      },
+    ],
+    details: [
+      "Zones d’intervention : Welkenraedt • Kinshasa • Kongo Central • réseaux de diaspora",
+      "Partenaires impliqués : Caritas International • diaspora congolaise • universités partenaires • ONG alliées",
+      "Budget indicatif : Animation 40% • Appui technique 22% • Coordination 18% • Suivi 20%",
+      "Calendrier : Réseautage • Déploiement • Renforcement • Consolidation",
     ],
   },
 };
@@ -596,14 +742,13 @@ function Header({
             />
           ))}
 
-          <a
-            href={KILENGI.reportPdf}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={() => setPage("project-kilengi")}
             className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50 hover:text-blue-950"
           >
-            Rapport PDF
-          </a>
+            Projet Kilengi
+          </button>
 
           <button
             type="button"
@@ -696,14 +841,16 @@ function Header({
               );
             })}
 
-            <a
-              href={KILENGI.reportPdf}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700"
+            <button
+              type="button"
+              onClick={() => {
+                setPage("project-kilengi");
+                setMobileOpen(false);
+              }}
+              className="rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-700"
             >
-              Rapport PDF
-            </a>
+              Projet Kilengi
+            </button>
 
             <button
               type="button"
@@ -725,9 +872,9 @@ function Header({
 function Hero({ setPage }) {
   const heroSlides = useMemo(
     () => [
-      ...KILENGI.during.slice(0, 6),
+      ...KILENGI.during.slice(0, 4),
       ...KILENGI.after.slice(0, 2),
-      ...KILENGI.before.slice(0, 2),
+      ...BOMA.gallery.slice(0, 4),
     ],
     []
   );
@@ -742,14 +889,6 @@ function Hero({ setPage }) {
     return () => clearInterval(interval);
   }, [heroSlides.length]);
 
-  const goPrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
-
-  const goNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
   return (
     <section className="relative overflow-hidden bg-slate-950 text-white">
       <div className="absolute inset-0">
@@ -757,13 +896,13 @@ function Hero({ setPage }) {
           <img
             key={src}
             src={src}
-            alt={`Projet Kilengi ${index + 1}`}
+            alt={`Projet ${index + 1}`}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-85" : "opacity-0"
+              index === currentSlide ? "opacity-80" : "opacity-0"
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/40 via-slate-950/20 to-orange-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/50 via-slate-950/30 to-orange-950/35" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
@@ -778,27 +917,26 @@ function Hero({ setPage }) {
             </h1>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-100">
-              Découvrez en images le projet de réhabilitation du Centre de Santé
-              de Référence de Kilengi, documenté à chaque étape du chantier.
+              PRODDEKO-Belgique valorise des projets concrets en santé, agriculture
+              durable, gouvernance et résilience communautaire en RDC.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 type="button"
-                onClick={() => setPage("projects")}
+                onClick={() => setPage("project-kilengi")}
                 className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
               >
                 Voir le projet Kilengi
               </button>
 
-              <a
-                href={KILENGI.reportPdf}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                type="button"
+                onClick={() => setPage("project-boma")}
                 className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
               >
-                Télécharger le rapport
-              </a>
+                Voir le projet Boma
+              </button>
             </div>
           </div>
 
@@ -820,9 +958,10 @@ function Hero({ setPage }) {
         <div className="mt-10 flex items-center gap-4">
           <button
             type="button"
-            onClick={goPrev}
+            onClick={() =>
+              setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+            }
             className="rounded-full border border-white/20 bg-white/10 p-3 text-white transition hover:bg-white/20"
-            aria-label="Image précédente"
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
@@ -836,16 +975,14 @@ function Hero({ setPage }) {
                 className={`h-2.5 w-2.5 rounded-full transition ${
                   index === currentSlide ? "bg-orange-400" : "bg-white/35"
                 }`}
-                aria-label={`Aller à l’image ${index + 1}`}
               />
             ))}
           </div>
 
           <button
             type="button"
-            onClick={goNext}
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
             className="rounded-full border border-white/20 bg-white/10 p-3 text-white transition hover:bg-white/20"
-            aria-label="Image suivante"
           >
             <ArrowRight className="h-5 w-5" />
           </button>
@@ -855,55 +992,61 @@ function Hero({ setPage }) {
   );
 }
 
-function HomePreview({ setPage }) {
+function HomeProjects({ setPage }) {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
+      <SectionTitle
+        eyebrow="Projets en cours"
+        title="Deux projets phares à fort impact territorial"
+        text="Découvrez nos projets actuellement valorisés sur le site : réhabilitation énergétique d’un centre de santé et appui à un système maraîcher communautaire."
+      />
+
+      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <button
+          type="button"
+          onClick={() => setPage("project-kilengi")}
+          className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+        >
           <img
             src={KILENGI.hero}
-            alt="Projet Kilengi"
-            className="h-full min-h-[440px] w-full object-cover"
+            alt={KILENGI.title}
+            className="h-72 w-full object-cover"
           />
-        </div>
-
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-          <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
-            Projet mis en avant
+          <div className="p-8">
+            <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+              Santé • Énergie
+            </div>
+            <h3 className="mt-3 text-2xl font-black text-blue-950">
+              {KILENGI.title}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Remise en service d’un système énergétique durable pour un centre de santé de référence, avec documentation photo complète du chantier.
+            </p>
           </div>
+        </button>
 
-          <h2 className="mt-3 text-3xl font-black text-blue-950 md:text-4xl">
-            {KILENGI.title}
-          </h2>
-
-          <p className="mt-5 text-sm leading-7 text-slate-600">
-            Ce projet documente les travaux de réhabilitation et la remise en
-            service d’une solution énergétique durable pour le Centre de Santé de
-            Référence de Kilengi. Il met en avant les photos du chantier, le
-            rapport documentaire et les éléments budgétaires essentiels.
-          </p>
-
-          <div className="mt-6 space-y-3">
-            {impactPoints.map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4"
-              >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
-                <span className="text-sm leading-6 text-slate-600">{item}</span>
-              </div>
-            ))}
+        <button
+          type="button"
+          onClick={() => setPage("project-boma")}
+          className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+        >
+          <img
+            src={BOMA.hero}
+            alt={BOMA.title}
+            className="h-72 w-full object-cover"
+          />
+          <div className="p-8">
+            <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">
+              Agriculture • Eau
+            </div>
+            <h3 className="mt-3 text-2xl font-black text-blue-950">
+              {BOMA.title}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Organisation des maraîchers, appui communautaire, gestion durable de l’eau et amélioration des capacités productives locales.
+            </p>
           </div>
-
-          <button
-            type="button"
-            onClick={() => setPage("projects")}
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
-          >
-            Ouvrir la page projet
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
+        </button>
       </div>
     </section>
   );
@@ -1014,15 +1157,6 @@ function DonationPage() {
             <div className="mt-2 text-base font-semibold leading-7">
               {SITE.accountName}
             </div>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={`mailto:${SITE.email}?subject=Don%20PRODDEKO`}
-              className="rounded-full bg-orange-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
-            >
-              Confirmer mon don
-            </a>
           </div>
         </div>
 
@@ -1144,7 +1278,7 @@ function GallerySection({ title, eyebrow, images, onOpen }) {
           <GalleryCard
             key={`${title}-${index}`}
             src={src}
-            alt={`${title} Kilengi ${index + 1}`}
+            alt={`${title} ${index + 1}`}
             onOpen={onOpen}
           />
         ))}
@@ -1245,7 +1379,7 @@ function KilengiProjectPage() {
             <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
               <img
                 src={KILENGI.hero}
-                alt="Travaux du Centre de Santé de Référence de Kilengi"
+                alt={KILENGI.title}
                 className="h-full min-h-[360px] w-full object-cover"
               />
             </div>
@@ -1310,8 +1444,7 @@ function KilengiProjectPage() {
                   Ce document présente une vue synthétique des coûts estimatifs
                   du projet, répartis par composante d’intervention. Il permet
                   d’améliorer la lisibilité budgétaire et de renforcer la
-                  transparence financière des actions menées par
-                  PRODDEKO-Belgique.
+                  transparence financière des actions menées par PRODDEKO-Belgique.
                 </p>
 
                 <button
@@ -1356,23 +1489,15 @@ function KilengiProjectPage() {
                   <br />
                   │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── CS-Kilengi_Cout-total-activites.png
                   <br />
-                  │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── CS-Kilengi_avril-22_1.jpeg
-                  <br />
-                  │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── CS-Kilengi_avril-22_01.jpeg
-                  <br />
-                  │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── CS-Kilengi_avril-22_2.jpeg
-                  <br />
                   │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── before/
                   <br />
                   │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── after/
                 </div>
 
                 <p className="mt-5 text-slate-600 leading-7">
-                  Pour éviter les erreurs d’affichage, tous les visuels du
-                  projet Kilengi doivent être regroupés dans un dossier unique,
-                  avec des sous-dossiers distincts pour les visuels
-                  d’avant-travaux et d’après-travaux. Les noms de fichiers
-                  doivent rester simples, cohérents et sans espaces.
+                  Tous les visuels du projet Kilengi doivent être regroupés dans
+                  un dossier unique, avec des sous-dossiers distincts pour les
+                  visuels d’avant-travaux et d’après-travaux.
                 </p>
               </div>
             </section>
@@ -1409,7 +1534,13 @@ function KilengiProjectPage() {
           <aside className="grid gap-6">
             <InfoCard icon={ShieldCheck} title="Éléments techniques">
               <ul className="list-disc space-y-2 pl-5">
-                {technicalItems.map((item) => (
+                {[
+                  "Panneaux solaires",
+                  "Régulateur de charge MPPT",
+                  "Onduleur / chargeur hybride",
+                  "Banque de batteries lithium",
+                  "Protections AC/DC et mise à la terre",
+                ].map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -1432,38 +1563,159 @@ function KilengiProjectPage() {
                 lisibilité des besoins auprès des bailleurs et donateurs.
               </p>
             </div>
+          </aside>
+        </div>
+      </section>
 
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-              <h3 className="text-lg font-black text-blue-950">
-                Contact institutionnel
-              </h3>
+      <ImageLightbox
+        src={lightbox.src}
+        title={lightbox.title}
+        onClose={closeLightbox}
+      />
+    </>
+  );
+}
 
-              <div className="mt-5 space-y-4 text-sm text-slate-600">
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-orange-500" />
-                  {SITE.belgiumLocation}
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-orange-500" />
-                  Coordination terrain : {SITE.drcLocation}
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-orange-500" />
-                  {SITE.email}
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-orange-500" />
-                  {SITE.phone}
-                </div>
+function BomaProjectPage() {
+  const [lightbox, setLightbox] = useState({ src: "", title: "" });
+
+  const openLightbox = (src, title) => setLightbox({ src, title });
+  const closeLightbox = () => setLightbox({ src: "", title: "" });
+
+  return (
+    <>
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <SectionTitle
+          eyebrow="Projet en cours"
+          title={BOMA.title}
+          text={BOMA.subtitle}
+        />
+
+        <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm lg:p-8">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">
+                Boma • RDC
               </div>
 
-              <a
-                href={`mailto:${SITE.email}?subject=Projet%20Kilengi`}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">
+                Agriculture communautaire, irrigation et résilience locale
+              </h2>
+
+              <p className="mt-5 text-base leading-8 text-slate-600">
+                Le projet accompagne les maraîchers et les communautés locales
+                dans le renforcement de la production agricole, l’organisation
+                communautaire et l’amélioration durable de l’accès à l’eau pour
+                l’irrigation.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {[
+                  "Maraîchage",
+                  "Irrigation",
+                  "Organisation communautaire",
+                  "Résilience locale",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
+              <img
+                src={BOMA.hero}
+                alt={BOMA.title}
+                className="h-full min-h-[360px] w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.8fr_0.9fr]">
+          <div className="grid gap-6">
+            <InfoCard icon={Leaf} title="Contexte du projet">
+              Les producteurs maraîchers font face à des contraintes d’accès à
+              l’eau, d’organisation, d’appui technique et de valorisation des
+              productions. Le projet répond à ces défis par une approche
+              communautaire et structurante.
+            </InfoCard>
+
+            <InfoCard icon={Droplets} title="Objectif principal">
+              Renforcer durablement les capacités productives locales à travers
+              l’amélioration de l’irrigation, l’accompagnement communautaire, la
+              concertation locale et la mise en valeur des périmètres maraîchers.
+            </InfoCard>
+
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-7">
+              <div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">
+                Schéma fonctionnel
+              </div>
+              <h3 className="mt-2 text-xl font-black text-blue-950">
+                Croquis fonctionnel du système d’irrigation
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                Ce schéma permet de visualiser l’organisation du périmètre
+                maraîcher, les zones d’irrigation, les réservoirs de stockage et
+                la logique d’alimentation à partir du captage.
+              </p>
+
+              <button
+                type="button"
+                onClick={() =>
+                  openLightbox(
+                    BOMA.schema,
+                    "Croquis fonctionnel du système d’irrigation"
+                  )
+                }
+                className="mt-6 block w-full overflow-hidden rounded-[1.5rem] border border-slate-200"
               >
-                <Mail className="h-4 w-4" />
-                Écrire à PRODDEKO-Belgique
-              </a>
+                <img
+                  src={BOMA.schema}
+                  alt="Croquis fonctionnel du système d’irrigation"
+                  className="w-full bg-white object-contain"
+                />
+              </button>
+            </div>
+
+            <GallerySection
+              eyebrow="Terrain & bénéficiaires"
+              title="Activités sur le terrain à Boma"
+              images={BOMA.gallery}
+              onOpen={openLightbox}
+            />
+          </div>
+
+          <aside className="grid gap-6">
+            <InfoCard icon={Users} title="Bénéficiaires cibles">
+              <ul className="list-disc space-y-2 pl-5">
+                <li>Maraîchers et maraîchères</li>
+                <li>Organisations communautaires locales</li>
+                <li>Jeunes et femmes impliqués dans la production</li>
+                <li>Ménages bénéficiaires des productions locales</li>
+              </ul>
+            </InfoCard>
+
+            <InfoCard icon={ImageIcon} title="Contenus disponibles">
+              <ul className="list-disc space-y-2 pl-5">
+                <li>Photos terrain</li>
+                <li>Réunions communautaires</li>
+                <li>Équipe locale</li>
+                <li>Croquis fonctionnel d’irrigation</li>
+              </ul>
+            </InfoCard>
+
+            <div className="rounded-[2rem] bg-gradient-to-br from-emerald-800 via-slate-900 to-blue-950 p-7 text-white shadow-sm">
+              <h3 className="text-lg font-black">Positionnement</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-100">
+                Le projet Boma peut être valorisé comme initiative de
+                développement durable, de sécurité alimentaire et de résilience
+                communautaire, avec un fort potentiel de mobilisation partenariale.
+              </p>
             </div>
           </aside>
         </div>
@@ -1538,10 +1790,17 @@ function Footer({ setPage }) {
             </button>
             <button
               type="button"
-              onClick={() => setPage("projects")}
+              onClick={() => setPage("project-kilengi")}
               className="block transition hover:text-orange-500"
             >
               Projet Kilengi
+            </button>
+            <button
+              type="button"
+              onClick={() => setPage("project-boma")}
+              className="block transition hover:text-orange-500"
+            >
+              Projet Boma
             </button>
             <button
               type="button"
@@ -1549,13 +1808,6 @@ function Footer({ setPage }) {
               className="block transition hover:text-orange-500"
             >
               Faire un don
-            </button>
-            <button
-              type="button"
-              onClick={() => setPage("contact-form")}
-              className="block transition hover:text-orange-500"
-            >
-              Contact
             </button>
           </div>
         </div>
@@ -1601,7 +1853,7 @@ export default function App() {
   const renderHome = () => (
     <>
       <Hero setPage={handlePageChange} />
-      <HomePreview setPage={handlePageChange} />
+      <HomeProjects setPage={handlePageChange} />
 
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -1945,7 +2197,8 @@ export default function App() {
 
   const renderPage = () => {
     if (page === "home") return renderHome();
-    if (page === "projects") return <KilengiProjectPage />;
+    if (page === "project-kilengi") return <KilengiProjectPage />;
+    if (page === "project-boma") return <BomaProjectPage />;
     if (page === "don") return <DonationPage />;
     if (page === "contact-form") return renderContactForm();
 
