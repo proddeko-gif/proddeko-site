@@ -6,6 +6,8 @@ import {
   ChevronDown,
   Download,
   Droplets,
+  ExternalLink,
+  FileSpreadsheet,
   FileText,
   Globe,
   GraduationCap,
@@ -20,6 +22,7 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  Sprout,
   Users,
   Wrench,
   X,
@@ -104,6 +107,41 @@ const BOMA = {
   schema: "/images/projects/boma/boma-croquis-irrigation.jpg",
 };
 
+const JPN95 = {
+  menuLabel: "JPN95 — Souveraineté agricole",
+  title: "JPN95 Kongo Central — Fertiliser autrement pour la souveraineté agricole",
+  subtitle:
+    "Face à la hausse du prix des engrais chimiques, aux tensions internationales et aux fragilités agricoles en RDC, PRODDEKO-Belgique porte un pilote de fertilisant naturel à base d’eau de mer pour renforcer les rendements, les revenus ruraux et la résilience des petits exploitants.",
+  docs: [
+    {
+      title: "Dossier de candidature FID",
+      href: "/docs/jpn95-dossier-candidature-fid.pdf",
+      icon: FileText,
+    },
+    {
+      title: "Éligibilité FID",
+      href: "/docs/jpn95-eligibilite-fid.pdf",
+      icon: FileText,
+    },
+    {
+      title: "Organisation candidate",
+      href: "/docs/jpn95-organisation-candidate.pdf",
+      icon: FileText,
+    },
+    {
+      title: "Budget prévisionnel",
+      href: "/docs/jpn95-budget.xlsx",
+      icon: FileSpreadsheet,
+    },
+  ],
+  metrics: [
+    { value: "500", label: "petits exploitants ciblés" },
+    { value: "24 mois", label: "durée pilote" },
+    { value: "195 000 €", label: "financement recherché" },
+    { value: "Kongo Central", label: "zone pilote" },
+  ],
+};
+
 const stats = [
   { value: "200 000+", label: "bénéficiaires accompagnés" },
   { value: "10+", label: "zones et pays d’action" },
@@ -120,6 +158,7 @@ const partnersList = [
   "CNCD–11.11.11",
   "Entraide & Fraternité",
   "Energy Assistance",
+  "Laguzze / Fertilomer JPN95",
 ];
 
 const universities = [
@@ -169,6 +208,7 @@ const navItems = [
     items: [
       { label: "Projet Kilengi", page: "project-kilengi", icon: Zap },
       { label: "Projet Boma", page: "project-boma", icon: Leaf },
+      { label: JPN95.menuLabel, page: "project-jpn95", icon: Sprout },
       { label: "Impact", page: "projects-impact", icon: Users },
       { label: "Partenaires", page: "partners", icon: Handshake },
       { label: "Appel à financement", page: "financing", icon: Sparkles },
@@ -367,7 +407,7 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
       </button>
 
       {isOpen && (
-        <div className="absolute left-1/2 top-full z-40 mt-3 w-[680px] -translate-x-1/2 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.16)]">
+        <div className="absolute left-1/2 top-full z-40 mt-3 w-[720px] -translate-x-1/2 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.16)]">
           <div className="grid grid-cols-[1.15fr_0.85fr]">
             <div className="p-6">
               <div className="mb-4 border-b border-slate-100 pb-4">
@@ -375,7 +415,7 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
                 <div className="mt-2 text-2xl font-black tracking-tight text-blue-950">Navigation stratégique</div>
               </div>
 
-              <div className="grid max-h-[390px] grid-cols-2 gap-3 overflow-y-auto pr-1">
+              <div className="grid max-h-[410px] grid-cols-2 gap-3 overflow-y-auto pr-1">
                 {group.items.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -583,8 +623,8 @@ function Hero({ setPage }) {
               <button type="button" onClick={() => setPage("project-kilengi")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600">
                 Voir le projet Kilengi
               </button>
-              <button type="button" onClick={() => setPage("project-boma")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">
-                Voir le projet Boma
+              <button type="button" onClick={() => setPage("project-jpn95")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">
+                Voir le projet JPN95
               </button>
             </div>
           </div>
@@ -703,41 +743,165 @@ function ActivityReportsPage() {
           financiers, soutiens mobilisés, équipe et volontaires.
         </p>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {[
-            { label: "Kilengi", value: "Électricité et eau potable" },
-            { label: "Éducation", value: "Parrainage et école primaire" },
-            { label: "Agriculture", value: "Production et commercialisation" },
-          ].map((item) => (
-            <div key={item.label} className="rounded-2xl bg-slate-50 p-5">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-500">{item.label}</div>
-              <div className="mt-2 text-sm font-semibold text-slate-700">{item.value}</div>
-            </div>
-          ))}
-        </div>
-
         <div className="mt-7 flex flex-wrap gap-4">
-          <a
-            href={DOCS.activityReport2022}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
-          >
+          <a href={DOCS.activityReport2022} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900">
             <FileText className="h-4 w-4" />
             Consulter le rapport PDF
           </a>
 
-          <a
-            href={DOCS.activityReport2022}
-            download
-            className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50"
-          >
+          <a href={DOCS.activityReport2022} download className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50">
             <Download className="h-4 w-4" />
             Télécharger le rapport
           </a>
         </div>
       </div>
     </div>
+  );
+}
+
+function Jpn95ProjectPage() {
+  return (
+    <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <SectionTitle eyebrow="Projet en recherche de financement" title={JPN95.title} text={JPN95.subtitle} />
+
+      <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-orange-50 p-6 shadow-sm lg:p-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">
+              Agriculture • Climat • Kongo Central
+            </div>
+
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">
+              Une réponse naturelle à la crise des engrais chimiques
+            </h2>
+
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              Le pilote JPN95 propose d’évaluer, auprès de petits exploitants agricoles, une solution naturelle à base
+              d’eau de mer transformée, dans un contexte de hausse des prix des intrants importés, de fragilité alimentaire
+              et de besoin urgent de souveraineté agricole en RDC.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {["Fertilisant naturel", "95 oligo-éléments", "Résilience paysanne", "Alternative aux intrants coûteux"].map((item) => (
+                <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] bg-gradient-to-br from-emerald-800 via-slate-950 to-blue-950 p-8 text-white shadow-xl">
+            <div className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">FERTILOMER JPN95</div>
+            <h3 className="mt-4 text-3xl font-black leading-tight">
+              Fertiliser autrement pour nourrir les sols, les familles et l’économie locale.
+            </h3>
+            <p className="mt-5 text-sm leading-7 text-slate-100">
+              Le projet vise à démontrer la valeur agronomique, économique et opérationnelle d’une solution plus accessible,
+              moins dangereuse à manipuler et adaptée aux contraintes des petits producteurs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {JPN95.metrics.map((item) => (
+          <div key={item.label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="text-3xl font-black text-orange-500">{item.value}</div>
+            <div className="mt-2 text-sm text-slate-600">{item.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
+        <div className="grid gap-6">
+          <InfoCard icon={Sprout} title="Pourquoi ce projet maintenant ?">
+            Les producteurs congolais sont exposés à la volatilité des prix des engrais chimiques, à la dépendance aux importations
+            et aux tensions internationales qui perturbent les chaînes d’approvisionnement. Dans l’Est de la RDC, les conflits
+            aggravent la pression sur la sécurité alimentaire et renforcent l’urgence d’alternatives agricoles résilientes.
+          </InfoCard>
+
+          <InfoCard icon={Leaf} title="Solution proposée">
+            Fertilomer JPN95 est présenté comme un fertilisant naturel à base d’eau de mer transformée, intégrant 95 oligo-éléments.
+            Le projet vise à tester son efficacité agronomique, sa facilité d’utilisation, son intérêt économique et son potentiel
+            d’adoption par les petits exploitants agricoles du Kongo Central.
+          </InfoCard>
+
+          <InfoCard icon={ShieldCheck} title="Bénéfices attendus">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Réduction de la dépendance aux engrais chimiques importés.</li>
+              <li>Amélioration potentielle des rendements et de la qualité des cultures.</li>
+              <li>Moindre exposition des producteurs aux produits dangereux.</li>
+              <li>Renforcement des revenus ruraux et de la sécurité alimentaire locale.</li>
+              <li>Contribution à une agriculture plus sobre, plus saine et plus résiliente.</li>
+            </ul>
+          </InfoCard>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">Documents du projet</div>
+            <h3 className="mt-3 text-xl font-black text-blue-950">Dossier JPN95 à consulter</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Les documents ci-dessous peuvent être déposés dans <strong>public/docs/</strong> avec les noms indiqués dans le code.
+            </p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {JPN95.docs.map((doc) => {
+                const Icon = doc.icon;
+                return (
+                  <a
+                    key={doc.href}
+                    href={doc.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:bg-white hover:shadow-md"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-black text-blue-950">{doc.title}</div>
+                      <div className="mt-1 text-xs text-slate-500">{doc.href.replace("/docs/", "")}</div>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <aside className="grid gap-6">
+          <InfoCard icon={Globe} title="Positionnement stratégique">
+            Ce projet s’inscrit dans une logique de souveraineté agricole : produire davantage, dépendre moins des intrants importés
+            et construire une réponse locale aux crises internationales qui affectent les prix et la disponibilité des engrais.
+          </InfoCard>
+
+          <InfoCard icon={Handshake} title="Partenariat">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>PRODDEKO-Belgique : portage et mobilisation partenariale.</li>
+              <li>Laguzze / Fertilomer : expertise produit JPN95.</li>
+              <li>Producteurs locaux : expérimentation terrain.</li>
+              <li>Partenaires techniques et financiers : co-financement du pilote.</li>
+            </ul>
+          </InfoCard>
+
+          <div className="rounded-[2rem] bg-gradient-to-br from-blue-950 via-slate-950 to-emerald-800 p-7 text-white shadow-sm">
+            <h3 className="text-lg font-black">Message bailleur</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-100">
+              Soutenir JPN95, c’est investir dans une alternative agricole naturelle, testable, mesurable et directement utile
+              aux petits producteurs du Kongo Central.
+            </p>
+            <a
+              href="https://www.fertilomer.org/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-blue-950"
+            >
+              Découvrir Fertilomer
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
   );
 }
 
@@ -1022,31 +1186,39 @@ function HomeProjects({ setPage }) {
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
       <SectionTitle
         eyebrow="Projets en cours"
-        title="Deux projets phares à fort impact territorial"
+        title="Trois projets phares à fort impact territorial"
         text="Découvrez nos projets actuellement valorisés sur le site."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+      <div className="mt-12 grid gap-6 lg:grid-cols-3">
         {[
           { title: KILENGI.title, img: KILENGI.hero, tag: "Santé • Énergie", page: "project-kilengi" },
           { title: BOMA.title, img: BOMA.hero, tag: "Agriculture • Eau", page: "project-boma" },
         ].map((project) => (
-          <button
-            key={project.page}
-            type="button"
-            onClick={() => setPage(project.page)}
-            className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-          >
+          <button key={project.page} type="button" onClick={() => setPage(project.page)} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
             <img src={project.img} alt={project.title} className="h-72 w-full object-cover" />
             <div className="p-8">
               <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">{project.tag}</div>
               <h3 className="mt-3 text-2xl font-black text-blue-950">{project.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600">
-                Projet documenté, valorisable auprès des partenaires et ouvert à la mobilisation de soutiens.
-              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">Projet documenté, valorisable auprès des partenaires et ouvert à la mobilisation de soutiens.</p>
             </div>
           </button>
         ))}
+
+        <button type="button" onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div className="flex h-72 items-center justify-center bg-gradient-to-br from-emerald-800 via-slate-950 to-orange-800 p-8 text-white">
+            <div>
+              <div className="text-xs font-black uppercase tracking-[0.2em] text-orange-200">Agriculture • Climat</div>
+              <div className="mt-4 text-4xl font-black leading-tight">JPN95</div>
+              <div className="mt-3 text-sm leading-7 text-slate-100">Fertiliser autrement pour la souveraineté agricole.</div>
+            </div>
+          </div>
+          <div className="p-8">
+            <div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">Fertilisant naturel</div>
+            <h3 className="mt-3 text-2xl font-black text-blue-950">{JPN95.title}</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">Projet pilote en recherche de financement pour 500 petits exploitants agricoles du Kongo Central.</p>
+          </div>
+        </button>
       </div>
     </section>
   );
@@ -1060,18 +1232,9 @@ function Home({ setPage }) {
 
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionTitle
-            eyebrow="Nos programmes"
-            title="Des actions complémentaires au service du bien commun"
-            text="PRODDEKO-Belgique déploie des programmes structurés, suivis et documentés."
-          />
+          <SectionTitle eyebrow="Nos programmes" title="Des actions complémentaires au service du bien commun" text="PRODDEKO-Belgique déploie des programmes structurés, suivis et documentés." />
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {[
-              pageContent["action-sustainable"],
-              pageContent["action-education"],
-              pageContent["action-governance"],
-              pageContent["action-solidarity"],
-            ].map((card) => (
+            {[pageContent["action-sustainable"], pageContent["action-education"], pageContent["action-governance"], pageContent["action-solidarity"]].map((card) => (
               <div key={card.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
                 <h3 className="text-2xl font-black text-blue-950">{card.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600">{card.text}</p>
@@ -1083,17 +1246,10 @@ function Home({ setPage }) {
 
       <section className="bg-blue-950 py-20 text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionTitle
-            eyebrow="Territoires d’intervention"
-            title="Une présence multi-territoriale"
-            text="Nos actions se déploient dans plusieurs provinces de la RDC ainsi qu’en Belgique, en Europe et en Afrique centrale."
-            light
-          />
+          <SectionTitle eyebrow="Territoires d’intervention" title="Une présence multi-territoriale" text="Nos actions se déploient dans plusieurs provinces de la RDC ainsi qu’en Belgique, en Europe et en Afrique centrale." light />
           <div className="mt-10 flex flex-wrap gap-3">
             {territories.map((territory) => (
-              <span key={territory} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">
-                {territory}
-              </span>
+              <span key={territory} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">{territory}</span>
             ))}
           </div>
         </div>
@@ -1137,9 +1293,7 @@ function Footer({ setPage }) {
               <div className="text-sm text-slate-500">{SITE.tagline}</div>
             </div>
           </div>
-          <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">
-            PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC et d’autres territoires partenaires.
-          </p>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC et d’autres territoires partenaires.</p>
         </div>
 
         <div>
@@ -1160,11 +1314,10 @@ function Footer({ setPage }) {
               ["Rapports d’activités", "activity-reports"],
               ["Projet Kilengi", "project-kilengi"],
               ["Projet Boma", "project-boma"],
+              ["JPN95", "project-jpn95"],
               ["Faire un don", "don"],
             ].map(([label, page]) => (
-              <button key={page} type="button" onClick={() => setPage(page)} className="block transition hover:text-orange-500">
-                {label}
-              </button>
+              <button key={page} type="button" onClick={() => setPage(page)} className="block transition hover:text-orange-500">{label}</button>
             ))}
           </div>
         </div>
@@ -1196,9 +1349,7 @@ export default function App() {
     e.preventDefault();
     setStatus("Ouverture de votre messagerie...");
     const subject = encodeURIComponent("Contact PRODDEKO-Belgique");
-    const body = encodeURIComponent(
-      `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
+    const body = encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
     window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
   };
 
@@ -1206,17 +1357,11 @@ export default function App() {
     if (page === "home") return <Home setPage={handlePageChange} />;
     if (page === "project-kilengi") return <KilengiProjectPage />;
     if (page === "project-boma") return <BomaProjectPage />;
+    if (page === "project-jpn95") return <Jpn95ProjectPage />;
     if (page === "activity-reports") return <ActivityReportsPage />;
     if (page === "don") return <DonationPage />;
     if (page === "contact-form") {
-      return (
-        <ContactForm
-          formData={formData}
-          status={status}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-        />
-      );
+      return <ContactForm formData={formData} status={status} handleChange={handleChange} handleSubmit={handleSubmit} />;
     }
 
     const content = pageContent[page];
