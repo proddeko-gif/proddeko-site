@@ -189,49 +189,23 @@ const pageContent = {
     title: "Qui sommes-nous ?",
     text: "PRODDEKO-Belgique est une organisation de solidarité internationale et de co-développement active entre la Belgique et la République Démocratique du Congo.",
     cards: [
-      {
-        title: "Vision et engagement",
-        body: "Promouvoir un développement durable, inclusif et endogène, fondé sur la justice sociale, la cohésion communautaire et la protection de l’environnement.",
-      },
-      {
-        title: "Positionnement stratégique",
-        body: "Agir comme interface entre diaspora, partenaires institutionnels européens et acteurs locaux en RDC, dans une logique de co-construction.",
-      },
-      {
-        title: "Domaines d’intervention",
-        body: "Santé communautaire, eau potable, agriculture durable, éducation citoyenne, gouvernance éthique et solidarité internationale.",
-      },
-      {
-        title: "Valeur ajoutée",
-        body: "Ancrage local, transparence documentaire, mobilisation partenariale et approche orientée résultats.",
-      },
+      { title: "Vision et engagement", body: "Promouvoir un développement durable, inclusif et endogène, fondé sur la justice sociale, la cohésion communautaire et la protection de l’environnement." },
+      { title: "Positionnement stratégique", body: "Agir comme interface entre diaspora, partenaires institutionnels européens et acteurs locaux en RDC, dans une logique de co-construction." },
+      { title: "Domaines d’intervention", body: "Santé communautaire, eau potable, agriculture durable, éducation citoyenne, gouvernance éthique et solidarité internationale." },
+      { title: "Valeur ajoutée", body: "Ancrage local, transparence documentaire, mobilisation partenariale et approche orientée résultats." },
     ],
   },
-
   mission: {
     eyebrow: "Cadre stratégique",
     title: "Notre mission",
     text: "Contribuer à un développement durable, inclusif et participatif en RDC, en renforçant les capacités locales, la gouvernance éthique et l’engagement citoyen.",
     cards: [
-      {
-        title: "Objectif global",
-        body: "Améliorer durablement les conditions de vie des populations en renforçant la gouvernance locale, la participation citoyenne et les initiatives communautaires.",
-      },
-      {
-        title: "Objectifs spécifiques",
-        body: "Renforcer les capacités locales, soutenir les projets sociaux et économiques durables, et promouvoir la transparence et la redevabilité.",
-      },
-      {
-        title: "Résultats attendus",
-        body: "Des communautés mieux organisées, des infrastructures utiles, des projets documentés et une meilleure appropriation locale.",
-      },
-      {
-        title: "Méthode",
-        body: "Diagnostic, participation communautaire, mobilisation des partenaires, mise en œuvre, suivi et capitalisation.",
-      },
+      { title: "Objectif global", body: "Améliorer durablement les conditions de vie des populations en renforçant la gouvernance locale, la participation citoyenne et les initiatives communautaires." },
+      { title: "Objectifs spécifiques", body: "Renforcer les capacités locales, soutenir les projets sociaux et économiques durables, et promouvoir la transparence et la redevabilité." },
+      { title: "Résultats attendus", body: "Des communautés mieux organisées, des infrastructures utiles, des projets documentés et une meilleure appropriation locale." },
+      { title: "Méthode", body: "Diagnostic, participation communautaire, mobilisation des partenaires, mise en œuvre, suivi et capitalisation." },
     ],
   },
-
   values: {
     eyebrow: "Référentiel d’action",
     title: "Nos valeurs",
@@ -243,7 +217,6 @@ const pageContent = {
       { title: "Solidarité internationale", body: "Des partenariats équilibrés entre diaspora, communautés locales, institutions et ONG." },
     ],
   },
-
   governance: {
     eyebrow: "Organisation",
     title: "Notre gouvernance",
@@ -255,23 +228,6 @@ const pageContent = {
       { title: "Relais locaux", body: "Acteurs communautaires impliqués dans l’identification, la mise en œuvre et le suivi des actions." },
     ],
   },
-
-  "activity-reports": {
-    eyebrow: "Transparence documentaire",
-    title: "Rapports d’activités",
-    text: "Retrouvez les rapports d’activités disponibles, publiés afin de renforcer la transparence, la mémoire institutionnelle et la redevabilité.",
-    cards: [
-      {
-        title: "Rapport d’activités 2022 — FSDI-CLODIK",
-        body: "Ce rapport présente les activités 2022 liées notamment à Kilengi, aux travaux d’électrification, à l’adduction d’eau potable avec pompe solaire, aux projets éducatifs, aux activités agricoles, aux rapports financiers et aux soutiens mobilisés.",
-      },
-      {
-        title: "Utilité du document",
-        body: "Le rapport peut être consulté par les partenaires, donateurs, bailleurs et membres de la diaspora souhaitant comprendre les actions menées et les perspectives de développement local.",
-      },
-    ],
-  },
-
   partners: {
     eyebrow: "Écosystème institutionnel",
     title: "Partenaires stratégiques",
@@ -283,7 +239,6 @@ const pageContent = {
       { title: "Communautés locales", body: "Participation active des bénéficiaires, comités locaux et relais communautaires." },
     ],
   },
-
   "projects-impact": {
     eyebrow: "Résultats et portée",
     title: "Notre impact",
@@ -295,7 +250,6 @@ const pageContent = {
       { title: "Documentation", body: "Photos, rapports, budgets, schémas et éléments de suivi publiables." },
     ],
   },
-
   financing: {
     eyebrow: "Appui financier",
     title: "Appel à financement",
@@ -307,7 +261,6 @@ const pageContent = {
       { title: "Contact", body: `Pour toute discussion : ${SITE.email} • ${SITE.belgiumLocation}.` },
     ],
   },
-
   "contact-info": {
     eyebrow: "Contact",
     title: "Coordonnées",
@@ -319,7 +272,6 @@ const pageContent = {
       { title: "Téléphone", body: SITE.phone },
     ],
   },
-
   "action-sustainable": {
     eyebrow: "Programme",
     title: "Développement durable",
@@ -331,7 +283,6 @@ const pageContent = {
       { title: "Méthode", body: "Diagnostic, formation, accompagnement, suivi et capitalisation." },
     ],
   },
-
   "action-education": {
     eyebrow: "Programme",
     title: "Éducation citoyenne",
@@ -343,7 +294,6 @@ const pageContent = {
       { title: "Approche", body: "Ateliers, sensibilisation, échanges communautaires et documentation." },
     ],
   },
-
   "action-governance": {
     eyebrow: "Programme",
     title: "Gouvernance éthique",
@@ -355,7 +305,6 @@ const pageContent = {
       { title: "Outils", body: "Documentation, suivi, réunions, rapports et capitalisation." },
     ],
   },
-
   "action-solidarity": {
     eyebrow: "Programme",
     title: "Solidarité internationale",
@@ -418,15 +367,15 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
       </button>
 
       {isOpen && (
-        <div className="absolute left-1/2 top-full z-40 mt-3 w-[620px] -translate-x-1/2 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.16)]">
-          <div className="grid grid-cols-[1.1fr_0.9fr]">
+        <div className="absolute left-1/2 top-full z-40 mt-3 w-[680px] -translate-x-1/2 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.16)]">
+          <div className="grid grid-cols-[1.15fr_0.85fr]">
             <div className="p-6">
               <div className="mb-4 border-b border-slate-100 pb-4">
                 <div className="text-sm font-black uppercase tracking-[0.2em] text-orange-500">{group.label}</div>
                 <div className="mt-2 text-2xl font-black tracking-tight text-blue-950">Navigation stratégique</div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid max-h-[390px] grid-cols-2 gap-3 overflow-y-auto pr-1">
                 {group.items.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -557,7 +506,7 @@ function Header({ page, setPage, mobileOpen, setMobileOpen, activeMenu, setActiv
                   </button>
 
                   {isOpen && (
-                    <div className="mt-3 space-y-2">
+                    <div className="mt-3 max-h-[380px] space-y-2 overflow-y-auto pr-1">
                       {group.items.map((item) => {
                         const Icon = item.icon;
                         return (
@@ -788,15 +737,6 @@ function ActivityReportsPage() {
           </a>
         </div>
       </div>
-
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        {pageContent["activity-reports"].cards.map((card) => (
-          <div key={card.title} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-            <h3 className="text-xl font-black text-blue-950">{card.title}</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">{card.body}</p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
@@ -804,7 +744,6 @@ function ActivityReportsPage() {
 function KilengiProjectPage() {
   const [lightbox, setLightbox] = useState({ src: "", title: "" });
   const featuredImages = useMemo(() => KILENGI.during.slice(0, 6), []);
-
   const openLightbox = (src, title) => setLightbox({ src, title });
 
   return (
