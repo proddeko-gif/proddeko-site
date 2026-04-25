@@ -728,9 +728,9 @@ function Jpn95ProjectPage() {
               Une réponse naturelle à la crise des engrais chimiques
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-600">
-              Le pilote JPN95 propose d’évaluer, auprès de petits exploitants agricoles, une solution naturelle à base
-              d’eau de mer transformée, dans un contexte de hausse des prix des intrants importés, de fragilité alimentaire
-              et de besoin urgent de souveraineté agricole en RDC.
+              Le pilote JPN95 propose d’évaluer une solution naturelle à base d’eau de mer transformée,
+              dans un contexte de hausse des prix des intrants importés, de fragilité alimentaire et de besoin
+              urgent de souveraineté agricole en RDC.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {["Fertilisant naturel", "95 oligo-éléments", "Résilience paysanne", "Alternative aux intrants coûteux"].map((item) => (
@@ -747,8 +747,8 @@ function Jpn95ProjectPage() {
               Fertiliser autrement pour nourrir les sols, les familles et l’économie locale.
             </h3>
             <p className="mt-5 text-sm leading-7 text-slate-100">
-              Le projet vise à démontrer la valeur agronomique, économique et opérationnelle d’une solution plus accessible,
-              moins dangereuse à manipuler et adaptée aux contraintes des petits producteurs.
+              Un projet pilote pour démontrer une solution plus accessible, moins dangereuse à manipuler
+              et adaptée aux contraintes des petits producteurs.
             </p>
           </div>
         </div>
@@ -765,4 +765,5 @@ function Jpn95ProjectPage() {
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
         <div className="grid gap-6">
-          <InfoCar
+          <InfoCard icon={Sprout} title="Pourquoi ce projet maintenant ?">
+            Les producteurs congo
