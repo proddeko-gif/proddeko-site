@@ -717,22 +717,52 @@ function Jpn95ProjectPage() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
       <SectionTitle eyebrow="Projet en recherche de financement" title={JPN95.title} text={JPN95.subtitle} />
+
       <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-orange-50 p-6 shadow-sm lg:p-8">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Agriculture • Climat • Kongo Central</div>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">Une réponse naturelle à la crise des engrais chimiques</h2>
-            <p className="mt-5 text-base leading-8 text-slate-600">Le pilote JPN95 propose d’évaluer, auprès de petits exploitants agricoles, une solution naturelle à base d’eau de mer transformée, dans un contexte de hausse des prix des intrants importés, de fragilité alimentaire et de besoin urgent de souveraineté agricole en RDC.</p>
-            <div className="mt-6 flex flex-wrap gap-3">{["Fertilisant naturel", "95 oligo-éléments", "Résilience paysanne", "Alternative aux intrants coûteux"].map((item) => <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">{item}</span>)}</div>
+            <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">
+              Agriculture • Climat • Kongo Central
+            </div>
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">
+              Une réponse naturelle à la crise des engrais chimiques
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              Le pilote JPN95 propose d’évaluer, auprès de petits exploitants agricoles, une solution naturelle à base
+              d’eau de mer transformée, dans un contexte de hausse des prix des intrants importés, de fragilité alimentaire
+              et de besoin urgent de souveraineté agricole en RDC.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {["Fertilisant naturel", "95 oligo-éléments", "Résilience paysanne", "Alternative aux intrants coûteux"].map((item) => (
+                <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
+
           <div className="rounded-[2rem] bg-gradient-to-br from-emerald-800 via-slate-950 to-blue-950 p-8 text-white shadow-xl">
             <div className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">FERTILOMER JPN95</div>
-            <h3 className="mt-4 text-3xl font-black leading-tight">Fertiliser autrement pour nourrir les sols, les familles et l’économie locale.</h3>
-            <p className="mt-5 text-sm leading-7 text-slate-100">Le projet vise à démontrer la valeur agronomique, économique et opérationnelle d’une solution plus accessible, moins dangereuse à manipuler et adaptée aux contraintes des petits producteurs.</p>
+            <h3 className="mt-4 text-3xl font-black leading-tight">
+              Fertiliser autrement pour nourrir les sols, les familles et l’économie locale.
+            </h3>
+            <p className="mt-5 text-sm leading-7 text-slate-100">
+              Le projet vise à démontrer la valeur agronomique, économique et opérationnelle d’une solution plus accessible,
+              moins dangereuse à manipuler et adaptée aux contraintes des petits producteurs.
+            </p>
           </div>
         </div>
       </div>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{JPN95.metrics.map((item) => <div key={item.label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div className="text-3xl font-black text-orange-500">{item.value}</div><div className="mt-2 text-sm text-slate-600">{item.label}</div></div>)}</div>
+
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {JPN95.metrics.map((item) => (
+          <div key={item.label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="text-3xl font-black text-orange-500">{item.value}</div>
+            <div className="mt-2 text-sm text-slate-600">{item.label}</div>
+          </div>
+        ))}
+      </div>
+
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
         <div className="grid gap-6">
-          <InfoCard icon={Sprout} title="Pourquoi ce projet maintenant ?">Les producteurs congolais sont exposés à la volatilité des prix des engrais chimiques, à la dépendance aux importations et aux tensions internationales qui perturbent les chaînes d’approvisionnement. Dans l’Est de la RDC, les conflits aggravent la pression sur la sécurité alimentaire et renforcent l’ur
+          <InfoCar
