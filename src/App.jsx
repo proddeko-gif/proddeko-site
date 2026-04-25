@@ -126,6 +126,38 @@ const JPN95 = {
   ],
 };
 
+// Images attendues dans : public/images/projects/rebond-foot/
+// Chemins publics utilisés par React : /images/projects/rebond-foot/rebond-foot-01.jpg ... rebond-foot-15.jpg
+const REBOND_FOOT = {
+  title: "Projet « Rebondir par le Foot » — Kinshasa, OC Somwe-Yongo",
+  subtitle:
+    "Demande d’aide d’urgence pour la réinsertion sociale de 35 jeunes anciens délinquants de rue par le football, l’éducation et le suivi psycho-social.",
+  hero: "/images/projects/rebond-foot/rebond-foot-01.jpg",
+  gallery: [
+    "/images/projects/rebond-foot/rebond-foot-01.jpg",
+    "/images/projects/rebond-foot/rebond-foot-02.jpg",
+    "/images/projects/rebond-foot/rebond-foot-03.jpg",
+    "/images/projects/rebond-foot/rebond-foot-04.jpg",
+    "/images/projects/rebond-foot/rebond-foot-05.jpg",
+    "/images/projects/rebond-foot/rebond-foot-06.jpg",
+    "/images/projects/rebond-foot/rebond-foot-07.jpg",
+    "/images/projects/rebond-foot/rebond-foot-08.jpg",
+    "/images/projects/rebond-foot/rebond-foot-09.jpg",
+    "/images/projects/rebond-foot/rebond-foot-10.jpg",
+    "/images/projects/rebond-foot/rebond-foot-11.jpg",
+    "/images/projects/rebond-foot/rebond-foot-12.jpg",
+    "/images/projects/rebond-foot/rebond-foot-13.jpg",
+    "/images/projects/rebond-foot/rebond-foot-14.jpg",
+    "/images/projects/rebond-foot/rebond-foot-15.jpg",
+  ],
+  metrics: [
+    { value: "35", label: "jeunes accompagnés" },
+    { value: "3 500 €", label: "aide d’urgence demandée" },
+    { value: "Lukunga", label: "championnat urbain" },
+    { value: "Kinshasa", label: "zone d’intervention" },
+  ],
+};
+
 const stats = [
   { value: "200 000+", label: "bénéficiaires accompagnés" },
   { value: "10+", label: "zones et pays d’action" },
@@ -193,6 +225,7 @@ const navItems = [
       { label: "Projet Kilengi", page: "project-kilengi", icon: Zap },
       { label: "Projet Boma", page: "project-boma", icon: Leaf },
       { label: JPN95.menuLabel, page: "project-jpn95", icon: Sprout },
+      { label: "Rebondir par le Foot", page: "project-rebond-foot", icon: Users },
       { label: "Impact", page: "projects-impact", icon: Users },
       { label: "Partenaires", page: "partners", icon: Handshake },
       { label: "Appel à financement", page: "financing", icon: Sparkles },
@@ -684,6 +717,117 @@ function Jpn95ProjectPage() {
   );
 }
 
+function RebondFootProjectPage() {
+  const [lightbox, setLightbox] = useState({ src: "", title: "" });
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const openLightbox = (src, title) => setLightbox({ src, title });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % REBOND_FOOT.gallery.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <SectionTitle eyebrow="Projet social d’urgence" title={REBOND_FOOT.title} text={REBOND_FOOT.subtitle} />
+
+        <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-orange-50 p-6 shadow-sm lg:p-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div>
+              <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">
+                Kinshasa • Malueka • Lukunga • OC Somwe-Yongo
+              </div>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">
+                Transformer des trajectoires de rue en parcours de réinsertion
+              </h2>
+              <p className="mt-5 text-base leading-8 text-slate-600">
+                PRODDEKO-Belgique sollicite une aide d’urgence pour maintenir l’inscription, l’équipement,
+                les déplacements, les collations de match et l’accompagnement éducatif et psycho-social de jeunes en rupture.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {[
+                  "Réinsertion sociale",
+                  "Sport éducatif",
+                  "Suivi psycho-social",
+                  "Prévention de la récidive",
+                ].map((item) => (
+                  <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl" data-protected-image>
+              {REBOND_FOOT.gallery.map((src, index) => (
+                <ProtectedImage
+                  key={src}
+                  src={src}
+                  alt={`Projet Rebondir par le Foot ${index + 1}`}
+                  className={`h-[420px] w-full object-cover transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "absolute inset-0 opacity-0"}`}
+                />
+              ))}
+              <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-blue-950 shadow">
+                Diaporama terrain
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {REBOND_FOOT.metrics.map((item) => (
+            <div key={item.label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="text-3xl font-black text-orange-500">{item.value}</div>
+              <div className="mt-2 text-sm text-slate-600">{item.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
+          <div className="grid gap-6">
+            <InfoCard icon={Users} title="Public accompagné">
+              35 jeunes anciens délinquants de rue, appelés localement « kununa », engagés dans un processus de réinsertion
+              sociale par l’entraînement régulier, l’encadrement éducatif, le suivi psycho-social et la participation au championnat urbain.
+            </InfoCard>
+
+            <InfoCard icon={ShieldCheck} title="Urgence à financer">
+              Le club risque l’exclusion de la compétition faute de ressources. L’aide demandée de 3 500 € permettra de couvrir
+              les licences, les frais d’inscription FECOFA / LIFKIN / Entente de Lukunga, les équipements, le transport,
+              les collations et le soutien nutritionnel.
+            </InfoCard>
+
+            <GallerySection eyebrow="Diaporama & terrain" title="Photos du projet Rebondir par le Foot" images={REBOND_FOOT.gallery} onOpen={openLightbox} />
+          </div>
+
+          <aside className="grid gap-6">
+            <InfoCard icon={Handshake} title="Partenaires de mise en œuvre">
+              <ul className="list-disc space-y-2 pl-5">
+                <li>PRODDEKO-Belgique : mobilisation, suivi et traçabilité.</li>
+                <li>OC Somwe-Yongo : encadrement sportif et communautaire.</li>
+                <li>FSDI-RDC : relais local, gestion et reporting terrain.</li>
+                <li>Fondation sollicitée : soutien d’urgence à la saison sportive.</li>
+              </ul>
+            </InfoCard>
+
+            <div className="rounded-[2rem] bg-gradient-to-br from-blue-950 via-slate-950 to-orange-900 p-7 text-white shadow-sm">
+              <h3 className="text-lg font-black">Message bailleur</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-100">
+                Soutenir « Rebondir par le Foot », c’est préserver un cadre structurant qui transforme la rue,
+                la violence et l’exclusion en discipline, appartenance, confiance et projet de vie.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <ImageLightbox src={lightbox.src} title={lightbox.title} onClose={() => setLightbox({ src: "", title: "" })} />
+    </>
+  );
+}
+
 function KilengiProjectPage() {
   const [lightbox, setLightbox] = useState({ src: "", title: "" });
   const featuredImages = useMemo(() => KILENGI.during.slice(0, 6), []);
@@ -753,7 +897,7 @@ function ContactForm({ formData, status, handleChange, handleSubmit }) {
 }
 
 function HomeProjects({ setPage }) {
-  return <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8"><SectionTitle eyebrow="Projets en cours" title="Trois projets phares à fort impact territorial" text="Découvrez nos projets actuellement valorisés sur le site." /><div className="mt-12 grid gap-6 lg:grid-cols-3">{[{ title: KILENGI.title, img: KILENGI.hero, tag: "Santé • Énergie", page: "project-kilengi" }, { title: BOMA.title, img: BOMA.hero, tag: "Agriculture • Eau", page: "project-boma" }].map((project) => <button key={project.page} type="button" onClick={() => setPage(project.page)} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><div data-protected-image><ProtectedImage src={project.img} alt={project.title} className="h-72 w-full object-cover" /></div><div className="p-8"><div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">{project.tag}</div><h3 className="mt-3 text-2xl font-black text-blue-950">{project.title}</h3><p className="mt-4 text-sm leading-7 text-slate-600">Projet documenté, valorisable auprès des partenaires et ouvert à la mobilisation de soutiens.</p></div></button>)}<button type="button" onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><div className="flex h-72 items-center justify-center bg-gradient-to-br from-emerald-800 via-slate-950 to-orange-800 p-8 text-white"><div><div className="text-xs font-black uppercase tracking-[0.2em] text-orange-200">Agriculture • Climat</div><div className="mt-4 text-4xl font-black leading-tight">JPN95</div><div className="mt-3 text-sm leading-7 text-slate-100">Fertiliser autrement pour la souveraineté agricole.</div></div></div><div className="p-8"><div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">Fertilisant naturel</div><h3 className="mt-3 text-2xl font-black text-blue-950">{JPN95.title}</h3><p className="mt-4 text-sm leading-7 text-slate-600">Projet pilote en recherche de financement pour 500 petits exploitants agricoles du Kongo Central.</p></div></button></div></section>;
+  return <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8"><SectionTitle eyebrow="Projets en cours" title="Trois projets phares à fort impact territorial" text="Découvrez nos projets actuellement valorisés sur le site." /><div className="mt-12 grid gap-6 lg:grid-cols-3">{[{ title: KILENGI.title, img: KILENGI.hero, tag: "Santé • Énergie", page: "project-kilengi" }, { title: BOMA.title, img: BOMA.hero, tag: "Agriculture • Eau", page: "project-boma" }, { title: REBOND_FOOT.title, img: REBOND_FOOT.hero, tag: "Jeunesse • Sport", page: "project-rebond-foot" }].map((project) => <button key={project.page} type="button" onClick={() => setPage(project.page)} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><div data-protected-image><ProtectedImage src={project.img} alt={project.title} className="h-72 w-full object-cover" /></div><div className="p-8"><div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">{project.tag}</div><h3 className="mt-3 text-2xl font-black text-blue-950">{project.title}</h3><p className="mt-4 text-sm leading-7 text-slate-600">Projet documenté, valorisable auprès des partenaires et ouvert à la mobilisation de soutiens.</p></div></button>)}<button type="button" onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><div className="flex h-72 items-center justify-center bg-gradient-to-br from-emerald-800 via-slate-950 to-orange-800 p-8 text-white"><div><div className="text-xs font-black uppercase tracking-[0.2em] text-orange-200">Agriculture • Climat</div><div className="mt-4 text-4xl font-black leading-tight">JPN95</div><div className="mt-3 text-sm leading-7 text-slate-100">Fertiliser autrement pour la souveraineté agricole.</div></div></div><div className="p-8"><div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">Fertilisant naturel</div><h3 className="mt-3 text-2xl font-black text-blue-950">{JPN95.title}</h3><p className="mt-4 text-sm leading-7 text-slate-600">Projet pilote en recherche de financement pour 500 petits exploitants agricoles du Kongo Central.</p></div></button></div></section>;
 }
 
 function Home({ setPage }) {
@@ -761,7 +905,7 @@ function Home({ setPage }) {
 }
 
 function Footer({ setPage }) {
-  return <footer className="border-t border-slate-200 bg-slate-50"><div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8"><div><div className="flex items-center gap-3"><div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm" data-protected-image><ProtectedImage src={SITE.logo} alt="Logo PRODDEKO-Belgique" className="h-full w-full object-contain" /></div><div><div className="text-lg font-black text-blue-950">{SITE.name}</div><div className="text-sm text-slate-500">{SITE.tagline}</div></div></div><p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC et d’autres territoires partenaires.</p></div><div><div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Coordonnées</div><ul className="mt-5 space-y-3 text-sm text-slate-600"><li>{SITE.belgiumLocation}</li><li>{SITE.drcLocation}</li><li>{SITE.email}</li><li>{SITE.phone}</li></ul></div><div><div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Navigation rapide</div><div className="mt-5 space-y-3 text-sm text-slate-600">{[["À propos", "about"], ["Rapports d’activités", "activity-reports"], ["Projet Kilengi", "project-kilengi"], ["Projet Boma", "project-boma"], ["JPN95", "project-jpn95"], ["Faire un don", "don"]].map(([label, page]) => <button key={page} type="button" onClick={() => setPage(page)} className="block transition hover:text-orange-500">{label}</button>)}</div></div></div></footer>;
+  return <footer className="border-t border-slate-200 bg-slate-50"><div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8"><div><div className="flex items-center gap-3"><div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm" data-protected-image><ProtectedImage src={SITE.logo} alt="Logo PRODDEKO-Belgique" className="h-full w-full object-contain" /></div><div><div className="text-lg font-black text-blue-950">{SITE.name}</div><div className="text-sm text-slate-500">{SITE.tagline}</div></div></div><p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC et d’autres territoires partenaires.</p></div><div><div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Coordonnées</div><ul className="mt-5 space-y-3 text-sm text-slate-600"><li>{SITE.belgiumLocation}</li><li>{SITE.drcLocation}</li><li>{SITE.email}</li><li>{SITE.phone}</li></ul></div><div><div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Navigation rapide</div><div className="mt-5 space-y-3 text-sm text-slate-600">{[["À propos", "about"], ["Rapports d’activités", "activity-reports"], ["Projet Kilengi", "project-kilengi"], ["Projet Boma", "project-boma"], ["JPN95", "project-jpn95"], ["Rebondir par le Foot", "project-rebond-foot"], ["Faire un don", "don"]].map(([label, page]) => <button key={page} type="button" onClick={() => setPage(page)} className="block transition hover:text-orange-500">{label}</button>)}</div></div></div></footer>;
 }
 
 export default function App() {
@@ -796,6 +940,7 @@ export default function App() {
     if (page === "project-kilengi") return <KilengiProjectPage />;
     if (page === "project-boma") return <BomaProjectPage />;
     if (page === "project-jpn95") return <Jpn95ProjectPage />;
+    if (page === "project-rebond-foot") return <RebondFootProjectPage />;
     if (page === "activity-reports") return <ActivityReportsPage />;
     if (page === "don") return <DonationPage />;
     if (page === "contact-form") return <ContactForm formData={formData} status={status} handleChange={handleChange} handleSubmit={handleSubmit} />;
