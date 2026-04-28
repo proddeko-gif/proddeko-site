@@ -43,6 +43,135 @@ const SITE = {
   logo: "/images/proddeko-logo.png",
 };
 
+// 📧 MESSAGE EMAIL OFFICIEL (texte simple prêt à envoyer)
+export const EMAIL_TEMPLATE = `
+Objet : Et si nous collaborions ? 🌍 PRODDEKO-Belgique
+
+Bonjour,
+
+PRODDEKO-Belgique agit entre la Belgique et la République Démocratique du Congo pour développer des projets concrets à fort impact social.
+
+Nos actions portent notamment sur :
+- la santé communautaire
+- l’agriculture durable
+- la réinsertion des jeunes par le sport
+- l’éducation à la citoyenneté mondiale en Belgique
+
+👉 Nous recherchons aujourd’hui des partenaires engagés :
+- écoles et universités
+- associations
+- institutions
+- acteurs éducatifs et citoyens
+
+💬 Seriez-vous disponible pour un échange ou une collaboration ?
+
+Un simple échange peut déjà ouvrir une belle opportunité de partenariat.
+
+👉 Découvrir le projet : https://proddeko.online
+
+Au plaisir d’échanger avec vous,
+
+Urbain Matimpi Yongo
+Président — PRODDEKO-Belgique
+Email : admin@proddeko.online
+`;
+
+// 🎨 VERSION HTML POUR BREVO / MAILCHIMP / OUTIL D’EMAILING
+export const EMAIL_HTML_TEMPLATE = `
+<div style="font-family:Arial,sans-serif;background:#f4f6f9;padding:30px 0;">
+  <table align="center" width="680" style="background:white;border-radius:18px;overflow:hidden;border:1px solid #e5e7eb">
+    
+    <!-- HEADER -->
+    <tr>
+      <td style="background:#0f172a;color:white;padding:30px;text-align:center">
+        <h1 style="margin:0;font-size:28px">PRODDEKO-Belgique 🌍</h1>
+        <p style="margin:10px 0 0;color:#fbbf24;font-size:14px">Partenaire de développement durable entre l’Europe et la RDC</p>
+      </td>
+    </tr>
+
+    <!-- CONTEXT UE -->
+    <tr>
+      <td style="padding:30px">
+        <h2 style="color:#1e293b;margin-top:0">Proposition de collaboration stratégique</h2>
+
+        <p style="font-size:16px;color:#374151">
+          En République Démocratique du Congo, des millions de personnes restent confrontées à des défis structurels majeurs : accès limité à l’eau potable, vulnérabilité des systèmes locaux et inégalités d’accès à la santé et à l’éducation.
+        </p>
+
+        <p style="font-size:16px;color:#374151">
+          Dans ce contexte, <strong>PRODDEKO-Belgique développe des interventions territoriales alignées avec les Objectifs de Développement Durable (ODD)</strong>, en lien avec les priorités des partenaires européens et internationaux.
+        </p>
+      </td>
+    </tr>
+
+    <!-- AXES STRATEGIQUES -->
+    <tr>
+      <td style="padding:0 30px 20px">
+        <table width="100%" style="background:#f9fafb;border-radius:12px;padding:20px">
+          <tr>
+            <td style="font-size:14px;color:#111827">
+              ✔ Accès à l’eau potable et infrastructures communautaires durables<br>
+              ✔ Développement durable et résilience économique locale<br>
+              ✔ Accès universel à la santé et à l’éducation<br>
+              ✔ Gouvernance locale, participation citoyenne et cohésion sociale
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- APPROCHE -->
+    <tr>
+      <td style="padding:20px 30px">
+        <p style="font-size:16px;color:#374151">
+          Notre approche repose sur la co-construction avec les communautés locales, la transparence financière et la production d’indicateurs mesurables, dans une logique de durabilité et d’appropriation locale.
+        </p>
+      </td>
+    </tr>
+
+    <!-- PARTENAIRES -->
+    <tr>
+      <td style="padding:20px 30px">
+        <p style="font-size:16px;color:#374151">
+          Nous recherchons des partenaires techniques et financiers :
+        </p>
+        <ul style="color:#374151;font-size:15px">
+          <li>Institutions européennes et programmes de financement</li>
+          <li>ONG internationales et fondations</li>
+          <li>Universités et centres de recherche</li>
+          <li>Acteurs du développement et de l’innovation sociale</li>
+        </ul>
+      </td>
+    </tr>
+
+    <!-- CTA -->
+    <tr>
+      <td style="text-align:center;padding:20px">
+        <a href="https://proddeko.online" style="background:#2563eb;color:white;padding:16px 28px;border-radius:999px;text-decoration:none;font-weight:bold;display:inline-block">
+          📊 Consulter nos projets et opportunités
+        </a>
+      </td>
+    </tr>
+
+    <!-- CONCLUSION -->
+    <tr>
+      <td style="padding:20px 30px">
+        <p style="font-size:16px;color:#111827">
+          <strong>Nous serions ravis d’explorer une collaboration stratégique ou un partenariat de financement avec votre organisation.</strong>
+        </p>
+
+        <p style="margin-top:20px;font-size:14px;color:#6b7280">
+          Urbain Matimpi Yongo<br>
+          Président — PRODDEKO-Belgique<br>
+          <a href="mailto:admin@proddeko.online">admin@proddeko.online</a>
+        </p>
+      </td>
+    </tr>
+
+  </table>
+</div>
+`;
+
 const DOCS = {
   activityReport2022: "/docs/rapport-activites-2022-fsdi-clodik.pdf",
 };
@@ -115,12 +244,29 @@ const JPN95 = {
   title: "JPN95 Kongo Central — Fertiliser autrement pour la souveraineté agricole",
   subtitle:
     "Face à la hausse du prix des engrais chimiques, aux tensions internationales et aux fragilités agricoles en RDC, PRODDEKO-Belgique porte un pilote de fertilisant naturel à base d’eau de mer pour renforcer les rendements, les revenus ruraux et la résilience des petits exploitants.",
+
+  // 📸 NOUVELLES IMAGES PRODUIT / USAGES AGRICOLES
+  gallery: [
+    "/images/projects/jpn95/Fertilomer-JPN95-01.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-02.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-03.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-04.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-05.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-06.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-07.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-08.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-09.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-10.png",
+    "/images/projects/jpn95/Fertilomer-JPN95-11.png"
+  ],
+
   docs: [
     { title: "Dossier de candidature FID", href: "/docs/jpn95-dossier-candidature-fid.pdf", icon: FileText },
     { title: "Éligibilité FID", href: "/docs/jpn95-eligibilite-fid.pdf", icon: FileText },
     { title: "Organisation candidate", href: "/docs/jpn95-organisation-candidate.pdf", icon: FileText },
     { title: "Budget prévisionnel", href: "/docs/jpn95-budget.xlsx", icon: FileSpreadsheet },
   ],
+
   metrics: [
     { value: "500", label: "petits exploitants ciblés" },
     { value: "24 mois", label: "durée pilote" },
@@ -346,12 +492,13 @@ const pageContent = {
   "action-education": {
     eyebrow: "Programme",
     title: "Éducation citoyenne",
-    text: "Formation, sensibilisation, leadership local et participation démocratique des jeunes, des femmes et des relais communautaires.",
+    text: "Formation, sensibilisation, leadership local et participation démocratique des jeunes, des femmes et des relais communautaires, ainsi que l’éducation à la citoyenneté mondiale en Belgique.",
     cards: [
-      { title: "Objectifs", body: "Renforcer les capacités citoyennes et le leadership local." },
-      { title: "Public cible", body: "Jeunes, femmes, leaders communautaires, écoles et relais locaux." },
+      { title: "Objectifs", body: "Renforcer les capacités citoyennes, le leadership local et l’engagement solidaire." },
+      { title: "Public cible", body: "Jeunes, femmes, leaders communautaires, écoles, relais locaux, associations et acteurs éducatifs." },
       { title: "Résultats", body: "Participation accrue, initiatives citoyennes et meilleure appropriation des projets." },
-      { title: "Approche", body: "Ateliers, sensibilisation, échanges communautaires et documentation." },
+      { title: "Approche", body: "Ateliers, sensibilisation, échanges communautaires, conférences, documentation et capitalisation." },
+      { title: "Citoyenneté mondiale (Belgique)", body: "Sensibilisation des jeunes en Belgique aux enjeux globaux : climat, inégalités, solidarité internationale, migrations, paix, citoyenneté active et liens Belgique–RDC." },
     ],
   },
   "action-governance": {
@@ -661,297 +808,14 @@ function InfoCard({ icon: Icon, title, children }) {
   );
 }
 
-// ⚠️ NOTE TECHNIQUE (IMAGES LOCALES)
-// Si les images ne s'affichent pas en local :
-// 1. Lancer le serveur : npm run dev
-// 2. Vérifier que les images sont bien dans /public/images/...
-// 3. Accéder via : http://localhost:5173/images/...
-// 4. Ne jamais utiliser "src/assets" pour ces images (utiliser public/)
+// ==============================
+// 📸 SECTION GALERIE JPN95
+// ==============================
 
-// ⚠️ NOTE TECHNIQUE (IMAGES LOCALES)
-// Si les images ne s'affichent pas en local :
-// 1. Lancer le serveur : npm run dev
-// 2. Vérifier que les images sont bien dans /public/images/...
-// 3. Accéder via : http://localhost:5173/images/...
-// 4. Ne jamais utiliser "src/assets" pour ces images (utiliser public/)
-
-// ⚠️ NOTE TECHNIQUE (IMAGES LOCALES)
-// Si les images ne s'affichent pas en local :
-// 1. Lancer le serveur : npm run dev
-// 2. Vérifier que les images sont bien dans /public/images/...
-// 3. Accéder via : http://localhost:5173/images/...
-// 4. Ne jamais utiliser "src/assets" pour ces images (utiliser public/)
-
-// ⚠️ NOTE TECHNIQUE (IMAGES LOCALES)
-// Si les images ne s'affichent pas en local :
-// 1. Lancer le serveur : npm run dev
-// 2. Vérifier que les images sont bien dans /public/images/...
-// 3. Accéder via : http://localhost:5173/images/...
-// 4. Ne jamais utiliser "src/assets" pour ces images (utiliser public/)
-
-// ⚠️ NOTE TECHNIQUE (IMAGES LOCALES)
-// Si les images ne s'affichent pas en local :
-// 1. Lancer le serveur : npm run dev
-// 2. Vérifier que les images sont bien dans /public/images/...
-// 3. Accéder via : http://localhost:5173/images/...
-// 4. Ne jamais utiliser "src/assets" pour ces images (utiliser public/)
-
-function ActivityReportsPage() {
-  return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
-      <SectionTitle eyebrow="Transparence documentaire" title="Rapports d’activités" text="Cette rubrique rassemble les rapports d’activités disponibles afin de renforcer la transparence, la mémoire institutionnelle et la redevabilité envers les partenaires." />
-      <div className="mt-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-        <div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">Rapport disponible</div>
-        <h3 className="mt-3 text-2xl font-black text-blue-950">Rapport d’activités 2022 — FSDI-CLODIK</h3>
-        <p className="mt-4 text-slate-600 leading-7">Ce rapport documente les activités réalisées en 2022 : travaux d’électrification et d’adduction d’eau potable avec pompe solaire à Kilengi, projets éducatifs, activités agricoles, rapports financiers, soutiens mobilisés, équipe et volontaires.</p>
-        <div className="mt-7 flex flex-wrap gap-4">
-          <a href={DOCS.activityReport2022} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"><FileText className="h-4 w-4" />Consulter le rapport PDF</a>
-          <a href={DOCS.activityReport2022} download className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50"><Download className="h-4 w-4" />Télécharger le rapport</a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Jpn95ProjectPage() {
+function JPN95Gallery({ onOpen }) {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-      <SectionTitle eyebrow="Projet en recherche de financement" title={JPN95.title} text={JPN95.subtitle} />
-
-      <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-orange-50 p-6 shadow-sm lg:p-8">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Agriculture • Climat • Kongo Central</div>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">Une réponse naturelle à la crise des engrais chimiques</h2>
-            <p className="mt-5 text-base leading-8 text-slate-600">Le pilote JPN95 propose d’évaluer une solution naturelle à base d’eau de mer transformée, dans un contexte de hausse des prix des intrants importés, de fragilité alimentaire et de besoin urgent de souveraineté agricole en RDC.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {["Fertilisant naturel", "95 oligo-éléments", "Résilience paysanne", "Alternative aux intrants coûteux"].map((item) => (
-                <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">{item}</span>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-[2rem] bg-gradient-to-br from-emerald-800 via-slate-950 to-blue-950 p-8 text-white shadow-xl">
-            <div className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">FERTILOMER JPN95</div>
-            <h3 className="mt-4 text-3xl font-black leading-tight">Fertiliser autrement pour nourrir les sols, les familles et l’économie locale.</h3>
-            <p className="mt-5 text-sm leading-7 text-slate-100">Un projet pilote pour démontrer une solution plus accessible, moins dangereuse à manipuler et adaptée aux contraintes des petits producteurs.</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {JPN95.metrics.map((item) => (
-          <div key={item.label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="text-3xl font-black text-orange-500">{item.value}</div>
-            <div className="mt-2 text-sm text-slate-600">{item.label}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-10 grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
-        <div className="grid gap-6">
-          <InfoCard icon={Sprout} title="Pourquoi ce projet maintenant ?">Les producteurs congolais sont exposés à la volatilité des prix des engrais chimiques, à la dépendance aux importations et aux tensions internationales qui perturbent les chaînes d’approvisionnement.</InfoCard>
-          <InfoCard icon={Leaf} title="Solution proposée">Fertilomer JPN95 est présenté comme un fertilisant naturel à base d’eau de mer transformée, intégrant 95 oligo-éléments. Le projet vise à tester son efficacité agronomique, sa facilité d’utilisation et son potentiel d’adoption.</InfoCard>
-          <InfoCard icon={ShieldCheck} title="Bénéfices attendus"><ul className="list-disc space-y-2 pl-5"><li>Réduction de la dépendance aux engrais chimiques importés.</li><li>Amélioration potentielle des rendements et de la qualité des cultures.</li><li>Renforcement des revenus ruraux et de la sécurité alimentaire locale.</li><li>Contribution à une agriculture plus sobre, plus saine et plus résiliente.</li></ul></InfoCard>
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-            <div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">Documents du projet</div>
-            <h3 className="mt-3 text-xl font-black text-blue-950">Dossier JPN95 à consulter</h3>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {JPN95.docs.map((doc) => {
-                const Icon = doc.icon;
-                return (
-                  <a key={doc.href} href={doc.href} target="_blank" rel="noreferrer" className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:bg-white hover:shadow-md">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-500"><Icon className="h-5 w-5" /></div>
-                    <div><div className="text-sm font-black text-blue-950">{doc.title}</div><div className="mt-1 text-xs text-slate-500">{doc.href.replace("/docs/", "")}</div></div>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-        <aside className="grid gap-6">
-          <InfoCard icon={Globe} title="Positionnement stratégique">Ce projet s’inscrit dans une logique de souveraineté agricole : produire davantage, dépendre moins des intrants importés et construire une réponse locale aux crises alimentaires et climatiques.</InfoCard>
-          <InfoCard icon={Handshake} title="Partenariat"><ul className="list-disc space-y-2 pl-5"><li>PRODDEKO-Belgique : portage et mobilisation partenariale.</li><li>Laguzze / Fertilomer : expertise produit JPN95.</li><li>Producteurs locaux : expérimentation terrain.</li><li>Partenaires techniques et financiers : co-financement du pilote.</li></ul></InfoCard>
-          <div className="rounded-[2rem] bg-gradient-to-br from-blue-950 via-slate-950 to-emerald-800 p-7 text-white shadow-sm">
-            <h3 className="text-lg font-black">Message bailleur</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-100">Soutenir JPN95, c’est investir dans une alternative agricole naturelle, testable et mesurable.</p>
-            <a href="https://www.fertilomer.org/" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-blue-950">Découvrir Fertilomer <ExternalLink className="h-4 w-4" /></a>
-          </div>
-        </aside>
-      </div>
-    </section>
-  );
-}
-
-function RebondFootProjectPage() {
-  const [lightbox, setLightbox] = useState({ src: "", title: "" });
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const openLightbox = (src, title) => setLightbox({ src, title });
-
-  useEffect(() => {
-    const interval = setInterval(() => setCurrentSlide((prev) => (prev + 1) % REBOND_FOOT.gallery.length), 3500);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <>
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <SectionTitle eyebrow="Projet social d’urgence" title={REBOND_FOOT.title} text={REBOND_FOOT.subtitle} />
-        <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-orange-50 p-6 shadow-sm lg:p-8">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div>
-              <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Kinshasa • Malueka • Lukunga • OC Somwe-Yongo</div>
-              <h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">Transformer des trajectoires de rue en parcours de réinsertion</h2>
-              <p className="mt-5 text-base leading-8 text-slate-600">PRODDEKO-Belgique sollicite une aide d’urgence pour maintenir l’inscription, l’équipement, les déplacements, les collations de match et l’accompagnement éducatif et psycho-social.</p>
-              <div className="mt-8 flex flex-wrap gap-3">{["Réinsertion sociale", "Sport éducatif", "Suivi psycho-social", "Prévention de la récidive"].map((item) => <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">{item}</span>)}</div>
-            </div>
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl" data-protected-image>
-              {REBOND_FOOT.gallery.map((src, index) => <ProtectedImage key={src} src={src} alt={`Projet Rebondir par le Foot ${index + 1}`} className={`h-[420px] w-full object-cover transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "absolute inset-0 opacity-0"}`} />)}
-              <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-blue-950 shadow">Diaporama terrain</div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{REBOND_FOOT.metrics.map((item) => <div key={item.label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div className="text-3xl font-black text-orange-500">{item.value}</div><div className="mt-2 text-sm text-slate-600">{item.label}</div></div>)}</div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
-          <div className="grid gap-6">
-            <InfoCard icon={Users} title="Public accompagné">35 jeunes anciens délinquants de rue, appelés localement « kununa », engagés dans un processus de réinsertion sociale par le football.</InfoCard>
-            <InfoCard icon={ShieldCheck} title="Urgence à financer">L’aide demandée de 3 500 € permettra de couvrir les licences, inscriptions, équipements, transports, collations et soutien nutritionnel.</InfoCard>
-            <GallerySection eyebrow="Diaporama & terrain" title="Photos du projet Rebondir par le Foot" images={REBOND_FOOT.gallery} onOpen={openLightbox} />
-          </div>
-          <aside className="grid gap-6">
-            <InfoCard icon={Handshake} title="Partenaires de mise en œuvre"><ul className="list-disc space-y-2 pl-5"><li>PRODDEKO-Belgique : mobilisation, suivi et traçabilité.</li><li>OC Somwe-Yongo : encadrement sportif et communautaire.</li><li>FSDI-RDC : relais local, gestion et reporting terrain.</li></ul></InfoCard>
-            <div className="rounded-[2rem] bg-gradient-to-br from-blue-950 via-slate-950 to-orange-900 p-7 text-white shadow-sm"><h3 className="text-lg font-black">Message bailleur</h3><p className="mt-4 text-sm leading-7 text-slate-100">Soutenir « Rebondir par le Foot », c’est préserver un cadre structurant qui transforme la rue, la violence et l’exclusion en discipline, appartenance, confiance et projet de vie.</p></div>
-          </aside>
-        </div>
-      </section>
-      <ImageLightbox src={lightbox.src} title={lightbox.title} onClose={() => setLightbox({ src: "", title: "" })} />
-    </>
-  );
-}
-
-function KilengiProjectPage() {
-  const [lightbox, setLightbox] = useState({ src: "", title: "" });
-  const featuredImages = useMemo(() => KILENGI.during.slice(0, 6), []);
-  const openLightbox = (src, title) => setLightbox({ src, title });
-  return (
-    <>
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <SectionTitle eyebrow="Projet en cours" title={KILENGI.title} text={KILENGI.subtitle} />
-        <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm lg:p-8">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div><div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Kilengi • RDC • Recherche de co-financement</div><h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">Réhabilitation énergétique et documentation complète du chantier</h2><p className="mt-5 text-base leading-8 text-slate-600">Le projet vise à renforcer l’accès à une alimentation électrique fiable pour un centre de santé de référence.</p><div className="mt-8 flex flex-wrap gap-4"><a href={KILENGI.reportPdf} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"><Download className="h-4 w-4" />Télécharger le rapport photo</a><a href={KILENGI.budgetDocument} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50"><FileText className="h-4 w-4" />Voir le document budgétaire</a></div></div>
-            <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl" data-protected-image><ProtectedImage src={KILENGI.hero} alt={KILENGI.title} className="h-full min-h-[360px] w-full object-cover" /></div>
-          </div>
-        </div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.8fr_0.9fr]">
-          <div className="grid gap-6">
-            <InfoCard icon={Zap} title="Contexte du projet">Le système solaire assurait l’alimentation des services essentiels du centre de santé. Après plusieurs années, les batteries sont devenues hors d’usage.</InfoCard>
-            <InfoCard icon={Wrench} title="Objectif principal">Remettre en service une solution énergétique durable, sécurisée et adaptée aux besoins prioritaires.</InfoCard>
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-7"><div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">Schéma technique</div><h3 className="mt-2 text-xl font-black text-blue-950">Schéma électrique du système</h3><button type="button" onClick={() => openLightbox(KILENGI.schema, "Schéma électrique du système")} className="mt-6 block w-full overflow-hidden rounded-[1.5rem] border border-slate-200" data-protected-image><ProtectedImage src={KILENGI.schema} alt="Schéma électrique du système" className="w-full bg-white object-contain" /></button></div>
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-7"><div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">Pièce documentaire</div><h3 className="mt-2 text-xl font-black text-blue-950">Coût total des activités</h3><button type="button" onClick={() => openLightbox(KILENGI.budgetDocument, "Coût total des activités")} className="mt-6 block w-full overflow-hidden rounded-[1.5rem] border border-slate-200" data-protected-image><ProtectedImage src={KILENGI.budgetDocument} alt="Coût total des activités Kilengi" className="w-full bg-white object-contain" /></button></div>
-            <GallerySection eyebrow="Mise en avant" title="Sélection de photos mises en avant" images={featuredImages} onOpen={openLightbox} />
-            <GallerySection eyebrow="Documentation visuelle" title="Avant les travaux" images={KILENGI.before} onOpen={openLightbox} />
-            <GallerySection eyebrow="Chantier" title="Pendant les travaux" images={KILENGI.during} onOpen={openLightbox} />
-            <GallerySection eyebrow="Résultats" title="Après les travaux" images={KILENGI.after} onOpen={openLightbox} />
-          </div>
-          <aside className="grid gap-6"><InfoCard icon={ShieldCheck} title="Éléments techniques"><ul className="list-disc space-y-2 pl-5"><li>Panneaux solaires</li><li>Régulateur MPPT</li><li>Onduleur / chargeur hybride</li><li>Banque de batteries lithium</li></ul></InfoCard><InfoCard icon={ImageIcon} title="Contenus disponibles"><ul className="list-disc space-y-2 pl-5"><li>Rapport photo PDF</li><li>Galerie avant / pendant / après</li><li>Schéma technique</li><li>Document budgétaire</li></ul></InfoCard></aside>
-        </div>
-      </section>
-      <ImageLightbox src={lightbox.src} title={lightbox.title} onClose={() => setLightbox({ src: "", title: "" })} />
-    </>
-  );
-}
-
-function BomaProjectPage() {
-  const [lightbox, setLightbox] = useState({ src: "", title: "" });
-  const openLightbox = (src, title) => setLightbox({ src, title });
-  return (
-    <>
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <SectionTitle eyebrow="Projet en cours" title={BOMA.title} text={BOMA.subtitle} />
-        <div className="mt-10 rounded-[2.25rem] border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm lg:p-8"><div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center"><div><div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Boma • RDC • Agriculture durable</div><h2 className="mt-5 text-3xl font-black tracking-tight text-blue-950 md:text-5xl">Agriculture communautaire, irrigation et résilience locale</h2><p className="mt-5 text-base leading-8 text-slate-600">Le projet accompagne les maraîchers et les communautés locales dans le renforcement de la production agricole.</p></div><div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl" data-protected-image><ProtectedImage src={BOMA.hero} alt={BOMA.title} className="h-full min-h-[360px] w-full object-cover" /></div></div></div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.8fr_0.9fr]"><div className="grid gap-6"><InfoCard icon={Leaf} title="Contexte du projet">Les producteurs maraîchers font face à des contraintes d’accès à l’eau et d’organisation.</InfoCard><InfoCard icon={Droplets} title="Objectif principal">Renforcer durablement les capacités productives locales.</InfoCard><div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-7"><div className="text-sm font-bold uppercase tracking-[0.18em] text-orange-500">Schéma fonctionnel</div><h3 className="mt-2 text-xl font-black text-blue-950">Croquis fonctionnel du système d’irrigation</h3><button type="button" onClick={() => openLightbox(BOMA.schema, "Croquis fonctionnel du système d’irrigation")} className="mt-6 block w-full overflow-hidden rounded-[1.5rem] border border-slate-200" data-protected-image><ProtectedImage src={BOMA.schema} alt="Croquis fonctionnel du système d’irrigation" className="w-full bg-white object-contain" /></button></div><GallerySection eyebrow="Terrain & bénéficiaires" title="Activités sur le terrain à Boma" images={BOMA.gallery} onOpen={openLightbox} /></div><aside className="grid gap-6"><InfoCard icon={Users} title="Bénéficiaires cibles"><ul className="list-disc space-y-2 pl-5"><li>Maraîchers et maraîchères</li><li>Organisations communautaires locales</li><li>Jeunes et femmes</li></ul></InfoCard><InfoCard icon={ImageIcon} title="Contenus disponibles"><ul className="list-disc space-y-2 pl-5"><li>Photos terrain</li><li>Réunions communautaires</li><li>Croquis fonctionnel</li></ul></InfoCard></aside></div>
-      </section>
-      <ImageLightbox src={lightbox.src} title={lightbox.title} onClose={() => setLightbox({ src: "", title: "" })} />
-    </>
-  );
-}
-
-function StandardPage({ content }) {
-  return <div className="mx-auto max-w-6xl px-6 py-16"><SectionTitle eyebrow={content.eyebrow} title={content.title} text={content.text} /><div className="mt-12 grid gap-6 md:grid-cols-2">{content.cards.map((card) => <div key={card.title} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm"><h3 className="text-xl font-black tracking-tight text-blue-950">{card.title}</h3><p className="mt-4 whitespace-pre-line text-sm leading-7 text-slate-600">{card.body}</p></div>)}</div></div>;
-}
-
-function DonationPage() {
-  return <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8"><SectionTitle eyebrow="Soutenir" title="Faire un don pour un impact concret" text="Votre contribution soutient des actions utiles, traçables et durables." /><div className="mt-8 rounded-[2rem] border border-slate-200 bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-8 text-white shadow-2xl"><h3 className="text-3xl font-black tracking-tight">Soutenir PRODDEKO-Belgique</h3><p className="mt-4 text-sm leading-7 text-slate-200">Vos contributions peuvent être effectuées par virement bancaire.</p><div className="mt-8 grid gap-4 sm:grid-cols-3"><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">IBAN</div><div className="mt-2 text-lg font-bold">{SITE.iban}</div></div><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">BIC</div><div className="mt-2 text-lg font-bold">{SITE.bic}</div></div><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><div className="text-xs font-bold uppercase tracking-[0.16em] text-orange-200">Compte</div><div className="mt-2 text-sm font-bold">{SITE.accountName}</div></div></div></div></div>;
-}
-
-function ContactForm({ formData, status, handleChange, handleSubmit }) {
-  return <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8"><SectionTitle eyebrow="Contact" title="Formulaire de contact" text="Écrivez-nous directement pour une prise de contact, un partenariat ou une demande d’information." /><div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr]"><div className="space-y-4 text-sm text-slate-600"><div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-500" />{SITE.belgiumLocation}</div><div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-500" />Coordination terrain : {SITE.drcLocation}</div><div className="flex items-center gap-3"><Mail className="h-4 w-4 text-orange-500" />{SITE.email}</div><div className="flex items-center gap-3"><Phone className="h-4 w-4 text-orange-500" />{SITE.phone}</div></div><div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl"><form onSubmit={handleSubmit} className="space-y-5"><input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Nom" className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400" /><input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="E-mail" className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400" /><textarea rows="5" name="message" value={formData.message} onChange={handleChange} required placeholder="Message" className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-orange-400" /><button type="submit" className="rounded-full bg-blue-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900">Envoyer</button>{status && <p className="text-sm text-slate-600">{status}</p>}</form></div></div></div>;
-}
-
-function HomeProjects({ setPage }) {
-  const projects = [{ title: KILENGI.title, img: KILENGI.hero, tag: "Santé • Énergie", page: "project-kilengi" }, { title: BOMA.title, img: BOMA.hero, tag: "Agriculture • Eau", page: "project-boma" }, { title: REBOND_FOOT.title, img: REBOND_FOOT.hero, tag: "Jeunesse • Sport", page: "project-rebond-foot" }];
-  return <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8"><SectionTitle eyebrow="Projets en cours" title="Projets phares à fort impact territorial" text="Découvrez nos projets actuellement valorisés sur le site." /><div className="mt-12 grid gap-6 lg:grid-cols-3">{projects.map((project) => <button key={project.page} type="button" onClick={() => setPage(project.page)} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><div data-protected-image><ProtectedImage src={project.img} alt={project.title} className="h-72 w-full object-cover" /></div><div className="p-8"><div className="text-xs font-bold uppercase tracking-[0.18em] text-orange-500">{project.tag}</div><h3 className="mt-3 text-2xl font-black text-blue-950">{project.title}</h3><p className="mt-4 text-sm leading-7 text-slate-600">Projet documenté, valorisable auprès des partenaires et ouvert à la mobilisation de soutiens.</p></div></button>)}</div></section>;
-}
-
-function Home({ setPage }) {
-  return <><Hero setPage={setPage} /><HomeProjects setPage={setPage} /><section className="bg-slate-50 py-20"><div className="mx-auto max-w-7xl px-6 lg:px-8"><SectionTitle eyebrow="Nos programmes" title="Des actions complémentaires au service du bien commun" text="PRODDEKO-Belgique déploie des programmes structurés, suivis et documentés." /><div className="mt-12 grid gap-6 lg:grid-cols-2">{[pageContent["action-sustainable"], pageContent["action-education"], pageContent["action-governance"], pageContent["action-solidarity"]].map((card) => <div key={card.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"><h3 className="text-2xl font-black text-blue-950">{card.title}</h3><p className="mt-4 text-sm leading-7 text-slate-600">{card.text}</p></div>)}</div></div></section><section className="bg-blue-950 py-20 text-white"><div className="mx-auto max-w-7xl px-6 lg:px-8"><SectionTitle eyebrow="Territoires d’intervention" title="Une présence multi-territoriale" text="Nos actions se déploient dans plusieurs provinces de la RDC ainsi qu’en Belgique, en Europe et en Afrique centrale." light /><div className="mt-10 flex flex-wrap gap-3">{territories.map((territory) => <span key={territory} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">{territory}</span>)}</div></div></section></>;
-}
-
-function Footer({ setPage }) {
-  return <footer className="border-t border-slate-200 bg-slate-50"><div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8"><div><div className="flex items-center gap-3"><div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm" data-protected-image><ProtectedImage src={SITE.logo} alt="Logo PRODDEKO-Belgique" className="h-full w-full object-contain" /></div><div><div className="text-lg font-black text-blue-950">{SITE.name}</div><div className="text-sm text-slate-500">{SITE.tagline}</div></div></div><p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">PRODDEKO-Belgique agit comme une passerelle entre la Belgique, la RDC et d’autres territoires partenaires.</p></div><div><div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Coordonnées</div><ul className="mt-5 space-y-3 text-sm text-slate-600"><li>{SITE.belgiumLocation}</li><li>{SITE.drcLocation}</li><li>{SITE.email}</li><li>{SITE.phone}</li></ul></div><div><div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Navigation rapide</div><div className="mt-5 space-y-3 text-sm text-slate-600">{[["À propos", "about"], ["Rapports d’activités", "activity-reports"], ["Projet Kilengi", "project-kilengi"], ["Projet Boma", "project-boma"], ["Rebondir par le Foot", "project-rebond-foot"], ["JPN95", "project-jpn95"], ["Faire un don", "don"]].map(([label, page]) => <button key={page} type="button" onClick={() => setPage(page)} className="block transition hover:text-orange-500">{label}</button>)}</div></div></div></footer>;
-}
-
-export default function App() {
-  const [page, setPage] = useState("home");
-  const [activeMenu, setActiveMenu] = useState(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
-
-  const handlePageChange = (newPage) => {
-    setPage(newPage);
-    setActiveMenu(null);
-    setMobileOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setStatus("Ouverture de votre messagerie...");
-    const subject = encodeURIComponent("Contact PRODDEKO-Belgique");
-    const body = encodeURIComponent(`Nom: ${formData.name}
-Email: ${formData.email}
-
-Message:
-${formData.message}`);
-    window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-  };
-
-  const renderPage = () => {
-    if (page === "home") return <Home setPage={handlePageChange} />;
-    if (page === "project-kilengi") return <KilengiProjectPage />;
-    if (page === "project-boma") return <BomaProjectPage />;
-    if (page === "project-jpn95") return <Jpn95ProjectPage />;
-    if (page === "project-rebond-foot") return <RebondFootProjectPage />;
-    if (page === "activity-reports") return <ActivityReportsPage />;
-    if (page === "don") return <DonationPage />;
-    if (page === "contact-form") return <ContactForm formData={formData} status={status} handleChange={handleChange} handleSubmit={handleSubmit} />;
-    const content = pageContent[page];
-    if (content) return <StandardPage content={content} />;
-    return <Home setPage={handlePageChange} />;
-  };
-
-  return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <ImageProtection />
-      <Header page={page} setPage={handlePageChange} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
-      {renderPage()}
-      <Footer setPage={handlePageChange} />
-    </div>
-  );
-}
+      <SectionTitle
+        eyebrow="Solutions agricoles"
+        title="Applications du fertilisant JPN95"
+        text="Une solution naturelle adaptée 
