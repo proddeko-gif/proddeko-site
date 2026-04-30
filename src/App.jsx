@@ -4,7 +4,6 @@ import {
   ArrowRight,
   BookOpen,
   ChevronDown,
-  Download,
   Droplets,
   ExternalLink,
   FileSpreadsheet,
@@ -13,7 +12,6 @@ import {
   GraduationCap,
   Handshake,
   HeartHandshake,
-  Image as ImageIcon,
   Landmark,
   Leaf,
   Mail,
@@ -24,7 +22,6 @@ import {
   Sparkles,
   Sprout,
   Users,
-  Wrench,
   X,
   Zap,
   ZoomIn,
@@ -43,9 +40,8 @@ const SITE = {
   logo: "/images/proddeko-logo.png",
 };
 
-// 📧 MESSAGE EMAIL OFFICIEL (texte simple prêt à envoyer)
 export const EMAIL_TEMPLATE = `
-Objet : Et si nous collaborions ? 🌍 PRODDEKO-Belgique
+Objet : Et si nous collaborions ? PRODDEKO-Belgique
 
 Bonjour,
 
@@ -57,17 +53,11 @@ Nos actions portent notamment sur :
 - la réinsertion des jeunes par le sport
 - l’éducation à la citoyenneté mondiale en Belgique
 
-👉 Nous recherchons aujourd’hui des partenaires engagés :
-- écoles et universités
-- associations
-- institutions
-- acteurs éducatifs et citoyens
+Nous recherchons aujourd’hui des partenaires engagés : écoles, universités, associations, institutions et acteurs éducatifs.
 
-💬 Seriez-vous disponible pour un échange ou une collaboration ?
+Seriez-vous disponible pour un échange ou une collaboration ?
 
-Un simple échange peut déjà ouvrir une belle opportunité de partenariat.
-
-👉 Découvrir le projet : https://proddeko.online
+Découvrir le projet : https://proddeko.online
 
 Au plaisir d’échanger avec vous,
 
@@ -76,98 +66,27 @@ Président — PRODDEKO-Belgique
 Email : admin@proddeko.online
 `;
 
-// 🎨 VERSION HTML POUR BREVO / MAILCHIMP / OUTIL D’EMAILING
 export const EMAIL_HTML_TEMPLATE = `
 <div style="font-family:Arial,sans-serif;background:#f4f6f9;padding:30px 0;">
   <table align="center" width="680" style="background:white;border-radius:18px;overflow:hidden;border:1px solid #e5e7eb">
-    
-    <!-- HEADER -->
     <tr>
       <td style="background:#0f172a;color:white;padding:30px;text-align:center">
-        <h1 style="margin:0;font-size:28px">PRODDEKO-Belgique 🌍</h1>
+        <h1 style="margin:0;font-size:28px">PRODDEKO-Belgique</h1>
         <p style="margin:10px 0 0;color:#fbbf24;font-size:14px">Partenaire de développement durable entre l’Europe et la RDC</p>
       </td>
     </tr>
-
-    <!-- CONTEXT UE -->
     <tr>
       <td style="padding:30px">
         <h2 style="color:#1e293b;margin-top:0">Proposition de collaboration stratégique</h2>
-
-        <p style="font-size:16px;color:#374151">
-          En République Démocratique du Congo, des millions de personnes restent confrontées à des défis structurels majeurs : accès limité à l’eau potable, vulnérabilité des systèmes locaux et inégalités d’accès à la santé et à l’éducation.
-        </p>
-
-        <p style="font-size:16px;color:#374151">
-          Dans ce contexte, <strong>PRODDEKO-Belgique développe des interventions territoriales alignées avec les Objectifs de Développement Durable (ODD)</strong>, en lien avec les priorités des partenaires européens et internationaux.
-        </p>
+        <p style="font-size:16px;color:#374151">PRODDEKO-Belgique développe des interventions territoriales alignées avec les Objectifs de Développement Durable, en lien avec les priorités des partenaires européens et internationaux.</p>
+        <p style="font-size:16px;color:#374151">Axes prioritaires : eau potable, développement durable, santé, éducation, gouvernance locale et cohésion sociale.</p>
       </td>
     </tr>
-
-    <!-- AXES STRATEGIQUES -->
-    <tr>
-      <td style="padding:0 30px 20px">
-        <table width="100%" style="background:#f9fafb;border-radius:12px;padding:20px">
-          <tr>
-            <td style="font-size:14px;color:#111827">
-              ✔ Accès à l’eau potable et infrastructures communautaires durables<br>
-              ✔ Développement durable et résilience économique locale<br>
-              ✔ Accès universel à la santé et à l’éducation<br>
-              ✔ Gouvernance locale, participation citoyenne et cohésion sociale
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-
-    <!-- APPROCHE -->
-    <tr>
-      <td style="padding:20px 30px">
-        <p style="font-size:16px;color:#374151">
-          Notre approche repose sur la co-construction avec les communautés locales, la transparence financière et la production d’indicateurs mesurables, dans une logique de durabilité et d’appropriation locale.
-        </p>
-      </td>
-    </tr>
-
-    <!-- PARTENAIRES -->
-    <tr>
-      <td style="padding:20px 30px">
-        <p style="font-size:16px;color:#374151">
-          Nous recherchons des partenaires techniques et financiers :
-        </p>
-        <ul style="color:#374151;font-size:15px">
-          <li>Institutions européennes et programmes de financement</li>
-          <li>ONG internationales et fondations</li>
-          <li>Universités et centres de recherche</li>
-          <li>Acteurs du développement et de l’innovation sociale</li>
-        </ul>
-      </td>
-    </tr>
-
-    <!-- CTA -->
     <tr>
       <td style="text-align:center;padding:20px">
-        <a href="https://proddeko.online" style="background:#2563eb;color:white;padding:16px 28px;border-radius:999px;text-decoration:none;font-weight:bold;display:inline-block">
-          📊 Consulter nos projets et opportunités
-        </a>
+        <a href="https://proddeko.online" style="background:#2563eb;color:white;padding:16px 28px;border-radius:999px;text-decoration:none;font-weight:bold;display:inline-block">Consulter nos projets</a>
       </td>
     </tr>
-
-    <!-- CONCLUSION -->
-    <tr>
-      <td style="padding:20px 30px">
-        <p style="font-size:16px;color:#111827">
-          <strong>Nous serions ravis d’explorer une collaboration stratégique ou un partenariat de financement avec votre organisation.</strong>
-        </p>
-
-        <p style="margin-top:20px;font-size:14px;color:#6b7280">
-          Urbain Matimpi Yongo<br>
-          Président — PRODDEKO-Belgique<br>
-          <a href="mailto:admin@proddeko.online">admin@proddeko.online</a>
-        </p>
-      </td>
-    </tr>
-
   </table>
 </div>
 `;
@@ -183,19 +102,10 @@ function makeImagePaths(folder, prefix, count, extension = "jpg", start = 1) {
   });
 }
 
-function makeCustomImagePaths(folder, prefix, numbers, extension = "jpg") {
-  return numbers.map((number) => {
-    const formatted = String(number).padStart(2, "0");
-    return `${folder}/${prefix}-${formatted}.${extension}`;
-  });
-}
-
 const KILENGI = {
   title: "Réhabilitation du Centre de Santé de Référence de Kilengi",
-  subtitle:
-    "Réhabilitation énergétique, sécurisation de l’alimentation électrique et valorisation documentaire du chantier.",
+  subtitle: "Réhabilitation énergétique, sécurisation de l’alimentation électrique et valorisation documentaire du chantier.",
   hero: "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
-  schema: "/schema-kilengi.png",
   reportPdf: "/docs/CS-Kilengi_Rapport_photos.pdf",
   budgetDocument: "/images/projects/kilengi/CS-Kilengi_Cout-total-activites.png",
   before: makeImagePaths("/images/projects/kilengi/before", "kilengi-avant", 3, "jpg"),
@@ -223,19 +133,9 @@ const KILENGI = {
 
 const BOMA = {
   title: "Projet maraîcher et irrigation communautaire de Boma",
-  subtitle:
-    "Appui aux maraîchers, organisation communautaire et amélioration durable de l’accès à l’eau pour la production locale.",
+  subtitle: "Appui aux maraîchers, organisation communautaire et amélioration durable de l’accès à l’eau pour la production locale.",
   hero: "/images/projects/boma/boma-01.jpg",
-  gallery: [
-    "/images/projects/boma/boma-01.jpg",
-    "/images/projects/boma/boma-02.jpg",
-    "/images/projects/boma/boma-03.jpg",
-    "/images/projects/boma/boma-04.jpg",
-    "/images/projects/boma/boma-05.jpg",
-    "/images/projects/boma/boma-06.jpg",
-    "/images/projects/boma/boma-07.jpg",
-    "/images/projects/boma/boma-08.jpg",
-  ],
+  gallery: makeImagePaths("/images/projects/boma", "boma", 8, "jpg"),
   schema: "/images/projects/boma/boma-croquis-irrigation.jpg",
 };
 
@@ -244,8 +144,7 @@ const JPN95 = {
   title: "JPN95 Kongo Central — Fertiliser autrement pour la souveraineté agricole",
   subtitle:
     "Face à la hausse du prix des engrais chimiques, aux tensions internationales et aux fragilités agricoles en RDC, PRODDEKO-Belgique porte un pilote de fertilisant naturel à base d’eau de mer pour renforcer les rendements, les revenus ruraux et la résilience des petits exploitants.",
-
-  // 📸 NOUVELLES IMAGES PRODUIT / USAGES AGRICOLES
+  hero: "/images/projects/jpn95/Fertilomer-JPN95-00.png",
   gallery: [
     "/images/projects/jpn95/Fertilomer-JPN95-01.png",
     "/images/projects/jpn95/Fertilomer-JPN95-02.png",
@@ -257,16 +156,14 @@ const JPN95 = {
     "/images/projects/jpn95/Fertilomer-JPN95-08.png",
     "/images/projects/jpn95/Fertilomer-JPN95-09.png",
     "/images/projects/jpn95/Fertilomer-JPN95-10.png",
-    "/images/projects/jpn95/Fertilomer-JPN95-11.png"
+    "/images/projects/jpn95/Fertilomer-JPN95-11.png",
   ],
-
   docs: [
     { title: "Dossier de candidature FID", href: "/docs/jpn95-dossier-candidature-fid.pdf", icon: FileText },
     { title: "Éligibilité FID", href: "/docs/jpn95-eligibilite-fid.pdf", icon: FileText },
     { title: "Organisation candidate", href: "/docs/jpn95-organisation-candidate.pdf", icon: FileText },
     { title: "Budget prévisionnel", href: "/docs/jpn95-budget.xlsx", icon: FileSpreadsheet },
   ],
-
   metrics: [
     { value: "500", label: "petits exploitants ciblés" },
     { value: "24 mois", label: "durée pilote" },
@@ -275,30 +172,11 @@ const JPN95 = {
   ],
 };
 
-// Images attendues dans : public/images/projects/rebond-foot/
-// Chemins publics utilisés par React : /images/projects/rebond-foot/rebond-foot-01.png ... rebond-foot-15.png
 const REBOND_FOOT = {
   title: "Projet « Rebondir par le Foot » — Kinshasa, OC Somwe-Yongo",
-  subtitle:
-    "Demande d’aide d’urgence pour la réinsertion sociale de 35 jeunes anciens délinquants de rue par le football, l’éducation et le suivi psycho-social.",
+  subtitle: "Réinsertion sociale de 35 jeunes anciens délinquants de rue par le football, l’éducation et le suivi psycho-social.",
   hero: "/images/projects/rebond-foot/rebond-foot-01.png",
-  gallery: [
-    "/images/projects/rebond-foot/rebond-foot-01.png",
-    "/images/projects/rebond-foot/rebond-foot-02.png",
-    "/images/projects/rebond-foot/rebond-foot-03.png",
-    "/images/projects/rebond-foot/rebond-foot-04.png",
-    "/images/projects/rebond-foot/rebond-foot-05.png",
-    "/images/projects/rebond-foot/rebond-foot-06.png",
-    "/images/projects/rebond-foot/rebond-foot-07.png",
-    "/images/projects/rebond-foot/rebond-foot-08.png",
-    "/images/projects/rebond-foot/rebond-foot-09.png",
-    "/images/projects/rebond-foot/rebond-foot-10.png",
-    "/images/projects/rebond-foot/rebond-foot-11.png",
-    "/images/projects/rebond-foot/rebond-foot-12.png",
-    "/images/projects/rebond-foot/rebond-foot-13.png",
-    "/images/projects/rebond-foot/rebond-foot-14.png",
-    "/images/projects/rebond-foot/rebond-foot-15.png",
-  ],
+  gallery: makeImagePaths("/images/projects/rebond-foot", "rebond-foot", 15, "png"),
   metrics: [
     { value: "35", label: "jeunes accompagnés" },
     { value: "3 500 €", label: "aide d’urgence demandée" },
@@ -324,28 +202,6 @@ const partnersList = [
   "Entraide & Fraternité",
   "Energy Assistance",
   "Laguzze / Fertilomer JPN95",
-];
-
-const universities = [
-  "ULiège",
-  "UCLouvain",
-  "Université de Kinshasa",
-  "Université Kongo",
-  "ISAV Matadi",
-  "ISDR-Kinzau-Mvuete",
-];
-
-const territories = [
-  "Kongo Central",
-  "Kinshasa",
-  "Kwilu",
-  "Nord-Kivu",
-  "Sud-Ubangi",
-  "Belgique",
-  "France",
-  "Allemagne",
-  "Congo-Brazzaville",
-  "Cameroun",
 ];
 
 const navItems = [
@@ -438,12 +294,7 @@ const pageContent = {
     eyebrow: "Écosystème institutionnel",
     title: "Partenaires stratégiques",
     text: "PRODDEKO-Belgique s’inscrit dans un réseau multi-acteurs mobilisant institutions, ONG, universités et relais territoriaux.",
-    cards: [
-      { title: "Institutions", body: "Coopération avec agences publiques, ambassades, collectivités et programmes internationaux." },
-      { title: "ONG et réseaux", body: "Collaboration avec des ONG européennes et africaines, plateformes citoyennes et réseaux de solidarité." },
-      { title: "Universités", body: "Recherche-action, formation, capitalisation et innovation appliquée." },
-      { title: "Communautés locales", body: "Participation active des bénéficiaires, comités locaux et relais communautaires." },
-    ],
+    cards: partnersList.map((name) => ({ title: name, body: "Partenaire potentiel, institutionnel ou technique dans l’écosystème de solidarité et de développement." })),
   },
   "projects-impact": {
     eyebrow: "Résultats et portée",
@@ -464,7 +315,7 @@ const pageContent = {
       { title: "Pourquoi soutenir ?", body: "Une capacité à articuler diaspora, acteurs locaux, institutions et partenaires autour de projets concrets." },
       { title: "Axes ouverts", body: "Santé communautaire, eau, agriculture durable, éducation citoyenne, gouvernance et infrastructures locales." },
       { title: "Partenariats recherchés", body: "Subventions, cofinancements, appuis techniques, mécénat, partenariats programmatiques et dons." },
-      { title: "Contact", body: `Pour toute discussion : ${SITE.email} • ${SITE.belgiumLocation}.` },
+      { title: "Compte bancaire", body: `${SITE.accountName} — IBAN : ${SITE.iban} — BIC : ${SITE.bic}` },
     ],
   },
   "contact-info": {
@@ -496,9 +347,7 @@ const pageContent = {
     cards: [
       { title: "Objectifs", body: "Renforcer les capacités citoyennes, le leadership local et l’engagement solidaire." },
       { title: "Public cible", body: "Jeunes, femmes, leaders communautaires, écoles, relais locaux, associations et acteurs éducatifs." },
-      { title: "Résultats", body: "Participation accrue, initiatives citoyennes et meilleure appropriation des projets." },
-      { title: "Approche", body: "Ateliers, sensibilisation, échanges communautaires, conférences, documentation et capitalisation." },
-      { title: "Citoyenneté mondiale (Belgique)", body: "Sensibilisation des jeunes en Belgique aux enjeux globaux : climat, inégalités, solidarité internationale, migrations, paix, citoyenneté active et liens Belgique–RDC." },
+      { title: "Citoyenneté mondiale", body: "Sensibilisation aux enjeux globaux : climat, inégalités, solidarité internationale, migrations, paix, citoyenneté active et liens Belgique–RDC." },
     ],
   },
   "action-governance": {
@@ -528,33 +377,18 @@ const pageContent = {
 function ImageProtection() {
   useEffect(() => {
     const protectedSelector = "img, [data-protected-image]";
-
     const block = (event) => {
-      if (event.target?.closest?.(protectedSelector)) {
-        event.preventDefault();
-      }
+      if (event.target?.closest?.(protectedSelector)) event.preventDefault();
     };
-
-    const blockKeys = (event) => {
-      const key = event.key?.toLowerCase();
-      if ((event.ctrlKey || event.metaKey) && ["s", "u", "p"].includes(key)) {
-        event.preventDefault();
-      }
-    };
-
     document.addEventListener("contextmenu", block);
     document.addEventListener("dragstart", block);
     document.addEventListener("selectstart", block);
-    document.addEventListener("keydown", blockKeys);
-
     return () => {
       document.removeEventListener("contextmenu", block);
       document.removeEventListener("dragstart", block);
       document.removeEventListener("selectstart", block);
-      document.removeEventListener("keydown", blockKeys);
     };
   }, []);
-
   return null;
 }
 
@@ -575,11 +409,7 @@ function ProtectedImage({ className = "", alt = "", ...props }) {
 function SectionTitle({ eyebrow, title, text, light = false }) {
   return (
     <div className="max-w-3xl">
-      {eyebrow && (
-        <div className={`text-sm font-bold uppercase tracking-[0.22em] ${light ? "text-orange-300" : "text-orange-500"}`}>
-          {eyebrow}
-        </div>
-      )}
+      {eyebrow && <div className={`text-sm font-bold uppercase tracking-[0.22em] ${light ? "text-orange-300" : "text-orange-500"}`}>{eyebrow}</div>}
       <h2 className={`mt-3 text-3xl font-black tracking-tight md:text-4xl ${light ? "text-white" : "text-blue-950"}`}>{title}</h2>
       {text && <p className={`mt-5 text-lg leading-8 ${light ? "text-slate-200" : "text-slate-600"}`}>{text}</p>}
     </div>
@@ -596,7 +426,6 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
         setActiveMenu((current) => (current === group.label ? null : current));
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [group.label, setActiveMenu]);
@@ -611,7 +440,6 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
         {group.label}
         <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
-
       {isOpen && (
         <div className="absolute left-1/2 top-full z-40 mt-3 w-[720px] -translate-x-1/2 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.16)]">
           <div className="grid grid-cols-[1.15fr_0.85fr]">
@@ -620,7 +448,6 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
                 <div className="text-sm font-black uppercase tracking-[0.2em] text-orange-500">{group.label}</div>
                 <div className="mt-2 text-2xl font-black tracking-tight text-blue-950">Navigation stratégique</div>
               </div>
-
               <div className="grid max-h-[410px] grid-cols-2 gap-3 overflow-y-auto pr-1">
                 {group.items.map((item) => {
                   const Icon = item.icon;
@@ -634,9 +461,7 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
                       }}
                       className="flex items-start gap-4 rounded-[1.25rem] bg-slate-50/70 p-4 text-left transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
-                        <Icon className="h-5 w-5" />
-                      </div>
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500"><Icon className="h-5 w-5" /></div>
                       <div>
                         <div className="text-sm font-bold text-blue-950">{item.label}</div>
                         <div className="mt-1 text-xs leading-5 text-slate-500">{group.label}</div>
@@ -646,7 +471,6 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
                 })}
               </div>
             </div>
-
             <div className="bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-6 text-white">
               <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">{SITE.name}</div>
               <h3 className="mt-5 text-2xl font-black leading-tight tracking-tight">Une action institutionnelle ancrée dans les territoires</h3>
@@ -672,48 +496,43 @@ function Header({ page, setPage, mobileOpen, setMobileOpen, activeMenu, setActiv
             <div className="hidden text-sm text-slate-500 md:block">{SITE.tagline}</div>
           </div>
         </button>
-
         <nav className="hidden items-center gap-3 lg:flex">
           <button type="button" onClick={() => { setPage("home"); setActiveMenu(null); }} className={`rounded-full px-5 py-3 text-sm font-bold transition ${page === "home" ? "bg-slate-100 text-blue-950 shadow-sm" : "text-slate-700 hover:bg-slate-100 hover:text-blue-950"}`}>Accueil</button>
           {navItems.map((group) => <MenuGroup key={group.label} group={group} activeMenu={activeMenu} setActiveMenu={setActiveMenu} setPage={setPage} />)}
           <button type="button" onClick={() => setPage("project-kilengi")} className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50 hover:text-blue-950">Projet Kilengi</button>
           <button type="button" onClick={() => setPage("contact-form")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-orange-600">Nous contacter</button>
         </nav>
-
         <button type="button" onClick={() => setMobileOpen((v) => !v)} className="rounded-full border border-slate-200 p-2 text-slate-700 lg:hidden" aria-label="Ouvrir le menu">
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
-
       {mobileOpen && (
         <div className="border-t border-slate-200 bg-white px-4 py-4 lg:hidden">
-          <div className="flex flex-col gap-3">
-            <button type="button" onClick={() => { setPage("home"); setMobileOpen(false); }} className="rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-700">Accueil</button>
-            {navItems.map((group) => {
-              const isOpen = activeMenu === group.label;
-              return (
-                <div key={group.label} className="rounded-2xl border border-slate-200 p-4">
-                  <button type="button" onClick={() => setActiveMenu((current) => (current === group.label ? null : group.label))} className="flex w-full items-center justify-between text-left">
-                    <span className="text-sm font-black text-blue-950">{group.label}</span>
-                    <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-                  </button>
-                  {isOpen && (
-                    <div className="mt-3 max-h-[380px] space-y-2 overflow-y-auto pr-1">
-                      {group.items.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <button key={item.page} type="button" onClick={() => { setPage(item.page); setMobileOpen(false); setActiveMenu(null); }} className="flex w-full items-start gap-3 rounded-2xl px-3 py-3 text-left transition hover:bg-slate-50">
-                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500"><Icon className="h-4 w-4" /></div>
-                            <div className="text-sm font-semibold text-slate-800">{item.label}</div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+          <button type="button" onClick={() => { setPage("home"); setMobileOpen(false); }} className="mb-3 w-full rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-700">Accueil</button>
+          {navItems.map((group) => {
+            const isOpen = activeMenu === group.label;
+            return (
+              <div key={group.label} className="mb-3 rounded-2xl border border-slate-200 p-4">
+                <button type="button" onClick={() => setActiveMenu((current) => (current === group.label ? null : group.label))} className="flex w-full items-center justify-between text-left">
+                  <span className="text-sm font-black text-blue-950">{group.label}</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                </button>
+                {isOpen && (
+                  <div className="mt-3 max-h-[380px] space-y-2 overflow-y-auto pr-1">
+                    {group.items.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <button key={item.page} type="button" onClick={() => { setPage(item.page); setMobileOpen(false); setActiveMenu(null); }} className="flex w-full items-start gap-3 rounded-2xl px-3 py-3 text-left transition hover:bg-slate-50">
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500"><Icon className="h-4 w-4" /></div>
+                          <div className="text-sm font-semibold text-slate-800">{item.label}</div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </header>
@@ -771,6 +590,7 @@ function GalleryCard({ src, alt, onOpen }) {
   return (
     <button type="button" onClick={() => onOpen(src, alt)} className="group relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl" data-protected-image>
       <ProtectedImage src={src} alt={alt} loading="lazy" className="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.03]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 transition group-hover:opacity-100" />
       <div className="absolute bottom-3 right-3 rounded-full bg-white/90 p-2 text-slate-800 opacity-0 shadow transition group-hover:opacity-100"><ZoomIn className="h-4 w-4" /></div>
     </button>
   );
@@ -808,14 +628,248 @@ function InfoCard({ icon: Icon, title, children }) {
   );
 }
 
-// ==============================
-// 📸 SECTION GALERIE JPN95
-// ==============================
-
 function JPN95Gallery({ onOpen }) {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
       <SectionTitle
         eyebrow="Solutions agricoles"
         title="Applications du fertilisant JPN95"
-        text="Une solution naturelle adaptée 
+        text="Une solution naturelle adaptée à plusieurs cultures et usages agricoles : maraîchage, fruits, céréales, horticulture, prairies et agriculture de précision."
+      />
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {JPN95.gallery.map((src, index) => (
+          <div key={src} className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" onClick={() => onOpen(src, `Application JPN95 ${index + 1}`)} data-protected-image>
+            <ProtectedImage src={src} alt={`Application JPN95 ${index + 1}`} loading="lazy" className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 transition group-hover:opacity-100" />
+            <div className="absolute bottom-3 right-3 rounded-full bg-white p-2 opacity-0 shadow transition group-hover:opacity-100"><ZoomIn className="h-4 w-4 text-slate-700" /></div>
+            <div className="absolute bottom-3 left-3 text-sm font-semibold text-white opacity-0 transition group-hover:opacity-100">Application {index + 1}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function DocsSection({ docs = [] }) {
+  if (!docs.length) return null;
+  return (
+    <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-8">
+        <SectionTitle eyebrow="Documentation" title="Documents du projet" text="Documents utiles pour les partenaires, bailleurs, institutions et acteurs techniques." />
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {docs.map((doc) => {
+            const Icon = doc.icon || FileText;
+            return (
+              <a key={doc.title} href={doc.href} target="_blank" rel="noreferrer" className="rounded-3xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg">
+                <Icon className="h-7 w-7 text-orange-500" />
+                <div className="mt-4 text-sm font-black text-blue-950">{doc.title}</div>
+                <div className="mt-2 flex items-center gap-2 text-xs font-semibold text-slate-500">Ouvrir <ExternalLink className="h-3.5 w-3.5" /></div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function GenericPage({ content }) {
+  return (
+    <main className="bg-slate-50">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <SectionTitle eyebrow={content.eyebrow} title={content.title} text={content.text} />
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {(content.cards || []).map((card) => <InfoCard key={card.title} icon={HeartHandshake} title={card.title}>{card.body}</InfoCard>)}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function ProjectPage({ project, type, onOpen }) {
+  const gallery = type === "kilengi" ? [...project.during, ...project.before, ...project.after] : project.gallery || [];
+  return (
+    <main className="bg-white">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="max-w-4xl">
+          <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Projet en recherche de financement</div>
+          <h1 className="mt-5 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">{project.title}</h1>
+          <p className="mt-6 text-xl leading-9 text-slate-600">{project.subtitle}</p>
+        </div>
+        {project.metrics && (
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {project.metrics.map((metric) => <div key={metric.label} className="rounded-3xl border border-slate-200 bg-slate-50 p-6"><div className="text-3xl font-black text-blue-950">{metric.value}</div><div className="mt-2 text-sm text-slate-600">{metric.label}</div></div>)}
+          </div>
+        )}
+        {project.hero && <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100" data-protected-image><ProtectedImage src={project.hero} alt={project.title} className="h-[420px] w-full object-cover" /></div>}
+      </section>
+      {type === "jpn95" ? (
+        <>
+          <section className="mx-auto max-w-7xl px-6 pb-6 lg:px-8">
+            <div className="grid gap-6 lg:grid-cols-3">
+              <InfoCard icon={Droplets} title="Priorité eau et fertilité des sols">Le projet valorise un fertilisant naturel à base d’eau de mer pour soutenir les cultures, réduire la dépendance aux intrants coûteux et renforcer l’autonomie agricole locale.</InfoCard>
+              <InfoCard icon={Sprout} title="Souveraineté agricole">Le pilote vise à améliorer les rendements, la résilience des petits exploitants et la sécurité alimentaire dans le Kongo Central.</InfoCard>
+              <InfoCard icon={Handshake} title="Partenariats recherchés">PRODDEKO-Belgique recherche des partenaires techniques, financiers et scientifiques pour tester, documenter et déployer la solution.</InfoCard>
+            </div>
+          </section>
+          <JPN95Gallery onOpen={onOpen} />
+          <DocsSection docs={project.docs} />
+        </>
+      ) : (
+        <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8"><GallerySection title="Galerie du projet" eyebrow="Documentation visuelle" images={gallery} onOpen={onOpen} /></section>
+      )}
+    </main>
+  );
+}
+
+function ActivityReportsPage() {
+  return (
+    <main className="bg-slate-50">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <SectionTitle eyebrow="Transparence" title="Rapports d’activités" text="Documents institutionnels disponibles pour les partenaires et soutiens de PRODDEKO-Belgique." />
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <a href={DOCS.activityReport2022} target="_blank" rel="noreferrer" className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <FileText className="h-8 w-8 text-orange-500" />
+            <h3 className="mt-4 text-xl font-black text-blue-950">Rapport d’activités 2022</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">Consulter ou télécharger le rapport institutionnel.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function ContactForm() {
+  return (
+    <main className="bg-slate-50">
+      <section className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
+        <SectionTitle eyebrow="Contact" title="Nous contacter" text="Pour un partenariat, un don, une collaboration ou une demande d’information." />
+        <div className="mt-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="grid gap-5 md:grid-cols-2">
+            <InfoCard icon={Mail} title="Email">{SITE.email}</InfoCard>
+            <InfoCard icon={Phone} title="Téléphone">{SITE.phone}</InfoCard>
+            <InfoCard icon={MapPin} title="Belgique">{SITE.belgiumLocation}</InfoCard>
+            <InfoCard icon={Globe} title="RDC">{SITE.drcLocation}</InfoCard>
+          </div>
+          <div className="mt-8 rounded-3xl bg-slate-50 p-6">
+            <h3 className="text-lg font-black text-blue-950">Soutenir PRODDEKO-Belgique</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">Compte : {SITE.accountName}<br />IBAN : {SITE.iban}<br />BIC : {SITE.bic}</p>
+          </div>
+          <a href={`mailto:${SITE.email}`} className="mt-8 inline-flex rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">Écrire un email</a>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function Home({ setPage, onOpen }) {
+  return (
+    <main>
+      <Hero setPage={setPage} />
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <SectionTitle eyebrow="Projets prioritaires" title="Des actions concrètes, documentées et finançables" text="PRODDEKO-Belgique met en avant des projets à fort impact social, agricole, éducatif et communautaire." />
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <button onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={JPN95.gallery[0]} alt="JPN95" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">JPN95 Kongo Central</h3><p className="mt-3 text-sm leading-7 text-slate-600">{JPN95.subtitle}</p></div></button>
+          <button onClick={() => setPage("project-kilengi")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={KILENGI.hero} alt="Kilengi" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Centre de Santé Kilengi</h3><p className="mt-3 text-sm leading-7 text-slate-600">{KILENGI.subtitle}</p></div></button>
+          <button onClick={() => setPage("project-boma")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={BOMA.hero} alt="Boma" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Projet maraîcher Boma</h3><p className="mt-3 text-sm leading-7 text-slate-600">{BOMA.subtitle}</p></div></button>
+        </div>
+      </section>
+      <JPN95Gallery onOpen={onOpen} />
+    </main>
+  );
+}
+
+function Footer({ setPage }) {
+  return (
+    <footer className="bg-[#2f2f2f] text-white">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr_1fr_1fr_0.95fr]">
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-white p-2" data-protected-image><ProtectedImage src={SITE.logo} alt="Logo PRODDEKO-Belgique" className="h-full w-full object-contain" /></div>
+              <div><div className="text-2xl font-black tracking-tight">{SITE.name}</div><div className="mt-1 text-xs font-semibold text-slate-300">Belgique • RDC</div></div>
+            </div>
+            <div className="mt-8 h-px w-full bg-white/20" />
+            <div className="mt-6 space-y-3 text-sm text-slate-300">
+              <button type="button" onClick={() => setPage("about")} className="block hover:text-white">Qui sommes-nous ?</button>
+              <button type="button" onClick={() => setPage("mission")} className="block hover:text-white">Mission</button>
+              <button type="button" onClick={() => setPage("values")} className="block hover:text-white">Valeurs</button>
+              <button type="button" onClick={() => setPage("governance")} className="block hover:text-white">Gouvernance</button>
+            </div>
+          </div>
+          <div>
+            <div className="text-xs font-black uppercase tracking-[0.25em] text-slate-200">Nos actions</div>
+            <div className="mt-5 space-y-3 text-sm font-semibold uppercase tracking-[0.12em] text-slate-300">
+              <button type="button" onClick={() => setPage("action-sustainable")} className="block text-left hover:text-white">Développement durable</button>
+              <button type="button" onClick={() => setPage("action-education")} className="block text-left hover:text-white">Éducation citoyenne</button>
+              <button type="button" onClick={() => setPage("action-governance")} className="block text-left hover:text-white">Gouvernance éthique</button>
+              <button type="button" onClick={() => setPage("action-solidarity")} className="block text-left hover:text-white">Solidarité internationale</button>
+            </div>
+            <div className="mt-7 h-px w-full bg-white/20" />
+            <div className="mt-5 space-y-3 text-sm text-slate-300">
+              <button type="button" onClick={() => setPage("project-kilengi")} className="block hover:text-white">Projet Kilengi</button>
+              <button type="button" onClick={() => setPage("project-boma")} className="block hover:text-white">Projet Boma</button>
+              <button type="button" onClick={() => setPage("project-jpn95")} className="block hover:text-white">Projet JPN95</button>
+              <button type="button" onClick={() => setPage("project-rebond-foot")} className="block hover:text-white">Rebondir par le Foot</button>
+            </div>
+          </div>
+          <div>
+            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Contact</div>
+            <div className="mt-5 space-y-3 text-sm font-bold leading-7 text-slate-100"><div>{SITE.name}</div><div>{SITE.belgiumLocation}</div><div>{SITE.drcLocation}</div><div className="pt-2">T : {SITE.phone}</div><div>E : {SITE.email}</div></div>
+            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Suivez-nous</div>
+            <div className="mt-4 flex gap-3 text-slate-300"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">f</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">in</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">▶</span></div>
+          </div>
+          <div>
+            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Compte bancaire</div>
+            <div className="mt-5 space-y-2 text-sm font-bold leading-7 text-slate-100"><div>{SITE.accountName}</div><div>IBAN : {SITE.iban}</div><div>BIC : {SITE.bic}</div></div>
+            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Chiffres clés</div>
+            <div className="mt-5 grid grid-cols-2 gap-3">{stats.map((stat) => <div key={stat.label} className="rounded-xl border border-white/10 bg-white/10 p-3"><div className="text-xl font-black text-orange-300">{stat.value}</div><div className="mt-1 text-[11px] leading-4 text-slate-300">{stat.label}</div></div>)}</div>
+          </div>
+          <div className="bg-[#1f1b1d] p-6 lg:-my-14 lg:py-14">
+            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Faire un don</div>
+            <p className="mt-5 text-sm font-semibold leading-7 text-slate-200">Soutenez nos projets en santé communautaire, eau potable, agriculture durable, éducation citoyenne et solidarité internationale.</p>
+            <button type="button" onClick={() => setPage("financing")} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></button>
+            <button type="button" onClick={() => setPage("contact-form")} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></button>
+            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Newsletter</div>
+            <p className="mt-4 text-sm leading-6 text-slate-300">Recevez nos nouvelles, appels à partenariat et rapports d’impact.</p>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-white/10 bg-[#202020] px-6 py-6 text-xs text-slate-300 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <div className="font-bold">{new Date().getFullYear()} © {SITE.name}. Tous droits réservés.</div>
+          <div className="flex flex-wrap gap-4"><button type="button" onClick={() => setPage("contact-info")} className="hover:text-white">Contact</button><span>|</span><button type="button" onClick={() => setPage("activity-reports")} className="hover:text-white">Rapports d’activités</button><span>|</span><button type="button" onClick={() => setPage("financing")} className="hover:text-white">Faire un don</button><span>|</span><span>{SITE.email}</span></div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function App() {
+  const [page, setPage] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [lightbox, setLightbox] = useState({ src: null, title: "" });
+  const openLightbox = (src, title) => setLightbox({ src, title });
+  const closeLightbox = () => setLightbox({ src: null, title: "" });
+
+  let content;
+  if (page === "home") content = <Home setPage={setPage} onOpen={openLightbox} />;
+  else if (page === "project-kilengi") content = <ProjectPage project={KILENGI} type="kilengi" onOpen={openLightbox} />;
+  else if (page === "project-boma") content = <ProjectPage project={BOMA} type="boma" onOpen={openLightbox} />;
+  else if (page === "project-jpn95") content = <ProjectPage project={JPN95} type="jpn95" onOpen={openLightbox} />;
+  else if (page === "project-rebond-foot") content = <ProjectPage project={REBOND_FOOT} type="rebond-foot" onOpen={openLightbox} />;
+  else if (page === "contact-form") content = <ContactForm />;
+  else if (page === "activity-reports") content = <ActivityReportsPage />;
+  else content = <GenericPage content={pageContent[page] || pageContent.about} />;
+
+  return (
+    <>
+      <ImageProtection />
+      <Header page={page} setPage={setPage} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+      {content}
+      <Footer setPage={setPage} />
+      <ImageLightbox src={lightbox.src} title={lightbox.title} onClose={closeLightbox} />
+    </>
+  );
+}
