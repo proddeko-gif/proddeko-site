@@ -1410,3 +1410,59 @@ function Footer({ setPage }) {
     </footer>
   );
 }
+function App() {
+  const [page, setPage] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [lightbox, setLightbox] = useState({ src: null, title: "" });
+
+  const openLightbox = (src, title) => setLightbox({ src, title });
+  const closeLightbox = () => setLightbox({ src: null, title: "" });
+
+  let content;
+
+  if (page === "home") {
+    content = <Home setPage={setPage} onOpen={openLightbox} />;
+  } else if (page === "project-kilengi") {
+    content = <ProjectPage project={KILENGI} type="kilengi" onOpen={openLightbox} />;
+  } else if (page === "project-boma") {
+    content = <ProjectPage project={BOMA} type="boma" onOpen={openLightbox} />;
+  } else if (page === "project-jpn95") {
+    content = <ProjectPage project={JPN95} type="jpn95" onOpen={openLightbox} />;
+  } else if (page === "project-rebond-foot") {
+    content = <ProjectPage project={REBOND_FOOT} type="rebond-foot" onOpen={openLightbox} />;
+  } else if (page === "contact-form") {
+    content = <ContactForm />;
+  } else if (page === "activity-reports") {
+    content = <ActivityReportsPage />;
+  } else {
+    content = <GenericPage content={pageContent[page] || pageContent.about} />;
+  }
+
+  return (
+    <>
+      <ImageProtection />
+
+      <Header
+        page={page}
+        setPage={setPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
+
+      {content}
+
+      <Footer setPage={setPage} />
+
+      <ImageLightbox
+        src={lightbox.src}
+        title={lightbox.title}
+        onClose={closeLightbox}
+      />
+    </>
+  );
+}
+
+export default App;
