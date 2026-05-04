@@ -1330,254 +1330,83 @@ function Footer({ setPage }) {
     <footer className="bg-[#2f2f2f] text-white">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr_1fr_1fr_0.95fr]">
-          <div>
-            <div className="flex items-center gap-3">
-              <div
-                className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-white p-2"
-                data-protected-image
-              >
-                <ProtectedImage
-                  src={SITE.logo}
-                  alt="Logo PRODDEKO-Belgique"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              <div>
-                <div className="text-2xl font-black tracking-tight">{SITE.name}</div>
-                <div className="mt-1 text-xs font-semibold text-slate-300">Belgique • RDC</div>
-              </div>
-            </div>
-
-            <div className="mt-8 h-px w-full bg-white/20" />
-
-            <div className="mt-6 space-y-3 text-sm text-slate-300">
-              <button type="button" onClick={() => setPage("about")} className="block hover:text-white">
-                Qui sommes-nous ?
-              </button>
-              <button type="button" onClick={() => setPage("mission")} className="block hover:text-white">
-                Mission
-              </button>
-              <button type="button" onClick={() => setPage("values")} className="block hover:text-white">
-                Valeurs
-              </button>
-              <button type="button" onClick={() => setPage("governance")} className="block hover:text-white">
-                Gouvernance
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div className="text-xs font-black uppercase tracking-[0.25em] text-slate-200">Nos actions</div>
-
-            <div className="mt-5 space-y-3 text-sm font-semibold uppercase tracking-[0.12em] text-slate-300">
-              <button type="button" onClick={() => setPage("action-sustainable")} className="block text-left hover:text-white">
-                Développement durable
-              </button>
-              <button type="button" onClick={() => setPage("action-education")} className="block text-left hover:text-white">
-                Éducation citoyenne
-              </button>
-              <button type="button" onClick={() => setPage("action-governance")} className="block text-left hover:text-white">
-                Gouvernance éthique
-              </button>
-              <button type="button" onClick={() => setPage("action-solidarity")} className="block text-left hover:text-white">
-                Solidarité internationale
-              </button>
-            </div>
-
-            <div className="mt-7 h-px w-full bg-white/20" />
-
-            <div className="mt-5 space-y-3 text-sm text-slate-300">
-              <button type="button" onClick={() => setPage("project-kilengi")} className="block hover:text-white">
-                Projet Kilengi
-              </button>
-              <button type="button" onClick={() => setPage("project-boma")} className="block hover:text-white">
-                Projet Boma
-              </button>
-              <button type="button" onClick={() => setPage("project-jpn95")} className="block hover:text-white">
-                Licence JPN95 / Fertilomer
-              </button>
-              <button type="button" onClick={() => setPage("project-rebond-foot")} className="block hover:text-white">
-                Rebondir par le Foot
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Contact</div>
-
-            <div className="mt-5 space-y-3 text-sm font-bold leading-7 text-slate-100">
-              <div>{SITE.name}</div>
-              <div>{SITE.belgiumLocation}</div>
-              <div>{SITE.drcLocation}</div>
-              <div className="pt-2">T : {SITE.phone}</div>
-              <div>E : {SITE.email}</div>
-            </div>
-
-            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">
-              Suivez-nous
-            </div>
-
-            <div className="mt-4 flex gap-3 text-slate-300">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">f</span>
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">in</span>
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">▶</span>
-            </div>
-          </div>
-
-          <div>
-            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Compte bancaire</div>
-
-            <div className="mt-5 space-y-2 text-sm font-bold leading-7 text-slate-100">
-              <div>{SITE.accountName}</div>
-              <div>IBAN : {SITE.iban}</div>
-              <div>BIC : {SITE.bic}</div>
-            </div>
-
-            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">
-              Chiffres clés
-            </div>
-
-            <div className="mt-5 grid grid-cols-2 gap-3">
-              {stats.map((stat) => (
-                <div key={stat.label} className="rounded-xl border border-white/10 bg-white/10 p-3">
-                  <div className="text-xl font-black text-orange-300">{stat.value}</div>
-                  <div className="mt-1 text-[11px] leading-4 text-slate-300">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-[#1f1b1d] p-6 lg:-my-14 lg:py-14">
-            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Faire un don</div>
-
-            <p className="mt-5 text-sm font-semibold leading-7 text-slate-200">
-              Soutenez nos projets en santé communautaire, eau potable, agriculture durable,
-              éducation citoyenne et solidarité internationale.
-            </p>
-
-            <button
-              type="button"
-              onClick={() => setPage("financing")}
-              className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700"
-            >
-              Je fais un don <span className="text-xl">›</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setPage("contact-form")}
-              className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10"
-            >
-              Devenir partenaire <span className="text-xl">›</span>
-            </button>
-
-            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Newsletter</div>
-
-            <p className="mt-4 text-sm leading-6 text-slate-300">
-              Recevez nos nouvelles, appels à partenariat et rapports d’impact.
-            </p>
-          </div>
+          {/* Gardez ici vos colonnes existantes du footer si elles sont déjà bonnes */}
         </div>
       </div>
 
       <div className="border-t border-white/10 bg-[#202020] px-6 py-10 text-xs text-slate-300">
-  <div className="mx-auto max-w-4xl text-center space-y-5">
+        <div className="mx-auto max-w-4xl space-y-5 text-center">
+          <div className="text-sm leading-7 text-slate-200">
+            <strong>{SITE.legalName}</strong>, agissant sous le nom commercial{" "}
+            <strong>{SITE.tradeName}</strong>
+            <br />
+            Numéro d’entreprise : <strong>{SITE.enterpriseNumber}</strong>
+            <br />
+            Email :{" "}
+            <a
+              href={`mailto:${SITE.email}`}
+              className="underline underline-offset-4 hover:text-white"
+            >
+              {SITE.email}
+            </a>
+          </div>
 
-    {/* Ligne juridique principale */}
-    <div className="text-sm leading-6 text-slate-300">
-      <strong>PRODDEKO-Belgique</strong>, agissant sous le nom commercial{" "}
-      <strong>Triple Sustain Impact</strong> — Numéro d’entreprise :{" "}
-      <strong>BE 0459.354.980</strong><br />
-      Email :{" "}
-      <a
-        href={`mailto:${SITE.email}`}
-        className="underline hover:text-white"
-      >
-        {SITE.email}
-      </a>
-    </div>
+          <div className="mx-auto max-w-3xl text-xs leading-6 text-slate-400">
+            <strong>Protection des données personnelles – RGPD</strong>
+            <br />
+            Conformément au Règlement Général sur la Protection des Données,
+            vous disposez d’un droit d’accès, de rectification, de suppression
+            et d’opposition concernant vos données personnelles. Pour exercer
+            ces droits, veuillez écrire à{" "}
+            <a
+              href={`mailto:${SITE.email}`}
+              className="underline underline-offset-4 hover:text-white"
+            >
+              {SITE.email}
+            </a>
+            .
+          </div>
 
-    {/* RGPD */}
-    <div className="text-xs leading-6 text-slate-400 max-w-2xl mx-auto">
-      <strong>Protection des données (RGPD)</strong> : conformément au
-      Règlement Général sur la Protection des Données, vous disposez d’un
-      droit d’accès, de rectification, de suppression et d’opposition.
-      Pour exercer ces droits, contactez-nous à{" "}
-      <a href={`mailto:${SITE.email}`} className="underline">
-        {SITE.email}
-      </a>.
-    </div>
+          <div className="mx-auto max-w-2xl text-xs leading-6 text-slate-500">
+            Ce site peut utiliser des cookies nécessaires à son fonctionnement
+            ainsi que, le cas échéant, des cookies de mesure d’audience.
+          </div>
 
-    {/* Cookies */}
-    <div className="text-xs text-slate-500">
-      Ce site peut utiliser des cookies nécessaires à son fonctionnement et,
-      le cas échéant, des cookies de mesure d’audience.
-    </div>
+          <div className="border-t border-white/10 pt-5">
+            <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
+              <div className="font-semibold text-slate-400">
+                © {new Date().getFullYear()} {SITE.name}. Tous droits réservés.
+              </div>
 
-    {/* Ligne finale */}
-    <div className="pt-4 border-t border-white/10 flex flex-col items-center gap-3 text-xs text-slate-400 md:flex-row md:justify-between">
-      <div>© {new Date().getFullYear()} PRODDEKO-Belgique. Tous droits réservés.</div>
-
-      <div className="flex gap-4">
-        <button onClick={() => setPage("contact-info")} className="hover:text-white">Contact</button>
-        <span>|</span>
-        <button onClick={() => setPage("activity-reports")} className="hover:text-white">Rapports</button>
-        <span>|</span>
-        <button onClick={() => setPage("financing")} className="hover:text-white">Faire un don</button>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-slate-400">
+                <button
+                  type="button"
+                  onClick={() => setPage("contact-info")}
+                  className="hover:text-white"
+                >
+                  Contact
+                </button>
+                <span>|</span>
+                <button
+                  type="button"
+                  onClick={() => setPage("activity-reports")}
+                  className="hover:text-white"
+                >
+                  Rapports d’activités
+                </button>
+                <span>|</span>
+                <button
+                  type="button"
+                  onClick={() => setPage("financing")}
+                  className="hover:text-white"
+                >
+                  Faire un don
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-  </div>
-</div>
-
-export default function App() {
-  const [page, setPage] = useState("home");
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
-  const [lightbox, setLightbox] = useState({ src: null, title: "" });
-
-  const openLightbox = (src, title) => setLightbox({ src, title });
-  const closeLightbox = () => setLightbox({ src: null, title: "" });
-
-  let content;
-
-  if (page === "home") {
-    content = <Home setPage={setPage} onOpen={openLightbox} />;
-  } else if (page === "project-kilengi") {
-    content = <ProjectPage project={KILENGI} type="kilengi" onOpen={openLightbox} />;
-  } else if (page === "project-boma") {
-    content = <ProjectPage project={BOMA} type="boma" onOpen={openLightbox} />;
-  } else if (page === "project-jpn95") {
-    content = <ProjectPage project={JPN95} type="jpn95" onOpen={openLightbox} />;
-  } else if (page === "project-rebond-foot") {
-    content = <ProjectPage project={REBOND_FOOT} type="rebond-foot" onOpen={openLightbox} />;
-  } else if (page === "contact-form") {
-    content = <ContactForm />;
-  } else if (page === "activity-reports") {
-    content = <ActivityReportsPage />;
-  } else {
-    content = <GenericPage content={pageContent[page] || pageContent.about} />;
-  }
-
-  return (
-    <>
-      <ImageProtection />
-
-      <Header
-        page={page}
-        setPage={setPage}
-        mobileOpen={mobileOpen}
-        setMobileOpen={setMobileOpen}
-        activeMenu={activeMenu}
-        setActiveMenu={setActiveMenu}
-      />
-
-      {content}
-
-      <Footer setPage={setPage} />
-
-      <ImageLightbox src={lightbox.src} title={lightbox.title} onClose={closeLightbox} />
-    </>
+    </footer>
   );
 }
