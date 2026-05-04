@@ -1116,35 +1116,49 @@ function GenericPage({ content }) {
 }
 
 function ProjectPage({ project, type, onOpen }) {
-  const gallery = type === "kilengi" ? [...project.during, ...project.before, ...project.after] : project.gallery || [];
+  const gallery =
+    type === "kilengi"
+      ? [...project.during, ...project.before, ...project.after]
+      : project.gallery || [];
 
   return (
     <main className="bg-white">
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="max-w-4xl">
           <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
-            {type === "jpn95" ? "Dossier officiel de demande de licence" : "Projet en recherche de financement"}
+            {type === "jpn95"
+              ? "Dossier officiel de demande de licence"
+              : "Projet en recherche de financement"}
           </div>
 
           <h1 className="mt-5 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">
             {project.title}
           </h1>
 
-          <p className="mt-6 text-xl leading-9 text-slate-600">{project.subtitle}</p>
+          <p className="mt-6 text-xl leading-9 text-slate-600">
+            {project.subtitle}
+          </p>
         </div>
 
         {type !== "jpn95" && project.metrics && (
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {project.metrics.map((metric) => (
-              <div key={metric.label} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                <div className="text-3xl font-black text-blue-950">{metric.value}</div>
-                <div className="mt-2 text-sm text-slate-600">{metric.label}</div>
+              <div
+                key={metric.label}
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
+              >
+                <div className="text-3xl font-black text-blue-950">
+                  {metric.value}
+                </div>
+                <div className="mt-2 text-sm text-slate-600">
+                  {metric.label}
+                </div>
               </div>
             ))}
           </div>
         )}
 
-        {project.hero && (
+        {type !== "jpn95" && project.hero && (
           <div
             className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100"
             data-protected-image
