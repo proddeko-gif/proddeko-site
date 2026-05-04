@@ -1481,54 +1481,55 @@ function Footer({ setPage }) {
         </div>
       </div>
 
-      <div className="border-t border-white/10 bg-[#202020] px-6 py-7 text-xs text-slate-300 lg:px-8">
-        <div className="mx-auto max-w-7xl space-y-4">
-          <div className="leading-6">
-            <strong>{SITE.legalName}</strong>, agissant sous le nom commercial{" "}
-            <strong>{SITE.tradeName}</strong> — Numéro d’entreprise :{" "}
-            <strong>{SITE.enterpriseNumber}</strong> — Email :{" "}
-            <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:text-white">
-              {SITE.email}
-            </a>
-          </div>
+      <div className="border-t border-white/10 bg-[#202020] px-6 py-10 text-xs text-slate-300">
+  <div className="mx-auto max-w-4xl text-center space-y-5">
 
-          <div className="leading-6">
-            <strong>Protection des données personnelles – RGPD :</strong> conformément au Règlement Général
-            sur la Protection des Données, vous disposez d’un droit d’accès, de rectification,
-            de suppression et d’opposition concernant vos données personnelles. Pour exercer ces droits,
-            veuillez écrire à{" "}
-            <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:text-white">
-              {SITE.email}
-            </a>.
-          </div>
+    {/* Ligne juridique principale */}
+    <div className="text-sm leading-6 text-slate-300">
+      <strong>PRODDEKO-Belgique</strong>, agissant sous le nom commercial{" "}
+      <strong>Triple Sustain Impact</strong> — Numéro d’entreprise :{" "}
+      <strong>BE 0459.354.980</strong><br />
+      Email :{" "}
+      <a
+        href={`mailto:${SITE.email}`}
+        className="underline hover:text-white"
+      >
+        {SITE.email}
+      </a>
+    </div>
 
-          <div className="leading-6">
-            <strong>Cookies :</strong> ce site peut utiliser des cookies nécessaires à son fonctionnement
-            ainsi que, le cas échéant, des cookies de mesure d’audience.
-          </div>
+    {/* RGPD */}
+    <div className="text-xs leading-6 text-slate-400 max-w-2xl mx-auto">
+      <strong>Protection des données (RGPD)</strong> : conformément au
+      Règlement Général sur la Protection des Données, vous disposez d’un
+      droit d’accès, de rectification, de suppression et d’opposition.
+      Pour exercer ces droits, contactez-nous à{" "}
+      <a href={`mailto:${SITE.email}`} className="underline">
+        {SITE.email}
+      </a>.
+    </div>
 
-          <div className="flex flex-col gap-3 border-t border-white/10 pt-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="font-bold">{new Date().getFullYear()} © {SITE.name}. Tous droits réservés.</div>
+    {/* Cookies */}
+    <div className="text-xs text-slate-500">
+      Ce site peut utiliser des cookies nécessaires à son fonctionnement et,
+      le cas échéant, des cookies de mesure d’audience.
+    </div>
 
-            <div className="flex flex-wrap gap-4">
-              <button type="button" onClick={() => setPage("contact-info")} className="hover:text-white">
-                Contact
-              </button>
-              <span>|</span>
-              <button type="button" onClick={() => setPage("activity-reports")} className="hover:text-white">
-                Rapports d’activités
-              </button>
-              <span>|</span>
-              <button type="button" onClick={() => setPage("financing")} className="hover:text-white">
-                Faire un don
-              </button>
-            </div>
-          </div>
-        </div>
+    {/* Ligne finale */}
+    <div className="pt-4 border-t border-white/10 flex flex-col items-center gap-3 text-xs text-slate-400 md:flex-row md:justify-between">
+      <div>© {new Date().getFullYear()} PRODDEKO-Belgique. Tous droits réservés.</div>
+
+      <div className="flex gap-4">
+        <button onClick={() => setPage("contact-info")} className="hover:text-white">Contact</button>
+        <span>|</span>
+        <button onClick={() => setPage("activity-reports")} className="hover:text-white">Rapports</button>
+        <span>|</span>
+        <button onClick={() => setPage("financing")} className="hover:text-white">Faire un don</button>
       </div>
-    </footer>
-  );
-}
+    </div>
+
+  </div>
+</div>
 
 export default function App() {
   const [page, setPage] = useState("home");
