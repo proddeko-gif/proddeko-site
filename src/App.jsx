@@ -843,25 +843,49 @@ function ContactForm() {
 }
 
 function SupportActionPage({ type }) {
+  const donationOptions = [
+    {
+      amount: "100 €",
+      afterTax: "70 € après déduction fiscale",
+      title: "Un kit de semences",
+      description: "Pour aider une famille paysanne à cultiver sa terre et nourrir ses enfants.",
+    },
+    {
+      amount: "150 €",
+      afterTax: "105 € après déduction fiscale",
+      title: "Une formation à l’agroécologie",
+      description: "Pour cultiver autrement, mieux et durablement.",
+    },
+    {
+      amount: "200 €",
+      afterTax: "140 € après déduction fiscale",
+      title: "Un microcrédit",
+      description: "Pour lancer une petite activité, sortir de la précarité et retrouver sa dignité.",
+    },
+  ];
+
   const config = {
     donate: {
-      eyebrow: "Soutenir Triple Sustain Impact",
+      eyebrow: "Votre don, un impact concret et durable",
       title: "Faire un don",
-      intro: "Votre don contribue directement aux projets de santé communautaire, d’agriculture durable, d’éducation citoyenne et de solidarité internationale entre la Belgique et la RDC.",
-      button: "Valider mon intention de don",
+      intro:
+        "Au Congo, des familles se battent chaque jour pour survivre. Votre don peut changer leur avenir et soutenir concrètement les projets agricoles, sociaux et communautaires portés par Triple Sustain Impact / PRODDEKO-Belgique.",
+      button: "Envoyer mon intention de don",
       fields: ["Prénom", "Nom", "Email", "Montant souhaité", "Message"],
     },
     partner: {
       eyebrow: "Partenariat stratégique",
       title: "Devenir partenaire",
-      intro: "Triple Sustain Impact / PRODDEKO-Belgique recherche des partenaires techniques, institutionnels, académiques et financiers pour co-développer des projets à fort impact.",
+      intro:
+        "Triple Sustain Impact / PRODDEKO-Belgique recherche des partenaires techniques, institutionnels, académiques et financiers pour co-développer des projets à fort impact.",
       button: "Proposer un partenariat",
       fields: ["Organisation", "Personne de contact", "Email", "Type de partenariat", "Message"],
     },
     volunteer: {
       eyebrow: "Engagement citoyen",
       title: "Devenir bénévole",
-      intro: "Rejoignez nos actions de sensibilisation, d’éducation citoyenne, de mobilisation solidaire et d’appui aux projets de terrain.",
+      intro:
+        "Rejoignez nos actions de sensibilisation, d’éducation citoyenne, de mobilisation solidaire et d’appui aux projets de terrain.",
       button: "Proposer mon aide bénévole",
       fields: ["Prénom", "Nom", "Email", "Compétences ou disponibilités", "Message"],
     },
@@ -869,41 +893,120 @@ function SupportActionPage({ type }) {
 
   return (
     <main className="bg-slate-50">
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
+      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+        <div className="rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
           <BrandBlock size="lg" />
-          <div className="mt-8 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">{config.eyebrow}</div>
-          <h1 className="mt-4 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">{config.title}</h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{config.intro}</p>
+          <div className="mt-8 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
+            {config.eyebrow}
+          </div>
+          <h1 className="mt-4 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">
+            {config.title}
+          </h1>
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">{config.intro}</p>
 
           {type === "donate" && (
-            <div className="mt-10 grid gap-3 sm:grid-cols-4">
-              {["10 €", "25 €", "40 €", "100 €"].map((amount) => (
-                <button key={amount} type="button" className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-black text-blue-950 transition hover:border-orange-400 hover:bg-orange-50">
-                  {amount}
-                </button>
-              ))}
+            <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 text-white shadow-xl">
+              <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="relative min-h-[360px] bg-slate-900" data-protected-image>
+                  <ProtectedImage
+                    src="/images/dons/proddeko-don-impact-concret.png"
+                    alt="Campagne de don PRODDEKO-Belgique"
+                    className="absolute inset-0 h-full w-full object-cover opacity-85"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="inline-flex rounded-full bg-red-600 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white">
+                      Chaque montant est vital
+                    </div>
+                    <h2 className="mt-4 text-3xl font-black leading-tight md:text-4xl">
+                      Faites un don qui a du sens.
+                    </h2>
+                    <p className="mt-3 text-sm leading-6 text-slate-200">
+                      Merci du fond du cœur pour votre soutien aux familles et aux projets de terrain.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 p-7 lg:p-9">
+                  <div className="text-sm font-black uppercase tracking-[0.22em] text-orange-300">
+                    Toutes les 6 secondes
+                  </div>
+                  <h3 className="mt-3 text-2xl font-black leading-tight">
+                    La faim arrache la vie à un enfant. Avec 5 €, vous pouvez sauver une vie.
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-200">
+                    Votre geste d’aujourd’hui peut devenir leur vie de demain. Les dons de 40 € ou plus ouvrent droit à une attestation fiscale avec une réduction d’impôt de 30 %.
+                  </p>
+
+                  <div className="mt-7 grid gap-4 md:grid-cols-3">
+                    {donationOptions.map((option) => (
+                      <div key={option.amount} className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                        <div className="text-3xl font-black text-orange-300">{option.amount}</div>
+                        <div className="mt-1 text-xs font-bold uppercase text-emerald-200">{option.afterTax}</div>
+                        <div className="mt-4 text-sm font-black uppercase tracking-wide text-white">{option.title}</div>
+                        <p className="mt-2 text-xs leading-5 text-slate-200">{option.description}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 rounded-2xl bg-white p-5 text-slate-900">
+                    <div className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">Virement bancaire</div>
+                    <div className="mt-4 grid gap-4 md:grid-cols-2">
+                      <div>
+                        <div className="text-xs font-bold uppercase text-slate-500">Compte</div>
+                        <div className="mt-1 font-black">SOS-SCHEUT</div>
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold uppercase text-slate-500">IBAN</div>
+                        <div className="mt-1 font-black">BE82 0000 9019 7468</div>
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold uppercase text-slate-500">BIC</div>
+                        <div className="mt-1 font-black">BPOTBEB1</div>
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold uppercase text-slate-500">Communication</div>
+                        <div className="mt-1 font-black">Kilengi 11 243 004</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
             {config.fields.map((field) => (
               <label key={field} className={field === "Message" ? "md:col-span-2" : ""}>
                 <span className="text-sm font-bold text-slate-700">{field}</span>
                 {field === "Message" ? (
-                  <textarea className="mt-2 min-h-32 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
+                  <textarea
+                    className="mt-2 min-h-32 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400"
+                    placeholder={field}
+                  />
                 ) : (
-                  <input className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
+                  <input
+                    className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400"
+                    placeholder={field}
+                  />
                 )}
               </label>
             ))}
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a href={`mailto:${SITE.email}`} className="rounded-full bg-orange-600 px-7 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">
+            <a
+              href={`mailto:${SITE.email}`}
+              className="rounded-full bg-orange-600 px-7 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700"
+            >
               {config.button}
             </a>
-            <div className="text-sm text-slate-500">Ou écrivez directement à <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">{SITE.email}</a></div>
+            <div className="text-sm text-slate-500">
+              Ou écrivez directement à{" "}
+              <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">
+                {SITE.email}
+              </a>
+            </div>
           </div>
         </div>
       </section>
