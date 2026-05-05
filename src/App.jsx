@@ -91,8 +91,8 @@ const BOMA = {
 
 const JPN95 = {
   menuLabel: "JPN95 — Licence Fertilomer",
-  title: "Demande de licence d’exploitation JPN95 / Fertilomer",
-  subtitle: "PRODDEKO-Belgique, agissant sous le nom commercial Triple Sustain Impact, souhaite obtenir auprès de Laguzze, détentrice de la licence JPN95 / Fertilomer, un droit d’exploitation pour la Belgique et la République Démocratique du Congo.",
+  title: "Accord de licence et déploiement stratégique de Fertilomer JPN95",
+  subtitle: "PRODDEKO-Belgique, agissant sous le nom commercial Triple Sustain Impact, structure une demande d’accord de licence auprès de Laguzze, détentrice de la licence JPN95 / Fertilomer, afin d’ouvrir le développement, l’adaptation terrain et le déploiement commercial de Fertilomer JPN95 en Belgique et en République Démocratique du Congo.",
   gallery: [
     "/images/projects/jpn95/Fertilomer-JPN95-01.png",
     "/images/projects/jpn95/Fertilomer-JPN95-02.png",
@@ -545,7 +545,7 @@ function Hero({ setPage }) {
             <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-100">PRODDEKO-Belgique valorise des projets concrets en santé, agriculture durable, gouvernance et résilience communautaire.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <button type="button" onClick={() => setPage("project-kilengi")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600">Voir le projet Kilengi</button>
-              <button type="button" onClick={() => setPage("project-jpn95")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Demande de licence JPN95</button>
+              <button type="button" onClick={() => setPage("project-jpn95")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Licence stratégique JPN95</button>
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -828,7 +828,7 @@ function Home({ setPage, onOpen }) {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <SectionTitle eyebrow="Projets prioritaires" title="Des actions concrètes, documentées et finançables" text="PRODDEKO-Belgique met en avant des projets à fort impact social, agricole, éducatif et communautaire." />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          <button type="button" onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={JPN95.gallery[0]} alt="JPN95" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Demande de licence JPN95 / Fertilomer</h3><p className="mt-3 text-sm leading-7 text-slate-600">{JPN95.subtitle}</p></div></button>
+          <button type="button" onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={JPN95.gallery[0]} alt="JPN95" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Licence et déploiement Fertilomer JPN95</h3><p className="mt-3 text-sm leading-7 text-slate-600">{JPN95.subtitle}</p></div></button>
           <button type="button" onClick={() => setPage("project-kilengi")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={KILENGI.hero} alt="Kilengi" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Centre de Santé Kilengi</h3><p className="mt-3 text-sm leading-7 text-slate-600">{KILENGI.subtitle}</p></div></button>
           <button type="button" onClick={() => setPage("project-boma")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={BOMA.hero} alt="Boma" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Projet maraîcher Boma</h3><p className="mt-3 text-sm leading-7 text-slate-600">{BOMA.subtitle}</p></div></button>
         </div>
