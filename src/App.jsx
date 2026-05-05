@@ -907,6 +907,11 @@ function SupportActionPage({ type }) {
 }
 
 function Footer({ setPage }) {
+  const goTo = (pageName) => {
+    setPage(pageName);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-[#2f2f2f] text-white">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
@@ -955,9 +960,9 @@ function Footer({ setPage }) {
           <div className="bg-[#1f1b1d] p-6 lg:-my-14 lg:py-14">
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Faire un don</div>
             <p className="mt-5 text-sm font-semibold leading-7 text-slate-200">Soutenez nos projets en santé communautaire, eau potable, agriculture durable, éducation citoyenne et solidarité internationale.</p>
-            <button type="button" onClick={() => setPage("donate")} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></button>
-            <button type="button" onClick={() => setPage("partner")} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></button>
-            <button type="button" onClick={() => setPage("volunteer")} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir bénévole <span className="text-xl">›</span></button>
+            <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></a>
+            <a href="#partner" onClick={(event) => { event.preventDefault(); goTo("partner"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></a>
+            <a href="#volunteer" onClick={(event) => { event.preventDefault(); goTo("volunteer"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir bénévole <span className="text-xl">›</span></a>
             <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Newsletter</div>
             <p className="mt-4 text-sm leading-6 text-slate-300">Recevez nos nouvelles, appels à partenariat et rapports d’impact.</p>
           </div>
@@ -972,12 +977,12 @@ function Footer({ setPage }) {
             <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
               <div className="font-semibold text-slate-400">© {new Date().getFullYear()} {SITE.name}. Tous droits réservés.</div>
               <div className="flex flex-wrap items-center justify-center gap-4 text-slate-400">
-                <button type="button" onClick={() => setPage("legal-notice")} className="hover:text-white">Mentions légales</button><span>|</span>
-                <button type="button" onClick={() => setPage("privacy")} className="hover:text-white">RGPD</button><span>|</span>
-                <button type="button" onClick={() => setPage("cookies")} className="hover:text-white">Cookies</button><span>|</span>
-                <button type="button" onClick={() => setPage("contact-info")} className="hover:text-white">Contact</button><span>|</span>
-                <button type="button" onClick={() => setPage("activity-reports")} className="hover:text-white">Rapports d’activités</button><span>|</span>
-                <button type="button" onClick={() => setPage("financing")} className="hover:text-white">Faire un don</button>
+                <a href="#legal-notice" onClick={(event) => { event.preventDefault(); goTo("legal-notice"); }} className="hover:text-white">Mentions légales</a><span>|</span>
+                <a href="#privacy" onClick={(event) => { event.preventDefault(); goTo("privacy"); }} className="hover:text-white">RGPD</a><span>|</span>
+                <a href="#cookies" onClick={(event) => { event.preventDefault(); goTo("cookies"); }} className="hover:text-white">Cookies</a><span>|</span>
+                <a href="#contact-info" onClick={(event) => { event.preventDefault(); goTo("contact-info"); }} className="hover:text-white">Contact</a><span>|</span>
+                <a href="#activity-reports" onClick={(event) => { event.preventDefault(); goTo("activity-reports"); }} className="hover:text-white">Rapports d’activités</a><span>|</span>
+                <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="hover:text-white">Faire un don</a>
               </div>
             </div>
           </div>
