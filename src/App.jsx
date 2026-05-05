@@ -838,6 +838,74 @@ function Home({ setPage, onOpen }) {
   );
 }
 
+function SupportActionPage({ type }) {
+  const config = {
+    donate: {
+      eyebrow: "Soutenir PRODDEKO-Belgique",
+      title: "Faire un don",
+      intro: "Votre don contribue directement aux projets de santé communautaire, d’agriculture durable, d’éducation citoyenne et de solidarité internationale entre la Belgique et la RDC.",
+      button: "Valider mon intention de don",
+      fields: ["Prénom", "Nom", "Email", "Montant souhaité", "Message"],
+    },
+    partner: {
+      eyebrow: "Partenariat stratégique",
+      title: "Devenir partenaire",
+      intro: "PRODDEKO-Belgique recherche des partenaires techniques, institutionnels, académiques et financiers pour co-développer des projets à fort impact.",
+      button: "Proposer un partenariat",
+      fields: ["Organisation", "Personne de contact", "Email", "Type de partenariat", "Message"],
+    },
+    volunteer: {
+      eyebrow: "Engagement citoyen",
+      title: "Devenir bénévole",
+      intro: "Rejoignez nos actions de sensibilisation, d’éducation citoyenne, de mobilisation solidaire et d’appui aux projets de terrain.",
+      button: "Proposer mon aide bénévole",
+      fields: ["Prénom", "Nom", "Email", "Compétences ou disponibilités", "Message"],
+    },
+  }[type];
+
+  return (
+    <main className="bg-slate-50">
+      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
+          <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">{config.eyebrow}</div>
+          <h1 className="mt-4 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">{config.title}</h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{config.intro}</p>
+
+          {type === "donate" && (
+            <div className="mt-10 grid gap-3 sm:grid-cols-4">
+              {["10 €", "25 €", "40 €", "100 €"].map((amount) => (
+                <button key={amount} type="button" className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-black text-blue-950 transition hover:border-orange-400 hover:bg-orange-50">
+                  {amount}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {config.fields.map((field) => (
+              <label key={field} className={field === "Message" ? "md:col-span-2" : ""}>
+                <span className="text-sm font-bold text-slate-700">{field}</span>
+                {field === "Message" ? (
+                  <textarea className="mt-2 min-h-32 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
+                ) : (
+                  <input className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
+                )}
+              </label>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a href={`mailto:${SITE.email}`} className="rounded-full bg-orange-600 px-7 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">
+              {config.button}
+            </a>
+            <div className="text-sm text-slate-500">Ou écrivez directement à <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">{SITE.email}</a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
 function Footer({ setPage }) {
   return (
     <footer className="bg-[#2f2f2f] text-white">
@@ -887,8 +955,9 @@ function Footer({ setPage }) {
           <div className="bg-[#1f1b1d] p-6 lg:-my-14 lg:py-14">
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Faire un don</div>
             <p className="mt-5 text-sm font-semibold leading-7 text-slate-200">Soutenez nos projets en santé communautaire, eau potable, agriculture durable, éducation citoyenne et solidarité internationale.</p>
-            <button type="button" onClick={() => setPage("financing")} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></button>
-            <button type="button" onClick={() => setPage("contact-form")} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></button>
+            <button type="button" onClick={() => setPage("donate")} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></button>
+            <button type="button" onClick={() => setPage("partner")} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></button>
+            <button type="button" onClick={() => setPage("volunteer")} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir bénévole <span className="text-xl">›</span></button>
             <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Newsletter</div>
             <p className="mt-4 text-sm leading-6 text-slate-300">Recevez nos nouvelles, appels à partenariat et rapports d’impact.</p>
           </div>
@@ -1027,6 +1096,9 @@ export default function App() {
   else if (page === "project-rebond-foot") content = <ProjectPage project={REBOND_FOOT} type="rebond-foot" onOpen={openLightbox} />;
   else if (page === "contact-form") content = <ContactForm />;
   else if (page === "activity-reports") content = <ActivityReportsPage />;
+  else if (page === "donate") content = <SupportActionPage type="donate" />;
+  else if (page === "partner") content = <SupportActionPage type="partner" />;
+  else if (page === "volunteer") content = <SupportActionPage type="volunteer" />;
   else content = <GenericPage content={pageContent[page] || pageContent.about} />;
 
   return (
