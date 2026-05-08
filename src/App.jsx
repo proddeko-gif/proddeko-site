@@ -32,6 +32,9 @@ const SITE = {
   name: "PRODDEKO-Belgique",
   legalName: "PRODDEKO-Belgique",
   tradeName: "Triple Sustain Impact",
+  brandSignature: "{SITE.brandSignature}",
+  domain: "proddeko.online",
+  website: "https://proddeko.online",
   enterpriseNumber: "BE 0459.354.980",
   tagline: "Solidarité internationale • Développement durable • Gouvernance éthique",
   email: "admin@proddeko.online",
@@ -398,6 +401,7 @@ function BrandBlock({ light = false, center = false, size = "md" }) {
     <div className={center ? "text-center" : ""}>
       <div className={`${tradeSize} font-black tracking-tight ${light ? "text-orange-300" : "text-orange-600"}`}>{SITE.tradeName}</div>
       <div className={`mt-2 ${legalSize} font-extrabold ${light ? "text-white" : "text-blue-950"}`}>{SITE.name}</div>
+      <div className={`mt-1 text-sm ${light ? "text-slate-200" : "text-slate-500"}`}>{SITE.domain} • {SITE.email}</div>
       <div className={`mt-1 text-sm ${light ? "text-slate-200" : "text-slate-500"}`}>{SITE.tagline}</div>
     </div>
   );
@@ -492,6 +496,7 @@ function Header({ page, setPage, mobileOpen, setMobileOpen, activeMenu, setActiv
           <div className="min-w-0">
             <div className="text-2xl font-black leading-none tracking-tight text-orange-600 md:text-3xl">{SITE.tradeName}</div>
             <div className="mt-1 text-lg font-extrabold leading-none text-blue-950 md:text-xl">{SITE.name}</div>
+            <div className="hidden text-sm text-slate-500 md:block">{SITE.domain} • {SITE.email}</div>
             <div className="hidden text-sm text-slate-500 md:block">{SITE.tagline}</div>
           </div>
         </button>
@@ -1072,7 +1077,7 @@ function Footer({ setPage }) {
           </div>
           <div>
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Contact</div>
-            <div className="mt-5 space-y-3 text-sm font-bold leading-7 text-slate-100"><div>{SITE.tradeName}</div><div>{SITE.name}</div><div>{SITE.belgiumLocation}</div><div>{SITE.drcLocation}</div><div className="pt-2">T : {SITE.phone}</div><div>E : {SITE.email}</div></div>
+            <div className="mt-5 space-y-3 text-sm font-bold leading-7 text-slate-100"><div>{SITE.tradeName}</div><div>{SITE.name}</div><div>{SITE.domain}</div><div>{SITE.belgiumLocation}</div><div>{SITE.drcLocation}</div><div className="pt-2">T : {SITE.phone}</div><div>Web : {SITE.domain}</div><div>E : {SITE.email}</div></div>
             <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Suivez-nous</div>
             <div className="mt-4 flex gap-3 text-slate-300"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">f</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">in</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">▶</span></div>
           </div>
@@ -1096,7 +1101,7 @@ function Footer({ setPage }) {
       <div className="border-t border-white/10 bg-[#202020] px-6 py-12 text-xs text-slate-300">
         <div className="mx-auto max-w-4xl space-y-5 text-center">
           <BrandBlock light center size="lg" />
-          <div className="text-sm leading-7 text-slate-200"><strong>{SITE.legalName}</strong>, agissant sous le nom commercial <strong>{SITE.tradeName}</strong><br />Numéro d’entreprise : <strong>{SITE.enterpriseNumber}</strong><br />Email : <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:text-white">{SITE.email}</a></div>
+          <div className="text-sm leading-7 text-slate-200"><strong>{SITE.legalName}</strong>, agissant sous le nom commercial <strong>{SITE.tradeName}</strong><br />Numéro d’entreprise : <strong>{SITE.enterpriseNumber}</strong><br />Site : <a href={SITE.website} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-white">{SITE.domain}</a><br />Email : <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:text-white">{SITE.email}</a></div>
           <div className="mx-auto max-w-3xl text-xs leading-6 text-slate-400"><strong>Protection des données personnelles – RGPD</strong><br />Conformément au Règlement Général sur la Protection des Données, vous disposez d’un droit d’accès, de rectification, de suppression et d’opposition concernant vos données personnelles. Pour exercer ces droits, veuillez écrire à <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:text-white">{SITE.email}</a>.</div>
           <div className="mx-auto max-w-2xl text-xs leading-6 text-slate-500">Ce site peut utiliser des cookies nécessaires à son fonctionnement ainsi que, le cas échéant, des cookies de mesure d’audience.</div>
           <div className="border-t border-white/10 pt-5">
