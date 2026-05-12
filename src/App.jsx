@@ -32,10 +32,11 @@ const SITE = {
   name: "PRODDEKO-Belgique",
   legalName: "PRODDEKO-Belgique",
   tradeName: "Triple Sustain Impact",
-  brandSignature: "{SITE.brandSignature}",
+  brandSignature: "Triple Sustain Impact / PRODDEKO-Belgique",
   domain: "proddeko.online",
   website: "https://proddeko.online",
   enterpriseNumber: "BE 0459.354.980",
+  historicalEnterpriseNumber: "0459.354.980",
   tagline: "Solidarité internationale • Développement durable • Gouvernance éthique",
   email: "admin@proddeko.online",
   phone: "+32 488 84 46 98",
@@ -43,6 +44,7 @@ const SITE = {
   bic: "GEBABEBB",
   accountName: "PRODDEKO PROGRAMMES DE DEVELOPPEMENT DURABLE",
   belgiumLocation: "Welkenraedt, Belgique",
+  officialSeat: "Rue Prince Albert 8 boîte et, 4840 Welkenraedt",
   drcLocation: "Kinzau-Mvuete, RDC",
   logo: "/images/proddeko-logo.png",
 };
@@ -168,6 +170,7 @@ const navItems = [
       { label: "Valeurs", page: "values", icon: BookOpen },
       { label: "Gouvernance", page: "governance", icon: Landmark },
       { label: "Rapports d’activités", page: "activity-reports", icon: FileText },
+      { label: "30 ans d’impact", page: "anniversary-30", icon: Sparkles },
     ],
   },
   {
@@ -503,6 +506,7 @@ function Header({ page, setPage, mobileOpen, setMobileOpen, activeMenu, setActiv
         <nav className="hidden items-center gap-3 lg:flex">
           <button type="button" onClick={() => { setPage("home"); setActiveMenu(null); }} className={`rounded-full px-5 py-3 text-sm font-bold transition ${page === "home" ? "bg-slate-100 text-blue-950 shadow-sm" : "text-slate-700 hover:bg-slate-100 hover:text-blue-950"}`}>Accueil</button>
           {navItems.map((group) => <MenuGroup key={group.label} group={group} activeMenu={activeMenu} setActiveMenu={setActiveMenu} setPage={setPage} />)}
+          <button type="button" onClick={() => setPage("anniversary-30")} className="rounded-full border border-orange-200 bg-orange-50 px-5 py-3 text-sm font-bold text-orange-700 transition hover:bg-orange-100">30 ans d’impact</button>
           <button type="button" onClick={() => setPage("project-kilengi")} className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50 hover:text-blue-950">Projet Kilengi</button>
           <button type="button" onClick={() => setPage("contact-form")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-orange-600">Nous contacter</button>
         </nav>
@@ -513,6 +517,7 @@ function Header({ page, setPage, mobileOpen, setMobileOpen, activeMenu, setActiv
       {mobileOpen && (
         <div className="border-t border-slate-200 bg-white px-4 py-4 lg:hidden">
           <button type="button" onClick={() => { setPage("home"); setMobileOpen(false); }} className="mb-3 w-full rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-700">Accueil</button>
+          <button type="button" onClick={() => { setPage("anniversary-30"); setMobileOpen(false); }} className="mb-3 w-full rounded-2xl border border-orange-200 bg-orange-50 px-4 py-3 text-left text-sm font-bold text-orange-700">30 ans d’impact</button>
           {navItems.map((group) => {
             const isOpen = activeMenu === group.label;
             return (
@@ -570,6 +575,7 @@ function Hero({ setPage }) {
             <div className="mt-10 flex flex-wrap gap-4">
               <button type="button" onClick={() => setPage("project-kilengi")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600">Voir le projet Kilengi</button>
               <button type="button" onClick={() => setPage("project-jpn95")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Licence stratégique JPN95</button>
+              <button type="button" onClick={() => setPage("anniversary-30")} className="rounded-full border border-orange-300 bg-orange-400/15 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Préparer les 30 ans</button>
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -824,6 +830,89 @@ function ActivityReportsPage() {
   );
 }
 
+function AnniversaryPage({ setPage }) {
+  const institutionalFacts = [
+    ["Nom historique", "Programmes de développement durable de la RD Congo en Belgique"],
+    ["Abréviation", "PRODDECCO-Belgique"],
+    ["Identité actuelle", SITE.brandSignature],
+    ["Numéro d’entreprise", SITE.historicalEnterpriseNumber],
+    ["Date de début", "24 août 1996"],
+    ["Statut", "Actif"],
+    ["Forme légale", "Association à but non lucratif"],
+    ["Siège social", SITE.officialSeat],
+  ];
+
+  return (
+    <main className="bg-slate-50">
+      <section className="relative overflow-hidden bg-slate-950 text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950" />
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8">
+          <BrandBlock light size="xl" />
+          <div className="mt-10 inline-flex rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-black uppercase tracking-[0.18em] text-orange-200">
+            24 août 2026 • 30 ans d’existence officielle
+          </div>
+          <h1 className="mt-8 max-w-5xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
+            30 ans d’impact durable : Héritage, Transformation et Futur
+          </h1>
+          <p className="mt-8 max-w-4xl text-xl leading-9 text-slate-100">
+            L’organisation enregistrée sous le numéro d’entreprise {SITE.historicalEnterpriseNumber} prépare une célébration qui dépasse la commémoration : un moment de relance institutionnelle, de reconnaissance des pionniers, de mobilisation internationale et de projection vers 2050.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <button type="button" onClick={() => setPage("partner")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-black text-white hover:bg-orange-600">Devenir partenaire</button>
+            <button type="button" onClick={() => setPage("volunteer")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-black text-white hover:bg-white/10">Participer comme bénévole</button>
+            <a href={`mailto:${SITE.email}`} className="rounded-full border border-white/20 px-6 py-3 text-sm font-black text-white hover:bg-white/10">Partager un témoignage</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-4">
+          {institutionalFacts.map(([label, value]) => (
+            <div key={label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="text-xs font-black uppercase tracking-[0.18em] text-orange-500">{label}</div>
+              <div className="mt-3 text-lg font-black leading-7 text-blue-950">{value}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
+          <SectionTitle eyebrow="Concept général" title="Un anniversaire pensé comme une relance" text="La célébration peut devenir une plateforme de dialogue, de reconnaissance, de visibilité internationale et de lancement d’un nouveau cycle de transformation durable." />
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            <InfoCard icon={BookOpen} title="Mémoire et reconnaissance">Exposition historique, témoignages, projection documentaire, distinctions honorifiques et publication anniversaire.</InfoCard>
+            <InfoCard icon={Users} title="Dialogue et futur">Forum stratégique sur le développement durable, la diaspora, l’économie sociale, l’innovation et la vision 2050.</InfoCard>
+            <InfoCard icon={Sparkles} title="Relance et mobilisation">Lancement officiel de la dynamique Triple Sustain Impact, signatures de partenariats, fonds d’impact durable et campagne “30 projets pour les 30 prochaines années”.</InfoCard>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <h2 className="text-2xl font-black text-blue-950">Version newsletter courte</h2>
+            <div className="mt-6 rounded-2xl bg-slate-50 p-5 text-sm leading-7 text-slate-700">
+              <p><strong>Objet :</strong> 30 ans d’impact durable — Triple Sustain Impact / PRODDEKO-Belgique prépare 2026</p>
+              <p className="mt-4">Le 24 août 2026, notre organisation célébrera 30 ans d’existence officielle. Cet anniversaire sera un moment de mémoire, de reconnaissance et de relance stratégique.</p>
+              <p className="mt-4">Sous l’identité Triple Sustain Impact / PRODDEKO-Belgique, nous souhaitons transformer cette étape en plateforme de dialogue, de mobilisation et de nouveaux partenariats pour les années 2026–2056.</p>
+              <p className="mt-4">Contact : <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">{SITE.email}</a></p>
+            </div>
+          </div>
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <h2 className="text-2xl font-black text-blue-950">Appels à action</h2>
+            <div className="mt-6 grid gap-3">
+              <button type="button" onClick={() => setPage("partner")} className="flex items-center justify-between rounded-2xl bg-orange-600 px-5 py-4 text-sm font-black uppercase tracking-wide text-white hover:bg-orange-700">Devenir partenaire <span>›</span></button>
+              <a href={`mailto:${SITE.email}`} className="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 text-sm font-black uppercase tracking-wide text-blue-950 hover:bg-slate-50">Partager un témoignage <span>›</span></a>
+              <button type="button" onClick={() => setPage("donate")} className="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 text-sm font-black uppercase tracking-wide text-blue-950 hover:bg-slate-50">Soutenir la célébration <span>›</span></button>
+              <button type="button" onClick={() => setPage("volunteer")} className="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 text-sm font-black uppercase tracking-wide text-blue-950 hover:bg-slate-50">Participer comme bénévole <span>›</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
 function ContactForm() {
   return (
     <main className="bg-slate-50">
@@ -1057,6 +1146,7 @@ function Footer({ setPage }) {
               <button type="button" onClick={() => goTo("mission")} className="block hover:text-white">Mission</button>
               <button type="button" onClick={() => goTo("values")} className="block hover:text-white">Valeurs</button>
               <button type="button" onClick={() => goTo("governance")} className="block hover:text-white">Gouvernance</button>
+              <button type="button" onClick={() => goTo("anniversary-30")} className="block font-bold text-orange-200 hover:text-white">30 ans d’impact</button>
             </div>
           </div>
           <div>
@@ -1090,7 +1180,8 @@ function Footer({ setPage }) {
           <div className="bg-[#1f1b1d] p-6 lg:-my-14 lg:py-14">
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Soutenir {SITE.tradeName}</div>
             <p className="mt-5 text-sm font-semibold leading-7 text-slate-200">Soutenez nos projets en santé communautaire, eau potable, agriculture durable, éducation citoyenne et solidarité internationale.</p>
-            <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></a>
+            <a href="#anniversary-30" onClick={(event) => { event.preventDefault(); goTo("anniversary-30"); }} className="mt-6 flex w-full items-center justify-between bg-orange-500 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-600">30 ans d’impact <span className="text-xl">›</span></a>
+            <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="mt-3 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></a>
             <a href="#partner" onClick={(event) => { event.preventDefault(); goTo("partner"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></a>
             <a href="#volunteer" onClick={(event) => { event.preventDefault(); goTo("volunteer"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir bénévole <span className="text-xl">›</span></a>
             <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Newsletter</div>
@@ -1108,6 +1199,7 @@ function Footer({ setPage }) {
             <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
               <div className="font-semibold text-slate-400">© {new Date().getFullYear()} {SITE.tradeName} / {SITE.name}. Tous droits réservés.</div>
               <div className="flex flex-wrap items-center justify-center gap-4 text-slate-400">
+                <a href="#anniversary-30" onClick={(event) => { event.preventDefault(); goTo("anniversary-30"); }} className="hover:text-white">30 ans d’impact</a><span>|</span>
                 <a href="#legal-notice" onClick={(event) => { event.preventDefault(); goTo("legal-notice"); }} className="hover:text-white">Mentions légales</a><span>|</span>
                 <a href="#privacy" onClick={(event) => { event.preventDefault(); goTo("privacy"); }} className="hover:text-white">RGPD</a><span>|</span>
                 <a href="#cookies" onClick={(event) => { event.preventDefault(); goTo("cookies"); }} className="hover:text-white">Cookies</a><span>|</span>
@@ -1232,6 +1324,7 @@ export default function App() {
   else if (page === "project-rebond-foot") content = <ProjectPage project={REBOND_FOOT} type="rebond-foot" onOpen={openLightbox} />;
   else if (page === "contact-form") content = <ContactForm />;
   else if (page === "activity-reports") content = <ActivityReportsPage />;
+  else if (page === "anniversary-30") content = <AnniversaryPage setPage={setPage} />;
   else if (page === "donate") content = <SupportActionPage type="donate" />;
   else if (page === "partner") content = <SupportActionPage type="partner" />;
   else if (page === "volunteer") content = <SupportActionPage type="volunteer" />;
