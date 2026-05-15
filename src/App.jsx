@@ -133,6 +133,8 @@ const REBOND_FOOT = {
   subtitle:
     "Réinsertion sociale de 35 jeunes anciens délinquants de rue par le football, l’éducation et le suivi psycho-social.",
   hero: "/images/projects/rebond-foot/rebond-foot-01.png",
+  video: "/videos/OC_Somwe-Yongo_V1.mp4",
+  videoCover: "/images/projects/rebond-foot/rebond-foot-cover.jpg",
   gallery: makeImagePaths("/images/projects/rebond-foot", "rebond-foot", 15, "png"),
   metrics: [
     { value: "35", label: "jeunes accompagnés" },
@@ -252,7 +254,10 @@ const pageContent = {
     eyebrow: "Écosystème institutionnel",
     title: "Partenaires stratégiques",
     text: "Triple Sustain Impact / PRODDEKO-Belgique s’inscrit dans un réseau multi-acteurs mobilisant institutions, ONG, universités et relais territoriaux.",
-    cards: partnersList.map((name) => ({ title: name, body: "Partenaire potentiel, institutionnel ou technique dans l’écosystème de solidarité et de développement." })),
+    cards: partnersList.map((name) => ({
+      title: name,
+      body: "Partenaire potentiel, institutionnel ou technique dans l’écosystème de solidarité et de développement.",
+    })),
   },
   "projects-impact": {
     eyebrow: "Résultats et portée",
@@ -683,6 +688,62 @@ function DocsSection({ docs = [] }) {
   );
 }
 
+function RebondFootVideoSection({ project }) {
+  if (!project.video) return null;
+
+  return (
+    <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+      <div className="overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-xl">
+        <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-orange-900 px-8 py-10 text-white">
+          <div className="text-sm font-black uppercase tracking-[0.22em] text-orange-300">
+            Vidéo officielle du projet
+          </div>
+
+          <h2 className="mt-4 text-4xl font-black tracking-tight">
+            Rebondir par le Foot — Kinshasa
+          </h2>
+
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-100">
+            Découvrez la dynamique du projet « Rebondir par le Foot » porté par Triple Sustain Impact / PRODDEKO-Belgique avec l’OC Somwe-Yongo à Kinshasa. Une initiative de réinsertion sociale par le sport, l’éducation citoyenne et l’accompagnement psycho-social.
+          </p>
+        </div>
+
+        <div className="bg-black p-4 md:p-8">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full bg-black"
+              poster={project.videoCover}
+            >
+              <source src={project.video} type="video/mp4" />
+              Votre navigateur ne supporte pas la lecture vidéo.
+            </video>
+          </div>
+        </div>
+
+        <div className="grid gap-6 bg-slate-50 px-8 py-8 md:grid-cols-3">
+          <div className="rounded-3xl bg-white p-6 shadow-sm">
+            <div className="text-3xl font-black text-orange-500">35</div>
+            <div className="mt-2 text-sm font-semibold text-slate-700">Jeunes accompagnés</div>
+          </div>
+
+          <div className="rounded-3xl bg-white p-6 shadow-sm">
+            <div className="text-3xl font-black text-blue-950">Kinshasa</div>
+            <div className="mt-2 text-sm font-semibold text-slate-700">Zone d’intervention</div>
+          </div>
+
+          <div className="rounded-3xl bg-white p-6 shadow-sm">
+            <div className="text-3xl font-black text-emerald-700">Inclusion</div>
+            <div className="mt-2 text-sm font-semibold text-slate-700">Réinsertion par le sport</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function JPN95LicenseContent({ onOpen }) {
   return (
     <>
@@ -714,53 +775,6 @@ function JPN95LicenseContent({ onOpen }) {
             <InfoCard icon={Sprout} title="Souveraineté agricole">Le projet vise à réduire la dépendance aux engrais chimiques importés et à renforcer l’autonomie productive des petits exploitants agricoles.</InfoCard>
             <InfoCard icon={Handshake} title="Partenariat Laguzze">PRODDEKO-Belgique souhaite obtenir un cadre de licence, de transfert de savoir-faire et d’encadrement technique pour la Belgique et la RDC.</InfoCard>
           </div>
-          <div className="mt-12 space-y-10">
-            <section>
-              <h3 className="text-2xl font-black text-blue-950">2. Présentation de JPN95 / Fertilomer</h3>
-              <p className="mt-4 leading-8 text-slate-700">JPN95 / Fertilomer est une solution fertilisante innovante qui vise à améliorer la fertilité des sols, réduire la dépendance aux intrants chimiques, diminuer les coûts agricoles et soutenir une agriculture plus résiliente.</p>
-              <ul className="mt-5 list-disc space-y-2 pl-6 text-slate-700">
-                <li>Amélioration durable de la fertilité des sols</li>
-                <li>Réduction de la dépendance aux engrais chimiques importés</li>
-                <li>Diminution des coûts de production agricole</li>
-                <li>Renforcement de la résilience des exploitations</li>
-                <li>Soutien à une agriculture locale plus productive</li>
-              </ul>
-            </section>
-            <section>
-              <h3 className="text-2xl font-black text-blue-950">3. Projet pilote : JPN95 Kongo Central</h3>
-              <p className="mt-4 leading-8 text-slate-700">Le projet pilote prévoit une phase d’expérimentation dans la province du Kongo Central, en République Démocratique du Congo, afin de tester l’efficacité agronomique, économique et sociale de la solution auprès de petits exploitants.</p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {JPN95.metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-3xl border border-slate-200 bg-slate-50 p-6"><div className="text-3xl font-black text-emerald-800">{metric.value}</div><div className="mt-2 text-sm text-slate-600">{metric.label}</div></div>
-                ))}
-              </div>
-            </section>
-            <section>
-              <h3 className="text-2xl font-black text-blue-950">4. Objectifs stratégiques</h3>
-              <ul className="mt-5 list-disc space-y-2 pl-6 text-slate-700">
-                <li>Obtenir une licence d’exploitation JPN95 / Fertilomer</li>
-                <li>Déployer une solution durable en Belgique et en RDC</li>
-                <li>Structurer un modèle agricole reproductible Europe – Afrique</li>
-                <li>Accompagner les petits producteurs agricoles</li>
-                <li>Contribuer à la souveraineté alimentaire locale</li>
-              </ul>
-            </section>
-            <section>
-              <h3 className="text-2xl font-black text-blue-950">5. Engagement souhaité avec Laguzze</h3>
-              <p className="mt-4 leading-8 text-slate-700">PRODDEKO-Belgique souhaite établir avec Laguzze un partenariat structuré, transparent et durable autour de la licence JPN95 / Fertilomer.</p>
-              <ul className="mt-5 list-disc space-y-2 pl-6 text-slate-700">
-                <li>Accès à la licence JPN95 / Fertilomer</li>
-                <li>Transfert de savoir-faire technique</li>
-                <li>Encadrement du projet pilote</li>
-                <li>Possibilité de co-développement Belgique / RDC</li>
-                <li>Suivi des résultats agronomiques et économiques</li>
-              </ul>
-            </section>
-            <section>
-              <h3 className="text-2xl font-black text-blue-950">6. Conclusion</h3>
-              <p className="mt-4 leading-8 text-slate-700">Cette demande de licence s’inscrit dans une logique de coopération internationale, de transfert de technologie et de développement agricole durable. Elle vise à faire de JPN95 / Fertilomer une solution concrète au service des producteurs, des sols, des familles et des économies locales.</p>
-            </section>
-          </div>
         </div>
       </section>
       <JPN95Gallery onOpen={onOpen} />
@@ -784,6 +798,7 @@ function GenericPage({ content }) {
 
 function ProjectPage({ project, type, onOpen }) {
   const gallery = type === "kilengi" ? [...project.during, ...project.before, ...project.after] : project.gallery || [];
+
   return (
     <main className="bg-white">
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
@@ -793,21 +808,35 @@ function ProjectPage({ project, type, onOpen }) {
           <h1 className="mt-5 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">{project.title}</h1>
           <p className="mt-6 text-xl leading-9 text-slate-600">{project.subtitle}</p>
         </div>
+
         {type !== "jpn95" && project.metrics && (
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {project.metrics.map((metric) => <div key={metric.label} className="rounded-3xl border border-slate-200 bg-slate-50 p-6"><div className="text-3xl font-black text-blue-950">{metric.value}</div><div className="mt-2 text-sm text-slate-600">{metric.label}</div></div>)}
+            {project.metrics.map((metric) => (
+              <div key={metric.label} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <div className="text-3xl font-black text-blue-950">{metric.value}</div>
+                <div className="mt-2 text-sm text-slate-600">{metric.label}</div>
+              </div>
+            ))}
           </div>
         )}
+
         {type !== "jpn95" && project.hero && (
           <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100" data-protected-image>
             <ProtectedImage src={project.hero} alt={project.title} className="h-[420px] w-full object-cover" />
           </div>
         )}
       </section>
+
       {type === "jpn95" ? (
         <JPN95LicenseContent onOpen={onOpen} />
       ) : (
-        <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8"><GallerySection title="Galerie du projet" eyebrow="Documentation visuelle" images={gallery} onOpen={onOpen} /></section>
+        <>
+          {type === "rebond-foot" && <RebondFootVideoSection project={project} />}
+
+          <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+            <GallerySection title="Galerie du projet" eyebrow="Documentation visuelle" images={gallery} onOpen={onOpen} />
+          </section>
+        </>
       )}
     </main>
   );
@@ -831,17 +860,6 @@ function ActivityReportsPage() {
 }
 
 function AnniversaryPage({ setPage }) {
-  const institutionalFacts = [
-    ["Nom historique", "Programmes de développement durable de la RD Congo en Belgique"],
-    ["Abréviation", "PRODDECCO-Belgique"],
-    ["Identité actuelle", SITE.brandSignature],
-    ["Numéro d’entreprise", SITE.historicalEnterpriseNumber],
-    ["Date de début", "24 août 1996"],
-    ["Statut", "Actif"],
-    ["Forme légale", "Association à but non lucratif"],
-    ["Siège social", SITE.officialSeat],
-  ];
-
   return (
     <main className="bg-slate-50">
       <section className="relative overflow-hidden bg-slate-950 text-white">
@@ -861,51 +879,6 @@ function AnniversaryPage({ setPage }) {
             <button type="button" onClick={() => setPage("partner")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-black text-white hover:bg-orange-600">Devenir partenaire</button>
             <button type="button" onClick={() => setPage("volunteer")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-black text-white hover:bg-white/10">Participer comme bénévole</button>
             <a href={`mailto:${SITE.email}`} className="rounded-full border border-white/20 px-6 py-3 text-sm font-black text-white hover:bg-white/10">Partager un témoignage</a>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-4">
-          {institutionalFacts.map(([label, value]) => (
-            <div key={label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="text-xs font-black uppercase tracking-[0.18em] text-orange-500">{label}</div>
-              <div className="mt-3 text-lg font-black leading-7 text-blue-950">{value}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
-          <SectionTitle eyebrow="Concept général" title="Un anniversaire pensé comme une relance" text="La célébration peut devenir une plateforme de dialogue, de reconnaissance, de visibilité internationale et de lancement d’un nouveau cycle de transformation durable." />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <InfoCard icon={BookOpen} title="Mémoire et reconnaissance">Exposition historique, témoignages, projection documentaire, distinctions honorifiques et publication anniversaire.</InfoCard>
-            <InfoCard icon={Users} title="Dialogue et futur">Forum stratégique sur le développement durable, la diaspora, l’économie sociale, l’innovation et la vision 2050.</InfoCard>
-            <InfoCard icon={Sparkles} title="Relance et mobilisation">Lancement officiel de la dynamique Triple Sustain Impact, signatures de partenariats, fonds d’impact durable et campagne “30 projets pour les 30 prochaines années”.</InfoCard>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-black text-blue-950">Version newsletter courte</h2>
-            <div className="mt-6 rounded-2xl bg-slate-50 p-5 text-sm leading-7 text-slate-700">
-              <p><strong>Objet :</strong> 30 ans d’impact durable — Triple Sustain Impact / PRODDEKO-Belgique prépare 2026</p>
-              <p className="mt-4">Le 24 août 2026, notre organisation célébrera 30 ans d’existence officielle. Cet anniversaire sera un moment de mémoire, de reconnaissance et de relance stratégique.</p>
-              <p className="mt-4">Sous l’identité Triple Sustain Impact / PRODDEKO-Belgique, nous souhaitons transformer cette étape en plateforme de dialogue, de mobilisation et de nouveaux partenariats pour les années 2026–2056.</p>
-              <p className="mt-4">Contact : <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">{SITE.email}</a></p>
-            </div>
-          </div>
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-black text-blue-950">Appels à action</h2>
-            <div className="mt-6 grid gap-3">
-              <button type="button" onClick={() => setPage("partner")} className="flex items-center justify-between rounded-2xl bg-orange-600 px-5 py-4 text-sm font-black uppercase tracking-wide text-white hover:bg-orange-700">Devenir partenaire <span>›</span></button>
-              <a href={`mailto:${SITE.email}`} className="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 text-sm font-black uppercase tracking-wide text-blue-950 hover:bg-slate-50">Partager un témoignage <span>›</span></a>
-              <button type="button" onClick={() => setPage("donate")} className="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 text-sm font-black uppercase tracking-wide text-blue-950 hover:bg-slate-50">Soutenir la célébration <span>›</span></button>
-              <button type="button" onClick={() => setPage("volunteer")} className="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 text-sm font-black uppercase tracking-wide text-blue-950 hover:bg-slate-50">Participer comme bénévole <span>›</span></button>
-            </div>
           </div>
         </div>
       </section>
@@ -937,49 +910,25 @@ function ContactForm() {
 }
 
 function SupportActionPage({ type }) {
-  const donationOptions = [
-    {
-      amount: "100 €",
-      afterTax: "70 € après déduction fiscale",
-      title: "Un kit de semences",
-      description: "Pour aider une famille paysanne à cultiver sa terre et nourrir ses enfants.",
-    },
-    {
-      amount: "150 €",
-      afterTax: "105 € après déduction fiscale",
-      title: "Une formation à l’agroécologie",
-      description: "Pour cultiver autrement, mieux et durablement.",
-    },
-    {
-      amount: "200 €",
-      afterTax: "140 € après déduction fiscale",
-      title: "Un microcrédit",
-      description: "Pour lancer une petite activité, sortir de la précarité et retrouver sa dignité.",
-    },
-  ];
-
   const config = {
     donate: {
       eyebrow: "Votre don, un impact concret et durable",
       title: "Faire un don",
-      intro:
-        "Au Congo, des familles se battent chaque jour pour survivre. Votre don peut changer leur avenir et soutenir concrètement les projets agricoles, sociaux et communautaires portés par Triple Sustain Impact / PRODDEKO-Belgique.",
+      intro: "Votre don peut changer l’avenir et soutenir concrètement les projets agricoles, sociaux et communautaires portés par Triple Sustain Impact / PRODDEKO-Belgique.",
       button: "Envoyer mon intention de don",
       fields: ["Prénom", "Nom", "Email", "Montant souhaité", "Message"],
     },
     partner: {
       eyebrow: "Partenariat stratégique",
       title: "Devenir partenaire",
-      intro:
-        "Triple Sustain Impact / PRODDEKO-Belgique recherche des partenaires techniques, institutionnels, académiques et financiers pour co-développer des projets à fort impact.",
+      intro: "Triple Sustain Impact / PRODDEKO-Belgique recherche des partenaires techniques, institutionnels, académiques et financiers pour co-développer des projets à fort impact.",
       button: "Proposer un partenariat",
       fields: ["Organisation", "Personne de contact", "Email", "Type de partenariat", "Message"],
     },
     volunteer: {
       eyebrow: "Engagement citoyen",
       title: "Devenir bénévole",
-      intro:
-        "Rejoignez nos actions de sensibilisation, d’éducation citoyenne, de mobilisation solidaire et d’appui aux projets de terrain.",
+      intro: "Rejoignez nos actions de sensibilisation, d’éducation citoyenne, de mobilisation solidaire et d’appui aux projets de terrain.",
       button: "Proposer mon aide bénévole",
       fields: ["Prénom", "Nom", "Email", "Compétences ou disponibilités", "Message"],
     },
@@ -990,116 +939,30 @@ function SupportActionPage({ type }) {
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
         <div className="rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
           <BrandBlock size="lg" />
-          <div className="mt-8 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
-            {config.eyebrow}
-          </div>
-          <h1 className="mt-4 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">
-            {config.title}
-          </h1>
+          <div className="mt-8 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">{config.eyebrow}</div>
+          <h1 className="mt-4 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">{config.title}</h1>
           <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">{config.intro}</p>
-
-          {type === "donate" && (
-            <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 text-white shadow-xl">
-              <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative min-h-[360px] bg-slate-900" data-protected-image>
-                  <ProtectedImage
-                    src="/images/dons/proddeko-don-impact-concret.png"
-                    alt="Campagne de don PRODDEKO-Belgique"
-                    className="absolute inset-0 h-full w-full object-cover opacity-85"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="inline-flex rounded-full bg-red-600 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white">
-                      Chaque montant est vital
-                    </div>
-                    <h2 className="mt-4 text-3xl font-black leading-tight md:text-4xl">
-                      Faites un don qui a du sens.
-                    </h2>
-                    <p className="mt-3 text-sm leading-6 text-slate-200">
-                      Merci du fond du cœur pour votre soutien aux familles et aux projets de terrain.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 p-7 lg:p-9">
-                  <div className="text-sm font-black uppercase tracking-[0.22em] text-orange-300">
-                    Toutes les 6 secondes
-                  </div>
-                  <h3 className="mt-3 text-2xl font-black leading-tight">
-                    La faim arrache la vie à un enfant. Avec 5 €, vous pouvez sauver une vie.
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-200">
-                    Votre geste d’aujourd’hui peut devenir leur vie de demain. Les dons de 40 € ou plus ouvrent droit à une attestation fiscale avec une réduction d’impôt de 30 %.
-                  </p>
-
-                  <div className="mt-7 grid gap-4 md:grid-cols-3">
-                    {donationOptions.map((option) => (
-                      <div key={option.amount} className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                        <div className="text-3xl font-black text-orange-300">{option.amount}</div>
-                        <div className="mt-1 text-xs font-bold uppercase text-emerald-200">{option.afterTax}</div>
-                        <div className="mt-4 text-sm font-black uppercase tracking-wide text-white">{option.title}</div>
-                        <p className="mt-2 text-xs leading-5 text-slate-200">{option.description}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-8 rounded-2xl bg-white p-5 text-slate-900">
-                    <div className="text-sm font-black uppercase tracking-[0.18em] text-orange-600">Virement bancaire</div>
-                    <div className="mt-4 grid gap-4 md:grid-cols-2">
-                      <div>
-                        <div className="text-xs font-bold uppercase text-slate-500">Compte</div>
-                        <div className="mt-1 font-black">SOS-SCHEUT</div>
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold uppercase text-slate-500">IBAN</div>
-                        <div className="mt-1 font-black">BE82 0000 9019 7468</div>
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold uppercase text-slate-500">BIC</div>
-                        <div className="mt-1 font-black">BPOTBEB1</div>
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold uppercase text-slate-500">Communication</div>
-                        <div className="mt-1 font-black">Kilengi 11 243 004</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {config.fields.map((field) => (
               <label key={field} className={field === "Message" ? "md:col-span-2" : ""}>
                 <span className="text-sm font-bold text-slate-700">{field}</span>
                 {field === "Message" ? (
-                  <textarea
-                    className="mt-2 min-h-32 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400"
-                    placeholder={field}
-                  />
+                  <textarea className="mt-2 min-h-32 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
                 ) : (
-                  <input
-                    className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400"
-                    placeholder={field}
-                  />
+                  <input className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
                 )}
               </label>
             ))}
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={`mailto:${SITE.email}`}
-              className="rounded-full bg-orange-600 px-7 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700"
-            >
+            <a href={`mailto:${SITE.email}`} className="rounded-full bg-orange-600 px-7 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">
               {config.button}
             </a>
             <div className="text-sm text-slate-500">
               Ou écrivez directement à{" "}
-              <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">
-                {SITE.email}
-              </a>
+              <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">{SITE.email}</a>
             </div>
           </div>
         </div>
@@ -1117,7 +980,7 @@ function Home({ setPage, onOpen }) {
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           <button type="button" onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={JPN95.gallery[0]} alt="JPN95" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Licence et déploiement Fertilomer JPN95</h3><p className="mt-3 text-sm leading-7 text-slate-600">{JPN95.subtitle}</p></div></button>
           <button type="button" onClick={() => setPage("project-kilengi")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={KILENGI.hero} alt="Kilengi" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Centre de Santé Kilengi</h3><p className="mt-3 text-sm leading-7 text-slate-600">{KILENGI.subtitle}</p></div></button>
-          <button type="button" onClick={() => setPage("project-boma")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={BOMA.hero} alt="Boma" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Projet maraîcher Boma</h3><p className="mt-3 text-sm leading-7 text-slate-600">{BOMA.subtitle}</p></div></button>
+          <button type="button" onClick={() => setPage("project-rebond-foot")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={REBOND_FOOT.hero} alt="Rebondir par le Foot" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Rebondir par le Foot</h3><p className="mt-3 text-sm leading-7 text-slate-600">{REBOND_FOOT.subtitle}</p></div></button>
         </div>
       </section>
       <JPN95Gallery onOpen={onOpen} />
@@ -1168,46 +1031,17 @@ function Footer({ setPage }) {
           <div>
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Contact</div>
             <div className="mt-5 space-y-3 text-sm font-bold leading-7 text-slate-100"><div>{SITE.tradeName}</div><div>{SITE.name}</div><div>{SITE.domain}</div><div>{SITE.belgiumLocation}</div><div>{SITE.drcLocation}</div><div className="pt-2">T : {SITE.phone}</div><div>Web : {SITE.domain}</div><div>E : {SITE.email}</div></div>
-            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Suivez-nous</div>
-            <div className="mt-4 flex gap-3 text-slate-300"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">f</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">in</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">▶</span></div>
           </div>
           <div>
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Compte bancaire</div>
             <div className="mt-5 space-y-2 text-sm font-bold leading-7 text-slate-100"><div>{SITE.accountName}</div><div>IBAN : {SITE.iban}</div><div>BIC : {SITE.bic}</div></div>
-            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Chiffres clés</div>
-            <div className="mt-5 grid grid-cols-2 gap-3">{stats.map((stat) => <div key={stat.label} className="rounded-xl border border-white/10 bg-white/10 p-3"><div className="text-xl font-black text-orange-300">{stat.value}</div><div className="mt-1 text-[11px] leading-4 text-slate-300">{stat.label}</div></div>)}</div>
           </div>
           <div className="bg-[#1f1b1d] p-6 lg:-my-14 lg:py-14">
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Soutenir {SITE.tradeName}</div>
             <p className="mt-5 text-sm font-semibold leading-7 text-slate-200">Soutenez nos projets en santé communautaire, eau potable, agriculture durable, éducation citoyenne et solidarité internationale.</p>
-            <a href="#anniversary-30" onClick={(event) => { event.preventDefault(); goTo("anniversary-30"); }} className="mt-6 flex w-full items-center justify-between bg-orange-500 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-600">30 ans d’impact <span className="text-xl">›</span></a>
-            <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="mt-3 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></a>
+            <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></a>
             <a href="#partner" onClick={(event) => { event.preventDefault(); goTo("partner"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></a>
             <a href="#volunteer" onClick={(event) => { event.preventDefault(); goTo("volunteer"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir bénévole <span className="text-xl">›</span></a>
-            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Newsletter</div>
-            <p className="mt-4 text-sm leading-6 text-slate-300">Recevez nos nouvelles, appels à partenariat et rapports d’impact.</p>
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-white/10 bg-[#202020] px-6 py-12 text-xs text-slate-300">
-        <div className="mx-auto max-w-4xl space-y-5 text-center">
-          <BrandBlock light center size="lg" />
-          <div className="text-sm leading-7 text-slate-200"><strong>{SITE.legalName}</strong>, agissant sous le nom commercial <strong>{SITE.tradeName}</strong><br />Numéro d’entreprise : <strong>{SITE.enterpriseNumber}</strong><br />Site : <a href={SITE.website} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-white">{SITE.domain}</a><br />Email : <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:text-white">{SITE.email}</a></div>
-          <div className="mx-auto max-w-3xl text-xs leading-6 text-slate-400"><strong>Protection des données personnelles – RGPD</strong><br />Conformément au Règlement Général sur la Protection des Données, vous disposez d’un droit d’accès, de rectification, de suppression et d’opposition concernant vos données personnelles. Pour exercer ces droits, veuillez écrire à <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:text-white">{SITE.email}</a>.</div>
-          <div className="mx-auto max-w-2xl text-xs leading-6 text-slate-500">Ce site peut utiliser des cookies nécessaires à son fonctionnement ainsi que, le cas échéant, des cookies de mesure d’audience.</div>
-          <div className="border-t border-white/10 pt-5">
-            <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
-              <div className="font-semibold text-slate-400">© {new Date().getFullYear()} {SITE.tradeName} / {SITE.name}. Tous droits réservés.</div>
-              <div className="flex flex-wrap items-center justify-center gap-4 text-slate-400">
-                <a href="#anniversary-30" onClick={(event) => { event.preventDefault(); goTo("anniversary-30"); }} className="hover:text-white">30 ans d’impact</a><span>|</span>
-                <a href="#legal-notice" onClick={(event) => { event.preventDefault(); goTo("legal-notice"); }} className="hover:text-white">Mentions légales</a><span>|</span>
-                <a href="#privacy" onClick={(event) => { event.preventDefault(); goTo("privacy"); }} className="hover:text-white">RGPD</a><span>|</span>
-                <a href="#cookies" onClick={(event) => { event.preventDefault(); goTo("cookies"); }} className="hover:text-white">Cookies</a><span>|</span>
-                <a href="#contact-info" onClick={(event) => { event.preventDefault(); goTo("contact-info"); }} className="hover:text-white">Contact</a><span>|</span>
-                <a href="#activity-reports" onClick={(event) => { event.preventDefault(); goTo("activity-reports"); }} className="hover:text-white">Rapports d’activités</a><span>|</span>
-                <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="hover:text-white">Faire un don</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1270,31 +1104,21 @@ function CookieConsent({ setPage }) {
                 <p className="mt-1 text-sm leading-6 text-slate-600">Nous utilisons des cookies nécessaires au fonctionnement du site. Avec votre accord, des cookies de mesure d’audience peuvent aussi être utilisés pour améliorer l’expérience utilisateur.</p>
               </div>
             </div>
-
             {preferencesOpen && (
               <div className="mt-5 rounded-2xl bg-slate-50 p-4">
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <div className="text-sm font-black text-blue-950">Cookies nécessaires</div>
-                    <p className="mt-2 text-xs leading-5 text-slate-600">Toujours actifs : ils permettent le fonctionnement technique du site.</p>
-                    <div className="mt-3 inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">Obligatoires</div>
-                  </div>
-                  <label className="cursor-pointer rounded-2xl border border-slate-200 bg-white p-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <div className="text-sm font-black text-blue-950">Mesure d’audience</div>
-                        <p className="mt-2 text-xs leading-5 text-slate-600">Facultatif : aide à comprendre l’utilisation du site.</p>
-                      </div>
-                      <input type="checkbox" checked={analytics} onChange={(event) => setAnalytics(event.target.checked)} className="mt-1 h-5 w-5 accent-orange-500" />
+                <label className="cursor-pointer rounded-2xl border border-slate-200 bg-white p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <div className="text-sm font-black text-blue-950">Mesure d’audience</div>
+                      <p className="mt-2 text-xs leading-5 text-slate-600">Facultatif : aide à comprendre l’utilisation du site.</p>
                     </div>
-                  </label>
-                </div>
+                    <input type="checkbox" checked={analytics} onChange={(event) => setAnalytics(event.target.checked)} className="mt-1 h-5 w-5 accent-orange-500" />
+                  </div>
+                </label>
               </div>
             )}
-
             <button type="button" onClick={() => setPage("cookies")} className="mt-4 text-xs font-bold text-blue-950 underline underline-offset-4">Lire la politique cookies</button>
           </div>
-
           <div className="flex flex-col gap-3 md:min-w-[230px]">
             <button type="button" onClick={() => saveConsent(true)} className="rounded-full bg-orange-500 px-5 py-3 text-sm font-black text-white hover:bg-orange-600">Tout accepter</button>
             <button type="button" onClick={() => saveConsent(false)} className="rounded-full border border-slate-300 px-5 py-3 text-sm font-black text-slate-700 hover:bg-slate-50">Refuser le facultatif</button>
