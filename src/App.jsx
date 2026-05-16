@@ -4,7 +4,6 @@ import {
   ArrowRight,
   BookOpen,
   ChevronDown,
-  Cookie,
   Droplets,
   ExternalLink,
   FileSpreadsheet,
@@ -30,13 +29,6 @@ import {
 
 const SITE = {
   name: "PRODDEKO-Belgique",
-  legalName: "PRODDEKO-Belgique",
-  tradeName: "Triple Sustain Impact",
-  brandSignature: "Triple Sustain Impact / PRODDEKO-Belgique",
-  domain: "proddeko.online",
-  website: "https://proddeko.online",
-  enterpriseNumber: "BE 0459.354.980",
-  historicalEnterpriseNumber: "0459.354.980",
   tagline: "Solidarité internationale • Développement durable • Gouvernance éthique",
   email: "admin@proddeko.online",
   phone: "+32 488 84 46 98",
@@ -44,10 +36,60 @@ const SITE = {
   bic: "GEBABEBB",
   accountName: "PRODDEKO PROGRAMMES DE DEVELOPPEMENT DURABLE",
   belgiumLocation: "Welkenraedt, Belgique",
-  officialSeat: "Rue Prince Albert 8 boîte et, 4840 Welkenraedt",
   drcLocation: "Kinzau-Mvuete, RDC",
   logo: "/images/proddeko-logo.png",
 };
+
+export const EMAIL_TEMPLATE = `
+Objet : Et si nous collaborions ? PRODDEKO-Belgique
+
+Bonjour,
+
+PRODDEKO-Belgique agit entre la Belgique et la République Démocratique du Congo pour développer des projets concrets à fort impact social.
+
+Nos actions portent notamment sur :
+- la santé communautaire
+- l’agriculture durable
+- la réinsertion des jeunes par le sport
+- l’éducation à la citoyenneté mondiale en Belgique
+
+Nous recherchons aujourd’hui des partenaires engagés : écoles, universités, associations, institutions et acteurs éducatifs.
+
+Seriez-vous disponible pour un échange ou une collaboration ?
+
+Découvrir le projet : https://proddeko.online
+
+Au plaisir d’échanger avec vous,
+
+Urbain Matimpi Yongo
+Président — PRODDEKO-Belgique
+Email : admin@proddeko.online
+`;
+
+export const EMAIL_HTML_TEMPLATE = `
+<div style="font-family:Arial,sans-serif;background:#f4f6f9;padding:30px 0;">
+  <table align="center" width="680" style="background:white;border-radius:18px;overflow:hidden;border:1px solid #e5e7eb">
+    <tr>
+      <td style="background:#0f172a;color:white;padding:30px;text-align:center">
+        <h1 style="margin:0;font-size:28px">PRODDEKO-Belgique</h1>
+        <p style="margin:10px 0 0;color:#fbbf24;font-size:14px">Partenaire de développement durable entre l’Europe et la RDC</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:30px">
+        <h2 style="color:#1e293b;margin-top:0">Proposition de collaboration stratégique</h2>
+        <p style="font-size:16px;color:#374151">PRODDEKO-Belgique développe des interventions territoriales alignées avec les Objectifs de Développement Durable, en lien avec les priorités des partenaires européens et internationaux.</p>
+        <p style="font-size:16px;color:#374151">Axes prioritaires : eau potable, développement durable, santé, éducation, gouvernance locale et cohésion sociale.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center;padding:20px">
+        <a href="https://proddeko.online" style="background:#2563eb;color:white;padding:16px 28px;border-radius:999px;text-decoration:none;font-weight:bold;display:inline-block">Consulter nos projets</a>
+      </td>
+    </tr>
+  </table>
+</div>
+`;
 
 const DOCS = {
   activityReport2022: "/docs/rapport-activites-2022-fsdi-clodik.pdf",
@@ -62,9 +104,10 @@ function makeImagePaths(folder, prefix, count, extension = "jpg", start = 1) {
 
 const KILENGI = {
   title: "Réhabilitation du Centre de Santé de Référence de Kilengi",
-  subtitle:
-    "Réhabilitation énergétique, sécurisation de l’alimentation électrique et valorisation documentaire du chantier.",
+  subtitle: "Réhabilitation énergétique, sécurisation de l’alimentation électrique et valorisation documentaire du chantier.",
   hero: "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
+  reportPdf: "/docs/CS-Kilengi_Rapport_photos.pdf",
+  budgetDocument: "/images/projects/kilengi/CS-Kilengi_Cout-total-activites.png",
   before: makeImagePaths("/images/projects/kilengi/before", "kilengi-avant", 3, "jpg"),
   during: [
     "/images/projects/kilengi/CS-Kilengi_avril-22_1.jpeg",
@@ -90,17 +133,18 @@ const KILENGI = {
 
 const BOMA = {
   title: "Projet maraîcher et irrigation communautaire de Boma",
-  subtitle:
-    "Appui aux maraîchers, organisation communautaire et amélioration durable de l’accès à l’eau pour la production locale.",
+  subtitle: "Appui aux maraîchers, organisation communautaire et amélioration durable de l’accès à l’eau pour la production locale.",
   hero: "/images/projects/boma/boma-01.jpg",
   gallery: makeImagePaths("/images/projects/boma", "boma", 8, "jpg"),
+  schema: "/images/projects/boma/boma-croquis-irrigation.jpg",
 };
 
 const JPN95 = {
-  menuLabel: "JPN95 — Licence Fertilomer",
-  title: "Accord de licence et déploiement stratégique de Fertilomer JPN95",
+  menuLabel: "JPN95 — Souveraineté agricole",
+  title: "JPN95 Kongo Central — Fertiliser autrement pour la souveraineté agricole",
   subtitle:
-    "PRODDEKO-Belgique, agissant sous le nom commercial Triple Sustain Impact, structure une demande d’accord de licence auprès de Laguzze, détentrice de la licence JPN95 / Fertilomer, afin d’ouvrir le développement, l’adaptation terrain et le déploiement commercial de Fertilomer JPN95 en Belgique et en République Démocratique du Congo.",
+    "Face à la hausse du prix des engrais chimiques, aux tensions internationales et aux fragilités agricoles en RDC, PRODDEKO-Belgique porte un pilote de fertilisant naturel à base d’eau de mer pour renforcer les rendements, les revenus ruraux et la résilience des petits exploitants.",
+  hero: "/images/projects/jpn95/Fertilomer-JPN95-00.png",
   gallery: [
     "/images/projects/jpn95/Fertilomer-JPN95-01.png",
     "/images/projects/jpn95/Fertilomer-JPN95-02.png",
@@ -121,20 +165,17 @@ const JPN95 = {
     { title: "Budget prévisionnel", href: "/docs/jpn95-budget.xlsx", icon: FileSpreadsheet },
   ],
   metrics: [
-    { value: "500", label: "exploitants agricoles ciblés" },
+    { value: "500", label: "petits exploitants ciblés" },
     { value: "24 mois", label: "durée pilote" },
     { value: "195 000 €", label: "financement recherché" },
-    { value: "Belgique / RDC", label: "territoires visés" },
+    { value: "Kongo Central", label: "zone pilote" },
   ],
 };
 
 const REBOND_FOOT = {
   title: "Projet « Rebondir par le Foot » — Kinshasa, OC Somwe-Yongo",
-  subtitle:
-    "Réinsertion sociale de 35 jeunes anciens délinquants de rue par le football, l’éducation et le suivi psycho-social.",
+  subtitle: "Réinsertion sociale de 35 jeunes anciens délinquants de rue par le football, l’éducation et le suivi psycho-social.",
   hero: "/images/projects/rebond-foot/rebond-foot-01.png",
-  video: "/videos/OC_Somwe-Yongo_V1.mp4",
-  videoCover: "/images/projects/rebond-foot/rebond-foot-cover.jpg",
   gallery: makeImagePaths("/images/projects/rebond-foot", "rebond-foot", 15, "png"),
   metrics: [
     { value: "35", label: "jeunes accompagnés" },
@@ -172,7 +213,6 @@ const navItems = [
       { label: "Valeurs", page: "values", icon: BookOpen },
       { label: "Gouvernance", page: "governance", icon: Landmark },
       { label: "Rapports d’activités", page: "activity-reports", icon: FileText },
-      { label: "30 ans d’impact", page: "anniversary-30", icon: Sparkles },
     ],
   },
   {
@@ -209,7 +249,7 @@ const pageContent = {
   about: {
     eyebrow: "Présentation institutionnelle",
     title: "Qui sommes-nous ?",
-    text: "Triple Sustain Impact est le nom commercial sous lequel PRODDEKO-Belgique structure ses actions de solidarité internationale, de développement durable et de gouvernance éthique entre la Belgique et la République Démocratique du Congo.",
+    text: "PRODDEKO-Belgique est une organisation de solidarité internationale et de co-développement active entre la Belgique et la République Démocratique du Congo.",
     cards: [
       { title: "Vision et engagement", body: "Promouvoir un développement durable, inclusif et endogène, fondé sur la justice sociale, la cohésion communautaire et la protection de l’environnement." },
       { title: "Positionnement stratégique", body: "Agir comme interface entre diaspora, partenaires institutionnels européens et acteurs locaux en RDC, dans une logique de co-construction." },
@@ -231,7 +271,7 @@ const pageContent = {
   values: {
     eyebrow: "Référentiel d’action",
     title: "Nos valeurs",
-    text: "Les valeurs de Triple Sustain Impact / PRODDEKO-Belgique structurent l’ensemble des interventions.",
+    text: "Les valeurs de PRODDEKO-Belgique structurent l’ensemble de ses interventions.",
     cards: [
       { title: "Dignité humaine", body: "Chaque personne est considérée comme sujet de droits et acteur de changement." },
       { title: "Transparence", body: "Une gestion claire, traçable et responsable des ressources financières, matérielles et humaines." },
@@ -253,11 +293,8 @@ const pageContent = {
   partners: {
     eyebrow: "Écosystème institutionnel",
     title: "Partenaires stratégiques",
-    text: "Triple Sustain Impact / PRODDEKO-Belgique s’inscrit dans un réseau multi-acteurs mobilisant institutions, ONG, universités et relais territoriaux.",
-    cards: partnersList.map((name) => ({
-      title: name,
-      body: "Partenaire potentiel, institutionnel ou technique dans l’écosystème de solidarité et de développement.",
-    })),
+    text: "PRODDEKO-Belgique s’inscrit dans un réseau multi-acteurs mobilisant institutions, ONG, universités et relais territoriaux.",
+    cards: partnersList.map((name) => ({ title: name, body: "Partenaire potentiel, institutionnel ou technique dans l’écosystème de solidarité et de développement." })),
   },
   "projects-impact": {
     eyebrow: "Résultats et portée",
@@ -273,7 +310,7 @@ const pageContent = {
   financing: {
     eyebrow: "Appui financier",
     title: "Appel à financement",
-    text: "Triple Sustain Impact / PRODDEKO-Belgique recherche des partenaires techniques et financiers souhaitant soutenir des programmes territoriaux à fort impact.",
+    text: "PRODDEKO-Belgique recherche des partenaires techniques et financiers souhaitant soutenir des programmes territoriaux à fort impact.",
     cards: [
       { title: "Pourquoi soutenir ?", body: "Une capacité à articuler diaspora, acteurs locaux, institutions et partenaires autour de projets concrets." },
       { title: "Axes ouverts", body: "Santé communautaire, eau, agriculture durable, éducation citoyenne, gouvernance et infrastructures locales." },
@@ -284,7 +321,7 @@ const pageContent = {
   "contact-info": {
     eyebrow: "Contact",
     title: "Coordonnées",
-    text: "Les coordonnées institutionnelles de Triple Sustain Impact / PRODDEKO-Belgique.",
+    text: "Les coordonnées institutionnelles de PRODDEKO-Belgique.",
     cards: [
       { title: "Siège", body: SITE.belgiumLocation },
       { title: "Coordination terrain", body: SITE.drcLocation },
@@ -335,39 +372,6 @@ const pageContent = {
       { title: "Approche", body: "Réseautage, transfert de compétences, mobilisation et suivi." },
     ],
   },
-  "legal-notice": {
-    eyebrow: "Mentions légales",
-    title: "Mentions légales",
-    text: "Informations légales relatives au site Triple Sustain Impact / PRODDEKO-Belgique.",
-    cards: [
-      { title: "Identification", body: `${SITE.legalName}, agissant sous le nom commercial ${SITE.tradeName}. Numéro d’entreprise : ${SITE.enterpriseNumber}.` },
-      { title: "Contact officiel", body: `Email : ${SITE.email} — Téléphone : ${SITE.phone}.` },
-      { title: "Siège", body: SITE.belgiumLocation },
-      { title: "Responsabilité", body: "PRODDEKO-Belgique veille à publier des informations exactes sans garantir l’absence totale d’erreurs." },
-    ],
-  },
-  privacy: {
-    eyebrow: "Protection des données",
-    title: "Politique de confidentialité – RGPD",
-    text: "Triple Sustain Impact / PRODDEKO-Belgique respecte la protection des données personnelles conformément au RGPD.",
-    cards: [
-      { title: "Responsable du traitement", body: `${SITE.legalName}, agissant sous le nom commercial ${SITE.tradeName}.` },
-      { title: "Données collectées", body: "Nom, email, téléphone et informations transmises volontairement." },
-      { title: "Finalité", body: "Gestion des contacts, partenariats et suivi des projets." },
-      { title: "Vos droits", body: `Droit d’accès, rectification, suppression et opposition. Contact : ${SITE.email}.` },
-    ],
-  },
-  cookies: {
-    eyebrow: "Cookies",
-    title: "Politique cookies",
-    text: "Ce site utilise des cookies nécessaires et, avec votre accord, des cookies de mesure d’audience.",
-    cards: [
-      { title: "Cookies nécessaires", body: "Ils assurent le fonctionnement technique du site." },
-      { title: "Cookies de mesure d’audience", body: "Ils peuvent aider à améliorer l’expérience utilisateur, uniquement si vous les acceptez." },
-      { title: "Gestion", body: "Vous pouvez modifier vos préférences à tout moment depuis le bandeau cookies." },
-      { title: "Contact", body: SITE.email },
-    ],
-  },
 };
 
 function ImageProtection() {
@@ -402,24 +406,10 @@ function ProtectedImage({ className = "", alt = "", ...props }) {
   );
 }
 
-function BrandBlock({ light = false, center = false, size = "md" }) {
-  const tradeSize = size === "xl" ? "text-5xl md:text-7xl" : size === "lg" ? "text-3xl md:text-5xl" : "text-2xl md:text-3xl";
-  const legalSize = size === "xl" ? "text-xl md:text-2xl" : "text-base md:text-lg";
-  return (
-    <div className={center ? "text-center" : ""}>
-      <div className={`${tradeSize} font-black tracking-tight ${light ? "text-orange-300" : "text-orange-600"}`}>{SITE.tradeName}</div>
-      <div className={`mt-2 ${legalSize} font-extrabold ${light ? "text-white" : "text-blue-950"}`}>{SITE.name}</div>
-      <div className={`mt-1 text-sm ${light ? "text-slate-200" : "text-slate-500"}`}>{SITE.domain} • {SITE.email}</div>
-      <div className={`mt-1 text-sm ${light ? "text-slate-200" : "text-slate-500"}`}>{SITE.tagline}</div>
-    </div>
-  );
-}
-
 function SectionTitle({ eyebrow, title, text, light = false }) {
   return (
     <div className="max-w-3xl">
-      <BrandBlock light={light} size="md" />
-      {eyebrow && <div className={`mt-8 text-sm font-bold uppercase tracking-[0.22em] ${light ? "text-orange-300" : "text-orange-500"}`}>{eyebrow}</div>}
+      {eyebrow && <div className={`text-sm font-bold uppercase tracking-[0.22em] ${light ? "text-orange-300" : "text-orange-500"}`}>{eyebrow}</div>}
       <h2 className={`mt-3 text-3xl font-black tracking-tight md:text-4xl ${light ? "text-white" : "text-blue-950"}`}>{title}</h2>
       {text && <p className={`mt-5 text-lg leading-8 ${light ? "text-slate-200" : "text-slate-600"}`}>{text}</p>}
     </div>
@@ -482,7 +472,7 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
               </div>
             </div>
             <div className="bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 p-6 text-white">
-              <BrandBlock light size="md" />
+              <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-200">{SITE.name}</div>
               <h3 className="mt-5 text-2xl font-black leading-tight tracking-tight">Une action institutionnelle ancrée dans les territoires</h3>
               <p className="mt-4 text-sm leading-7 text-slate-200">Des projets concrets, documentés et orientés impact entre la Belgique et la RDC.</p>
             </div>
@@ -498,20 +488,17 @@ function Header({ page, setPage, mobileOpen, setMobileOpen, activeMenu, setActiv
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
         <button type="button" onClick={() => setPage("home")} className="flex min-w-0 items-center gap-3 text-left">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm" data-protected-image>
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm" data-protected-image>
             <ProtectedImage src={SITE.logo} alt="Logo PRODDEKO-Belgique" className="h-full w-full object-contain" />
           </div>
           <div className="min-w-0">
-            <div className="text-2xl font-black leading-none tracking-tight text-orange-600 md:text-3xl">{SITE.tradeName}</div>
-            <div className="mt-1 text-lg font-extrabold leading-none text-blue-950 md:text-xl">{SITE.name}</div>
-            <div className="hidden text-sm text-slate-500 md:block">{SITE.domain} • {SITE.email}</div>
+            <div className="text-xl font-black tracking-tight text-blue-950 md:text-2xl">{SITE.name}</div>
             <div className="hidden text-sm text-slate-500 md:block">{SITE.tagline}</div>
           </div>
         </button>
         <nav className="hidden items-center gap-3 lg:flex">
           <button type="button" onClick={() => { setPage("home"); setActiveMenu(null); }} className={`rounded-full px-5 py-3 text-sm font-bold transition ${page === "home" ? "bg-slate-100 text-blue-950 shadow-sm" : "text-slate-700 hover:bg-slate-100 hover:text-blue-950"}`}>Accueil</button>
           {navItems.map((group) => <MenuGroup key={group.label} group={group} activeMenu={activeMenu} setActiveMenu={setActiveMenu} setPage={setPage} />)}
-          <button type="button" onClick={() => setPage("anniversary-30")} className="rounded-full border border-orange-200 bg-orange-50 px-5 py-3 text-sm font-bold text-orange-700 transition hover:bg-orange-100">30 ans d’impact</button>
           <button type="button" onClick={() => setPage("project-kilengi")} className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50 hover:text-blue-950">Projet Kilengi</button>
           <button type="button" onClick={() => setPage("contact-form")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-orange-600">Nous contacter</button>
         </nav>
@@ -522,7 +509,6 @@ function Header({ page, setPage, mobileOpen, setMobileOpen, activeMenu, setActiv
       {mobileOpen && (
         <div className="border-t border-slate-200 bg-white px-4 py-4 lg:hidden">
           <button type="button" onClick={() => { setPage("home"); setMobileOpen(false); }} className="mb-3 w-full rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-700">Accueil</button>
-          <button type="button" onClick={() => { setPage("anniversary-30"); setMobileOpen(false); }} className="mb-3 w-full rounded-2xl border border-orange-200 bg-orange-50 px-4 py-3 text-left text-sm font-bold text-orange-700">30 ans d’impact</button>
           {navItems.map((group) => {
             const isOpen = activeMenu === group.label;
             return (
@@ -568,19 +554,17 @@ function Hero({ setPage }) {
         {heroSlides.map((src, index) => (
           <ProtectedImage key={src} src={src} alt={`Projet ${index + 1}`} className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${index === currentSlide ? "opacity-80" : "opacity-0"}`} />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/70 via-slate-950/45 to-orange-950/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/55 via-slate-950/35 to-orange-950/35" />
       </div>
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
-            <BrandBlock light size="xl" />
-            <div className="mt-8 inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-slate-100 backdrop-blur">Belgique • RDC • Co-développement • Solidarité internationale</div>
-            <h1 className="mt-8 max-w-5xl text-4xl font-black leading-tight tracking-tight md:text-6xl">Une action durable entre territoires, citoyens et partenaires</h1>
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-100">Triple Sustain Impact / PRODDEKO-Belgique valorise des projets concrets en santé, agriculture durable, gouvernance et résilience communautaire.</p>
+            <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-slate-100 backdrop-blur">Belgique • RDC • Co-développement • Solidarité internationale</div>
+            <h1 className="mt-8 max-w-5xl text-5xl font-black leading-tight tracking-tight md:text-7xl">Une action durable entre territoires, citoyens et partenaires</h1>
+            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-100">PRODDEKO-Belgique valorise des projets concrets en santé, agriculture durable, gouvernance et résilience communautaire.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <button type="button" onClick={() => setPage("project-kilengi")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600">Voir le projet Kilengi</button>
-              <button type="button" onClick={() => setPage("project-jpn95")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Licence stratégique JPN95</button>
-              <button type="button" onClick={() => setPage("anniversary-30")} className="rounded-full border border-orange-300 bg-orange-400/15 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Préparer les 30 ans</button>
+              <button type="button" onClick={() => setPage("project-jpn95")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Voir le projet JPN95</button>
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -628,7 +612,7 @@ function ImageLightbox({ src, title, onClose }) {
   if (!src) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4" onClick={onClose} data-protected-image>
-      <div className="relative max-h-[95vh] w-full max-w-6xl" onClick={(event) => event.stopPropagation()}>
+      <div className="relative max-h-[95vh] w-full max-w-6xl" onClick={(e) => e.stopPropagation()}>
         <button type="button" onClick={onClose} className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 text-slate-800 shadow"><X className="h-5 w-5" /></button>
         <ProtectedImage src={src} alt={title} className="max-h-[95vh] w-full rounded-2xl bg-white object-contain" />
       </div>
@@ -639,10 +623,7 @@ function ImageLightbox({ src, title, onClose }) {
 function InfoCard({ icon: Icon, title, children }) {
   return (
     <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-      <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500"><Icon className="h-6 w-6" /></div>
-        <div><h3 className="text-lg font-black text-blue-950">{title}</h3><div className="mt-3 text-sm leading-7 text-slate-600">{children}</div></div>
-      </div>
+      <div className="flex items-start gap-4"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-orange-50 text-orange-500"><Icon className="h-6 w-6" /></div><div><h3 className="text-lg font-black text-blue-950">{title}</h3><div className="mt-3 text-sm leading-7 text-slate-600">{children}</div></div></div>
     </div>
   );
 }
@@ -650,7 +631,11 @@ function InfoCard({ icon: Icon, title, children }) {
 function JPN95Gallery({ onOpen }) {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-      <SectionTitle eyebrow="Solutions agricoles" title="Applications du fertilisant JPN95" text="Une solution naturelle adaptée à plusieurs cultures et usages agricoles : maraîchage, fruits, céréales, horticulture, prairies et agriculture de précision." />
+      <SectionTitle
+        eyebrow="Solutions agricoles"
+        title="Applications du fertilisant JPN95"
+        text="Une solution naturelle adaptée à plusieurs cultures et usages agricoles : maraîchage, fruits, céréales, horticulture, prairies et agriculture de précision."
+      />
       <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {JPN95.gallery.map((src, index) => (
           <div key={src} className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" onClick={() => onOpen(src, `Application JPN95 ${index + 1}`)} data-protected-image>
@@ -688,101 +673,6 @@ function DocsSection({ docs = [] }) {
   );
 }
 
-function RebondFootVideoSection({ project }) {
-  if (!project.video) return null;
-
-  return (
-    <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-      <div className="overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-xl">
-        <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-orange-900 px-8 py-10 text-white">
-          <div className="text-sm font-black uppercase tracking-[0.22em] text-orange-300">
-            Vidéo officielle du projet
-          </div>
-
-          <h2 className="mt-4 text-4xl font-black tracking-tight">
-            Rebondir par le Foot — Kinshasa
-          </h2>
-
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-100">
-            Découvrez la dynamique du projet « Rebondir par le Foot » porté par Triple Sustain Impact / PRODDEKO-Belgique avec l’OC Somwe-Yongo à Kinshasa. Une initiative de réinsertion sociale par le sport, l’éducation citoyenne et l’accompagnement psycho-social.
-          </p>
-        </div>
-
-        <div className="bg-black p-4 md:p-8">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full bg-black"
-              poster={project.videoCover}
-            >
-              <source src={project.video} type="video/mp4" />
-              Votre navigateur ne supporte pas la lecture vidéo.
-            </video>
-          </div>
-        </div>
-
-        <div className="grid gap-6 bg-slate-50 px-8 py-8 md:grid-cols-3">
-          <div className="rounded-3xl bg-white p-6 shadow-sm">
-            <div className="text-3xl font-black text-orange-500">35</div>
-            <div className="mt-2 text-sm font-semibold text-slate-700">Jeunes accompagnés</div>
-          </div>
-
-          <div className="rounded-3xl bg-white p-6 shadow-sm">
-            <div className="text-3xl font-black text-blue-950">Kinshasa</div>
-            <div className="mt-2 text-sm font-semibold text-slate-700">Zone d’intervention</div>
-          </div>
-
-          <div className="rounded-3xl bg-white p-6 shadow-sm">
-            <div className="text-3xl font-black text-emerald-700">Inclusion</div>
-            <div className="mt-2 text-sm font-semibold text-slate-700">Réinsertion par le sport</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function JPN95LicenseContent({ onOpen }) {
-  return (
-    <>
-      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
-          <div className="rounded-3xl bg-gradient-to-br from-emerald-950 via-slate-950 to-blue-950 p-8 text-white shadow-xl">
-            <BrandBlock light center size="lg" />
-            <div className="mt-8 text-sm font-black uppercase tracking-[0.22em] text-emerald-200">Fertilomer JPN95</div>
-            <h2 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">Régénérer les sols. Sécuriser les récoltes. Structurer une agriculture durable.</h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-emerald-50">Fertiliser autrement pour nourrir les familles, préserver les sols et renforcer l’économie locale.</p>
-          </div>
-          <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-3xl bg-slate-50 p-6">
-              <h3 className="text-xl font-black text-blue-950">Porteur de la demande</h3>
-              <div className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
-                <p><strong>{SITE.legalName}</strong>, agissant sous le nom commercial <strong>{SITE.tradeName}</strong>.</p>
-                <p>Numéro d’entreprise : <strong>{SITE.enterpriseNumber}</strong></p>
-                <p>Email officiel : <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">{SITE.email}</a></p>
-                <p>Territoires visés : Belgique et République Démocratique du Congo.</p>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-black text-blue-950">1. Objet de la demande</h3>
-              <p className="mt-4 leading-8 text-slate-700">La présente demande vise à établir un partenariat structuré avec la société <strong>Laguzze</strong>, détentrice de la licence du fertilisant naturel <strong>JPN95 / Fertilomer</strong>, afin de permettre à PRODDEKO-Belgique, sous son nom commercial Triple Sustain Impact, de développer, adapter et diffuser cette solution en Belgique et en République Démocratique du Congo.</p>
-            </div>
-          </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            <InfoCard icon={Droplets} title="Solution naturelle">JPN95 / Fertilomer est présenté comme un fertilisant naturel à base d’eau de mer transformée, enrichi en oligo-éléments, destiné à soutenir la fertilité des sols.</InfoCard>
-            <InfoCard icon={Sprout} title="Souveraineté agricole">Le projet vise à réduire la dépendance aux engrais chimiques importés et à renforcer l’autonomie productive des petits exploitants agricoles.</InfoCard>
-            <InfoCard icon={Handshake} title="Partenariat Laguzze">PRODDEKO-Belgique souhaite obtenir un cadre de licence, de transfert de savoir-faire et d’encadrement technique pour la Belgique et la RDC.</InfoCard>
-          </div>
-        </div>
-      </section>
-      <JPN95Gallery onOpen={onOpen} />
-      <DocsSection docs={JPN95.docs} />
-    </>
-  );
-}
-
 function GenericPage({ content }) {
   return (
     <main className="bg-slate-50">
@@ -798,45 +688,35 @@ function GenericPage({ content }) {
 
 function ProjectPage({ project, type, onOpen }) {
   const gallery = type === "kilengi" ? [...project.during, ...project.before, ...project.after] : project.gallery || [];
-
   return (
     <main className="bg-white">
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="max-w-4xl">
-          <BrandBlock size="lg" />
-          <div className="mt-8 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">{type === "jpn95" ? "Dossier officiel de demande de licence" : "Projet en recherche de financement"}</div>
+          <div className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">Projet en recherche de financement</div>
           <h1 className="mt-5 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">{project.title}</h1>
           <p className="mt-6 text-xl leading-9 text-slate-600">{project.subtitle}</p>
         </div>
-
-        {type !== "jpn95" && project.metrics && (
+        {project.metrics && (
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {project.metrics.map((metric) => (
-              <div key={metric.label} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                <div className="text-3xl font-black text-blue-950">{metric.value}</div>
-                <div className="mt-2 text-sm text-slate-600">{metric.label}</div>
-              </div>
-            ))}
+            {project.metrics.map((metric) => <div key={metric.label} className="rounded-3xl border border-slate-200 bg-slate-50 p-6"><div className="text-3xl font-black text-blue-950">{metric.value}</div><div className="mt-2 text-sm text-slate-600">{metric.label}</div></div>)}
           </div>
         )}
-
-        {type !== "jpn95" && project.hero && (
-          <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100" data-protected-image>
-            <ProtectedImage src={project.hero} alt={project.title} className="h-[420px] w-full object-cover" />
-          </div>
-        )}
+        {project.hero && <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100" data-protected-image><ProtectedImage src={project.hero} alt={project.title} className="h-[420px] w-full object-cover" /></div>}
       </section>
-
       {type === "jpn95" ? (
-        <JPN95LicenseContent onOpen={onOpen} />
-      ) : (
         <>
-          {type === "rebond-foot" && <RebondFootVideoSection project={project} />}
-
-          <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-            <GallerySection title="Galerie du projet" eyebrow="Documentation visuelle" images={gallery} onOpen={onOpen} />
+          <section className="mx-auto max-w-7xl px-6 pb-6 lg:px-8">
+            <div className="grid gap-6 lg:grid-cols-3">
+              <InfoCard icon={Droplets} title="Priorité eau et fertilité des sols">Le projet valorise un fertilisant naturel à base d’eau de mer pour soutenir les cultures, réduire la dépendance aux intrants coûteux et renforcer l’autonomie agricole locale.</InfoCard>
+              <InfoCard icon={Sprout} title="Souveraineté agricole">Le pilote vise à améliorer les rendements, la résilience des petits exploitants et la sécurité alimentaire dans le Kongo Central.</InfoCard>
+              <InfoCard icon={Handshake} title="Partenariats recherchés">PRODDEKO-Belgique recherche des partenaires techniques, financiers et scientifiques pour tester, documenter et déployer la solution.</InfoCard>
+            </div>
           </section>
+          <JPN95Gallery onOpen={onOpen} />
+          <DocsSection docs={project.docs} />
         </>
+      ) : (
+        <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8"><GallerySection title="Galerie du projet" eyebrow="Documentation visuelle" images={gallery} onOpen={onOpen} /></section>
       )}
     </main>
   );
@@ -846,40 +726,13 @@ function ActivityReportsPage() {
   return (
     <main className="bg-slate-50">
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <SectionTitle eyebrow="Transparence" title="Rapports d’activités" text="Documents institutionnels disponibles pour les partenaires et soutiens de Triple Sustain Impact / PRODDEKO-Belgique." />
+        <SectionTitle eyebrow="Transparence" title="Rapports d’activités" text="Documents institutionnels disponibles pour les partenaires et soutiens de PRODDEKO-Belgique." />
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           <a href={DOCS.activityReport2022} target="_blank" rel="noreferrer" className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
             <FileText className="h-8 w-8 text-orange-500" />
             <h3 className="mt-4 text-xl font-black text-blue-950">Rapport d’activités 2022</h3>
             <p className="mt-3 text-sm leading-7 text-slate-600">Consulter ou télécharger le rapport institutionnel.</p>
           </a>
-        </div>
-      </section>
-    </main>
-  );
-}
-
-function AnniversaryPage({ setPage }) {
-  return (
-    <main className="bg-slate-50">
-      <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <BrandBlock light size="xl" />
-          <div className="mt-10 inline-flex rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-black uppercase tracking-[0.18em] text-orange-200">
-            24 août 2026 • 30 ans d’existence officielle
-          </div>
-          <h1 className="mt-8 max-w-5xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
-            30 ans d’impact durable : Héritage, Transformation et Futur
-          </h1>
-          <p className="mt-8 max-w-4xl text-xl leading-9 text-slate-100">
-            L’organisation enregistrée sous le numéro d’entreprise {SITE.historicalEnterpriseNumber} prépare une célébration qui dépasse la commémoration : un moment de relance institutionnelle, de reconnaissance des pionniers, de mobilisation internationale et de projection vers 2050.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button type="button" onClick={() => setPage("partner")} className="rounded-full bg-orange-500 px-6 py-3 text-sm font-black text-white hover:bg-orange-600">Devenir partenaire</button>
-            <button type="button" onClick={() => setPage("volunteer")} className="rounded-full border border-white/20 px-6 py-3 text-sm font-black text-white hover:bg-white/10">Participer comme bénévole</button>
-            <a href={`mailto:${SITE.email}`} className="rounded-full border border-white/20 px-6 py-3 text-sm font-black text-white hover:bg-white/10">Partager un témoignage</a>
-          </div>
         </div>
       </section>
     </main>
@@ -899,72 +752,10 @@ function ContactForm() {
             <InfoCard icon={Globe} title="RDC">{SITE.drcLocation}</InfoCard>
           </div>
           <div className="mt-8 rounded-3xl bg-slate-50 p-6">
-            <h3 className="text-lg font-black text-blue-950">Soutenir {SITE.tradeName}</h3>
+            <h3 className="text-lg font-black text-blue-950">Soutenir PRODDEKO-Belgique</h3>
             <p className="mt-3 text-sm leading-7 text-slate-600">Compte : {SITE.accountName}<br />IBAN : {SITE.iban}<br />BIC : {SITE.bic}</p>
           </div>
           <a href={`mailto:${SITE.email}`} className="mt-8 inline-flex rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">Écrire un email</a>
-        </div>
-      </section>
-    </main>
-  );
-}
-
-function SupportActionPage({ type }) {
-  const config = {
-    donate: {
-      eyebrow: "Votre don, un impact concret et durable",
-      title: "Faire un don",
-      intro: "Votre don peut changer l’avenir et soutenir concrètement les projets agricoles, sociaux et communautaires portés par Triple Sustain Impact / PRODDEKO-Belgique.",
-      button: "Envoyer mon intention de don",
-      fields: ["Prénom", "Nom", "Email", "Montant souhaité", "Message"],
-    },
-    partner: {
-      eyebrow: "Partenariat stratégique",
-      title: "Devenir partenaire",
-      intro: "Triple Sustain Impact / PRODDEKO-Belgique recherche des partenaires techniques, institutionnels, académiques et financiers pour co-développer des projets à fort impact.",
-      button: "Proposer un partenariat",
-      fields: ["Organisation", "Personne de contact", "Email", "Type de partenariat", "Message"],
-    },
-    volunteer: {
-      eyebrow: "Engagement citoyen",
-      title: "Devenir bénévole",
-      intro: "Rejoignez nos actions de sensibilisation, d’éducation citoyenne, de mobilisation solidaire et d’appui aux projets de terrain.",
-      button: "Proposer mon aide bénévole",
-      fields: ["Prénom", "Nom", "Email", "Compétences ou disponibilités", "Message"],
-    },
-  }[type];
-
-  return (
-    <main className="bg-slate-50">
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-        <div className="rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
-          <BrandBlock size="lg" />
-          <div className="mt-8 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">{config.eyebrow}</div>
-          <h1 className="mt-4 text-4xl font-black tracking-tight text-blue-950 md:text-5xl">{config.title}</h1>
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">{config.intro}</p>
-
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {config.fields.map((field) => (
-              <label key={field} className={field === "Message" ? "md:col-span-2" : ""}>
-                <span className="text-sm font-bold text-slate-700">{field}</span>
-                {field === "Message" ? (
-                  <textarea className="mt-2 min-h-32 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
-                ) : (
-                  <input className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-orange-400" placeholder={field} />
-                )}
-              </label>
-            ))}
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a href={`mailto:${SITE.email}`} className="rounded-full bg-orange-600 px-7 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">
-              {config.button}
-            </a>
-            <div className="text-sm text-slate-500">
-              Ou écrivez directement à{" "}
-              <a href={`mailto:${SITE.email}`} className="font-bold text-blue-950 underline underline-offset-4">{SITE.email}</a>
-            </div>
-          </div>
         </div>
       </section>
     </main>
@@ -976,11 +767,11 @@ function Home({ setPage, onOpen }) {
     <main>
       <Hero setPage={setPage} />
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <SectionTitle eyebrow="Projets prioritaires" title="Des actions concrètes, documentées et finançables" text="Triple Sustain Impact / PRODDEKO-Belgique met en avant des projets à fort impact social, agricole, éducatif et communautaire." />
+        <SectionTitle eyebrow="Projets prioritaires" title="Des actions concrètes, documentées et finançables" text="PRODDEKO-Belgique met en avant des projets à fort impact social, agricole, éducatif et communautaire." />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          <button type="button" onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={JPN95.gallery[0]} alt="JPN95" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Licence et déploiement Fertilomer JPN95</h3><p className="mt-3 text-sm leading-7 text-slate-600">{JPN95.subtitle}</p></div></button>
-          <button type="button" onClick={() => setPage("project-kilengi")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={KILENGI.hero} alt="Kilengi" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Centre de Santé Kilengi</h3><p className="mt-3 text-sm leading-7 text-slate-600">{KILENGI.subtitle}</p></div></button>
-          <button type="button" onClick={() => setPage("project-rebond-foot")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={REBOND_FOOT.hero} alt="Rebondir par le Foot" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Rebondir par le Foot</h3><p className="mt-3 text-sm leading-7 text-slate-600">{REBOND_FOOT.subtitle}</p></div></button>
+          <button onClick={() => setPage("project-jpn95")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={JPN95.gallery[0]} alt="JPN95" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">JPN95 Kongo Central</h3><p className="mt-3 text-sm leading-7 text-slate-600">{JPN95.subtitle}</p></div></button>
+          <button onClick={() => setPage("project-kilengi")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={KILENGI.hero} alt="Kilengi" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Centre de Santé Kilengi</h3><p className="mt-3 text-sm leading-7 text-slate-600">{KILENGI.subtitle}</p></div></button>
+          <button onClick={() => setPage("project-boma")} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><ProtectedImage src={BOMA.hero} alt="Boma" className="h-56 w-full object-cover" /><div className="p-6"><h3 className="text-xl font-black text-blue-950">Projet maraîcher Boma</h3><p className="mt-3 text-sm leading-7 text-slate-600">{BOMA.subtitle}</p></div></button>
         </div>
       </section>
       <JPN95Gallery onOpen={onOpen} />
@@ -989,11 +780,6 @@ function Home({ setPage, onOpen }) {
 }
 
 function Footer({ setPage }) {
-  const goTo = (pageName) => {
-    setPage(pageName);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-[#2f2f2f] text-white">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
@@ -1001,133 +787,61 @@ function Footer({ setPage }) {
           <div>
             <div className="flex items-center gap-3">
               <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-white p-2" data-protected-image><ProtectedImage src={SITE.logo} alt="Logo PRODDEKO-Belgique" className="h-full w-full object-contain" /></div>
-              <div><div className="text-3xl font-black tracking-tight text-orange-300">{SITE.tradeName}</div><div className="mt-1 text-lg font-bold text-white">{SITE.name}</div><div className="mt-1 text-xs font-semibold text-slate-300">Belgique • RDC</div></div>
+              <div><div className="text-2xl font-black tracking-tight">{SITE.name}</div><div className="mt-1 text-xs font-semibold text-slate-300">Belgique • RDC</div></div>
             </div>
             <div className="mt-8 h-px w-full bg-white/20" />
             <div className="mt-6 space-y-3 text-sm text-slate-300">
-              <button type="button" onClick={() => goTo("about")} className="block hover:text-white">Qui sommes-nous ?</button>
-              <button type="button" onClick={() => goTo("mission")} className="block hover:text-white">Mission</button>
-              <button type="button" onClick={() => goTo("values")} className="block hover:text-white">Valeurs</button>
-              <button type="button" onClick={() => goTo("governance")} className="block hover:text-white">Gouvernance</button>
-              <button type="button" onClick={() => goTo("anniversary-30")} className="block font-bold text-orange-200 hover:text-white">30 ans d’impact</button>
+              <button type="button" onClick={() => setPage("about")} className="block hover:text-white">Qui sommes-nous ?</button>
+              <button type="button" onClick={() => setPage("mission")} className="block hover:text-white">Mission</button>
+              <button type="button" onClick={() => setPage("values")} className="block hover:text-white">Valeurs</button>
+              <button type="button" onClick={() => setPage("governance")} className="block hover:text-white">Gouvernance</button>
             </div>
           </div>
           <div>
             <div className="text-xs font-black uppercase tracking-[0.25em] text-slate-200">Nos actions</div>
             <div className="mt-5 space-y-3 text-sm font-semibold uppercase tracking-[0.12em] text-slate-300">
-              <button type="button" onClick={() => goTo("action-sustainable")} className="block text-left hover:text-white">Développement durable</button>
-              <button type="button" onClick={() => goTo("action-education")} className="block text-left hover:text-white">Éducation citoyenne</button>
-              <button type="button" onClick={() => goTo("action-governance")} className="block text-left hover:text-white">Gouvernance éthique</button>
-              <button type="button" onClick={() => goTo("action-solidarity")} className="block text-left hover:text-white">Solidarité internationale</button>
+              <button type="button" onClick={() => setPage("action-sustainable")} className="block text-left hover:text-white">Développement durable</button>
+              <button type="button" onClick={() => setPage("action-education")} className="block text-left hover:text-white">Éducation citoyenne</button>
+              <button type="button" onClick={() => setPage("action-governance")} className="block text-left hover:text-white">Gouvernance éthique</button>
+              <button type="button" onClick={() => setPage("action-solidarity")} className="block text-left hover:text-white">Solidarité internationale</button>
             </div>
             <div className="mt-7 h-px w-full bg-white/20" />
             <div className="mt-5 space-y-3 text-sm text-slate-300">
-              <button type="button" onClick={() => goTo("project-kilengi")} className="block hover:text-white">Projet Kilengi</button>
-              <button type="button" onClick={() => goTo("project-boma")} className="block hover:text-white">Projet Boma</button>
-              <button type="button" onClick={() => goTo("project-jpn95")} className="block hover:text-white">Licence JPN95 / Fertilomer</button>
-              <button type="button" onClick={() => goTo("project-rebond-foot")} className="block hover:text-white">Rebondir par le Foot</button>
+              <button type="button" onClick={() => setPage("project-kilengi")} className="block hover:text-white">Projet Kilengi</button>
+              <button type="button" onClick={() => setPage("project-boma")} className="block hover:text-white">Projet Boma</button>
+              <button type="button" onClick={() => setPage("project-jpn95")} className="block hover:text-white">Projet JPN95</button>
+              <button type="button" onClick={() => setPage("project-rebond-foot")} className="block hover:text-white">Rebondir par le Foot</button>
             </div>
           </div>
           <div>
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Contact</div>
-            <div className="mt-5 space-y-3 text-sm font-bold leading-7 text-slate-100"><div>{SITE.tradeName}</div><div>{SITE.name}</div><div>{SITE.domain}</div><div>{SITE.belgiumLocation}</div><div>{SITE.drcLocation}</div><div className="pt-2">T : {SITE.phone}</div><div>Web : {SITE.domain}</div><div>E : {SITE.email}</div></div>
+            <div className="mt-5 space-y-3 text-sm font-bold leading-7 text-slate-100"><div>{SITE.name}</div><div>{SITE.belgiumLocation}</div><div>{SITE.drcLocation}</div><div className="pt-2">T : {SITE.phone}</div><div>E : {SITE.email}</div></div>
+            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Suivez-nous</div>
+            <div className="mt-4 flex gap-3 text-slate-300"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">f</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">in</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-black">▶</span></div>
           </div>
           <div>
             <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Compte bancaire</div>
             <div className="mt-5 space-y-2 text-sm font-bold leading-7 text-slate-100"><div>{SITE.accountName}</div><div>IBAN : {SITE.iban}</div><div>BIC : {SITE.bic}</div></div>
+            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Chiffres clés</div>
+            <div className="mt-5 grid grid-cols-2 gap-3">{stats.map((stat) => <div key={stat.label} className="rounded-xl border border-white/10 bg-white/10 p-3"><div className="text-xl font-black text-orange-300">{stat.value}</div><div className="mt-1 text-[11px] leading-4 text-slate-300">{stat.label}</div></div>)}</div>
           </div>
           <div className="bg-[#1f1b1d] p-6 lg:-my-14 lg:py-14">
-            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Soutenir {SITE.tradeName}</div>
+            <div className="text-xs font-black uppercase tracking-[0.25em] text-white">Faire un don</div>
             <p className="mt-5 text-sm font-semibold leading-7 text-slate-200">Soutenez nos projets en santé communautaire, eau potable, agriculture durable, éducation citoyenne et solidarité internationale.</p>
-            <a href="#donate" onClick={(event) => { event.preventDefault(); goTo("donate"); }} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></a>
-            <a href="#partner" onClick={(event) => { event.preventDefault(); goTo("partner"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></a>
-            <a href="#volunteer" onClick={(event) => { event.preventDefault(); goTo("volunteer"); }} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir bénévole <span className="text-xl">›</span></a>
+            <button type="button" onClick={() => setPage("financing")} className="mt-6 flex w-full items-center justify-between bg-orange-600 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-orange-700">Je fais un don <span className="text-xl">›</span></button>
+            <button type="button" onClick={() => setPage("contact-form")} className="mt-3 flex w-full items-center justify-between border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-white/10">Devenir partenaire <span className="text-xl">›</span></button>
+            <div className="mt-8 text-xs font-black uppercase tracking-[0.25em] text-white">Newsletter</div>
+            <p className="mt-4 text-sm leading-6 text-slate-300">Recevez nos nouvelles, appels à partenariat et rapports d’impact.</p>
           </div>
+        </div>
+      </div>
+      <div className="border-t border-white/10 bg-[#202020] px-6 py-6 text-xs text-slate-300 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <div className="font-bold">{new Date().getFullYear()} © {SITE.name}. Tous droits réservés.</div>
+          <div className="flex flex-wrap gap-4"><button type="button" onClick={() => setPage("contact-info")} className="hover:text-white">Contact</button><span>|</span><button type="button" onClick={() => setPage("activity-reports")} className="hover:text-white">Rapports d’activités</button><span>|</span><button type="button" onClick={() => setPage("financing")} className="hover:text-white">Faire un don</button><span>|</span><span>{SITE.email}</span></div>
         </div>
       </div>
     </footer>
-  );
-}
-
-function CookieConsent({ setPage }) {
-  const [visible, setVisible] = useState(false);
-  const [preferencesOpen, setPreferencesOpen] = useState(false);
-  const [analytics, setAnalytics] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("proddeko_cookie_consent");
-    if (!saved) setVisible(true);
-    else {
-      try {
-        const parsed = JSON.parse(saved);
-        setAnalytics(Boolean(parsed.analytics));
-      } catch {
-        setVisible(true);
-      }
-    }
-  }, []);
-
-  const saveConsent = (analyticsValue) => {
-    const consent = {
-      necessary: true,
-      analytics: analyticsValue,
-      savedAt: new Date().toISOString(),
-      version: "1.0",
-    };
-    localStorage.setItem("proddeko_cookie_consent", JSON.stringify(consent));
-    setAnalytics(analyticsValue);
-    setVisible(false);
-  };
-
-  if (!visible) {
-    return (
-      <button
-        type="button"
-        onClick={() => setVisible(true)}
-        className="fixed bottom-4 left-4 z-40 flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-lg hover:bg-slate-50"
-        aria-label="Modifier mes préférences cookies"
-      >
-        <Cookie className="h-4 w-4 text-orange-500" /> Cookies
-      </button>
-    );
-  }
-
-  return (
-    <div className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4">
-      <div className="mx-auto max-w-5xl rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.22)] md:p-6">
-        <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-start">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-50 text-orange-500"><Cookie className="h-5 w-5" /></div>
-              <div>
-                <h3 className="text-base font-black text-blue-950">Gestion des cookies</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-600">Nous utilisons des cookies nécessaires au fonctionnement du site. Avec votre accord, des cookies de mesure d’audience peuvent aussi être utilisés pour améliorer l’expérience utilisateur.</p>
-              </div>
-            </div>
-            {preferencesOpen && (
-              <div className="mt-5 rounded-2xl bg-slate-50 p-4">
-                <label className="cursor-pointer rounded-2xl border border-slate-200 bg-white p-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="text-sm font-black text-blue-950">Mesure d’audience</div>
-                      <p className="mt-2 text-xs leading-5 text-slate-600">Facultatif : aide à comprendre l’utilisation du site.</p>
-                    </div>
-                    <input type="checkbox" checked={analytics} onChange={(event) => setAnalytics(event.target.checked)} className="mt-1 h-5 w-5 accent-orange-500" />
-                  </div>
-                </label>
-              </div>
-            )}
-            <button type="button" onClick={() => setPage("cookies")} className="mt-4 text-xs font-bold text-blue-950 underline underline-offset-4">Lire la politique cookies</button>
-          </div>
-          <div className="flex flex-col gap-3 md:min-w-[230px]">
-            <button type="button" onClick={() => saveConsent(true)} className="rounded-full bg-orange-500 px-5 py-3 text-sm font-black text-white hover:bg-orange-600">Tout accepter</button>
-            <button type="button" onClick={() => saveConsent(false)} className="rounded-full border border-slate-300 px-5 py-3 text-sm font-black text-slate-700 hover:bg-slate-50">Refuser le facultatif</button>
-            <button type="button" onClick={() => setPreferencesOpen((value) => !value)} className="rounded-full border border-slate-200 px-5 py-3 text-sm font-black text-slate-700 hover:bg-slate-50">Personnaliser</button>
-            {preferencesOpen && <button type="button" onClick={() => saveConsent(analytics)} className="rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-slate-800">Enregistrer mes choix</button>}
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -1136,7 +850,6 @@ export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [lightbox, setLightbox] = useState({ src: null, title: "" });
-
   const openLightbox = (src, title) => setLightbox({ src, title });
   const closeLightbox = () => setLightbox({ src: null, title: "" });
 
@@ -1148,10 +861,6 @@ export default function App() {
   else if (page === "project-rebond-foot") content = <ProjectPage project={REBOND_FOOT} type="rebond-foot" onOpen={openLightbox} />;
   else if (page === "contact-form") content = <ContactForm />;
   else if (page === "activity-reports") content = <ActivityReportsPage />;
-  else if (page === "anniversary-30") content = <AnniversaryPage setPage={setPage} />;
-  else if (page === "donate") content = <SupportActionPage type="donate" />;
-  else if (page === "partner") content = <SupportActionPage type="partner" />;
-  else if (page === "volunteer") content = <SupportActionPage type="volunteer" />;
   else content = <GenericPage content={pageContent[page] || pageContent.about} />;
 
   return (
@@ -1160,7 +869,6 @@ export default function App() {
       <Header page={page} setPage={setPage} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       {content}
       <Footer setPage={setPage} />
-      <CookieConsent setPage={setPage} />
       <ImageLightbox src={lightbox.src} title={lightbox.title} onClose={closeLightbox} />
     </>
   );
