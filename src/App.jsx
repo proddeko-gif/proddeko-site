@@ -615,4 +615,4 @@ function JPN95Gallery({ onOpen }) {
 function DocsSection({ docs = [] }) {
   if (!docs.length) return null;
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-16
+    <section className="mx-auto max-w-7xl px-
