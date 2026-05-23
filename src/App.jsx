@@ -615,4 +615,7 @@ function JPN95Gallery({ onOpen }) {
 function DocsSection({ docs = [] }) {
   if (!docs.length) return null;
   return (
-    <section className="mx-auto max-w-7xl px-
+    <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-8">
+        <SectionTitle eyebrow="Documentation" title="Documents du projet" text="Documents utiles pour les partenaires, bailleurs, institutions et acteurs techniques." />
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4
