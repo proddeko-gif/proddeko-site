@@ -20,9 +20,10 @@ import {
   Sprout,
   Users,
   Wrench,
-  X,
-  Zap,
-  ZoomIn,
+  Church,
+  Briefcase,
+  Search,
+  Cog,
 } from "lucide-react";
 
 const SITE = {
