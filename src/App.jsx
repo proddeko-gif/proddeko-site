@@ -32,7 +32,7 @@ const SITE = {
   tagline:
     "Solidarité internationale • Développement durable • Gouvernance éthique",
   email: "admin@proddeko.online",
-  phone: "+32 488 84 46 98",
+  phone: "+32 492 70 45 04",
   belgiumLocation: "Verviers, Belgique",
   drcLocation: "Kinzau-Mvuete, RDC",
   logo: "/images/proddeko-logo.png",
