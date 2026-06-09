@@ -1,29 +1,25 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+```jsx
+import React, { useEffect, useRef, useState } from "react";
+
 import {
-  ArrowLeft,
-  ArrowRight,
   BookOpen,
+  Briefcase,
   ChevronDown,
-  FileText,
   Globe,
   GraduationCap,
   Handshake,
   HeartHandshake,
   Landmark,
-  Leaf,
   Mail,
   MapPin,
   Menu,
   Phone,
   ShieldCheck,
   Sparkles,
-  Sprout,
   Users,
   Wrench,
-  Church,
-  Briefcase,
-  Search,
-  Cog,
+  X,
+  ZoomIn,
 } from "lucide-react";
 
 const SITE = {
@@ -31,112 +27,234 @@ const SITE = {
   brandName: "Triple Sustain Impact",
   tagline:
     "Solidarité internationale • Développement durable • Gouvernance éthique",
+
   email: "admin@proddeko.online",
+
   phone: "+32 492 70 45 04",
+
   belgiumLocation: "Verviers, Belgique",
+
   drcLocation: "Kinzau-Mvuete, RDC",
+
   logo: "/images/proddeko-logo.png",
 };
 
 const PATRIMOINE_EMPLOI = {
   title: "Projet Patrimoine & Emploi — Verviers",
+
   subtitle:
     "Projet pilote d’insertion professionnelle pour la maintenance technique du patrimoine religieux.",
 
-  hero: "/images/projects/patrimoine-emploi/patrimoine-emploi-cover.png",
+  hero:
+    "/images/projects/patrimoine-emploi/patrimoine-emploi-cover.png",
 
   brochure:
     "/images/projects/patrimoine-emploi/patrimoine-emploi-brochure.png",
 
   gallery: [
     "/images/projects/patrimoine-emploi/patrimoine-emploi-cover.png",
+
     "/images/projects/patrimoine-emploi/pavlo-workshop.jpg",
+
     "/images/projects/patrimoine-emploi/urbain-matimpi.jpg",
+
     "/images/projects/patrimoine-emploi/orgue-verviers.jpg",
   ],
 
   metrics: [
     { value: "2026", label: "année pilote" },
+
     { value: "Verviers", label: "zone pilote" },
+
     { value: "Patrimoine", label: "maintenance d’orgues" },
+
     { value: "Insertion", label: "emploi technique" },
   ],
 
   objectives: [
     "Sauvegarder le patrimoine musical et historique des églises.",
+
     "Créer des opportunités professionnelles pour des ingénieurs qualifiés issus de la migration.",
+
     "Mettre en place des diagnostics techniques fiables pour les fabriques d’église.",
+
     "Développer une expertise locale durable en maintenance d’orgues.",
   ],
 
   contacts: [
     {
       name: "Urbain Matimpi Yongo",
+
       role: "Président & Coordination du projet",
-      image: "/images/projects/patrimoine-emploi/urbain-matimpi.jpg",
+
+      image:
+        "/images/projects/patrimoine-emploi/urbain-matimpi.jpg",
     },
+
     {
       name: "Pavlo Morar",
+
       role: "Responsable technique",
-      image: "/images/projects/patrimoine-emploi/pavlo-workshop.jpg",
+
+      image:
+        "/images/projects/patrimoine-emploi/pavlo-workshop.jpg",
+    },
+  ],
+};
+
+const EMPLOI_PRIMO_ARRIVANTS = {
+  title: "Projet Emploi – Primo-arrivants qualifiés",
+
+  subtitle:
+    "Valoriser les compétences des ingénieurs, techniciens et professionnels issus de la migration à travers des projets concrets d’utilité sociale et patrimoniale.",
+
+  hero:
+    "/images/projects/primo-arrivants/primo-arrivants-cover.jpg",
+
+  brochure:
+    "/images/projects/primo-arrivants/primo-arrivants-brochure.jpg",
+
+  gallery: [
+    "/images/projects/primo-arrivants/primo-arrivants-cover.jpg",
+
+    "/images/projects/primo-arrivants/atelier-technique.jpg",
+
+    "/images/projects/primo-arrivants/patrimoine.jpg",
+
+    "/images/projects/primo-arrivants/reunion.jpg",
+  ],
+
+  metrics: [
+    { value: "2026", label: "année pilote" },
+
+    { value: "Belgique", label: "territoire d’expérimentation" },
+
+    { value: "Insertion", label: "emploi qualifié" },
+
+    { value: "Patrimoine", label: "maintenance technique" },
+  ],
+
+  objectives: [
+    "Faciliter l’intégration professionnelle des primo-arrivants qualifiés.",
+
+    "Valoriser les compétences techniques et scientifiques des ingénieurs migrants.",
+
+    "Créer des opportunités d’emploi à travers les métiers du patrimoine et de la maintenance.",
+
+    "Développer des projets pilotes d’insertion professionnelle à impact territorial.",
+
+    "Favoriser la coopération entre patrimoine, inclusion sociale et innovation durable.",
+  ],
+
+  contacts: [
+    {
+      name: "Urbain Matimpi Yongo",
+
+      role: "Coordination stratégique",
+
+      image:
+        "/images/projects/patrimoine-emploi/urbain-matimpi.jpg",
+    },
+
+    {
+      name: "Pavlo Morar",
+
+      role: "Expert technique & maintenance",
+
+      image:
+        "/images/projects/patrimoine-emploi/pavlo-workshop.jpg",
     },
   ],
 };
 
 const stats = [
   { value: "200 000+", label: "bénéficiaires accompagnés" },
+
   { value: "10+", label: "zones d’action" },
+
   { value: "8+", label: "partenaires stratégiques" },
+
   { value: "6", label: "universités partenaires" },
 ];
 
 const navItems = [
   {
     label: "À propos",
+
     items: [
       { label: "Qui sommes-nous", page: "about", icon: Users },
+
       { label: "Mission", page: "mission", icon: HeartHandshake },
+
       { label: "Valeurs", page: "values", icon: BookOpen },
+
       { label: "Gouvernance", page: "governance", icon: Landmark },
     ],
   },
+
   {
     label: "Nos actions",
+
     items: [
       {
         label: "Développement durable",
+
         page: "action-sustainable",
+
         icon: Globe,
       },
+
       {
         label: "Éducation citoyenne",
+
         page: "action-education",
+
         icon: GraduationCap,
       },
+
       {
         label: "Solidarité internationale",
+
         page: "action-solidarity",
+
         icon: Handshake,
       },
     ],
   },
+
   {
     label: "Projets",
+
     items: [
       {
         label: "Patrimoine & Emploi",
+
         page: "project-patrimoine",
+
         icon: Wrench,
       },
+
+      {
+        label: "Emploi – Primo-arrivants",
+
+        page: "project-primo-arrivants",
+
+        icon: Briefcase,
+      },
+
       {
         label: "Impact",
+
         page: "projects-impact",
+
         icon: Sparkles,
       },
     ],
   },
+
   {
     label: "Contact",
+
     items: [
       { label: "Coordonnées", page: "contact", icon: Mail },
     ],
@@ -190,8 +308,14 @@ function SectionTitle({ eyebrow, title, text, light = false }) {
   );
 }
 
-function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
+function MenuGroup({
+  group,
+  activeMenu,
+  setActiveMenu,
+  setPage,
+}) {
   const wrapperRef = useRef(null);
+
   const isOpen = activeMenu === group.label;
 
   useEffect(() => {
@@ -207,7 +331,10 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
   }, [setActiveMenu]);
 
   return (
@@ -222,6 +349,7 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
         className="flex items-center gap-1 rounded-full px-4 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-100"
       >
         {group.label}
+
         <ChevronDown className="h-4 w-4" />
       </button>
 
@@ -237,6 +365,7 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
                   type="button"
                   onClick={() => {
                     setPage(item.page);
+
                     setActiveMenu(null);
                   }}
                   className="flex w-full items-center gap-3 rounded-2xl p-4 text-left transition hover:bg-slate-50"
@@ -258,8 +387,7 @@ function MenuGroup({ group, activeMenu, setActiveMenu, setPage }) {
   );
 }
 
-function Header({ page, setPage }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
+function Header({ setPage }) {
   const [activeMenu, setActiveMenu] = useState(null);
 
   return (
@@ -282,6 +410,7 @@ function Header({ page, setPage }) {
             <div className="text-2xl font-black text-blue-950">
               {SITE.name}
             </div>
+
             <div className="hidden text-sm text-slate-500 md:block">
               {SITE.tagline}
             </div>
@@ -307,80 +436,8 @@ function Header({ page, setPage }) {
             />
           ))}
         </nav>
-
-        <button
-          type="button"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="rounded-full border border-slate-200 p-2 lg:hidden"
-        >
-          {mobileOpen ? <X /> : <Menu />}
-        </button>
       </div>
     </header>
-  );
-}
-
-function Hero({ setPage }) {
-  return (
-    <section className="relative overflow-hidden bg-slate-950 text-white">
-      <div className="absolute inset-0">
-        <ProtectedImage
-          src={PATRIMOINE_EMPLOI.hero}
-          alt="Hero"
-          className="h-full w-full object-cover opacity-40"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/80 to-black/70" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
-        <div className="max-w-4xl">
-          <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold backdrop-blur">
-            Belgique • RDC • Patrimoine • Emploi
-          </div>
-
-          <h1 className="mt-8 text-5xl font-black leading-tight tracking-tight md:text-7xl">
-            Triple Sustain Impact
-          </h1>
-
-          <h2 className="mt-4 text-3xl font-bold text-orange-400 md:text-5xl">
-            PATRIMOINE & EMPLOI
-          </h2>
-
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-100">
-            Sauvegarder nos orgues, valoriser nos talents.
-            Un projet humain, technique et durable porté par
-            PRODDEKO-Belgique.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button
-              type="button"
-              onClick={() => setPage("project-patrimoine")}
-              className="rounded-full bg-orange-500 px-6 py-3 font-bold text-white transition hover:bg-orange-600"
-            >
-              Découvrir le projet
-            </button>
-          </div>
-        </div>
-
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-[2rem] border border-white/10 bg-white/10 p-8 backdrop-blur"
-            >
-              <div className="text-4xl font-black text-orange-300">
-                {stat.value}
-              </div>
-              <div className="mt-3 text-base text-slate-100">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -431,14 +488,14 @@ function ImageLightbox({ src, onClose }) {
   );
 }
 
-function PatrimoineProjectPage({ onOpen }) {
+function PrimoArrivantsPage({ onOpen }) {
   return (
     <div className="bg-slate-50">
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <ProtectedImage
-            src={PATRIMOINE_EMPLOI.hero}
-            alt="Projet Patrimoine"
+            src={EMPLOI_PRIMO_ARRIVANTS.hero}
+            alt="Projet Emploi"
             className="h-full w-full object-cover opacity-30"
           />
 
@@ -448,17 +505,19 @@ function PatrimoineProjectPage({ onOpen }) {
         <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
           <div className="max-w-4xl">
             <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-orange-200 backdrop-blur">
-              Projet pilote • Doyenné de Verviers
+              Inclusion • Expertise • Emploi
             </div>
 
             <h1 className="mt-8 text-5xl font-black leading-tight md:text-7xl">
-              PATRIMOINE
-              <span className="block text-orange-400">& EMPLOI</span>
+              EMPLOI
+              <span className="block text-orange-400">
+                & PRIMO-ARRIVANTS
+              </span>
             </h1>
 
             <p className="mt-8 text-xl leading-9 text-slate-200">
-              Sauvegarder nos orgues, valoriser nos talents.
-              Une ingénierie au service du patrimoine religieux.
+              Valoriser les compétences des ingénieurs et
+              techniciens qualifiés issus de la migration.
             </p>
           </div>
         </div>
@@ -466,13 +525,13 @@ function PatrimoineProjectPage({ onOpen }) {
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <SectionTitle
-          eyebrow="Projet institutionnel"
-          title={PATRIMOINE_EMPLOI.title}
-          text={PATRIMOINE_EMPLOI.subtitle}
+          eyebrow="Projet stratégique"
+          title={EMPLOI_PRIMO_ARRIVANTS.title}
+          text={EMPLOI_PRIMO_ARRIVANTS.subtitle}
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-4">
-          {PATRIMOINE_EMPLOI.metrics.map((metric) => (
+          {EMPLOI_PRIMO_ARRIVANTS.metrics.map((metric) => (
             <div
               key={metric.label}
               className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
@@ -493,30 +552,32 @@ function PatrimoineProjectPage({ onOpen }) {
         <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
           <div>
             <SectionTitle
-              eyebrow="Vision stratégique"
-              title="Une ingénierie au service du sacré"
-              text="Le projet connecte patrimoine religieux, expertise mécanique et insertion professionnelle durable."
+              eyebrow="Vision"
+              title="Une expertise humaine au service des territoires"
+              text="Le projet développe une nouvelle approche d’intégration professionnelle fondée sur les compétences réelles."
             />
 
             <div className="mt-8 space-y-4">
-              {PATRIMOINE_EMPLOI.objectives.map((objective) => (
-                <div
-                  key={objective}
-                  className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-                >
-                  <div className="mt-2 h-3 w-3 rounded-full bg-orange-500" />
+              {EMPLOI_PRIMO_ARRIVANTS.objectives.map(
+                (objective) => (
+                  <div
+                    key={objective}
+                    className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                  >
+                    <div className="mt-2 h-3 w-3 rounded-full bg-orange-500" />
 
-                  <p className="leading-7 text-slate-700">
-                    {objective}
-                  </p>
-                </div>
-              ))}
+                    <p className="leading-7 text-slate-700">
+                      {objective}
+                    </p>
+                  </div>
+                )
+              )}
             </div>
           </div>
 
           <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
             <ProtectedImage
-              src={PATRIMOINE_EMPLOI.brochure}
+              src={EMPLOI_PRIMO_ARRIVANTS.brochure}
               alt="Brochure"
               className="w-full object-cover"
             />
@@ -527,19 +588,21 @@ function PatrimoineProjectPage({ onOpen }) {
       <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
         <SectionTitle
           eyebrow="Galerie"
-          title="Visuels du projet"
-          text="Maintenance d’orgues, ingénierie technique et coordination institutionnelle."
+          title="Insertion & Expertise"
+          text="Des compétences qualifiées au service du patrimoine et du développement territorial."
         />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {PATRIMOINE_EMPLOI.gallery.map((src, index) => (
-            <GalleryCard
-              key={src}
-              src={src}
-              alt={`Projet ${index + 1}`}
-              onOpen={onOpen}
-            />
-          ))}
+          {EMPLOI_PRIMO_ARRIVANTS.gallery.map(
+            (src, index) => (
+              <GalleryCard
+                key={src}
+                src={src}
+                alt={`Projet ${index + 1}`}
+                onOpen={onOpen}
+              />
+            )
+          )}
         </div>
       </section>
 
@@ -548,37 +611,39 @@ function PatrimoineProjectPage({ onOpen }) {
           <SectionTitle
             eyebrow="Coordination"
             title="Équipe du projet"
-            text="Une approche humaine, technique et durable."
+            text="Une approche professionnelle, humaine et durable."
             light
           />
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {PATRIMOINE_EMPLOI.contacts.map((person) => (
-              <div
-                key={person.name}
-                className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur"
-              >
-                <div className="flex items-center gap-5">
-                  <div className="h-24 w-24 overflow-hidden rounded-2xl border border-white/10">
-                    <ProtectedImage
-                      src={person.image}
-                      alt={person.name}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
+            {EMPLOI_PRIMO_ARRIVANTS.contacts.map(
+              (person) => (
+                <div
+                  key={person.name}
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className="h-24 w-24 overflow-hidden rounded-2xl border border-white/10">
+                      <ProtectedImage
+                        src={person.image}
+                        alt={person.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
 
-                  <div>
-                    <h3 className="text-2xl font-black text-white">
-                      {person.name}
-                    </h3>
+                    <div>
+                      <h3 className="text-2xl font-black text-white">
+                        {person.name}
+                      </h3>
 
-                    <p className="mt-2 text-orange-300">
-                      {person.role}
-                    </p>
+                      <p className="mt-2 text-orange-300">
+                        {person.role}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </section>
@@ -586,56 +651,9 @@ function PatrimoineProjectPage({ onOpen }) {
   );
 }
 
-function HomePage({ setPage }) {
-  return (
-    <>
-      <Hero setPage={setPage} />
-
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <SectionTitle
-          eyebrow="Triple Sustain Impact"
-          title="Des projets à fort impact territorial"
-          text="PRODDEKO-Belgique développe des initiatives concrètes entre la Belgique et la RDC dans les domaines du patrimoine, de la solidarité internationale et du développement durable."
-        />
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-            <Globe className="h-10 w-10 text-orange-500" />
-            <h3 className="mt-5 text-2xl font-black text-blue-950">
-              Développement durable
-            </h3>
-            <p className="mt-4 leading-7 text-slate-600">
-              Projets territoriaux à impact social, économique et environnemental.
-            </p>
-          </div>
-
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-            <ShieldCheck className="h-10 w-10 text-orange-500" />
-            <h3 className="mt-5 text-2xl font-black text-blue-950">
-              Gouvernance éthique
-            </h3>
-            <p className="mt-4 leading-7 text-slate-600">
-              Transparence, redevabilité et approche documentaire structurée.
-            </p>
-          </div>
-
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-            <Wrench className="h-10 w-10 text-orange-500" />
-            <h3 className="mt-5 text-2xl font-black text-blue-950">
-              Patrimoine & Emploi
-            </h3>
-            <p className="mt-4 leading-7 text-slate-600">
-              Sauvegarde des orgues et insertion professionnelle d’ingénieurs qualifiés.
-            </p>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
 export default function App() {
   const [page, setPage] = useState("home");
+
   const [lightbox, setLightbox] = useState(null);
 
   const openLightbox = (src) => {
@@ -644,12 +662,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <Header page={page} setPage={setPage} />
+      <Header setPage={setPage} />
 
-      {page === "home" && <HomePage setPage={setPage} />}
-
-      {page === "project-patrimoine" && (
-        <PatrimoineProjectPage onOpen={openLightbox} />
+      {page === "project-primo-arrivants" && (
+        <PrimoArrivantsPage onOpen={openLightbox} />
       )}
 
       <footer className="bg-slate-950 py-14 text-white">
@@ -666,7 +682,9 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold">Coordonnées</h4>
+              <h4 className="text-lg font-bold">
+                Coordonnées
+              </h4>
 
               <div className="mt-5 space-y-3 text-slate-300">
                 <div className="flex items-center gap-3">
@@ -687,11 +705,14 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold">Projet pilote</h4>
+              <h4 className="text-lg font-bold">
+                Projet stratégique
+              </h4>
 
               <p className="mt-4 leading-7 text-slate-300">
-                Patrimoine & Emploi — Sauvegarder nos orgues,
-                valoriser nos talents.
+                Emploi – Primo-arrivants qualifiés :
+                valoriser les compétences et favoriser
+                l’insertion professionnelle durable.
               </p>
             </div>
           </div>
@@ -705,3 +726,4 @@ export default function App() {
     </div>
   );
 }
+```
