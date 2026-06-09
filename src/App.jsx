@@ -1,4 +1,3 @@
-```jsx
 import React, { useEffect, useRef, useState } from "react";
 
 import {
@@ -20,11 +19,14 @@ import {
   Wrench,
   X,
   ZoomIn,
+  UserCheck,
 } from "lucide-react";
 
 const SITE = {
   name: "PRODDEKO-Belgique",
+
   brandName: "Triple Sustain Impact",
+
   tagline:
     "Solidarité internationale • Développement durable • Gouvernance éthique",
 
@@ -37,69 +39,6 @@ const SITE = {
   drcLocation: "Kinzau-Mvuete, RDC",
 
   logo: "/images/proddeko-logo.png",
-};
-
-const PATRIMOINE_EMPLOI = {
-  title: "Projet Patrimoine & Emploi — Verviers",
-
-  subtitle:
-    "Projet pilote d’insertion professionnelle pour la maintenance technique du patrimoine religieux.",
-
-  hero:
-    "/images/projects/patrimoine-emploi/patrimoine-emploi-cover.png",
-
-  brochure:
-    "/images/projects/patrimoine-emploi/patrimoine-emploi-brochure.png",
-
-  gallery: [
-    "/images/projects/patrimoine-emploi/patrimoine-emploi-cover.png",
-
-    "/images/projects/patrimoine-emploi/pavlo-workshop.jpg",
-
-    "/images/projects/patrimoine-emploi/urbain-matimpi.jpg",
-
-    "/images/projects/patrimoine-emploi/orgue-verviers.jpg",
-  ],
-
-  metrics: [
-    { value: "2026", label: "année pilote" },
-
-    { value: "Verviers", label: "zone pilote" },
-
-    { value: "Patrimoine", label: "maintenance d’orgues" },
-
-    { value: "Insertion", label: "emploi technique" },
-  ],
-
-  objectives: [
-    "Sauvegarder le patrimoine musical et historique des églises.",
-
-    "Créer des opportunités professionnelles pour des ingénieurs qualifiés issus de la migration.",
-
-    "Mettre en place des diagnostics techniques fiables pour les fabriques d’église.",
-
-    "Développer une expertise locale durable en maintenance d’orgues.",
-  ],
-
-  contacts: [
-    {
-      name: "Urbain Matimpi Yongo",
-
-      role: "Président & Coordination du projet",
-
-      image:
-        "/images/projects/patrimoine-emploi/urbain-matimpi.jpg",
-    },
-
-    {
-      name: "Pavlo Morar",
-
-      role: "Responsable technique",
-
-      image:
-        "/images/projects/patrimoine-emploi/pavlo-workshop.jpg",
-    },
-  ],
 };
 
 const EMPLOI_PRIMO_ARRIVANTS = {
@@ -167,101 +106,93 @@ const EMPLOI_PRIMO_ARRIVANTS = {
   ],
 };
 
-const stats = [
-  { value: "200 000+", label: "bénéficiaires accompagnés" },
-
-  { value: "10+", label: "zones d’action" },
-
-  { value: "8+", label: "partenaires stratégiques" },
-
-  { value: "6", label: "universités partenaires" },
-];
-
-const navItems = [
+const projectCards = [
   {
-    label: "À propos",
+    title: "Projet Kilengi",
 
-    items: [
-      { label: "Qui sommes-nous", page: "about", icon: Users },
+    category: "Projets",
 
-      { label: "Mission", page: "mission", icon: HeartHandshake },
+    icon: Sparkles,
 
-      { label: "Valeurs", page: "values", icon: BookOpen },
-
-      { label: "Gouvernance", page: "governance", icon: Landmark },
-    ],
+    page: "kilengi",
   },
 
   {
-    label: "Nos actions",
+    title: "Projet Boma",
 
-    items: [
-      {
-        label: "Développement durable",
+    category: "Projets",
 
-        page: "action-sustainable",
+    icon: Globe,
 
-        icon: Globe,
-      },
-
-      {
-        label: "Éducation citoyenne",
-
-        page: "action-education",
-
-        icon: GraduationCap,
-      },
-
-      {
-        label: "Solidarité internationale",
-
-        page: "action-solidarity",
-
-        icon: Handshake,
-      },
-    ],
+    page: "boma",
   },
 
   {
-    label: "Projets",
+    title: "JPN95 — Souveraineté agricole",
 
-    items: [
-      {
-        label: "Patrimoine & Emploi",
+    category: "Projets",
 
-        page: "project-patrimoine",
+    icon: GraduationCap,
 
-        icon: Wrench,
-      },
-
-      {
-        label: "Emploi – Primo-arrivants",
-
-        page: "project-primo-arrivants",
-
-        icon: Briefcase,
-      },
-
-      {
-        label: "Impact",
-
-        page: "projects-impact",
-
-        icon: Sparkles,
-      },
-    ],
+    page: "jpn95",
   },
 
   {
-    label: "Contact",
+    title: "Rebondir par le Foot",
 
-    items: [
-      { label: "Coordonnées", page: "contact", icon: Mail },
-    ],
+    category: "Projets",
+
+    icon: Users,
+
+    page: "football",
+  },
+
+  {
+    title: "Impact",
+
+    category: "Projets",
+
+    icon: HeartHandshake,
+
+    page: "impact",
+  },
+
+  {
+    title: "Partenaires",
+
+    category: "Projets",
+
+    icon: Handshake,
+
+    page: "partners",
+  },
+
+  {
+    title: "Appel à financement",
+
+    category: "Projets",
+
+    icon: ShieldCheck,
+
+    page: "funding",
+  },
+
+  {
+    title: "Emploi – Primo-arrivants qualifiés",
+
+    category: "Insertion professionnelle",
+
+    icon: UserCheck,
+
+    page: "project-primo-arrivants",
   },
 ];
 
-function ProtectedImage({ className = "", alt = "", ...props }) {
+function ProtectedImage({
+  className = "",
+  alt = "",
+  ...props
+}) {
   return (
     <img
       {...props}
@@ -269,136 +200,20 @@ function ProtectedImage({ className = "", alt = "", ...props }) {
       draggable="false"
       onContextMenu={(e) => e.preventDefault()}
       className={`select-none ${className}`}
-      style={{ WebkitUserDrag: "none", userSelect: "none" }}
+      style={{
+        WebkitUserDrag: "none",
+        userSelect: "none",
+      }}
     />
   );
 }
 
-function SectionTitle({ eyebrow, title, text, light = false }) {
-  return (
-    <div className="max-w-3xl">
-      {eyebrow && (
-        <div
-          className={`text-sm font-bold uppercase tracking-[0.22em] ${
-            light ? "text-orange-300" : "text-orange-500"
-          }`}
-        >
-          {eyebrow}
-        </div>
-      )}
-
-      <h2
-        className={`mt-3 text-3xl font-black tracking-tight md:text-5xl ${
-          light ? "text-white" : "text-blue-950"
-        }`}
-      >
-        {title}
-      </h2>
-
-      {text && (
-        <p
-          className={`mt-5 text-lg leading-8 ${
-            light ? "text-slate-200" : "text-slate-600"
-          }`}
-        >
-          {text}
-        </p>
-      )}
-    </div>
-  );
-}
-
-function MenuGroup({
-  group,
-  activeMenu,
-  setActiveMenu,
-  setPage,
-}) {
-  const wrapperRef = useRef(null);
-
-  const isOpen = activeMenu === group.label;
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target)
-      ) {
-        setActiveMenu(null);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () =>
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
-  }, [setActiveMenu]);
-
-  return (
-    <div ref={wrapperRef} className="relative">
-      <button
-        type="button"
-        onClick={() =>
-          setActiveMenu((current) =>
-            current === group.label ? null : group.label
-          )
-        }
-        className="flex items-center gap-1 rounded-full px-4 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-100"
-      >
-        {group.label}
-
-        <ChevronDown className="h-4 w-4" />
-      </button>
-
-      {isOpen && (
-        <div className="absolute left-0 top-full z-40 mt-3 w-[320px] rounded-[2rem] border border-slate-200 bg-white p-4 shadow-2xl">
-          <div className="space-y-2">
-            {group.items.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <button
-                  key={item.page}
-                  type="button"
-                  onClick={() => {
-                    setPage(item.page);
-
-                    setActiveMenu(null);
-                  }}
-                  className="flex w-full items-center gap-3 rounded-2xl p-4 text-left transition hover:bg-slate-50"
-                >
-                  <div className="rounded-xl bg-orange-50 p-2 text-orange-500">
-                    <Icon className="h-4 w-4" />
-                  </div>
-
-                  <span className="font-semibold text-slate-700">
-                    {item.label}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function Header({ setPage }) {
-  const [activeMenu, setActiveMenu] = useState(null);
-
+function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        <button
-          type="button"
-          onClick={() => setPage("home")}
-          className="flex items-center gap-3"
-        >
-          <div className="h-12 w-12 overflow-hidden rounded-xl border border-slate-200">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        <div className="flex items-center gap-4">
+          <div className="h-14 w-14 overflow-hidden rounded-xl border border-slate-200">
             <ProtectedImage
               src={SITE.logo}
               alt="Logo"
@@ -407,37 +222,141 @@ function Header({ setPage }) {
           </div>
 
           <div>
-            <div className="text-2xl font-black text-blue-950">
+            <h1 className="text-3xl font-black text-blue-950">
               {SITE.name}
-            </div>
+            </h1>
 
-            <div className="hidden text-sm text-slate-500 md:block">
+            <p className="text-lg text-slate-500">
               {SITE.tagline}
-            </div>
+            </p>
           </div>
-        </button>
+        </div>
 
-        <nav className="hidden items-center gap-3 lg:flex">
-          <button
-            type="button"
-            onClick={() => setPage("home")}
-            className="rounded-full px-5 py-3 text-sm font-bold hover:bg-slate-100"
-          >
+        <div className="hidden items-center gap-5 lg:flex">
+          <button className="rounded-full bg-slate-100 px-7 py-4 font-bold text-blue-950">
             Accueil
           </button>
 
-          {navItems.map((group) => (
-            <MenuGroup
-              key={group.label}
-              group={group}
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              setPage={setPage}
-            />
-          ))}
-        </nav>
+          <button className="font-bold text-blue-950">
+            À propos
+          </button>
+
+          <button className="font-bold text-blue-950">
+            Nos actions
+          </button>
+
+          <button className="rounded-full bg-slate-100 px-7 py-4 font-bold text-blue-950">
+            Projets
+          </button>
+
+          <button className="font-bold text-blue-950">
+            Contact
+          </button>
+
+          <button className="rounded-full border border-slate-300 px-7 py-4 font-bold text-blue-950">
+            Projet Kilengi
+          </button>
+
+          <button className="rounded-full bg-orange-500 px-8 py-4 font-bold text-white">
+            Nous contacter
+          </button>
+        </div>
       </div>
     </header>
+  );
+}
+
+function ProjectNavigation({ setPage }) {
+  return (
+    <section className="relative z-20 mx-auto -mt-6 max-w-7xl px-6">
+      <div className="grid overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl lg:grid-cols-[1.2fr_0.9fr]">
+        <div className="max-h-[640px] overflow-y-auto p-8">
+          <div className="text-sm font-black uppercase tracking-[0.35em] text-orange-500">
+            Projets
+          </div>
+
+          <h2 className="mt-4 text-5xl font-black text-blue-950">
+            Navigation stratégique
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {projectCards.map((project) => {
+              const Icon = project.icon;
+
+              return (
+                <button
+                  key={project.title}
+                  type="button"
+                  onClick={() => setPage(project.page)}
+                  className="group flex items-start gap-5 rounded-[2rem] bg-slate-50 p-6 text-left transition hover:-translate-y-1 hover:bg-orange-50 hover:shadow-lg"
+                >
+                  <div className="rounded-2xl bg-orange-100 p-4 text-orange-500">
+                    <Icon className="h-7 w-7" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-black leading-tight text-blue-950">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-2 text-lg text-slate-500">
+                      {project.category}
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-black to-red-950 p-10 text-white">
+          <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-bold uppercase tracking-[0.25em] text-orange-200">
+            PRODDEKO-BELGIQUE
+          </div>
+
+          <h3 className="mt-10 text-6xl font-black leading-tight">
+            Une action institutionnelle ancrée dans les territoires
+          </h3>
+
+          <p className="mt-10 text-2xl leading-10 text-slate-200">
+            Des projets concrets, documentés et orientés
+            impact entre la Belgique et la RDC.
+          </p>
+
+          <div className="mt-14 space-y-5">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+              <div className="text-4xl font-black text-orange-400">
+                10+
+              </div>
+
+              <div className="mt-2 text-lg text-slate-300">
+                Zones d’intervention
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+              <div className="text-4xl font-black text-orange-400">
+                200 000+
+              </div>
+
+              <div className="mt-2 text-lg text-slate-300">
+                Bénéficiaires
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+              <div className="text-4xl font-black text-orange-400">
+                Belgique – RDC
+              </div>
+
+              <div className="mt-2 text-lg text-slate-300">
+                Coopération stratégique
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -446,16 +365,16 @@ function GalleryCard({ src, alt, onOpen }) {
     <button
       type="button"
       onClick={() => onOpen(src)}
-      className="group relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+      className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
     >
       <ProtectedImage
         src={src}
         alt={alt}
-        className="h-72 w-full object-cover transition duration-300 group-hover:scale-105"
+        className="h-80 w-full object-cover transition duration-300 group-hover:scale-105"
       />
 
-      <div className="absolute bottom-3 right-3 rounded-full bg-white p-2 opacity-0 transition group-hover:opacity-100">
-        <ZoomIn className="h-4 w-4 text-slate-700" />
+      <div className="absolute bottom-4 right-4 rounded-full bg-white p-3 opacity-0 transition group-hover:opacity-100">
+        <ZoomIn className="h-5 w-5 text-slate-700" />
       </div>
     </button>
   );
@@ -473,7 +392,7 @@ function ImageLightbox({ src, onClose }) {
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-3 top-3 rounded-full bg-white p-2"
+          className="absolute right-4 top-4 rounded-full bg-white p-3"
         >
           <X className="h-5 w-5" />
         </button>
@@ -481,7 +400,7 @@ function ImageLightbox({ src, onClose }) {
         <ProtectedImage
           src={src}
           alt="Preview"
-          className="max-h-[90vh] rounded-2xl"
+          className="max-h-[90vh] rounded-3xl"
         />
       </div>
     </div>
@@ -496,26 +415,26 @@ function PrimoArrivantsPage({ onOpen }) {
           <ProtectedImage
             src={EMPLOI_PRIMO_ARRIVANTS.hero}
             alt="Projet Emploi"
-            className="h-full w-full object-cover opacity-30"
+            className="h-full w-full object-cover opacity-25"
           />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-orange-950/60" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-6 py-32">
           <div className="max-w-4xl">
-            <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-orange-200 backdrop-blur">
+            <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-orange-200 backdrop-blur">
               Inclusion • Expertise • Emploi
             </div>
 
-            <h1 className="mt-8 text-5xl font-black leading-tight md:text-7xl">
+            <h1 className="mt-10 text-6xl font-black leading-tight md:text-7xl">
               EMPLOI
               <span className="block text-orange-400">
                 & PRIMO-ARRIVANTS
               </span>
             </h1>
 
-            <p className="mt-8 text-xl leading-9 text-slate-200">
+            <p className="mt-10 text-2xl leading-10 text-slate-200">
               Valoriser les compétences des ingénieurs et
               techniciens qualifiés issus de la migration.
             </p>
@@ -523,24 +442,18 @@ function PrimoArrivantsPage({ onOpen }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <SectionTitle
-          eyebrow="Projet stratégique"
-          title={EMPLOI_PRIMO_ARRIVANTS.title}
-          text={EMPLOI_PRIMO_ARRIVANTS.subtitle}
-        />
-
-        <div className="mt-12 grid gap-6 md:grid-cols-4">
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid gap-8 md:grid-cols-4">
           {EMPLOI_PRIMO_ARRIVANTS.metrics.map((metric) => (
             <div
               key={metric.label}
               className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
             >
-              <div className="text-4xl font-black text-orange-500">
+              <div className="text-5xl font-black text-orange-500">
                 {metric.value}
               </div>
 
-              <div className="mt-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
+              <div className="mt-4 text-sm font-bold uppercase tracking-[0.2em] text-slate-500">
                 {metric.label}
               </div>
             </div>
@@ -548,25 +461,34 @@ function PrimoArrivantsPage({ onOpen }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="grid gap-14 lg:grid-cols-[1fr_0.95fr]">
           <div>
-            <SectionTitle
-              eyebrow="Vision"
-              title="Une expertise humaine au service des territoires"
-              text="Le projet développe une nouvelle approche d’intégration professionnelle fondée sur les compétences réelles."
-            />
+            <div className="text-sm font-black uppercase tracking-[0.25em] text-orange-500">
+              Vision
+            </div>
 
-            <div className="mt-8 space-y-4">
+            <h2 className="mt-5 text-5xl font-black text-blue-950">
+              Une expertise humaine au service des territoires
+            </h2>
+
+            <p className="mt-8 text-xl leading-9 text-slate-600">
+              Le projet développe une nouvelle approche
+              d’intégration professionnelle fondée sur les
+              compétences réelles et les besoins du
+              patrimoine.
+            </p>
+
+            <div className="mt-10 space-y-5">
               {EMPLOI_PRIMO_ARRIVANTS.objectives.map(
                 (objective) => (
                   <div
                     key={objective}
-                    className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                    className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                   >
                     <div className="mt-2 h-3 w-3 rounded-full bg-orange-500" />
 
-                    <p className="leading-7 text-slate-700">
+                    <p className="text-lg leading-8 text-slate-700">
                       {objective}
                     </p>
                   </div>
@@ -575,7 +497,7 @@ function PrimoArrivantsPage({ onOpen }) {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
+          <div className="overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-xl">
             <ProtectedImage
               src={EMPLOI_PRIMO_ARRIVANTS.brochure}
               alt="Brochure"
@@ -585,14 +507,21 @@ function PrimoArrivantsPage({ onOpen }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-        <SectionTitle
-          eyebrow="Galerie"
-          title="Insertion & Expertise"
-          text="Des compétences qualifiées au service du patrimoine et du développement territorial."
-        />
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="text-sm font-black uppercase tracking-[0.25em] text-orange-500">
+          Galerie
+        </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <h2 className="mt-5 text-5xl font-black text-blue-950">
+          Insertion & Expertise
+        </h2>
+
+        <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-600">
+          Des compétences qualifiées au service du patrimoine
+          et du développement territorial.
+        </p>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {EMPLOI_PRIMO_ARRIVANTS.gallery.map(
             (src, index) => (
               <GalleryCard
@@ -603,48 +532,6 @@ function PrimoArrivantsPage({ onOpen }) {
               />
             )
           )}
-        </div>
-      </section>
-
-      <section className="bg-slate-950 py-20 text-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionTitle
-            eyebrow="Coordination"
-            title="Équipe du projet"
-            text="Une approche professionnelle, humaine et durable."
-            light
-          />
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {EMPLOI_PRIMO_ARRIVANTS.contacts.map(
-              (person) => (
-                <div
-                  key={person.name}
-                  className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur"
-                >
-                  <div className="flex items-center gap-5">
-                    <div className="h-24 w-24 overflow-hidden rounded-2xl border border-white/10">
-                      <ProtectedImage
-                        src={person.image}
-                        alt={person.name}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-
-                    <div>
-                      <h3 className="text-2xl font-black text-white">
-                        {person.name}
-                      </h3>
-
-                      <p className="mt-2 text-orange-300">
-                        {person.role}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )
-            )}
-          </div>
         </div>
       </section>
     </div>
@@ -662,54 +549,80 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <Header setPage={setPage} />
+      <Header />
+
+      {page === "home" && (
+        <>
+          <section className="relative overflow-hidden bg-white">
+            <div className="mx-auto max-w-7xl px-6 py-24">
+              <div className="max-w-4xl">
+                <div className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+                  Solutions agricoles
+                </div>
+
+                <h1 className="mt-6 text-6xl font-black leading-tight text-blue-950">
+                  Applications du fertilisant naturel
+                </h1>
+
+                <p className="mt-8 text-2xl leading-10 text-slate-600">
+                  Une solution naturelle adaptée à plusieurs
+                  cultures : céréales, horticulture, prairies
+                  et agriculture durable.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <ProjectNavigation setPage={setPage} />
+        </>
+      )}
 
       {page === "project-primo-arrivants" && (
         <PrimoArrivantsPage onOpen={openLightbox} />
       )}
 
-      <footer className="bg-slate-950 py-14 text-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-10 md:grid-cols-3">
+      <footer className="bg-slate-950 py-16 text-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-12 md:grid-cols-3">
             <div>
-              <h3 className="text-2xl font-black text-orange-400">
+              <h3 className="text-3xl font-black text-orange-400">
                 {SITE.name}
               </h3>
 
-              <p className="mt-4 leading-7 text-slate-300">
-                Un projet humain, technique et durable.
+              <p className="mt-6 text-lg leading-8 text-slate-300">
+                Un projet humain, institutionnel et durable.
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-bold">
+              <h4 className="text-xl font-black">
                 Coordonnées
               </h4>
 
-              <div className="mt-5 space-y-3 text-slate-300">
+              <div className="mt-6 space-y-4 text-slate-300">
                 <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-orange-400" />
+                  <Mail className="h-5 w-5 text-orange-400" />
                   {SITE.email}
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-orange-400" />
+                  <Phone className="h-5 w-5 text-orange-400" />
                   {SITE.phone}
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-orange-400" />
+                  <MapPin className="h-5 w-5 text-orange-400" />
                   {SITE.belgiumLocation}
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-bold">
+              <h4 className="text-xl font-black">
                 Projet stratégique
               </h4>
 
-              <p className="mt-4 leading-7 text-slate-300">
+              <p className="mt-6 text-lg leading-8 text-slate-300">
                 Emploi – Primo-arrivants qualifiés :
                 valoriser les compétences et favoriser
                 l’insertion professionnelle durable.
@@ -726,4 +639,3 @@ export default function App() {
     </div>
   );
 }
-```
