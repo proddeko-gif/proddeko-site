@@ -1,641 +1,95 @@
-import React, { useEffect, useRef, useState } from "react";
-
+import React, { useState } from "react";
 import {
-  BookOpen,
-  Briefcase,
-  ChevronDown,
-  Globe,
-  GraduationCap,
-  Handshake,
-  HeartHandshake,
-  Landmark,
-  Mail,
-  MapPin,
-  Menu,
-  Phone,
-  ShieldCheck,
-  Sparkles,
-  Users,
-  Wrench,
-  X,
-  ZoomIn,
-  UserCheck,
+  ArrowRight, Building2, CheckCircle2, ChevronRight, Globe2, Handshake,
+  Leaf, Mail, MapPin, Menu, MessageCircle, Phone, ShieldCheck, Sprout, Target, Users, X,
+  Droplets, BriefcaseBusiness, Scale, HeartHandshake
 } from "lucide-react";
 
-const SITE = {
-  name: "PRODDEKO-Belgique",
-
-  brandName: "Triple Sustain Impact",
-
-  tagline:
-    "Solidarité internationale • Développement durable • Gouvernance éthique",
-
-  email: "admin@proddeko.online",
-
-  phone: "+32 492 70 45 04",
-
-  belgiumLocation: "Verviers, Belgique",
-
-  drcLocation: "Kinzau-Mvuete, RDC",
-
-  logo: "/images/proddeko-logo.png",
-};
-
-const EMPLOI_PRIMO_ARRIVANTS = {
-  title: "Projet Emploi – Primo-arrivants qualifiés",
-
-  subtitle:
-    "Valoriser les compétences des ingénieurs, techniciens et professionnels issus de la migration à travers des projets concrets d’utilité sociale et patrimoniale.",
-
-  hero:
-    "/images/projects/primo-arrivants/primo-arrivants-cover.jpg",
-
-  brochure:
-    "/images/projects/primo-arrivants/primo-arrivants-brochure.jpg",
-
-  gallery: [
-    "/images/projects/primo-arrivants/primo-arrivants-cover.jpg",
-
-    "/images/projects/primo-arrivants/atelier-technique.jpg",
-
-    "/images/projects/primo-arrivants/patrimoine.jpg",
-
-    "/images/projects/primo-arrivants/reunion.jpg",
-  ],
-
-  metrics: [
-    { value: "2026", label: "année pilote" },
-
-    { value: "Belgique", label: "territoire d’expérimentation" },
-
-    { value: "Insertion", label: "emploi qualifié" },
-
-    { value: "Patrimoine", label: "maintenance technique" },
-  ],
-
-  objectives: [
-    "Faciliter l’intégration professionnelle des primo-arrivants qualifiés.",
-
-    "Valoriser les compétences techniques et scientifiques des ingénieurs migrants.",
-
-    "Créer des opportunités d’emploi à travers les métiers du patrimoine et de la maintenance.",
-
-    "Développer des projets pilotes d’insertion professionnelle à impact territorial.",
-
-    "Favoriser la coopération entre patrimoine, inclusion sociale et innovation durable.",
-  ],
-
-  contacts: [
-    {
-      name: "Urbain Matimpi Yongo",
-
-      role: "Coordination stratégique",
-
-      image:
-        "/images/projects/patrimoine-emploi/urbain-matimpi.jpg",
-    },
-
-    {
-      name: "Pavlo Morar",
-
-      role: "Expert technique & maintenance",
-
-      image:
-        "/images/projects/patrimoine-emploi/pavlo-workshop.jpg",
-    },
-  ],
-};
-
-const projectCards = [
-  {
-    title: "Projet Kilengi",
-
-    category: "Projets",
-
-    icon: Sparkles,
-
-    page: "kilengi",
-  },
-
-  {
-    title: "Projet Boma",
-
-    category: "Projets",
-
-    icon: Globe,
-
-    page: "boma",
-  },
-
-  {
-    title: "JPN95 — Souveraineté agricole",
-
-    category: "Projets",
-
-    icon: GraduationCap,
-
-    page: "jpn95",
-  },
-
-  {
-    title: "Rebondir par le Foot",
-
-    category: "Projets",
-
-    icon: Users,
-
-    page: "football",
-  },
-
-  {
-    title: "Impact",
-
-    category: "Projets",
-
-    icon: HeartHandshake,
-
-    page: "impact",
-  },
-
-  {
-    title: "Partenaires",
-
-    category: "Projets",
-
-    icon: Handshake,
-
-    page: "partners",
-  },
-
-  {
-    title: "Appel à financement",
-
-    category: "Projets",
-
-    icon: ShieldCheck,
-
-    page: "funding",
-  },
-
-  {
-    title: "Emploi – Primo-arrivants qualifiés",
-
-    category: "Insertion professionnelle",
-
-    icon: UserCheck,
-
-    page: "project-primo-arrivants",
-  },
+const NAV = [
+  ["Accueil", "accueil"], ["Qui sommes-nous", "qui"], ["Programmes", "programmes"],
+  ["Projets", "projets"], ["Impact", "impact"], ["Gouvernance", "gouvernance"],
+  ["Partenaires", "partenaires"], ["Contact", "contact"]
 ];
 
-function ProtectedImage({
-  className = "",
-  alt = "",
-  ...props
-}) {
-  return (
-    <img
-      {...props}
-      alt={alt}
-      draggable="false"
-      onContextMenu={(e) => e.preventDefault()}
-      className={`select-none ${className}`}
-      style={{
-        WebkitUserDrag: "none",
-        userSelect: "none",
-      }}
-    />
-  );
-}
+const programs = [
+  {icon: Droplets, title:"Eau, agriculture & résilience climatique", text:"Accès durable à l’eau, irrigation solaire, agriculture familiale, agroécologie et gestion participative des ressources naturelles."},
+  {icon: BriefcaseBusiness, title:"Insertion, jeunesse & économie verte", text:"Formation, entrepreneuriat, métiers verts, économie circulaire et accompagnement vers une insertion économique durable."},
+  {icon: Users, title:"Inclusion & cohésion sociale", text:"Citoyenneté, apprentissage, sport comme levier d’insertion et valorisation des compétences des personnes issues de la migration."},
+  {icon: Scale, title:"Gouvernance & innovation territoriale", text:"Renforcement institutionnel, transparence, partenariats responsables, technologies appropriées et solutions ancrées dans les territoires."}
+];
 
-function Header() {
-  return (
+const projects = [
+  {status:"En cours", title:"BOMA – Irrigation solaire et résilience maraîchère", place:"Boma, Kongo Central · RDC", text:"Améliorer l’accès à l’eau et la résilience de 300 maraîchers grâce à une solution d’irrigation solaire, une gouvernance locale de l’eau et un accompagnement technique."},
+  {status:"En développement", title:"KIN ECO-JEUNES 2027", place:"Malueka, Kinshasa · RDC", text:"Insertion économique de jeunes et de femmes par les métiers verts, l’économie circulaire, l’entrepreneuriat et un Green Business Lab territorial."},
+  {status:"En développement", title:"Brussels Football Bridges", place:"Bruxelles · Belgique", text:"Utiliser le football comme porte d’entrée vers les compétences personnelles, la citoyenneté, l’inclusion et l’insertion socioprofessionnelle des jeunes."},
+  {status:"Pilote", title:"Emploi – Primo-arrivants qualifiés", place:"Belgique", text:"Valoriser les compétences d’ingénieurs, techniciens et professionnels issus de la migration au service de projets techniques et patrimoniaux d’utilité sociale."}
+];
+
+const partners = ["Fondations et bailleurs", "Pouvoirs publics", "ONG et associations", "Universités et experts", "Entreprises responsables", "Organisations communautaires"];
+
+function Shell({children}) { return <div className="min-h-screen bg-slate-50 text-slate-800">{children}</div>; }
+function Wrap({children, className=""}) { return <div className={`mx-auto max-w-7xl px-5 sm:px-7 lg:px-8 ${className}`}>{children}</div>; }
+function Eyebrow({children}) { return <div className="text-xs font-black uppercase tracking-[.28em] text-orange-600">{children}</div>; }
+function SectionTitle({eyebrow, title, text}) { return <div className="max-w-3xl"><Eyebrow>{eyebrow}</Eyebrow><h2 className="mt-4 text-3xl font-black tracking-tight text-blue-950 sm:text-5xl">{title}</h2>{text && <p className="mt-5 text-lg leading-8 text-slate-600">{text}</p>}</div>; }
+
+export default function App(){
+  const [page,setPage]=useState("accueil");
+  const [mobile,setMobile]=useState(false);
+  const go=(p)=>{setPage(p);setMobile(false);window.scrollTo({top:0,behavior:"smooth"});};
+  return <Shell>
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-4">
-          <div className="h-14 w-14 overflow-hidden rounded-xl border border-slate-200">
-            <ProtectedImage
-              src={SITE.logo}
-              alt="Logo"
-              className="h-full w-full object-contain"
-            />
-          </div>
-
-          <div>
-            <h1 className="text-3xl font-black text-blue-950">
-              {SITE.name}
-            </h1>
-
-            <p className="text-lg text-slate-500">
-              {SITE.tagline}
-            </p>
-          </div>
-        </div>
-
-        <div className="hidden items-center gap-5 lg:flex">
-          <button className="rounded-full bg-slate-100 px-7 py-4 font-bold text-blue-950">
-            Accueil
-          </button>
-
-          <button className="font-bold text-blue-950">
-            À propos
-          </button>
-
-          <button className="font-bold text-blue-950">
-            Nos actions
-          </button>
-
-          <button className="rounded-full bg-slate-100 px-7 py-4 font-bold text-blue-950">
-            Projets
-          </button>
-
-          <button className="font-bold text-blue-950">
-            Contact
-          </button>
-
-          <button className="rounded-full border border-slate-300 px-7 py-4 font-bold text-blue-950">
-            Projet Kilengi
-          </button>
-
-          <button className="rounded-full bg-orange-500 px-8 py-4 font-bold text-white">
-            Nous contacter
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function ProjectNavigation({ setPage }) {
-  return (
-    <section className="relative z-20 mx-auto -mt-6 max-w-7xl px-6">
-      <div className="grid overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl lg:grid-cols-[1.2fr_0.9fr]">
-        <div className="max-h-[640px] overflow-y-auto p-8">
-          <div className="text-sm font-black uppercase tracking-[0.35em] text-orange-500">
-            Projets
-          </div>
-
-          <h2 className="mt-4 text-5xl font-black text-blue-950">
-            Navigation stratégique
-          </h2>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {projectCards.map((project) => {
-              const Icon = project.icon;
-
-              return (
-                <button
-                  key={project.title}
-                  type="button"
-                  onClick={() => setPage(project.page)}
-                  className="group flex items-start gap-5 rounded-[2rem] bg-slate-50 p-6 text-left transition hover:-translate-y-1 hover:bg-orange-50 hover:shadow-lg"
-                >
-                  <div className="rounded-2xl bg-orange-100 p-4 text-orange-500">
-                    <Icon className="h-7 w-7" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl font-black leading-tight text-blue-950">
-                      {project.title}
-                    </h3>
-
-                    <p className="mt-2 text-lg text-slate-500">
-                      {project.category}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-black to-red-950 p-10 text-white">
-          <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-bold uppercase tracking-[0.25em] text-orange-200">
-            PRODDEKO-BELGIQUE
-          </div>
-
-          <h3 className="mt-10 text-6xl font-black leading-tight">
-            Une action institutionnelle ancrée dans les territoires
-          </h3>
-
-          <p className="mt-10 text-2xl leading-10 text-slate-200">
-            Des projets concrets, documentés et orientés
-            impact entre la Belgique et la RDC.
-          </p>
-
-          <div className="mt-14 space-y-5">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-              <div className="text-4xl font-black text-orange-400">
-                10+
-              </div>
-
-              <div className="mt-2 text-lg text-slate-300">
-                Zones d’intervention
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-              <div className="text-4xl font-black text-orange-400">
-                200 000+
-              </div>
-
-              <div className="mt-2 text-lg text-slate-300">
-                Bénéficiaires
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-              <div className="text-4xl font-black text-orange-400">
-                Belgique – RDC
-              </div>
-
-              <div className="mt-2 text-lg text-slate-300">
-                Coopération stratégique
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function GalleryCard({ src, alt, onOpen }) {
-  return (
-    <button
-      type="button"
-      onClick={() => onOpen(src)}
-      className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-    >
-      <ProtectedImage
-        src={src}
-        alt={alt}
-        className="h-80 w-full object-cover transition duration-300 group-hover:scale-105"
-      />
-
-      <div className="absolute bottom-4 right-4 rounded-full bg-white p-3 opacity-0 transition group-hover:opacity-100">
-        <ZoomIn className="h-5 w-5 text-slate-700" />
-      </div>
-    </button>
-  );
-}
-
-function ImageLightbox({ src, onClose }) {
-  if (!src) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-      onClick={onClose}
-    >
-      <div className="relative max-w-6xl">
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-4 top-4 rounded-full bg-white p-3"
-        >
-          <X className="h-5 w-5" />
+      <Wrap className="flex min-h-20 items-center justify-between gap-4 py-3">
+        <button onClick={()=>go("accueil")} className="flex items-center gap-3 text-left">
+          <img src="/images/proddeko-logo.png" alt="PRODDEKO-Belgique" className="h-12 w-12 rounded-xl object-contain" />
+          <div><div className="font-black text-blue-950">PRODDEKO-Belgique</div><div className="text-xs font-semibold text-slate-500">Triple Sustain Impact</div></div>
         </button>
+        <nav className="hidden items-center gap-1 xl:flex">{NAV.map(([n,p])=><button key={p} onClick={()=>go(p)} className={`rounded-full px-3 py-2 text-sm font-bold ${page===p?"bg-blue-950 text-white":"text-slate-700 hover:bg-slate-100"}`}>{n}</button>)}</nav>
+        <button className="xl:hidden" onClick={()=>setMobile(!mobile)}>{mobile?<X/>:<Menu/>}</button>
+      </Wrap>
+      {mobile && <div className="border-t bg-white xl:hidden"><Wrap className="grid gap-1 py-4">{NAV.map(([n,p])=><button key={p} onClick={()=>go(p)} className="rounded-xl px-4 py-3 text-left font-bold hover:bg-slate-100">{n}</button>)}</Wrap></div>}
+    </header>
 
-        <ProtectedImage
-          src={src}
-          alt="Preview"
-          className="max-h-[90vh] rounded-3xl"
-        />
-      </div>
-    </div>
-  );
+    {page==="accueil" && <>
+      <section className="relative overflow-hidden bg-blue-950 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(249,115,22,.28),transparent_35%),radial-gradient(circle_at_10%_80%,rgba(34,197,94,.18),transparent_30%)]" />
+        <Wrap className="relative grid gap-12 py-24 lg:grid-cols-[1.15fr_.85fr] lg:py-32">
+          <div><div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold">Belgique · République démocratique du Congo</div>
+            <h1 className="mt-7 text-5xl font-black leading-[1.04] sm:text-7xl">Agir durablement.<br/><span className="text-orange-400">Innover ensemble.</span><br/>Transformer les territoires.</h1>
+            <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-200">PRODDEKO-Belgique conçoit et accompagne des solutions à triple impact — social, économique et environnemental — en reliant les communautés, l’expertise, l’innovation et les partenaires de développement.</p>
+            <div className="mt-9 flex flex-wrap gap-4"><button onClick={()=>go("projets")} className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black">Découvrir nos projets <ArrowRight size={18}/></button><button onClick={()=>go("partenaires")} className="rounded-full border border-white/25 px-6 py-3 font-black">Construire un partenariat</button></div>
+          </div>
+          <div className="grid gap-4 self-end sm:grid-cols-2 lg:grid-cols-1"><HeroCard icon={Sprout} title="Impact social" text="Capacités, inclusion, autonomisation et participation."/><HeroCard icon={Target} title="Impact économique" text="Emploi, entrepreneuriat, revenus et économie locale."/><HeroCard icon={Leaf} title="Impact environnemental" text="Résilience climatique, eau, énergie et ressources durables."/></div>
+        </Wrap>
+      </section>
+      <section className="py-20"><Wrap><SectionTitle eyebrow="Notre approche" title="Du besoin territorial à l’impact mesurable" text="Nous partons des réalités locales, construisons avec les acteurs concernés et recherchons des solutions techniquement pertinentes, financièrement responsables et capables de produire des effets durables."/><div className="mt-10 grid gap-5 md:grid-cols-4">{["Écouter et diagnostiquer","Co-concevoir","Mettre en œuvre","Mesurer et capitaliser"].map((x,i)=><div key={x} className="rounded-3xl border bg-white p-6 shadow-sm"><div className="text-4xl font-black text-orange-500">0{i+1}</div><div className="mt-4 font-black text-blue-950">{x}</div></div>)}</div></Wrap></section>
+      <ProjectsPreview go={go}/>
+    </>}
+
+    {page==="qui" && <PageHero eyebrow="Qui sommes-nous ?" title="Une organisation de coopération et d’innovation au service des territoires" text="PRODDEKO-Belgique développe une coopération fondée sur la dignité, la responsabilité, la participation et la durabilité." />}
+    {page==="qui" && <section className="py-20"><Wrap className="grid gap-10 lg:grid-cols-2"><TextBlock title="Notre identité">Issue d’une dynamique associative engagée depuis 1996, PRODDEKO-Belgique articule solidarité internationale, développement durable, inclusion et innovation territoriale. Notre ambition est de faire émerger des solutions utiles, reproductibles et portées avec les acteurs locaux.</TextBlock><TextBlock title="Notre mission">Renforcer les capacités des personnes et des organisations, améliorer l’accès aux ressources productives et aux opportunités, soutenir l’innovation responsable et contribuer à des territoires plus résilients et plus inclusifs.</TextBlock><TextBlock title="Notre vision">Des communautés capables d’agir sur leur avenir, des institutions responsables et des partenariats qui transforment les ressources disponibles en impacts durables.</TextBlock><TextBlock title="Nos valeurs">Dignité humaine, intégrité, participation, équité, responsabilité environnementale, apprentissage et redevabilité.</TextBlock></Wrap></section>}
+
+    {page==="programmes" && <><PageHero eyebrow="Programmes" title="Quatre programmes pour un triple impact" text="Nos programmes structurent l’action autour des besoins essentiels, de l’autonomie économique, de l’inclusion et de la gouvernance."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2">{programs.map(p=><ProgramCard key={p.title} {...p}/>)}</Wrap></section></>}
+
+    {page==="projets" && <><PageHero eyebrow="Projets" title="Des projets à différents stades de maturité" text="Nous distinguons clairement les projets en cours, pilotes et en développement afin de présenter de manière transparente leur niveau d’avancement."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2">{projects.map(p=><ProjectCard key={p.title} {...p}/>)}</Wrap></section></>}
+
+    {page==="impact" && <><PageHero eyebrow="Impact" title="Mesurer ce qui change réellement" text="Notre approche de l’impact privilégie les résultats documentés, la qualité des changements observés et la capacité des acteurs locaux à maintenir les acquis."/><section className="py-20"><Wrap><div className="grid gap-6 md:grid-cols-3"><Impact icon={HeartHandshake} title="Social" text="Compétences renforcées, inclusion, participation, accès aux services et autonomisation."/><Impact icon={BriefcaseBusiness} title="Économique" text="Revenus, insertion, entrepreneuriat, productivité et dynamiques économiques locales."/><Impact icon={Leaf} title="Environnemental" text="Gestion responsable de l’eau, énergie propre, résilience et pratiques durables."/></div><div className="mt-10 rounded-3xl border border-orange-200 bg-orange-50 p-7 text-slate-700"><b className="text-blue-950">Principe de transparence :</b> les chiffres d’impact sont publiés lorsqu’ils sont reliés à une source, une période et un périmètre clairement identifiés.</div></Wrap></section></>}
+
+    {page==="gouvernance" && <><PageHero eyebrow="Gouvernance" title="Responsabilité, transparence et redevabilité" text="La gouvernance est une condition de l’impact. Nous renforçons progressivement nos procédures pour répondre aux exigences des partenaires, bailleurs et communautés."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2"><Govern title="Gouvernance associative" text="Assemblée générale, conseil d’administration, responsabilités clairement définies et décisions documentées."/><Govern title="Gestion financière" text="Budgets par projet, pièces justificatives, séparation des responsabilités et suivi régulier des engagements."/><Govern title="Éthique & intégrité" text="Prévention des conflits d’intérêts, lutte contre la fraude et la corruption, respect des personnes et des règles applicables."/><Govern title="Suivi, évaluation & apprentissage" text="Indicateurs proportionnés, collecte de preuves, analyse des résultats et capitalisation pour améliorer les interventions."/></Wrap></section></>}
+
+    {page==="partenaires" && <><PageHero eyebrow="Partenaires" title="Construire des alliances utiles et complémentaires" text="Nous recherchons des partenariats fondés sur des objectifs partagés, des responsabilités claires et une valeur ajoutée réelle pour les bénéficiaires et les territoires."/><section className="py-20"><Wrap><div className="grid gap-5 md:grid-cols-3">{partners.map(x=><div key={x} className="flex items-center gap-4 rounded-3xl border bg-white p-6 shadow-sm"><Handshake className="text-orange-500"/><b className="text-blue-950">{x}</b></div>)}</div><div className="mt-10 rounded-[2rem] bg-blue-950 p-9 text-white"><h3 className="text-3xl font-black">Vous souhaitez collaborer ?</h3><p className="mt-4 max-w-3xl text-slate-200">Co-construction de projets, expertise technique, financement, recherche, formation, mise en réseau ou accompagnement institutionnel : nous privilégions les partenariats où chaque acteur apporte une contribution identifiable.</p><button onClick={()=>go("contact")} className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black">Nous contacter <ChevronRight size={18}/></button></div></Wrap></section></>}
+
+    {page==="contact" && <><PageHero eyebrow="Contact" title="Parlons de votre projet ou d’un partenariat" text="Pour toute proposition de collaboration, demande institutionnelle ou information sur nos programmes, contactez PRODDEKO-Belgique."/><section className="py-20"><Wrap className="grid gap-8 lg:grid-cols-2"><div className="rounded-[2rem] border bg-white p-8 shadow-sm"><ContactLine icon={Mail} title="E-mail" text="admin@proddeko.online" href="mailto:admin@proddeko.online"/><ContactLine icon={Phone} title="Mobile" text="+32 492 70 45 04" href="tel:+32492704504"/><ContactLine icon={MessageCircle} title="WhatsApp" text="+32 488 84 46 98" href="https://wa.me/32488844698" external/><ContactLine icon={Globe2} title="Site" text="proddeko.online" href="https://proddeko.online" external/><ContactLine icon={MapPin} title="Ancrage" text="Belgique · République démocratique du Congo"/></div><div className="rounded-[2rem] bg-blue-950 p-8 text-white"><ShieldCheck className="h-10 w-10 text-orange-400"/><h3 className="mt-5 text-3xl font-black">Une coopération responsable</h3><p className="mt-5 leading-8 text-slate-200">Les demandes de partenariat sont examinées au regard de leur cohérence avec notre mission, de leur faisabilité, de leur impact attendu et des principes d’éthique et de transparence.</p></div></Wrap></section></>}
+
+    <footer className="border-t bg-slate-950 py-12 text-slate-300"><Wrap className="grid gap-8 md:grid-cols-[1fr_auto]"><div><div className="text-xl font-black text-white">PRODDEKO-Belgique · Triple Sustain Impact</div><p className="mt-3 max-w-2xl">Agir durablement. Innover ensemble. Transformer les territoires.</p></div><div className="text-sm md:text-right">© 2026 PRODDEKO-Belgique<br/>Solidarité · Innovation · Durabilité</div></Wrap></footer>
+  </Shell>
 }
 
-function PrimoArrivantsPage({ onOpen }) {
-  return (
-    <div className="bg-slate-50">
-      <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0">
-          <ProtectedImage
-            src={EMPLOI_PRIMO_ARRIVANTS.hero}
-            alt="Projet Emploi"
-            className="h-full w-full object-cover opacity-25"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-orange-950/60" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 py-32">
-          <div className="max-w-4xl">
-            <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-orange-200 backdrop-blur">
-              Inclusion • Expertise • Emploi
-            </div>
-
-            <h1 className="mt-10 text-6xl font-black leading-tight md:text-7xl">
-              EMPLOI
-              <span className="block text-orange-400">
-                & PRIMO-ARRIVANTS
-              </span>
-            </h1>
-
-            <p className="mt-10 text-2xl leading-10 text-slate-200">
-              Valoriser les compétences des ingénieurs et
-              techniciens qualifiés issus de la migration.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid gap-8 md:grid-cols-4">
-          {EMPLOI_PRIMO_ARRIVANTS.metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
-            >
-              <div className="text-5xl font-black text-orange-500">
-                {metric.value}
-              </div>
-
-              <div className="mt-4 text-sm font-bold uppercase tracking-[0.2em] text-slate-500">
-                {metric.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="grid gap-14 lg:grid-cols-[1fr_0.95fr]">
-          <div>
-            <div className="text-sm font-black uppercase tracking-[0.25em] text-orange-500">
-              Vision
-            </div>
-
-            <h2 className="mt-5 text-5xl font-black text-blue-950">
-              Une expertise humaine au service des territoires
-            </h2>
-
-            <p className="mt-8 text-xl leading-9 text-slate-600">
-              Le projet développe une nouvelle approche
-              d’intégration professionnelle fondée sur les
-              compétences réelles et les besoins du
-              patrimoine.
-            </p>
-
-            <div className="mt-10 space-y-5">
-              {EMPLOI_PRIMO_ARRIVANTS.objectives.map(
-                (objective) => (
-                  <div
-                    key={objective}
-                    className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-                  >
-                    <div className="mt-2 h-3 w-3 rounded-full bg-orange-500" />
-
-                    <p className="text-lg leading-8 text-slate-700">
-                      {objective}
-                    </p>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-xl">
-            <ProtectedImage
-              src={EMPLOI_PRIMO_ARRIVANTS.brochure}
-              alt="Brochure"
-              className="w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="text-sm font-black uppercase tracking-[0.25em] text-orange-500">
-          Galerie
-        </div>
-
-        <h2 className="mt-5 text-5xl font-black text-blue-950">
-          Insertion & Expertise
-        </h2>
-
-        <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-600">
-          Des compétences qualifiées au service du patrimoine
-          et du développement territorial.
-        </p>
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {EMPLOI_PRIMO_ARRIVANTS.gallery.map(
-            (src, index) => (
-              <GalleryCard
-                key={src}
-                src={src}
-                alt={`Projet ${index + 1}`}
-                onOpen={onOpen}
-              />
-            )
-          )}
-        </div>
-      </section>
-    </div>
-  );
-}
-
-export default function App() {
-  const [page, setPage] = useState("home");
-
-  const [lightbox, setLightbox] = useState(null);
-
-  const openLightbox = (src) => {
-    setLightbox(src);
-  };
-
-  return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <Header />
-
-      {page === "home" && (
-        <>
-          <section className="relative overflow-hidden bg-white">
-            <div className="mx-auto max-w-7xl px-6 py-24">
-              <div className="max-w-4xl">
-                <div className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
-                  Solutions agricoles
-                </div>
-
-                <h1 className="mt-6 text-6xl font-black leading-tight text-blue-950">
-                  Applications du fertilisant naturel
-                </h1>
-
-                <p className="mt-8 text-2xl leading-10 text-slate-600">
-                  Une solution naturelle adaptée à plusieurs
-                  cultures : céréales, horticulture, prairies
-                  et agriculture durable.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <ProjectNavigation setPage={setPage} />
-        </>
-      )}
-
-      {page === "project-primo-arrivants" && (
-        <PrimoArrivantsPage onOpen={openLightbox} />
-      )}
-
-      <footer className="bg-slate-950 py-16 text-white">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-3">
-            <div>
-              <h3 className="text-3xl font-black text-orange-400">
-                {SITE.name}
-              </h3>
-
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Un projet humain, institutionnel et durable.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-black">
-                Coordonnées
-              </h4>
-
-              <div className="mt-6 space-y-4 text-slate-300">
-                <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-orange-400" />
-                  {SITE.email}
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-orange-400" />
-                  {SITE.phone}
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-orange-400" />
-                  {SITE.belgiumLocation}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-black">
-                Projet stratégique
-              </h4>
-
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Emploi – Primo-arrivants qualifiés :
-                valoriser les compétences et favoriser
-                l’insertion professionnelle durable.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      <ImageLightbox
-        src={lightbox}
-        onClose={() => setLightbox(null)}
-      />
-    </div>
-  );
-}
+function PageHero({eyebrow,title,text}){return <section className="bg-blue-950 py-20 text-white"><Wrap><div className="max-w-4xl"><Eyebrow>{eyebrow}</Eyebrow><h1 className="mt-5 text-4xl font-black leading-tight sm:text-6xl">{title}</h1><p className="mt-6 max-w-3xl text-xl leading-9 text-slate-200">{text}</p></div></Wrap></section>}
+function HeroCard({icon:Icon,title,text}){return <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur"><Icon className="h-8 w-8 text-orange-400"/><div className="mt-4 text-xl font-black">{title}</div><p className="mt-2 text-slate-300">{text}</p></div>}
+function TextBlock({title,children}){return <div className="rounded-[2rem] border bg-white p-8 shadow-sm"><h3 className="text-2xl font-black text-blue-950">{title}</h3><p className="mt-4 text-lg leading-8 text-slate-600">{children}</p></div>}
+function ProgramCard({icon:Icon,title,text}){return <div className="rounded-[2rem] border bg-white p-8 shadow-sm"><div className="inline-flex rounded-2xl bg-orange-100 p-4 text-orange-600"><Icon/></div><h3 className="mt-6 text-2xl font-black text-blue-950">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></div>}
+function ProjectCard({status,title,place,text}){return <article className="rounded-[2rem] border bg-white p-8 shadow-sm"><span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">{status}</span><h3 className="mt-5 text-2xl font-black text-blue-950">{title}</h3><div className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-500"><MapPin size={16}/>{place}</div><p className="mt-5 leading-7 text-slate-600">{text}</p></article>}
+function Impact({icon:Icon,title,text}){return <div className="rounded-[2rem] border bg-white p-8 shadow-sm"><Icon className="h-9 w-9 text-orange-500"/><h3 className="mt-5 text-2xl font-black text-blue-950">Impact {title.toLowerCase()}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></div>}
+function Govern({title,text}){return <div className="rounded-[2rem] border bg-white p-8 shadow-sm"><div className="flex items-start gap-4"><CheckCircle2 className="mt-1 shrink-0 text-green-600"/><div><h3 className="text-2xl font-black text-blue-950">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></div></div></div>}
+function ContactLine({icon:Icon,title,text,href,external=false}){const content=<><div className="rounded-2xl bg-orange-100 p-3 text-orange-600"><Icon/></div><div><div className="font-black text-blue-950">{title}</div><div className="mt-1 text-slate-600">{text}</div></div></>;return href?<a href={href} target={external?"_blank":undefined} rel={external?"noreferrer":undefined} className="flex gap-4 border-b border-slate-100 py-5 transition hover:opacity-80 last:border-0">{content}</a>:<div className="flex gap-4 border-b border-slate-100 py-5 last:border-0">{content}</div>}
+function ProjectsPreview({go}){return <section className="bg-white py-20"><Wrap><SectionTitle eyebrow="Projets prioritaires" title="Des interventions concrètes, avec un statut clairement identifié" text="Découvrez les initiatives en cours, pilotes et en développement."/><div className="mt-10 grid gap-6 md:grid-cols-2">{projects.slice(0,2).map(p=><ProjectCard key={p.title} {...p}/>)}</div><button onClick={()=>go("projets")} className="mt-8 inline-flex items-center gap-2 font-black text-blue-950">Voir tous les projets <ArrowRight size={18}/></button></Wrap></section>}
