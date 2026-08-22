@@ -93,7 +93,7 @@ export default function App(){
 
       <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
         <a
-       href="/mentions-legaux.html"
+       href="/mentions-legales.html"
           className="transition hover:text-white"
         >
           Mentions légales
