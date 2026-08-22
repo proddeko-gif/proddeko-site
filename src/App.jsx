@@ -80,7 +80,43 @@ export default function App(){
 
     {page==="contact" && <><PageHero eyebrow="Contact" title="Parlons de votre projet ou d’un partenariat" text="Pour toute proposition de collaboration, demande institutionnelle ou information sur nos programmes, contactez PRODDEKO-Belgique."/><section className="py-20"><Wrap className="grid gap-8 lg:grid-cols-2"><div className="rounded-[2rem] border bg-white p-8 shadow-sm"><ContactLine icon={Mail} title="E-mail" text="admin@proddeko.online" href="mailto:admin@proddeko.online"/><ContactLine icon={Phone} title="Mobile" text="+32 492 70 45 04" href="tel:+32492704504"/><ContactLine icon={MessageCircle} title="WhatsApp" text="+32 488 84 46 98" href="https://wa.me/32488844698" external/><ContactLine icon={Globe2} title="Site" text="proddeko.online" href="https://proddeko.online" external/><ContactLine icon={MapPin} title="Ancrage" text="Belgique · République démocratique du Congo"/></div><div className="rounded-[2rem] bg-blue-950 p-8 text-white"><ShieldCheck className="h-10 w-10 text-orange-400"/><h3 className="mt-5 text-3xl font-black">Une coopération responsable</h3><p className="mt-5 leading-8 text-slate-200">Les demandes de partenariat sont examinées au regard de leur cohérence avec notre mission, de leur faisabilité, de leur impact attendu et des principes d’éthique et de transparence.</p></div></Wrap></section></>}
 
-    <footer className="border-t bg-slate-950 py-12 text-slate-300"><Wrap className="grid gap-8 md:grid-cols-[1fr_auto]"><div><div className="text-xl font-black text-white">PRODDEKO-Belgique · Triple Sustain Impact</div><p className="mt-3 max-w-2xl">Agir durablement. Innover ensemble. Transformer les territoires.</p></div><div className="text-sm md:text-right">© 2026 PRODDEKO-Belgique<br/>Solidarité · Innovation · Durabilité</div></Wrap></footer>
+    <footer className="border-t bg-slate-950 py-12 text-slate-300">
+  <Wrap className="grid gap-8 md:grid-cols-[1fr_auto]">
+    <div>
+      <div className="text-xl font-black text-white">
+        PRODDEKO-Belgique · Triple Sustain Impact
+      </div>
+
+      <p className="mt-3 max-w-2xl">
+        Agir durablement. Innover ensemble. Transformer les territoires.
+      </p>
+
+      <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+        <a
+          href="/mentions-legales.html"
+          className="transition hover:text-white"
+        >
+          Mentions légales
+        </a>
+
+        <a
+          href="/politique-confidentialite.html"
+          className="transition hover:text-white"
+        >
+          Politique de confidentialité
+        </a>
+      </div>
+    </div>
+
+    <div className="text-sm md:text-right">
+      © 2026 PRODDEKO-Belgique
+      <br />
+      ASBL · BCE 0459.354.980
+      <br />
+      Solidarité · Innovation · Durabilité
+    </div>
+  </Wrap>
+</footer>
   </Shell>
 }
 
