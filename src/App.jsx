@@ -65,9 +65,116 @@ export default function App(){
       <ProjectsPreview go={go}/>
     </>}
 
-    {page==="qui" && <PageHero eyebrow="Qui sommes-nous ?" title="Une organisation de coopération et d’innovation au service des territoires" text="PRODDEKO-Belgique développe une coopération fondée sur la dignité, la responsabilité, la participation et la durabilité." />}
-    {page==="qui" && <section className="py-20"><Wrap className="grid gap-10 lg:grid-cols-2"><TextBlock title="Notre identité">Issue d’une dynamique associative engagée depuis 1996, PRODDEKO-Belgique articule solidarité internationale, développement durable, inclusion et innovation territoriale. Notre ambition est de faire émerger des solutions utiles, reproductibles et portées avec les acteurs locaux.</TextBlock><TextBlock title="Notre mission">Renforcer les capacités des personnes et des organisations, améliorer l’accès aux ressources productives et aux opportunités, soutenir l’innovation responsable et contribuer à des territoires plus résilients et plus inclusifs.</TextBlock><TextBlock title="Notre vision">Des communautés capables d’agir sur leur avenir, des institutions responsables et des partenariats qui transforment les ressources disponibles en impacts durables.</TextBlock><TextBlock title="Nos valeurs">Dignité humaine, intégrité, participation, équité, responsabilité environnementale, apprentissage et redevabilité.</TextBlock></Wrap></section>}
+    {page==="qui" && <>
+  <PageHero
+    eyebrow="Qui sommes-nous ?"
+    title="Une organisation de coopération et d’innovation au service des territoires"
+    text="PRODDEKO-Belgique – Triple Sustain Impact est une association belge engagée dans le développement durable, la solidarité internationale, l’inclusion et l’innovation territoriale. Issue d’une dynamique associative initiée en 1996, elle développe et accompagne des initiatives en Belgique et en République démocratique du Congo, en recherchant simultanément un impact social, économique et environnemental."
+  />
 
+  <section className="py-20">
+    <Wrap>
+      <div className="grid gap-8 lg:grid-cols-2">
+
+        <TextBlock title="Notre identité">
+          Notre approche repose sur une conviction : les réponses durables aux défis sociaux, économiques et environnementaux se construisent avec les populations et les acteurs des territoires concernés. PRODDEKO-Belgique agit comme facilitateur, concepteur de projets et interface de coopération entre communautés locales, associations, experts, institutions publiques, acteurs académiques, entreprises responsables et partenaires de développement.
+        </TextBlock>
+
+        <TextBlock title="Notre mission">
+          Contribuer à des territoires plus autonomes, inclusifs et résilients en renforçant les capacités des personnes et des organisations et en facilitant l’accès aux ressources, aux compétences, aux technologies et aux opportunités économiques.
+        </TextBlock>
+
+        <TextBlock title="Notre vision">
+          Contribuer à l’émergence de communautés capables d’agir sur leur propre avenir, d’organisations locales renforcées et de partenariats dans lesquels les ressources mobilisées produisent des changements mesurables, responsables et durables.
+        </TextBlock>
+
+        <TextBlock title="Nos principes d’intervention">
+          Dignité humaine, participation, équité, intégrité, responsabilité environnementale, transparence et redevabilité. Nous privilégions la co-construction, le renforcement des capacités locales, les technologies appropriées et la recherche de solutions capables de produire des effets durables au-delà de la durée d’un financement.
+        </TextBlock>
+
+      </div>
+
+      <div className="mt-12 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+        <Eyebrow>Triple Sustain Impact</Eyebrow>
+        <h2 className="mt-4 text-3xl font-black sm:text-4xl">
+          Trois dimensions complémentaires de l’impact
+        </h2>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="rounded-3xl border border-white/15 bg-white/10 p-6">
+            <HeartHandshake className="h-8 w-8 text-orange-400" />
+            <h3 className="mt-4 text-xl font-black">Impact social</h3>
+            <p className="mt-3 leading-7 text-slate-200">
+              Dignité, inclusion, compétences, participation et autonomisation des personnes.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/15 bg-white/10 p-6">
+            <BriefcaseBusiness className="h-8 w-8 text-orange-400" />
+            <h3 className="mt-4 text-xl font-black">Impact économique</h3>
+            <p className="mt-3 leading-7 text-slate-200">
+              Insertion, entrepreneuriat, amélioration des revenus, productivité et développement économique local.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/15 bg-white/10 p-6">
+            <Leaf className="h-8 w-8 text-orange-400" />
+            <h3 className="mt-4 text-xl font-black">Impact environnemental</h3>
+            <p className="mt-3 leading-7 text-slate-200">
+              Gestion responsable de l’eau et des ressources, énergie propre, agroécologie, économie circulaire et résilience climatique.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <TextBlock title="Notre méthode">
+          Diagnostiquer avec les acteurs locaux, co-concevoir les réponses, mobiliser les compétences et les partenariats, mettre en œuvre, mesurer les résultats puis capitaliser les apprentissages afin d’améliorer les interventions.
+        </TextBlock>
+
+        <TextBlock title="Notre ancrage Belgique – RDC">
+          Cet ancrage permet à PRODDEKO-Belgique de favoriser la circulation des compétences, des expériences, des technologies et des partenariats entre la Belgique et la République démocratique du Congo, tout en maintenant les besoins et les capacités des acteurs locaux au centre des projets.
+        </TextBlock>
+      </div>
+
+      <div className="mt-12 rounded-[2rem] border bg-white p-8 shadow-sm">
+        <Eyebrow>Repères institutionnels</Eyebrow>
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <div className="text-sm font-bold text-slate-500">Identité</div>
+            <div className="mt-1 font-black text-blue-950">PRODDEKO-Belgique · Triple Sustain Impact</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-slate-500">Création</div>
+            <div className="mt-1 font-black text-blue-950">1996</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-slate-500">BCE</div>
+            <div className="mt-1 font-black text-blue-950">0459.354.980</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-slate-500">Siège social</div>
+            <div className="mt-1 font-black text-blue-950">Rue Prince Albert 8/1, 4840 Welkenraedt</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-slate-500">Ancrage</div>
+            <div className="mt-1 font-black text-blue-950">Belgique · République démocratique du Congo</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-slate-500">E-mail</div>
+            <a
+              href="mailto:admin@proddeko.online"
+              className="mt-1 block font-black text-blue-950 hover:text-orange-600"
+            >
+              admin@proddeko.online
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </Wrap>
+  </section>
+</>}
     {page==="programmes" && <><PageHero eyebrow="Programmes" title="Quatre programmes pour un triple impact" text="Nos programmes structurent l’action autour des besoins essentiels, de l’autonomie économique, de l’inclusion et de la gouvernance."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2">{programs.map(p=><ProgramCard key={p.title} {...p}/>)}</Wrap></section></>}
 
     {page==="projets" && <><PageHero eyebrow="Projets" title="Des projets à différents stades de maturité" text="Nous distinguons clairement les projets en cours, pilotes et en développement afin de présenter de manière transparente leur niveau d’avancement."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2">{projects.map(p=><ProjectCard key={p.title} {...p}/>)}</Wrap></section></>}
