@@ -345,8 +345,194 @@ export default function App(){
     </Wrap>
   </section>
 </>}
-    {page==="projets" && <><PageHero eyebrow="Projets" title="Des projets à différents stades de maturité" text="Nous distinguons clairement les projets en cours, pilotes et en développement afin de présenter de manière transparente leur niveau d’avancement."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2">{projects.map(p=><ProjectCard key={p.title} {...p}/>)}</Wrap></section></>}
+    {page==="projets" && <>
+  <PageHero
+    eyebrow="Projets"
+    title="Des interventions concrètes, avec un niveau de maturité clairement identifié"
+    text="Nos projets traduisent les programmes de PRODDEKO-Belgique en interventions territoriales concrètes. Nous distinguons les projets en cours, les initiatives en développement et les projets pilotes afin de présenter de manière transparente leur niveau d’avancement."
+  />
 
+  <section className="py-20">
+    <Wrap>
+      <SectionTitle
+        eyebrow="Portefeuille de projets"
+        title="De la réponse locale à l’impact durable"
+        text="Chaque projet est développé à partir d’un besoin identifié, d’un territoire, de bénéficiaires et de partenaires clairement définis. Les informations présentées évoluent en fonction de la maturation, des partenariats et des financements effectivement mobilisés."
+      />
+
+      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+
+        <article className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
+            En cours
+          </span>
+
+          <h2 className="mt-5 text-2xl font-black text-blue-950">
+            BOMA – Irrigation solaire et résilience maraîchère
+          </h2>
+
+          <div className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-500">
+            <MapPin size={16} />
+            Boma, Kongo Central · RDC
+          </div>
+
+          <p className="mt-5 leading-7 text-slate-600">
+            Améliorer durablement l’accès à l’eau et renforcer la résilience
+            des producteurs maraîchers grâce à une solution d’irrigation solaire,
+            une gestion responsable de la ressource en eau et un accompagnement
+            technique adapté au contexte local.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Public prioritaire</div>
+            <p className="mt-2 text-slate-600">
+              Producteurs maraîchers et organisations locales de producteurs.
+            </p>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+            <div className="text-sm font-black text-blue-950">
+              Contribution attendue
+            </div>
+            <p className="mt-2 leading-7 text-slate-600">
+              Sécurisation de l’accès à l’eau, amélioration des capacités
+              productives, résilience climatique et renforcement de la
+              gouvernance locale de l’eau.
+            </p>
+          </div>
+        </article>
+
+        <article className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
+            En développement
+          </span>
+
+          <h2 className="mt-5 text-2xl font-black text-blue-950">
+            KIN ECO-JEUNES 2027
+          </h2>
+
+          <div className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-500">
+            <MapPin size={16} />
+            Malueka, Kinshasa · RDC
+          </div>
+
+          <p className="mt-5 leading-7 text-slate-600">
+            Favoriser l’insertion économique des jeunes et des femmes par
+            les métiers verts, l’économie circulaire, l’entrepreneuriat
+            et le développement progressif d’un Green Business Lab territorial.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Public prioritaire</div>
+            <p className="mt-2 text-slate-600">
+              Jeunes et femmes souhaitant développer des compétences,
+              une activité économique ou un parcours entrepreneurial.
+            </p>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+            <div className="text-sm font-black text-blue-950">
+              Approche
+            </div>
+            <p className="mt-2 leading-7 text-slate-600">
+              Formation technique, entrepreneuriat, accompagnement,
+              incubation, économie circulaire et mise en réseau avec
+              les acteurs économiques et institutionnels.
+            </p>
+          </div>
+        </article>
+
+        <article className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
+            En développement
+          </span>
+
+          <h2 className="mt-5 text-2xl font-black text-blue-950">
+            Brussels Football Bridges
+          </h2>
+
+          <div className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-500">
+            <MapPin size={16} />
+            Bruxelles · Belgique
+          </div>
+
+          <p className="mt-5 leading-7 text-slate-600">
+            Utiliser le football comme porte d’entrée vers le développement
+            des compétences personnelles et sociales, la citoyenneté,
+            l’inclusion et l’insertion socioprofessionnelle des jeunes.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Logique d’intervention</div>
+            <p className="mt-2 text-slate-600">
+              Sport, accompagnement éducatif, compétences transversales,
+              orientation et création de passerelles vers les acteurs
+              de l’insertion.
+            </p>
+          </div>
+        </article>
+
+        <article className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
+            Pilote
+          </span>
+
+          <h2 className="mt-5 text-2xl font-black text-blue-950">
+            Emploi – Primo-arrivants qualifiés
+          </h2>
+
+          <div className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-500">
+            <MapPin size={16} />
+            Belgique
+          </div>
+
+          <p className="mt-5 leading-7 text-slate-600">
+            Valoriser les compétences d’ingénieurs, techniciens et autres
+            professionnels issus de la migration, en créant des passerelles
+            entre leurs compétences, les besoins du marché du travail
+            et des projets d’utilité sociale.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Objectif</div>
+            <p className="mt-2 text-slate-600">
+              Réduire la sous-utilisation des compétences, faciliter
+              l’orientation professionnelle et favoriser la reconnaissance
+              des savoir-faire.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div className="mt-14 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+        <div className="max-w-3xl">
+          <Eyebrow>Transparence</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black">
+            Un statut de projet n’est pas une promesse de financement
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            La mention « en développement » indique qu’une initiative est
+            en cours de conception, de recherche de partenaires ou de
+            financement. Les résultats, budgets et partenaires sont publiés
+            progressivement lorsqu’ils sont confirmés et documentés.
+          </p>
+
+          <button
+            onClick={()=>go("partenaires")}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+          >
+            Construire un partenariat
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+
+    </Wrap>
+  </section>
+</>}
     {page==="impact" && <><PageHero eyebrow="Impact" title="Mesurer ce qui change réellement" text="Notre approche de l’impact privilégie les résultats documentés, la qualité des changements observés et la capacité des acteurs locaux à maintenir les acquis."/><section className="py-20"><Wrap><div className="grid gap-6 md:grid-cols-3"><Impact icon={HeartHandshake} title="Social" text="Compétences renforcées, inclusion, participation, accès aux services et autonomisation."/><Impact icon={BriefcaseBusiness} title="Économique" text="Revenus, insertion, entrepreneuriat, productivité et dynamiques économiques locales."/><Impact icon={Leaf} title="Environnemental" text="Gestion responsable de l’eau, énergie propre, résilience et pratiques durables."/></div><div className="mt-10 rounded-3xl border border-orange-200 bg-orange-50 p-7 text-slate-700"><b className="text-blue-950">Principe de transparence :</b> les chiffres d’impact sont publiés lorsqu’ils sont reliés à une source, une période et un périmètre clairement identifiés.</div></Wrap></section></>}
 
     {page==="gouvernance" && <><PageHero eyebrow="Gouvernance" title="Responsabilité, transparence et redevabilité" text="La gouvernance est une condition de l’impact. Nous renforçons progressivement nos procédures pour répondre aux exigences des partenaires, bailleurs et communautés."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2"><Govern title="Gouvernance associative" text="Assemblée générale, conseil d’administration, responsabilités clairement définies et décisions documentées."/><Govern title="Gestion financière" text="Budgets par projet, pièces justificatives, séparation des responsabilités et suivi régulier des engagements."/><Govern title="Éthique & intégrité" text="Prévention des conflits d’intérêts, lutte contre la fraude et la corruption, respect des personnes et des règles applicables."/><Govern title="Suivi, évaluation & apprentissage" text="Indicateurs proportionnés, collecte de preuves, analyse des résultats et capitalisation pour améliorer les interventions."/></Wrap></section></>}
