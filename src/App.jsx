@@ -175,8 +175,176 @@ export default function App(){
     </Wrap>
   </section>
 </>}
-    {page==="programmes" && <><PageHero eyebrow="Programmes" title="Quatre programmes pour un triple impact" text="Nos programmes structurent l’action autour des besoins essentiels, de l’autonomie économique, de l’inclusion et de la gouvernance."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2">{programs.map(p=><ProgramCard key={p.title} {...p}/>)}</Wrap></section></>}
+    {page==="programmes" && <>
+  <PageHero
+    eyebrow="Programmes"
+    title="Quatre programmes pour un triple impact"
+    text="PRODDEKO-Belgique – Triple Sustain Impact structure son action autour de quatre programmes complémentaires. Ils relient besoins territoriaux, renforcement des capacités, innovation et partenariats afin de produire des résultats sociaux, économiques et environnementaux durables."
+  />
 
+  <section className="py-20">
+    <Wrap>
+      <SectionTitle
+        eyebrow="Nos domaines d’intervention"
+        title="Des programmes conçus à partir des réalités des territoires"
+        text="Chaque programme constitue un cadre d’intervention dans lequel peuvent être développés plusieurs projets, en Belgique comme en République démocratique du Congo."
+      />
+
+      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+
+        <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <Droplets className="h-10 w-10 text-orange-500" />
+          <div className="mt-5 text-xs font-black uppercase tracking-[.25em] text-orange-600">
+            Programme 01
+          </div>
+          <h2 className="mt-3 text-2xl font-black text-blue-950">
+            Eau, agriculture & résilience climatique
+          </h2>
+          <p className="mt-4 leading-7 text-slate-600">
+            Améliorer durablement l’accès à l’eau, renforcer l’agriculture familiale
+            et développer la capacité des communautés à faire face aux effets du changement climatique.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Axes d’intervention</div>
+            <p className="mt-2 leading-7 text-slate-600">
+              Irrigation solaire · gestion responsable de l’eau · agriculture familiale ·
+              agroécologie · technologies appropriées · renforcement des organisations
+              de producteurs · résilience climatique.
+            </p>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+            <div className="text-sm font-black text-blue-950">Projet associé</div>
+            <p className="mt-2 text-slate-600">
+              BOMA – Irrigation solaire et résilience maraîchère · Kongo Central, RDC.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <BriefcaseBusiness className="h-10 w-10 text-orange-500" />
+          <div className="mt-5 text-xs font-black uppercase tracking-[.25em] text-orange-600">
+            Programme 02
+          </div>
+          <h2 className="mt-3 text-2xl font-black text-blue-950">
+            Insertion, jeunesse & économie verte
+          </h2>
+          <p className="mt-4 leading-7 text-slate-600">
+            Faciliter l’insertion économique des jeunes et des personnes confrontées
+            à des obstacles d’accès à l’emploi en combinant compétences,
+            entrepreneuriat et nouvelles opportunités économiques.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Axes d’intervention</div>
+            <p className="mt-2 leading-7 text-slate-600">
+              Formation professionnelle · métiers verts · entrepreneuriat · économie
+              circulaire · accompagnement vers l’emploi · incubation · compétences
+              numériques · innovation économique locale.
+            </p>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+            <div className="text-sm font-black text-blue-950">Initiatives associées</div>
+            <p className="mt-2 text-slate-600">
+              KIN ECO-JEUNES 2027 · Emploi – Primo-arrivants qualifiés.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <Users className="h-10 w-10 text-orange-500" />
+          <div className="mt-5 text-xs font-black uppercase tracking-[.25em] text-orange-600">
+            Programme 03
+          </div>
+          <h2 className="mt-3 text-2xl font-black text-blue-950">
+            Inclusion & cohésion sociale
+          </h2>
+          <p className="mt-4 leading-7 text-slate-600">
+            Renforcer la participation, les compétences et l’autonomie des personnes
+            tout en utilisant l’apprentissage, la citoyenneté et le sport comme
+            leviers de cohésion sociale.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Axes d’intervention</div>
+            <p className="mt-2 leading-7 text-slate-600">
+              Inclusion · apprentissage · citoyenneté · jeunesse · sport · compétences
+              sociales · accompagnement des publics vulnérables · dialogue interculturel.
+            </p>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+            <div className="text-sm font-black text-blue-950">Initiative associée</div>
+            <p className="mt-2 text-slate-600">
+              Brussels Football Bridges · Belgique.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <Scale className="h-10 w-10 text-orange-500" />
+          <div className="mt-5 text-xs font-black uppercase tracking-[.25em] text-orange-600">
+            Programme 04
+          </div>
+          <h2 className="mt-3 text-2xl font-black text-blue-950">
+            Gouvernance & innovation territoriale
+          </h2>
+          <p className="mt-4 leading-7 text-slate-600">
+            Renforcer les organisations et les territoires afin qu’ils puissent
+            concevoir, piloter et évaluer leurs propres stratégies de développement
+            dans un cadre transparent et responsable.
+          </p>
+
+          <div className="mt-6 border-t pt-5">
+            <div className="font-bold text-blue-950">Axes d’intervention</div>
+            <p className="mt-2 leading-7 text-slate-600">
+              Renforcement institutionnel · gouvernance · transparence · redevabilité ·
+              planification territoriale · partenariats · technologies appropriées ·
+              suivi et mesure de l’impact.
+            </p>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+            <div className="text-sm font-black text-blue-950">Fonction transversale</div>
+            <p className="mt-2 text-slate-600">
+              Ce programme soutient également la qualité institutionnelle et la
+              pérennisation des autres programmes.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="mt-14 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+        <div className="max-w-3xl">
+          <Eyebrow>Une logique commune</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black">
+            Du programme au projet, du projet à l’impact
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            Les programmes définissent les orientations de long terme. Les projets
+            traduisent ces orientations en interventions concrètes, avec des territoires,
+            des bénéficiaires, des partenaires, des ressources et des résultats attendus
+            clairement identifiés.
+          </p>
+
+          <button
+            onClick={()=>go("projets")}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+          >
+            Découvrir nos projets
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+
+    </Wrap>
+  </section>
+</>}
     {page==="projets" && <><PageHero eyebrow="Projets" title="Des projets à différents stades de maturité" text="Nous distinguons clairement les projets en cours, pilotes et en développement afin de présenter de manière transparente leur niveau d’avancement."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2">{projects.map(p=><ProjectCard key={p.title} {...p}/>)}</Wrap></section></>}
 
     {page==="impact" && <><PageHero eyebrow="Impact" title="Mesurer ce qui change réellement" text="Notre approche de l’impact privilégie les résultats documentés, la qualité des changements observés et la capacité des acteurs locaux à maintenir les acquis."/><section className="py-20"><Wrap><div className="grid gap-6 md:grid-cols-3"><Impact icon={HeartHandshake} title="Social" text="Compétences renforcées, inclusion, participation, accès aux services et autonomisation."/><Impact icon={BriefcaseBusiness} title="Économique" text="Revenus, insertion, entrepreneuriat, productivité et dynamiques économiques locales."/><Impact icon={Leaf} title="Environnemental" text="Gestion responsable de l’eau, énergie propre, résilience et pratiques durables."/></div><div className="mt-10 rounded-3xl border border-orange-200 bg-orange-50 p-7 text-slate-700"><b className="text-blue-950">Principe de transparence :</b> les chiffres d’impact sont publiés lorsqu’ils sont reliés à une source, une période et un périmètre clairement identifiés.</div></Wrap></section></>}
