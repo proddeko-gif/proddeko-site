@@ -463,7 +463,9 @@ export default function App(){
           </p>
 
           <div className="mt-6 border-t pt-5">
-            <div className="font-bold text-blue-950">Logique d’intervention</div>
+            <div className="font-bold text-blue-950">
+              Logique d’intervention
+            </div>
             <p className="mt-2 text-slate-600">
               Sport, accompagnement éducatif, compétences transversales,
               orientation et création de passerelles vers les acteurs
