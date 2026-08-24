@@ -799,8 +799,200 @@ export default function App(){
     </Wrap>
   </section>
 </>}
-    {page==="gouvernance" && <><PageHero eyebrow="Gouvernance" title="Responsabilité, transparence et redevabilité" text="La gouvernance est une condition de l’impact. Nous renforçons progressivement nos procédures pour répondre aux exigences des partenaires, bailleurs et communautés."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2"><Govern title="Gouvernance associative" text="Assemblée générale, conseil d’administration, responsabilités clairement définies et décisions documentées."/><Govern title="Gestion financière" text="Budgets par projet, pièces justificatives, séparation des responsabilités et suivi régulier des engagements."/><Govern title="Éthique & intégrité" text="Prévention des conflits d’intérêts, lutte contre la fraude et la corruption, respect des personnes et des règles applicables."/><Govern title="Suivi, évaluation & apprentissage" text="Indicateurs proportionnés, collecte de preuves, analyse des résultats et capitalisation pour améliorer les interventions."/></Wrap></section></>}
+    {page==="gouvernance" && <>
+  <PageHero
+    eyebrow="Gouvernance"
+    title="Responsabilité, transparence et redevabilité"
+    text="La gouvernance constitue une condition essentielle de la qualité et de la durabilité de nos interventions. PRODDEKO-Belgique renforce progressivement ses procédures de décision, de gestion, de contrôle et de suivi afin de répondre aux exigences des membres, partenaires, bailleurs et communautés."
+  />
 
+  <section className="py-20">
+    <Wrap>
+
+      <SectionTitle
+        eyebrow="Cadre institutionnel"
+        title="Une organisation responsable de ses décisions et de ses ressources"
+        text="Notre objectif est de consolider une gouvernance associative lisible, des responsabilités clairement définies et une gestion proportionnée à la taille et à la complexité des projets."
+      />
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
+
+        <Govern
+          title="Gouvernance associative"
+          text="Assemblée générale, conseil d’administration, répartition des responsabilités, décisions documentées et respect des dispositions statutaires."
+        />
+
+        <Govern
+          title="Gestion financière"
+          text="Budgets identifiés par projet, suivi des engagements, conservation des pièces justificatives et séparation progressive des fonctions d’autorisation, d’exécution et de contrôle."
+        />
+
+        <Govern
+          title="Éthique & intégrité"
+          text="Prévention des conflits d’intérêts, vigilance face à la fraude et à la corruption, respect des personnes, confidentialité et application des règles pertinentes."
+        />
+
+        <Govern
+          title="Suivi, évaluation & apprentissage"
+          text="Définition d’indicateurs adaptés, collecte de preuves, analyse des résultats, documentation des écarts et capitalisation des enseignements."
+        />
+
+      </div>
+
+      <div className="mt-20 grid gap-10 lg:grid-cols-2">
+
+        <div>
+          <Eyebrow>Redevabilité</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black text-blue-950">
+            Savoir qui décide, qui exécute et qui contrôle
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-600">
+            Une gouvernance crédible repose sur une distinction claire entre
+            les fonctions de décision stratégique, de mise en œuvre opérationnelle
+            et de contrôle. Cette séparation réduit les risques, améliore la
+            traçabilité et facilite la reddition de comptes.
+          </p>
+        </div>
+
+        <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+          <div className="space-y-6">
+
+            <div>
+              <div className="text-sm font-black uppercase tracking-wider text-orange-600">
+                Niveau 01
+              </div>
+              <h3 className="mt-2 text-xl font-black text-blue-950">
+                Orientation stratégique
+              </h3>
+              <p className="mt-2 text-slate-600">
+                Assemblée générale et conseil d’administration.
+              </p>
+            </div>
+
+            <div className="border-t pt-5">
+              <div className="text-sm font-black uppercase tracking-wider text-orange-600">
+                Niveau 02
+              </div>
+              <h3 className="mt-2 text-xl font-black text-blue-950">
+                Pilotage opérationnel
+              </h3>
+              <p className="mt-2 text-slate-600">
+                Coordination des projets, suivi des activités, partenaires
+                et obligations contractuelles.
+              </p>
+            </div>
+
+            <div className="border-t pt-5">
+              <div className="text-sm font-black uppercase tracking-wider text-orange-600">
+                Niveau 03
+              </div>
+              <h3 className="mt-2 text-xl font-black text-blue-950">
+                Contrôle & redevabilité
+              </h3>
+              <p className="mt-2 text-slate-600">
+                Vérification des dépenses, suivi des engagements, rapports,
+                preuves et documentation des décisions.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <SectionTitle
+          eyebrow="Gestion des projets"
+          title="Des règles appliquées tout au long du cycle de financement"
+          text="Les exigences de gouvernance doivent accompagner le projet depuis sa conception jusqu’à la clôture et à la capitalisation."
+        />
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+          {[
+            ["01", "Conception", "Objectifs, responsabilités, budget et risques identifiés."],
+            ["02", "Validation", "Décisions et engagements formalisés avant mise en œuvre."],
+            ["03", "Exécution", "Suivi technique, administratif et financier documenté."],
+            ["04", "Clôture", "Rapportage, justification, évaluation et archivage."]
+          ].map(([n,t,d])=>(
+            <div key={n} className="rounded-3xl border bg-white p-6 shadow-sm">
+              <div className="text-3xl font-black text-orange-500">{n}</div>
+              <h3 className="mt-4 text-xl font-black text-blue-950">{t}</h3>
+              <p className="mt-3 leading-7 text-slate-600">{d}</p>
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+      <div className="mt-20 rounded-[2rem] bg-slate-50 p-8 sm:p-10">
+        <div className="grid gap-8 lg:grid-cols-2">
+
+          <div>
+            <Eyebrow>Intégrité</Eyebrow>
+
+            <h2 className="mt-4 text-3xl font-black text-blue-950">
+              Prévenir les risques avant qu’ils ne fragilisent les projets
+            </h2>
+
+            <p className="mt-5 leading-8 text-slate-600">
+              Les mécanismes de prévention doivent être proportionnés aux
+              activités et aux financements concernés : conflits d’intérêts,
+              fraude, corruption, protection des données, sécurité des personnes
+              et utilisation responsable des ressources.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] bg-white p-7 shadow-sm">
+            <ShieldCheck className="h-9 w-9 text-orange-500" />
+
+            <div className="mt-5 font-black text-blue-950">
+              Principes de vigilance
+            </div>
+
+            <div className="mt-5 space-y-3 text-slate-600">
+              <p>• Traçabilité des décisions et des dépenses</p>
+              <p>• Déclaration des conflits d’intérêts</p>
+              <p>• Respect des bénéficiaires et partenaires</p>
+              <p>• Protection des informations sensibles</p>
+              <p>• Réaction documentée en cas d’incident</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="mt-14 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+        <div className="max-w-4xl">
+
+          <Eyebrow>Amélioration continue</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black">
+            Une gouvernance qui se renforce avec la croissance de l’organisation
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            PRODDEKO-Belgique poursuit la formalisation progressive de ses
+            procédures internes. Les mécanismes de contrôle, de gestion des risques
+            et de suivi sont appelés à évoluer avec les volumes financiers,
+            les exigences contractuelles et la complexité des partenariats.
+          </p>
+
+          <button
+            onClick={()=>go("partenaires")}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+          >
+            Découvrir nos partenariats
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
+        </div>
+      </div>
+
+    </Wrap>
+  </section>
+</>}
     {page==="partenaires" && <><PageHero eyebrow="Partenaires" title="Construire des alliances utiles et complémentaires" text="Nous recherchons des partenariats fondés sur des objectifs partagés, des responsabilités claires et une valeur ajoutée réelle pour les bénéficiaires et les territoires."/><section className="py-20"><Wrap><div className="grid gap-5 md:grid-cols-3">{partners.map(x=><div key={x} className="flex items-center gap-4 rounded-3xl border bg-white p-6 shadow-sm"><Handshake className="text-orange-500"/><b className="text-blue-950">{x}</b></div>)}</div><div className="mt-10 rounded-[2rem] bg-blue-950 p-9 text-white"><h3 className="text-3xl font-black">Vous souhaitez collaborer ?</h3><p className="mt-4 max-w-3xl text-slate-200">Co-construction de projets, expertise technique, financement, recherche, formation, mise en réseau ou accompagnement institutionnel : nous privilégions les partenariats où chaque acteur apporte une contribution identifiable.</p><button onClick={()=>go("contact")} className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black">Nous contacter <ChevronRight size={18}/></button></div></Wrap></section></>}
 
     {page==="contact" && <><PageHero eyebrow="Contact" title="Parlons de votre projet ou d’un partenariat" text="Pour toute proposition de collaboration, demande institutionnelle ou information sur nos programmes, contactez PRODDEKO-Belgique."/><section className="py-20"><Wrap className="grid gap-8 lg:grid-cols-2"><div className="rounded-[2rem] border bg-white p-8 shadow-sm"><ContactLine icon={Mail} title="E-mail" text="admin@proddeko.online" href="mailto:admin@proddeko.online"/><ContactLine icon={Phone} title="Mobile" text="+32 492 70 45 04" href="tel:+32492704504"/><ContactLine icon={MessageCircle} title="WhatsApp" text="+32 488 84 46 98" href="https://wa.me/32488844698" external/><ContactLine icon={Globe2} title="Site" text="proddeko.online" href="https://proddeko.online" external/><ContactLine icon={MapPin} title="Ancrage" text="Belgique · République démocratique du Congo"/></div><div className="rounded-[2rem] bg-blue-950 p-8 text-white"><ShieldCheck className="h-10 w-10 text-orange-400"/><h3 className="mt-5 text-3xl font-black">Une coopération responsable</h3><p className="mt-5 leading-8 text-slate-200">Les demandes de partenariat sont examinées au regard de leur cohérence avec notre mission, de leur faisabilité, de leur impact attendu et des principes d’éthique et de transparence.</p></div></Wrap></section></>}
