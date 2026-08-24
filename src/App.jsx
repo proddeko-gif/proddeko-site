@@ -1292,8 +1292,278 @@ export default function App(){
     </Wrap>
   </section>
 </>}
-    {page==="contact" && <><PageHero eyebrow="Contact" title="Parlons de votre projet ou d’un partenariat" text="Pour toute proposition de collaboration, demande institutionnelle ou information sur nos programmes, contactez PRODDEKO-Belgique."/><section className="py-20"><Wrap className="grid gap-8 lg:grid-cols-2"><div className="rounded-[2rem] border bg-white p-8 shadow-sm"><ContactLine icon={Mail} title="E-mail" text="admin@proddeko.online" href="mailto:admin@proddeko.online"/><ContactLine icon={Phone} title="Mobile" text="+32 492 70 45 04" href="tel:+32492704504"/><ContactLine icon={MessageCircle} title="WhatsApp" text="+32 488 84 46 98" href="https://wa.me/32488844698" external/><ContactLine icon={Globe2} title="Site" text="proddeko.online" href="https://proddeko.online" external/><ContactLine icon={MapPin} title="Ancrage" text="Belgique · République démocratique du Congo"/></div><div className="rounded-[2rem] bg-blue-950 p-8 text-white"><ShieldCheck className="h-10 w-10 text-orange-400"/><h3 className="mt-5 text-3xl font-black">Une coopération responsable</h3><p className="mt-5 leading-8 text-slate-200">Les demandes de partenariat sont examinées au regard de leur cohérence avec notre mission, de leur faisabilité, de leur impact attendu et des principes d’éthique et de transparence.</p></div></Wrap></section></>}
+    {page==="contact" && <>
+  <PageHero
+    eyebrow="Contact"
+    title="Parlons de votre projet ou d’un partenariat"
+    text="Vous représentez une institution, une association, une entreprise, un bailleur, une université ou une communauté ? Contactez PRODDEKO-Belgique pour une demande institutionnelle, une proposition de collaboration ou une information sur nos programmes."
+  />
 
+  <section className="py-20">
+    <Wrap>
+
+      <SectionTitle
+        eyebrow="Nous contacter"
+        title="Un premier échange pour identifier les possibilités de collaboration"
+        text="Afin de faciliter le traitement de votre demande, indiquez votre organisation, l’objet de votre message, le territoire concerné et, lorsqu’il s’agit d’un projet, son niveau actuel de préparation."
+      />
+
+      <div className="mt-12 grid gap-8 lg:grid-cols-[1.05fr_.95fr]">
+
+        <div className="rounded-[2rem] border bg-white p-8 shadow-sm sm:p-10">
+
+          <ContactLine
+            icon={Mail}
+            title="E-mail institutionnel"
+            text="admin@proddeko.online"
+            href="mailto:admin@proddeko.online"
+          />
+
+          <ContactLine
+            icon={Phone}
+            title="Téléphone"
+            text="+32 492 70 45 04"
+            href="tel:+32492704504"
+          />
+
+          <ContactLine
+            icon={MessageCircle}
+            title="WhatsApp"
+            text="+32 488 84 46 98"
+            href="https://wa.me/32488844698"
+            external
+          />
+
+          <ContactLine
+            icon={Globe2}
+            title="Site internet"
+            text="proddeko.online"
+            href="https://proddeko.online"
+            external
+          />
+
+          <ContactLine
+            icon={MapPin}
+            title="Siège social"
+            text="Rue Prince Albert 8/1, 4840 Welkenraedt · Belgique"
+          />
+
+          <ContactLine
+            icon={Globe2}
+            title="Territoires d’intervention"
+            text="Belgique · République démocratique du Congo"
+          />
+
+        </div>
+
+        <div className="rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+
+          <ShieldCheck className="h-11 w-11 text-orange-400" />
+
+          <h2 className="mt-6 text-3xl font-black">
+            Une coopération responsable
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            Les propositions de partenariat sont examinées au regard de leur
+            cohérence avec notre mission, de leur faisabilité, de la valeur
+            ajoutée de chaque partenaire et de leur impact potentiel pour les
+            populations et territoires concernés.
+          </p>
+
+          <div className="mt-8 border-t border-white/15 pt-7">
+
+            <div className="font-black">
+              Pour une demande de partenariat, précisez si possible :
+            </div>
+
+            <div className="mt-5 space-y-3 text-slate-300">
+              <p>• votre organisation et vos coordonnées ;</p>
+              <p>• le territoire ou public concerné ;</p>
+              <p>• le problème ou besoin identifié ;</p>
+              <p>• le type de collaboration envisagé ;</p>
+              <p>• le calendrier indicatif ;</p>
+              <p>• les ressources ou compétences déjà disponibles.</p>
+            </div>
+
+          </div>
+
+          <a
+            href="mailto:admin@proddeko.online?subject=Proposition%20de%20partenariat"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+          >
+            Envoyer une proposition
+            <ChevronRight className="h-5 w-5" />
+          </a>
+
+        </div>
+
+      </div>
+
+      <div className="mt-20">
+
+        <SectionTitle
+          eyebrow="Orienter votre demande"
+          title="Quel est l’objet de votre prise de contact ?"
+          text="Une demande bien identifiée nous permet de l’orienter plus rapidement."
+        />
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+          <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+            <Handshake className="h-8 w-8 text-orange-500" />
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              Partenariat
+            </h3>
+            <p className="mt-3 leading-7 text-slate-600">
+              Co-construction de projet, consortium, expertise ou coopération
+              institutionnelle.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+            <BriefcaseBusiness className="h-8 w-8 text-orange-500" />
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              Projet
+            </h3>
+            <p className="mt-3 leading-7 text-slate-600">
+              Proposition, information ou échange concernant l’un de nos
+              programmes ou projets.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+            <Users className="h-8 w-8 text-orange-500" />
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              Expertise
+            </h3>
+            <p className="mt-3 leading-7 text-slate-600">
+              Offre de compétences, collaboration technique, recherche,
+              formation ou accompagnement.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+            <Mail className="h-8 w-8 text-orange-500" />
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              Demande institutionnelle
+            </h3>
+            <p className="mt-3 leading-7 text-slate-600">
+              Documents, renseignements administratifs, communication ou
+              demande officielle.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="mt-20 rounded-[2rem] bg-slate-50 p-8 sm:p-10">
+
+        <div className="grid gap-10 lg:grid-cols-2">
+
+          <div>
+            <Eyebrow>Informations institutionnelles</Eyebrow>
+
+            <h2 className="mt-4 text-3xl font-black text-blue-950">
+              Identifier clairement notre organisation
+            </h2>
+
+            <p className="mt-5 leading-8 text-slate-600">
+              Ces informations permettent aux partenaires et interlocuteurs
+              institutionnels d’identifier l’association dans leurs échanges
+              et documents administratifs.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] bg-white p-7 shadow-sm">
+
+            <div className="space-y-5">
+
+              <div>
+                <div className="text-sm font-bold text-slate-500">
+                  Organisation
+                </div>
+                <div className="mt-1 font-black text-blue-950">
+                  PRODDEKO-Belgique
+                </div>
+              </div>
+
+              <div className="border-t pt-4">
+                <div className="text-sm font-bold text-slate-500">
+                  Positionnement
+                </div>
+                <div className="mt-1 font-black text-blue-950">
+                  Triple Sustain Impact
+                </div>
+              </div>
+
+              <div className="border-t pt-4">
+                <div className="text-sm font-bold text-slate-500">
+                  Forme juridique
+                </div>
+                <div className="mt-1 font-black text-blue-950">
+                  Association sans but lucratif (ASBL)
+                </div>
+              </div>
+
+              <div className="border-t pt-4">
+                <div className="text-sm font-bold text-slate-500">
+                  Numéro BCE
+                </div>
+                <div className="mt-1 font-black text-blue-950">
+                  0459.354.980
+                </div>
+              </div>
+
+              <div className="border-t pt-4">
+                <div className="text-sm font-bold text-slate-500">
+                  Siège social
+                </div>
+                <div className="mt-1 font-black text-blue-950">
+                  Rue Prince Albert 8/1 · 4840 Welkenraedt · Belgique
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="mt-14 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+
+        <div className="max-w-4xl">
+
+          <Eyebrow>Premier contact</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black">
+            Une idée de collaboration ?
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            Présentez-nous brièvement votre organisation, le besoin identifié
+            et la collaboration envisagée. Un premier échange permettra
+            d’évaluer les complémentarités et les prochaines étapes possibles.
+          </p>
+
+          <a
+            href="mailto:admin@proddeko.online?subject=Premier%20contact%20PRODDEKO"
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+          >
+            Contacter PRODDEKO-Belgique
+            <Mail className="h-5 w-5" />
+          </a>
+
+        </div>
+
+      </div>
+
+    </Wrap>
+  </section>
+</>}
     <footer className="border-t bg-slate-950 py-12 text-slate-300">
   <Wrap className="grid gap-8 md:grid-cols-[1fr_auto]">
     <div>
