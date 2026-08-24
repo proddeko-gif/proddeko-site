@@ -535,8 +535,270 @@ export default function App(){
     </Wrap>
   </section>
 </>}
-    {page==="impact" && <><PageHero eyebrow="Impact" title="Mesurer ce qui change réellement" text="Notre approche de l’impact privilégie les résultats documentés, la qualité des changements observés et la capacité des acteurs locaux à maintenir les acquis."/><section className="py-20"><Wrap><div className="grid gap-6 md:grid-cols-3"><Impact icon={HeartHandshake} title="Social" text="Compétences renforcées, inclusion, participation, accès aux services et autonomisation."/><Impact icon={BriefcaseBusiness} title="Économique" text="Revenus, insertion, entrepreneuriat, productivité et dynamiques économiques locales."/><Impact icon={Leaf} title="Environnemental" text="Gestion responsable de l’eau, énergie propre, résilience et pratiques durables."/></div><div className="mt-10 rounded-3xl border border-orange-200 bg-orange-50 p-7 text-slate-700"><b className="text-blue-950">Principe de transparence :</b> les chiffres d’impact sont publiés lorsqu’ils sont reliés à une source, une période et un périmètre clairement identifiés.</div></Wrap></section></>}
+{page==="impact" && <>
+  <PageHero
+    eyebrow="Impact"
+    title="Mesurer ce qui change réellement"
+    text="Notre approche de l’impact privilégie les résultats documentés, la qualité des changements observés et la capacité des acteurs locaux à maintenir les acquis dans la durée."
+  />
 
+  <section className="py-20">
+    <Wrap>
+
+      <SectionTitle
+        eyebrow="Notre approche"
+        title="De l’activité au changement durable"
+        text="Nous ne réduisons pas l’impact au nombre d’activités réalisées. Nous cherchons à comprendre ce qui change pour les personnes, les organisations et les territoires, pourquoi ce changement intervient et dans quelle mesure il peut être maintenu."
+      />
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+        <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+          <HeartHandshake className="h-9 w-9 text-orange-500" />
+          <h3 className="mt-5 text-xl font-black text-blue-950">
+            Impact social
+          </h3>
+          <p className="mt-4 leading-7 text-slate-600">
+            Inclusion, compétences, participation, accès aux services,
+            autonomisation et amélioration des capacités d’action.
+          </p>
+        </div>
+
+        <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+          <BriefcaseBusiness className="h-9 w-9 text-orange-500" />
+          <h3 className="mt-5 text-xl font-black text-blue-950">
+            Impact économique
+          </h3>
+          <p className="mt-4 leading-7 text-slate-600">
+            Insertion, entrepreneuriat, revenus, productivité,
+            développement des compétences et dynamiques économiques locales.
+          </p>
+        </div>
+
+        <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+          <Leaf className="h-9 w-9 text-orange-500" />
+          <h3 className="mt-5 text-xl font-black text-blue-950">
+            Impact environnemental
+          </h3>
+          <p className="mt-4 leading-7 text-slate-600">
+            Gestion responsable de l’eau, énergie propre, adaptation
+            climatique, économie circulaire et pratiques durables.
+          </p>
+        </div>
+
+        <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+          <Building2 className="h-9 w-9 text-orange-500" />
+          <h3 className="mt-5 text-xl font-black text-blue-950">
+            Impact institutionnel
+          </h3>
+          <p className="mt-4 leading-7 text-slate-600">
+            Gouvernance, capacités organisationnelles, transparence,
+            coopération entre acteurs et pérennisation des dispositifs.
+          </p>
+        </div>
+
+      </div>
+
+      <div className="mt-20 grid gap-10 lg:grid-cols-2">
+
+        <div>
+          <Eyebrow>Mesure de l’impact</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black text-blue-950">
+            Une chaîne de résultats lisible et vérifiable
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-600">
+            Chaque intervention doit progressivement relier les ressources
+            mobilisées aux activités réalisées, aux résultats obtenus et
+            aux changements recherchés. Cette logique permet de distinguer
+            ce qui a effectivement été réalisé de ce qui reste attendu.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+
+          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-100 font-black text-orange-700">
+                1
+              </div>
+              <div>
+                <h3 className="font-black text-blue-950">
+                  Ressources
+                </h3>
+                <p className="mt-1 text-slate-600">
+                  Financements, expertise, équipements, partenariats
+                  et mobilisation locale.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-100 font-black text-orange-700">
+                2
+              </div>
+              <div>
+                <h3 className="font-black text-blue-950">
+                  Activités
+                </h3>
+                <p className="mt-1 text-slate-600">
+                  Formations, infrastructures, accompagnement,
+                  animation territoriale et appui institutionnel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-100 font-black text-orange-700">
+                3
+              </div>
+              <div>
+                <h3 className="font-black text-blue-950">
+                  Résultats
+                </h3>
+                <p className="mt-1 text-slate-600">
+                  Services accessibles, compétences acquises,
+                  équipements opérationnels et organisations renforcées.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-100 font-black text-orange-700">
+                4
+              </div>
+              <div>
+                <h3 className="font-black text-blue-950">
+                  Changements
+                </h3>
+                <p className="mt-1 text-slate-600">
+                  Amélioration durable des conditions, des capacités
+                  et de l’autonomie des acteurs concernés.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <SectionTitle
+          eyebrow="Indicateurs"
+          title="Publier des résultats que nous pouvons démontrer"
+          text="Les indicateurs sont adaptés à chaque projet. Ils doivent être associés à une période, un périmètre, une méthode de collecte et, lorsque cela est possible, une situation de référence."
+        />
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+
+          <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+            <CheckCircle2 className="h-8 w-8 text-green-600" />
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              Résultats réalisés
+            </h3>
+            <p className="mt-3 leading-7 text-slate-600">
+              Données correspondant à des activités ou résultats
+              effectivement réalisés et pouvant être documentés.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+            <Target className="h-8 w-8 text-orange-500" />
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              Résultats attendus
+            </h3>
+            <p className="mt-3 leading-7 text-slate-600">
+              Objectifs et cibles fixés dans les projets, clairement
+              distingués des résultats déjà atteints.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
+            <FileText className="h-8 w-8 text-blue-700" />
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              Sources & preuves
+            </h3>
+            <p className="mt-3 leading-7 text-slate-600">
+              Rapports, listes de participation, documents techniques,
+              données de suivi, évaluations et autres éléments vérifiables.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="mt-20 rounded-[2rem] bg-slate-50 p-8 sm:p-10">
+        <div className="grid gap-8 lg:grid-cols-2">
+
+          <div>
+            <Eyebrow>Apprentissage</Eyebrow>
+
+            <h2 className="mt-4 text-3xl font-black text-blue-950">
+              Mesurer pour améliorer, pas seulement pour rendre compte
+            </h2>
+
+            <p className="mt-5 leading-8 text-slate-600">
+              Le suivi et l’évaluation doivent permettre d’identifier
+              ce qui fonctionne, ce qui doit être adapté et les enseignements
+              transférables à d’autres projets ou territoires.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] bg-white p-7 shadow-sm">
+            <div className="font-black text-blue-950">
+              Notre cycle d’apprentissage
+            </div>
+
+            <div className="mt-5 space-y-3 text-slate-600">
+              <p>01 · Observer et documenter</p>
+              <p>02 · Analyser les résultats</p>
+              <p>03 · Identifier les écarts et enseignements</p>
+              <p>04 · Adapter les interventions</p>
+              <p>05 · Capitaliser et partager</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="mt-14 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+        <div className="max-w-4xl">
+
+          <Eyebrow>Transparence de l’impact</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black">
+            Pas de chiffre sans contexte
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            PRODDEKO-Belgique privilégie une communication prudente et
+            vérifiable. Un chiffre d’impact doit pouvoir être relié à une
+            source, une période, un territoire et une méthode de collecte.
+            Les objectifs futurs sont présentés comme des cibles et non
+            comme des réalisations.
+          </p>
+
+          <button
+            onClick={()=>go("gouvernance")}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+          >
+            Découvrir notre gouvernance
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
+        </div>
+      </div>
+
+    </Wrap>
+  </section>
+</>}
     {page==="gouvernance" && <><PageHero eyebrow="Gouvernance" title="Responsabilité, transparence et redevabilité" text="La gouvernance est une condition de l’impact. Nous renforçons progressivement nos procédures pour répondre aux exigences des partenaires, bailleurs et communautés."/><section className="py-20"><Wrap className="grid gap-6 md:grid-cols-2"><Govern title="Gouvernance associative" text="Assemblée générale, conseil d’administration, responsabilités clairement définies et décisions documentées."/><Govern title="Gestion financière" text="Budgets par projet, pièces justificatives, séparation des responsabilités et suivi régulier des engagements."/><Govern title="Éthique & intégrité" text="Prévention des conflits d’intérêts, lutte contre la fraude et la corruption, respect des personnes et des règles applicables."/><Govern title="Suivi, évaluation & apprentissage" text="Indicateurs proportionnés, collecte de preuves, analyse des résultats et capitalisation pour améliorer les interventions."/></Wrap></section></>}
 
     {page==="partenaires" && <><PageHero eyebrow="Partenaires" title="Construire des alliances utiles et complémentaires" text="Nous recherchons des partenariats fondés sur des objectifs partagés, des responsabilités claires et une valeur ajoutée réelle pour les bénéficiaires et les territoires."/><section className="py-20"><Wrap><div className="grid gap-5 md:grid-cols-3">{partners.map(x=><div key={x} className="flex items-center gap-4 rounded-3xl border bg-white p-6 shadow-sm"><Handshake className="text-orange-500"/><b className="text-blue-950">{x}</b></div>)}</div><div className="mt-10 rounded-[2rem] bg-blue-950 p-9 text-white"><h3 className="text-3xl font-black">Vous souhaitez collaborer ?</h3><p className="mt-4 max-w-3xl text-slate-200">Co-construction de projets, expertise technique, financement, recherche, formation, mise en réseau ou accompagnement institutionnel : nous privilégions les partenariats où chaque acteur apporte une contribution identifiable.</p><button onClick={()=>go("contact")} className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black">Nous contacter <ChevronRight size={18}/></button></div></Wrap></section></>}
