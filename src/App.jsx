@@ -993,8 +993,305 @@ export default function App(){
     </Wrap>
   </section>
 </>}
-    {page==="partenaires" && <><PageHero eyebrow="Partenaires" title="Construire des alliances utiles et complémentaires" text="Nous recherchons des partenariats fondés sur des objectifs partagés, des responsabilités claires et une valeur ajoutée réelle pour les bénéficiaires et les territoires."/><section className="py-20"><Wrap><div className="grid gap-5 md:grid-cols-3">{partners.map(x=><div key={x} className="flex items-center gap-4 rounded-3xl border bg-white p-6 shadow-sm"><Handshake className="text-orange-500"/><b className="text-blue-950">{x}</b></div>)}</div><div className="mt-10 rounded-[2rem] bg-blue-950 p-9 text-white"><h3 className="text-3xl font-black">Vous souhaitez collaborer ?</h3><p className="mt-4 max-w-3xl text-slate-200">Co-construction de projets, expertise technique, financement, recherche, formation, mise en réseau ou accompagnement institutionnel : nous privilégions les partenariats où chaque acteur apporte une contribution identifiable.</p><button onClick={()=>go("contact")} className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black">Nous contacter <ChevronRight size={18}/></button></div></Wrap></section></>}
+    {page==="partenaires" && <>
+  <PageHero
+    eyebrow="Partenaires"
+    title="Construire des alliances utiles, complémentaires et durables"
+    text="PRODDEKO-Belgique développe ses interventions avec des acteurs publics, associatifs, techniques, académiques et financiers capables de conjuguer expertise, ancrage territorial et responsabilité."
+  />
 
+  <section className="py-20">
+    <Wrap>
+
+      <SectionTitle
+        eyebrow="Notre approche partenariale"
+        title="Coopérer là où les compétences se complètent"
+        text="Nous ne recherchons pas des partenariats de façade. Chaque collaboration doit répondre à un besoin identifié, apporter une valeur ajoutée concrète et préciser les responsabilités de chaque organisation."
+      />
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+        {[
+          {
+            title:"Associations & ONG",
+            text:"Co-construction et mise en œuvre d’interventions, mobilisation communautaire, accompagnement des bénéficiaires et ancrage territorial."
+          },
+          {
+            title:"Institutions publiques",
+            text:"Articulation avec les politiques publiques, coordination territoriale, accès aux dispositifs institutionnels et recherche de complémentarités."
+          },
+          {
+            title:"Fondations & bailleurs",
+            text:"Financement d’interventions démontrables, accompagnement stratégique, suivi des résultats et développement de solutions reproductibles."
+          },
+          {
+            title:"Entreprises & experts",
+            text:"Expertise technique, technologies appropriées, ingénierie, équipements, innovation et transfert de compétences."
+          },
+          {
+            title:"Universités & recherche",
+            text:"Diagnostic, production de connaissances, suivi-évaluation, recherche-action, documentation et capitalisation des enseignements."
+          },
+          {
+            title:"Acteurs communautaires",
+            text:"Identification des besoins, participation aux décisions, mise en œuvre locale, appropriation et pérennisation des solutions."
+          }
+        ].map((item)=>(
+          <div
+            key={item.title}
+            className="rounded-[2rem] border bg-white p-7 shadow-sm"
+          >
+            <Handshake className="h-9 w-9 text-orange-500" />
+
+            <h3 className="mt-5 text-xl font-black text-blue-950">
+              {item.title}
+            </h3>
+
+            <p className="mt-4 leading-7 text-slate-600">
+              {item.text}
+            </p>
+          </div>
+        ))}
+
+      </div>
+
+      <div className="mt-20 grid gap-10 lg:grid-cols-2 lg:items-center">
+
+        <div>
+          <Eyebrow>Principes de collaboration</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black text-blue-950">
+            Des responsabilités définies avant l’action
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-600">
+            Une coopération solide commence par une compréhension commune du
+            problème à résoudre, des résultats recherchés et des capacités
+            réellement disponibles. Les rôles, contributions, mécanismes de
+            décision et obligations de rapportage doivent être explicités dès
+            la préparation du partenariat.
+          </p>
+
+          <p className="mt-4 leading-8 text-slate-600">
+            Cette approche permet de limiter les malentendus, de mieux gérer
+            les risques et de construire une relation fondée sur la confiance
+            et la redevabilité.
+          </p>
+        </div>
+
+        <div className="rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+
+          <div className="space-y-6">
+
+            {[
+              ["01", "Objectifs partagés",
+               "Définir clairement le problème, les bénéficiaires et les résultats attendus."],
+
+              ["02", "Complémentarité",
+               "Identifier ce que chaque partenaire apporte réellement au projet."],
+
+              ["03", "Responsabilités",
+               "Formaliser les rôles, décisions, ressources et obligations de chacun."],
+
+              ["04", "Transparence",
+               "Partager les informations nécessaires au pilotage et au contrôle."],
+
+              ["05", "Apprentissage",
+               "Documenter les résultats, difficultés et enseignements de la collaboration."]
+            ].map(([n,title,text])=>(
+              <div key={n} className="flex gap-4">
+
+                <div className="text-2xl font-black text-orange-400">
+                  {n}
+                </div>
+
+                <div>
+                  <div className="font-black">
+                    {title}
+                  </div>
+
+                  <p className="mt-1 text-sm leading-6 text-slate-300">
+                    {text}
+                  </p>
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="mt-20">
+
+        <SectionTitle
+          eyebrow="Valeur ajoutée"
+          title="Ce que PRODDEKO-Belgique apporte à une alliance"
+          text="Notre contribution se situe à l’interface entre développement territorial, ingénierie de projets, mobilisation de partenaires et accompagnement des acteurs locaux."
+        />
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+
+          <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+            <Globe2 className="h-9 w-9 text-orange-500" />
+
+            <h3 className="mt-5 text-2xl font-black text-blue-950">
+              Ancrage Belgique – RDC
+            </h3>
+
+            <p className="mt-4 leading-7 text-slate-600">
+              Une capacité à relier acteurs, compétences et opportunités entre
+              la Belgique et la République démocratique du Congo, tout en
+              privilégiant l’appropriation locale des interventions.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+            <BriefcaseBusiness className="h-9 w-9 text-orange-500" />
+
+            <h3 className="mt-5 text-2xl font-black text-blue-950">
+              Ingénierie de projets
+            </h3>
+
+            <p className="mt-4 leading-7 text-slate-600">
+              Diagnostic, structuration d’interventions, recherche de
+              partenaires, budgétisation, préparation de dossiers et
+              organisation du suivi des projets.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+            <Users className="h-9 w-9 text-orange-500" />
+
+            <h3 className="mt-5 text-2xl font-black text-blue-950">
+              Approche participative
+            </h3>
+
+            <p className="mt-4 leading-7 text-slate-600">
+              Association des bénéficiaires, organisations locales et parties
+              prenantes à l’identification des besoins et à la construction
+              des solutions.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border bg-white p-8 shadow-sm">
+            <ShieldCheck className="h-9 w-9 text-orange-500" />
+
+            <h3 className="mt-5 text-2xl font-black text-blue-950">
+              Recherche de redevabilité
+            </h3>
+
+            <p className="mt-4 leading-7 text-slate-600">
+              Documentation des engagements, suivi des résultats et
+              renforcement progressif des mécanismes de transparence,
+              d’intégrité et de gestion des risques.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="mt-20 rounded-[2rem] bg-slate-50 p-8 sm:p-10">
+
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+
+          <div>
+            <Eyebrow>Cycle de partenariat</Eyebrow>
+
+            <h2 className="mt-4 text-3xl font-black text-blue-950">
+              De la première rencontre à l’évaluation commune
+            </h2>
+
+            <p className="mt-5 leading-8 text-slate-600">
+              Nous privilégions une construction progressive des alliances
+              afin de vérifier la cohérence stratégique, les capacités
+              disponibles et la faisabilité de la collaboration.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+
+            {[
+              ["1", "Prise de contact",
+               "Comprendre l’organisation, le besoin et l’opportunité de coopération."],
+
+              ["2", "Analyse de complémentarité",
+               "Vérifier les objectifs communs, compétences et responsabilités potentielles."],
+
+              ["3", "Co-construction",
+               "Définir l’intervention, les résultats, ressources, risques et modalités de gouvernance."],
+
+              ["4", "Formalisation",
+               "Préciser les engagements et, lorsque nécessaire, les contractualiser."],
+
+              ["5", "Mise en œuvre & suivi",
+               "Piloter les activités, documenter les résultats et traiter les difficultés."],
+
+              ["6", "Évaluation & capitalisation",
+               "Analyser la collaboration et décider des suites à lui donner."]
+            ].map(([n,title,text])=>(
+              <div
+                key={n}
+                className="flex gap-5 rounded-2xl bg-white p-5 shadow-sm"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-100 font-black text-orange-600">
+                  {n}
+                </div>
+
+                <div>
+                  <div className="font-black text-blue-950">
+                    {title}
+                  </div>
+
+                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                    {text}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="mt-14 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
+
+        <div className="max-w-4xl">
+
+          <Eyebrow>Construisons ensemble</Eyebrow>
+
+          <h2 className="mt-4 text-3xl font-black">
+            Vous souhaitez développer un partenariat ?
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            Coopération technique, financement, recherche, formation,
+            innovation, accompagnement institutionnel ou mise en réseau :
+            nous sommes ouverts aux collaborations cohérentes avec nos
+            programmes et capables de produire une valeur concrète pour
+            les territoires concernés.
+          </p>
+
+          <button
+            onClick={()=>go("contact")}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+          >
+            Proposer une collaboration
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
+        </div>
+
+      </div>
+
+    </Wrap>
+  </section>
+</>}
     {page==="contact" && <><PageHero eyebrow="Contact" title="Parlons de votre projet ou d’un partenariat" text="Pour toute proposition de collaboration, demande institutionnelle ou information sur nos programmes, contactez PRODDEKO-Belgique."/><section className="py-20"><Wrap className="grid gap-8 lg:grid-cols-2"><div className="rounded-[2rem] border bg-white p-8 shadow-sm"><ContactLine icon={Mail} title="E-mail" text="admin@proddeko.online" href="mailto:admin@proddeko.online"/><ContactLine icon={Phone} title="Mobile" text="+32 492 70 45 04" href="tel:+32492704504"/><ContactLine icon={MessageCircle} title="WhatsApp" text="+32 488 84 46 98" href="https://wa.me/32488844698" external/><ContactLine icon={Globe2} title="Site" text="proddeko.online" href="https://proddeko.online" external/><ContactLine icon={MapPin} title="Ancrage" text="Belgique · République démocratique du Congo"/></div><div className="rounded-[2rem] bg-blue-950 p-8 text-white"><ShieldCheck className="h-10 w-10 text-orange-400"/><h3 className="mt-5 text-3xl font-black">Une coopération responsable</h3><p className="mt-5 leading-8 text-slate-200">Les demandes de partenariat sont examinées au regard de leur cohérence avec notre mission, de leur faisabilité, de leur impact attendu et des principes d’éthique et de transparence.</p></div></Wrap></section></>}
 
     <footer className="border-t bg-slate-950 py-12 text-slate-300">
