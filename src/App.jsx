@@ -61,6 +61,18 @@ export default function App(){
 
   const [mobile,setMobile]=useState(false);
 
+  useEffect(()=>{
+  const handlePopState=()=>{
+    setPage(pathToPage[window.location.pathname] || "accueil");
+    window.scrollTo({top:0});
+  };
+
+  window.addEventListener("popstate", handlePopState);
+
+  return ()=>{
+    window.removeEventListener("popstate", handlePopState);
+  };
+},[]);
   const go=(p)=>{
     setPage(p);
     setMobile(false);
