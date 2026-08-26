@@ -33,9 +33,43 @@ function Eyebrow({children}) { return <div className="text-xs font-black upperca
 function SectionTitle({eyebrow, title, text}) { return <div className="max-w-3xl"><Eyebrow>{eyebrow}</Eyebrow><h2 className="mt-4 text-3xl font-black tracking-tight text-blue-950 sm:text-5xl">{title}</h2>{text && <p className="mt-5 text-lg leading-8 text-slate-600">{text}</p>}</div>; }
 
 export default function App(){
-  const [page,setPage]=useState("accueil");
+  const pathToPage = {
+    "/": "accueil",
+    "/qui-sommes-nous/": "qui",
+    "/programmes/": "programmes",
+    "/projets/": "projets",
+    "/impact/": "impact",
+    "/gouvernance/": "gouvernance",
+    "/partenaires/": "partenaires",
+    "/contact/": "contact"
+  };
+
+  const pageToPath = {
+    accueil: "/",
+    qui: "/qui-sommes-nous/",
+    programmes: "/programmes/",
+    projets: "/projets/",
+    impact: "/impact/",
+    gouvernance: "/gouvernance/",
+    partenaires: "/partenaires/",
+    contact: "/contact/"
+  };
+
+  const [page,setPage]=useState(
+    pathToPage[window.location.pathname] || "accueil"
+  );
+
   const [mobile,setMobile]=useState(false);
-  const go=(p)=>{setPage(p);setMobile(false);window.scrollTo({top:0,behavior:"smooth"});};
+
+  const go=(p)=>{
+    setPage(p);
+    setMobile(false);
+
+    const newPath = pageToPath[p] || "/";
+    window.history.pushState({}, "", newPath);
+
+    window.scrollTo({top:0,behavior:"smooth"});
+  };
   return <Shell>
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <Wrap className="flex min-h-20 items-center justify-between gap-4 py-3">
