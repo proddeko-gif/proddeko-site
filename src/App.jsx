@@ -73,6 +73,21 @@ export default function App(){
     window.removeEventListener("popstate", handlePopState);
   };
 },[]);
+    useEffect(()=>{
+    const handlePopState=()=>{
+      setPage(pathToPage[window.location.pathname] || "accueil");
+      window.scrollTo({top:0});
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return ()=>{
+      window.removeEventListener("popstate", handlePopState);
+    };
+  },[]);
+
+  const go=(p)=>{
+    
   const go=(p)=>{
     setPage(p);
     setMobile(false);
