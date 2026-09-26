@@ -172,7 +172,7 @@ export default function App(){
   };
   return <Shell>
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <Wrap className="flex min-h-20 items-center justify-between gap-4 py-3">
+      <Wrap className="flex min-h-20 items-center justify-start gap-4 py-3">
         <button onClick={()=>go("accueil")} className="flex items-center gap-3 text-left">
           <img src="/images/tsi-logo.png" alt="Triple Sustain Impact (TSI)" className="h-24 w-60 rounded-xl object-contain" />
         </button>
