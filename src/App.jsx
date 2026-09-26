@@ -175,7 +175,6 @@ export default function App(){
       <Wrap className="flex min-h-20 items-center justify-between gap-4 py-3">
         <button onClick={()=>go("accueil")} className="flex items-center gap-3 text-left">
           <img src="/images/tsi-logo.png" alt="Triple Sustain Impact (TSI)" className="h-24 w-60 rounded-xl object-contain" />
-          <div><div className="font-black text-blue-950">Triple Sustain Impact (TSI)</div><div className="text-xs font-semibold text-slate-500">Triple Sustain Impact</div></div>
         </button>
         <nav className="hidden items-center gap-1 xl:flex">{NAV.map(([n,p])=><button key={p} onClick={()=>go(p)} className={`rounded-full px-3 py-2 text-sm font-bold ${page===p?"bg-blue-950 text-white":"text-slate-700 hover:bg-slate-100"}`}>{n}</button>)}</nav>
         <button className="xl:hidden" onClick={()=>setMobile(!mobile)}>{mobile?<X/>:<Menu/>}</button>
