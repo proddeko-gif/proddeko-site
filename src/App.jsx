@@ -101,7 +101,7 @@ export default function App(){
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <Wrap className="flex min-h-20 items-center justify-between gap-4 py-3">
         <button onClick={()=>go("accueil")} className="flex items-center gap-3 text-left">
-          <img src="/images/proddeko-logo.png" alt="PRODDEKO-Belgique" className="h-12 w-12 rounded-xl object-contain" />
+          <img src="/images/proddeko-logo.png" alt="Triple Sustain Impact (TSI)" className="h-12 w-12 rounded-xl object-contain" />
           <div><div className="font-black text-blue-950">PRODDEKO-Belgique</div><div className="text-xs font-semibold text-slate-500">Triple Sustain Impact</div></div>
         </button>
         <nav className="hidden items-center gap-1 xl:flex">{NAV.map(([n,p])=><button key={p} onClick={()=>go(p)} className={`rounded-full px-3 py-2 text-sm font-bold ${page===p?"bg-blue-950 text-white":"text-slate-700 hover:bg-slate-100"}`}>{n}</button>)}</nav>
@@ -116,7 +116,7 @@ export default function App(){
         <Wrap className="relative grid gap-12 py-24 lg:grid-cols-[1.15fr_.85fr] lg:py-32">
           <div><div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold">Belgique · République démocratique du Congo</div>
             <h1 className="mt-7 text-5xl font-black leading-[1.04] sm:text-7xl">Agir durablement.<br/><span className="text-orange-400">Innover ensemble.</span><br/>Transformer les territoires.</h1>
-            <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-200">PRODDEKO-Belgique conçoit et accompagne des solutions à triple impact — social, économique et environnemental — en reliant les communautés, l’expertise, l’innovation et les partenaires de développement.</p>
+            <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-200">Triple Sustain Impact (TSI) conçoit et accompagne des solutions à triple impact — social, économique et environnemental — en reliant les communautés, l’expertise, l’innovation et les partenaires de développement.</p>
             <div className="mt-9 flex flex-wrap gap-4"><button onClick={()=>go("projets")} className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-black">Découvrir nos projets <ArrowRight size={18}/></button><button onClick={()=>go("partenaires")} className="rounded-full border border-white/25 px-6 py-3 font-black">Construire un partenariat</button></div>
           </div>
           <div className="grid gap-4 self-end sm:grid-cols-2 lg:grid-cols-1"><HeroCard icon={Sprout} title="Impact social" text="Capacités, inclusion, autonomisation et participation."/><HeroCard icon={Target} title="Impact économique" text="Emploi, entrepreneuriat, revenus et économie locale."/><HeroCard icon={Leaf} title="Impact environnemental" text="Résilience climatique, eau, énergie et ressources durables."/></div>
@@ -130,7 +130,7 @@ export default function App(){
   <PageHero
     eyebrow="Qui sommes-nous ?"
     title="Une organisation de coopération et d’innovation au service des territoires"
-    text="PRODDEKO-Belgique – Triple Sustain Impact est une association belge engagée dans le développement durable, la solidarité internationale, l’inclusion et l’innovation territoriale. Issue d’une dynamique associative initiée en 1996, elle développe et accompagne des initiatives en Belgique et en République démocratique du Congo, en recherchant simultanément un impact social, économique et environnemental."
+    text="Triple Sustain Impact (TSI) – Triple Sustain Impact est une association belge engagée dans le développement durable, la solidarité internationale, l’inclusion et l’innovation territoriale. Issue d’une dynamique associative initiée en 1996, elle développe et accompagne des initiatives en Belgique et en République démocratique du Congo, en recherchant simultanément un impact social, économique et environnemental."
   />
 
   <section className="py-20">
@@ -138,7 +138,7 @@ export default function App(){
       <div className="grid gap-8 lg:grid-cols-2">
 
         <TextBlock title="Notre identité">
-          Notre approche repose sur une conviction : les réponses durables aux défis sociaux, économiques et environnementaux se construisent avec les populations et les acteurs des territoires concernés. PRODDEKO-Belgique agit comme facilitateur, concepteur de projets et interface de coopération entre communautés locales, associations, experts, institutions publiques, acteurs académiques, entreprises responsables et partenaires de développement.
+          Notre approche repose sur une conviction : les réponses durables aux défis sociaux, économiques et environnementaux se construisent avec les populations et les acteurs des territoires concernés. Triple Sustain Impact (TSI) agit comme facilitateur, concepteur de projets et interface de coopération entre communautés locales, associations, experts, institutions publiques, acteurs académiques, entreprises responsables et partenaires de développement.
         </TextBlock>
 
         <TextBlock title="Notre mission">
@@ -194,7 +194,7 @@ export default function App(){
         </TextBlock>
 
         <TextBlock title="Notre ancrage Belgique – RDC">
-          Cet ancrage permet à PRODDEKO-Belgique de favoriser la circulation des compétences, des expériences, des technologies et des partenariats entre la Belgique et la République démocratique du Congo, tout en maintenant les besoins et les capacités des acteurs locaux au centre des projets.
+          Cet ancrage permet à Triple Sustain Impact (TSI) de favoriser la circulation des compétences, des expériences, des technologies et des partenariats entre la Belgique et la République démocratique du Congo, tout en maintenant les besoins et les capacités des acteurs locaux au centre des projets.
         </TextBlock>
       </div>
 
@@ -203,7 +203,7 @@ export default function App(){
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <div className="text-sm font-bold text-slate-500">Identité</div>
-            <div className="mt-1 font-black text-blue-950">PRODDEKO-Belgique · Triple Sustain Impact</div>
+            <div className="mt-1 font-black text-blue-950">Triple Sustain Impact (TSI) · Triple Sustain Impact</div>
           </div>
           <div>
             <div className="text-sm font-bold text-slate-500">Création</div>
@@ -240,7 +240,7 @@ export default function App(){
   <PageHero
     eyebrow="Programmes"
     title="Quatre programmes pour un triple impact"
-    text="PRODDEKO-Belgique – Triple Sustain Impact structure son action autour de quatre programmes complémentaires. Ils relient besoins territoriaux, renforcement des capacités, innovation et partenariats afin de produire des résultats sociaux, économiques et environnementaux durables."
+    text="Triple Sustain Impact (TSI) – Triple Sustain Impact structure son action autour de quatre programmes complémentaires. Ils relient besoins territoriaux, renforcement des capacités, innovation et partenariats afin de produire des résultats sociaux, économiques et environnementaux durables."
   />
 
   <section className="py-20">
@@ -410,7 +410,7 @@ export default function App(){
   <PageHero
     eyebrow="Projets"
     title="Des interventions concrètes, avec un niveau de maturité clairement identifié"
-    text="Nos projets traduisent les programmes de PRODDEKO-Belgique en interventions territoriales concrètes. Nous distinguons les projets en cours, les initiatives en développement et les projets pilotes afin de présenter de manière transparente leur niveau d’avancement."
+    text="Nos projets traduisent les programmes de Triple Sustain Impact (TSI) en interventions territoriales concrètes. Nous distinguons les projets en cours, les initiatives en développement et les projets pilotes afin de présenter de manière transparente leur niveau d’avancement."
   />
 
   <section className="py-20">
@@ -839,7 +839,7 @@ export default function App(){
           </h2>
 
           <p className="mt-5 leading-8 text-slate-200">
-            PRODDEKO-Belgique privilégie une communication prudente et
+            Triple Sustain Impact (TSI) privilégie une communication prudente et
             vérifiable. Un chiffre d’impact doit pouvoir être relié à une
             source, une période, un territoire et une méthode de collecte.
             Les objectifs futurs sont présentés comme des cibles et non
@@ -864,7 +864,7 @@ export default function App(){
   <PageHero
     eyebrow="Gouvernance"
     title="Responsabilité, transparence et redevabilité"
-    text="La gouvernance constitue une condition essentielle de la qualité et de la durabilité de nos interventions. PRODDEKO-Belgique renforce progressivement ses procédures de décision, de gestion, de contrôle et de suivi afin de répondre aux exigences des membres, partenaires, bailleurs et communautés."
+    text="La gouvernance constitue une condition essentielle de la qualité et de la durabilité de nos interventions. Triple Sustain Impact (TSI) renforce progressivement ses procédures de décision, de gestion, de contrôle et de suivi afin de répondre aux exigences des membres, partenaires, bailleurs et communautés."
   />
 
   <section className="py-20">
@@ -1034,7 +1034,7 @@ export default function App(){
           </h2>
 
           <p className="mt-5 leading-8 text-slate-200">
-            PRODDEKO-Belgique poursuit la formalisation progressive de ses
+            Triple Sustain Impact (TSI) poursuit la formalisation progressive de ses
             procédures internes. Les mécanismes de contrôle, de gestion des risques
             et de suivi sont appelés à évoluer avec les volumes financiers,
             les exigences contractuelles et la complexité des partenariats.
@@ -1058,7 +1058,7 @@ export default function App(){
   <PageHero
     eyebrow="Partenaires"
     title="Construire des alliances utiles, complémentaires et durables"
-    text="PRODDEKO-Belgique développe ses interventions avec des acteurs publics, associatifs, techniques, académiques et financiers capables de conjuguer expertise, ancrage territorial et responsabilité."
+    text="Triple Sustain Impact (TSI) développe ses interventions avec des acteurs publics, associatifs, techniques, académiques et financiers capables de conjuguer expertise, ancrage territorial et responsabilité."
   />
 
   <section className="py-20">
@@ -1189,7 +1189,7 @@ export default function App(){
 
         <SectionTitle
           eyebrow="Valeur ajoutée"
-          title="Ce que PRODDEKO-Belgique apporte à une alliance"
+          title="Ce que Triple Sustain Impact (TSI) apporte à une alliance"
           text="Notre contribution se situe à l’interface entre développement territorial, ingénierie de projets, mobilisation de partenaires et accompagnement des acteurs locaux."
         />
 
@@ -1357,7 +1357,7 @@ export default function App(){
   <PageHero
     eyebrow="Contact"
     title="Parlons de votre projet ou d’un partenariat"
-    text="Vous représentez une institution, une association, une entreprise, un bailleur, une université ou une communauté ? Contactez PRODDEKO-Belgique pour une demande institutionnelle, une proposition de collaboration ou une information sur nos programmes."
+    text="Vous représentez une institution, une association, une entreprise, un bailleur, une université ou une communauté ? Contactez Triple Sustain Impact (TSI) pour une demande institutionnelle, une proposition de collaboration ou une information sur nos programmes."
   />
 
   <section className="py-20">
@@ -1546,7 +1546,7 @@ export default function App(){
                   Organisation
                 </div>
                 <div className="mt-1 font-black text-blue-950">
-                  PRODDEKO-Belgique
+                  Triple Sustain Impact (TSI)
                 </div>
               </div>
 
@@ -1629,7 +1629,7 @@ export default function App(){
   <Wrap className="grid gap-8 md:grid-cols-[1fr_auto]">
     <div>
       <div className="text-xl font-black text-white">
-        PRODDEKO-Belgique · Triple Sustain Impact
+        Triple Sustain Impact (TSI) · Triple Sustain Impact
       </div>
 
       <p className="mt-3 max-w-2xl">
