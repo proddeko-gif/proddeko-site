@@ -160,7 +160,6 @@ export default function App(){
     };
   },[]);
 
-  const go=(p)=>{
     
   const go=(p)=>{
     setPage(p);
