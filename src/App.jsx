@@ -176,7 +176,7 @@ export default function App(){
         <button onClick={()=>go("accueil")} className="flex items-center gap-3 text-left">
           <img src="/images/tsi-logo.png" alt="Triple Sustain Impact (TSI)" className="h-24 w-60 rounded-xl object-contain" />
         </button>
-        <nav className="hidden items-center gap-1 xl:flex">{NAV.map(([n,p])=><button key={p} onClick={()=>go(p)} className={`rounded-full px-3 py-2 text-sm font-bold ${page===p?"bg-blue-950 text-white":"text-slate-700 hover:bg-slate-100"}`}>{n}</button>)}</nav>
+        <nav className="hidden items-center gap-1 xl:flex">{NAV.map(([n,p])=><button key={p} onClick={()=>go(p)} className={`rounded-full px-3 py-2 text-xl font-bold ${page===p?"bg-blue-950 text-white":"text-slate-700 hover:bg-slate-100"}`}>{n}</button>)}</nav>
         <button className="xl:hidden" onClick={()=>setMobile(!mobile)}>{mobile?<X/>:<Menu/>}</button>
       </Wrap>
       {mobile && <div className="border-t bg-white xl:hidden"><Wrap className="grid gap-1 py-4">{NAV.map(([n,p])=><button key={p} onClick={()=>go(p)} className="rounded-xl px-4 py-3 text-left font-bold hover:bg-slate-100">{n}</button>)}</Wrap></div>}
