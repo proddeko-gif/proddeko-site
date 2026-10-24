@@ -80,12 +80,12 @@ export default function App(){
           "Découvrez les programmes de TSI consacrés à l'eau, à la résilience climatique, à l'insertion, à l'inclusion sociale et à l'innovation territoriale.",
         path: "/programmes/",
       },
-      projets: {
-        title: "Projets | Triple Sustain Impact (TSI)",
-        description:
-          "Découvrez les projets de Triple Sustain Impact en Belgique et en République démocratique du Congo.",
-        path: "/projets/",
-      },
+projets:{
+  titre:"Projets de développement durable Belgique–RDC | TSI",
+  description:
+    "Découvrez les projets de TSI en Belgique et en RDC : irrigation solaire, accès à l'eau, éducation, inclusion sociale et coopération au développement.",
+  chemin:"/projets/",
+},
       impact: {
         title: "Impact | Triple Sustain Impact (TSI)",
         description:
