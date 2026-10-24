@@ -75,7 +75,7 @@ export default function App(){
         path: "/qui-sommes-nous/",
       },
       programmes: {
-        title: "Programmes | Triple Sustain Impact (TSI)",
+        title:"Programmes de développement durable et inclusion | TSI",
         description:
           "Découvrez les programmes de TSI consacrés à l'eau, à la résilience climatique, à l'insertion, à l'inclusion sociale et à l'innovation territoriale.",
         path: "/programmes/",
