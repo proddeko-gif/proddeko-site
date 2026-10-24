@@ -93,7 +93,7 @@ projets:{
         path: "/impact/",
       },
       gouvernance: {
-        title: "Gouvernance | Triple Sustain Impact (TSI)",
+       title:"Gouvernance, transparence et responsabilité | TSI",
         description:
           "Découvrez la gouvernance de Triple Sustain Impact : responsabilités, transparence, redevabilité, gestion et suivi des projets.",
         path: "/gouvernance/",
