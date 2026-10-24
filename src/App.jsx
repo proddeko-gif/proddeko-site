@@ -87,7 +87,7 @@ projets:{
   chemin:"/projets/",
 },
       impact: {
-        title: "Impact | Triple Sustain Impact (TSI)",
+        title:"Impact social, économique et environnemental | TSI",
         description:
           "Découvrez l'approche de TSI pour mesurer, documenter et renforcer l'impact social, économique et environnemental de ses interventions.",
         path: "/impact/",
