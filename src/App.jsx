@@ -99,7 +99,7 @@ projets:{
         path: "/gouvernance/",
       },
       partenaires: {
-        title: "Partenaires | Triple Sustain Impact (TSI)",
+        title:"Partenariats et coopération en Belgique, Europe, Amérique, Afrique et en RDC | TSI",
         description:
           "TSI construit des partenariats avec associations, institutions publiques, universités, bailleurs, entreprises et acteurs communautaires.",
         path: "/partenaires/",
