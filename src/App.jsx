@@ -99,7 +99,7 @@ projets:{
         path: "/gouvernance/",
       },
       partenaires: {
-        title:"Partenariats et coopération en Belgique, Europe, Amérique, Afrique et en RDC | TSI",
+        title:"Partenariats et coopération internationale | TSI",
         description:
           "TSI construit des partenariats avec associations, institutions publiques, universités, bailleurs, entreprises et acteurs communautaires.",
         path: "/partenaires/",
