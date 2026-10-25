@@ -105,7 +105,7 @@ projets:{
         path: "/partenaires/",
       },
       contact: {
-        title: "Contact | Triple Sustain Impact (TSI)",
+        title:"Contacter Triple Sustain Impact (TSI) | Projets et partenariats",
         description:
           "Contactez Triple Sustain Impact (TSI) pour un partenariat, un projet, une coopération institutionnelle ou une demande d'information.",
         path: "/contact/",
