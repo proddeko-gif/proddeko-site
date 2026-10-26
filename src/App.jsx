@@ -112,7 +112,9 @@ projets:{
       },
     };
 
-   const current = seo[page] || seo.accueil;
+  const current = seo[page] && seo[page].title && seo[page].path
+  ? seo[page]
+  : seo.accueil;
 
     document.title = current.title;
 
