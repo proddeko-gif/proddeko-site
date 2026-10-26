@@ -149,23 +149,6 @@ projets:{
     window.removeEventListener("popstate", handlePopState);
   };
 },[]);
-    useEffect(()=>{
-    const handlePopState=()=>{
-      setPage(pathToPage[window.location.pathname] || "accueil");
-      window.scrollTo({top:0});
-    };
-
-    window.addEventListener("popstate", handlePopState);
-
-    return ()=>{
-      window.removeEventListener("popstate", handlePopState);
-    };
-  },[]);
-
-    
-  const go=(p)=>{
-    setPage(p);
-    setMobile(false);
 
     const newPath = pageToPath[p] || "/";
     window.history.pushState({}, "", newPath);
