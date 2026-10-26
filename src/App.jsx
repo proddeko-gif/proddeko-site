@@ -84,7 +84,7 @@ projets:{
   titre:"Projets de développement durable Belgique–RDC | TSI",
   description:
     "Découvrez les projets de TSI en Belgique et en RDC : irrigation solaire, accès à l'eau, éducation, inclusion sociale et coopération au développement.",
-  chemin:"/projets/",
+  path: "/projets/",
 },
       impact: {
         title:"Impact social, économique et environnemental | TSI",
