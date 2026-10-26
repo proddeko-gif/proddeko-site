@@ -149,12 +149,15 @@ projets:{
     window.removeEventListener("popstate", handlePopState);
   };
 },[]);
+const go=(p)=>{
+  setPage(p);
+  setMobile(false);
 
-    const newPath = pageToPath[p] || "/";
-    window.history.pushState({}, "", newPath);
+  const newPath = pageToPath[p] || "/";
+  window.history.pushState({}, "", newPath);
 
-    window.scrollTo({top:0,behavior:"smooth"});
-  };
+  window.scrollTo({top:0,behavior:"smooth"});
+};
   return <Shell>
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <Wrap className="flex min-h-20 items-center justify-start gap-4 py-3">
