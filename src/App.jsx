@@ -134,7 +134,7 @@ projets:{
     }
     canonical.setAttribute(
       "href",
-      `https://proddeko.online${current.path}`
+    `https://proddeko.online${window.location.pathname}`
     );
   }, [page]);
   useEffect(()=>{
