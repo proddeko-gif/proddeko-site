@@ -152,7 +152,6 @@ updateMeta("property", "og:title", current.title);
 updateMeta("property", "og:description", current.description);
 updateMeta("name", "twitter:title", current.title);
 updateMeta("name", "twitter:description", current.description);
-    );
   }, [page]);
   useEffect(()=>{
   const handlePopState=()=>{
