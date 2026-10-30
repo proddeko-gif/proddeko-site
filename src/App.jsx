@@ -132,9 +132,26 @@ projets:{
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute(
-      "href",
-    `https://proddeko.online${window.location.pathname}`
+    
+const pageUrl = `https://proddeko.online${window.location.pathname}`;
+
+const updateMeta = (attribute, key, content) => {
+  let meta = document.querySelector(`meta[${attribute}="${key}"]`);
+
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.setAttribute(attribute, key);
+    document.head.appendChild(meta);
+  }
+
+  meta.setAttribute("content", content);
+};
+
+updateMeta("property", "og:url", pageUrl);
+updateMeta("property", "og:title", current.title);
+updateMeta("property", "og:description", current.description);
+updateMeta("name", "twitter:title", current.title);
+updateMeta("name", "twitter:description", current.description);
     );
   }, [page]);
   useEffect(()=>{
