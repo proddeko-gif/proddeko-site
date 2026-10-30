@@ -81,7 +81,7 @@ export default function App(){
         path: "/programmes/",
       },
 projets:{
-  titre:"Projets de développement durable Belgique–RDC | TSI",
+  title:"Projets de développement durable Belgique–RDC | TSI",
   description:
     "Découvrez les projets de TSI en Belgique et en RDC : irrigation solaire, accès à l'eau, éducation, inclusion sociale et coopération au développement.",
   path: "/projets/",
