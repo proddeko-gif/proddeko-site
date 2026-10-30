@@ -134,7 +134,7 @@ projets:{
     }
     
 const pageUrl = `https://proddeko.online${window.location.pathname}`;
-
+canonical.setAttribute("href", pageUrl);
 const updateMeta = (attribute, key, content) => {
   let meta = document.querySelector(`meta[${attribute}="${key}"]`);
 
