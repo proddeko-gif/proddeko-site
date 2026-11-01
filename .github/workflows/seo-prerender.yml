@@ -29,7 +29,7 @@ jobs:
       - name: Installer Chromium et ses dependances
         run: npx playwright install --with-deps chromium
 
-           - name: Construire et prerendre les pages
+      - name: Construire et prerendre les pages
         run: |
           npm run build
           node scripts/prerender.mjs
