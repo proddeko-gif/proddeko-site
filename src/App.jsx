@@ -499,6 +499,94 @@ const go=(p)=>{
 
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
 
+<article className="rounded-[2rem] border bg-white p-8 shadow-sm lg:col-span-2">
+  <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
+    En cours — Année scolaire 2026-2027
+  </span>
+
+  <h2 className="mt-5 text-3xl font-black text-blue-950">
+    CAP RÉUSSITE MOBILE
+  </h2>
+
+  <h3 className="mt-3 text-xl font-bold text-blue-900">
+    Accompagnement scolaire individualisé et réussite éducative à Verviers
+  </h3>
+
+  <p className="mt-3 text-sm font-bold text-slate-500">
+    Verviers, Belgique — TSI (Triple Sustain Impact ASBL)
+  </p>
+
+  <p className="mt-5 leading-8 text-slate-600">
+    CAP RÉUSSITE MOBILE est un dispositif de soutien scolaire de proximité
+    destiné aux enfants et adolescents du primaire et du secondaire,
+    particulièrement ceux qui rencontrent des difficultés d'apprentissage
+    ou nécessitent un accompagnement pédagogique adapté.
+    Il intervient auprès des familles dans les quartiers de Crapeaurue,
+    Carmes et Hodimont à Verviers.
+  </p>
+
+  <div className="mt-7 grid gap-6 md:grid-cols-2">
+    <div className="rounded-2xl bg-slate-50 p-6">
+      <h3 className="text-lg font-black text-blue-950">
+        Nos interventions
+      </h3>
+      <ul className="mt-4 list-disc space-y-3 pl-5 leading-7 text-slate-600">
+        <li>Aide aux devoirs et compréhension des consignes.</li>
+        <li>Remédiation individualisée à partir des bulletins et évaluations.</li>
+        <li>Renforcement en français, lecture, expression écrite et mathématiques.</li>
+        <li>Préparation aux contrôles avec exercices et corrigés expliqués.</li>
+        <li>Suivi pédagogique et échanges avec les familles.</li>
+        <li>Égalité des chances, inclusion et persévérance scolaire.</li>
+      </ul>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-6">
+      <h3 className="text-lg font-black text-blue-950">
+        Déploiement opérationnel
+      </h3>
+      <p className="mt-4 leading-7 text-slate-600">
+        Lancé dans la deuxième quinzaine de septembre 2026,
+        le dispositif accompagne un premier groupe de 15 jeunes.
+        Une extension à 30 bénéficiaires est envisagée,
+        sous réserve de confirmation.
+      </p>
+      <p className="mt-4 leading-7 text-slate-600">
+        Les activités sont organisées en petits groupes et en séances
+        individualisées, selon les niveaux scolaires et les besoins identifiés.
+      </p>
+    </div>
+  </div>
+
+  <div className="mt-7 border-t pt-6">
+    <h3 className="text-lg font-black text-blue-950">
+      Méthodologie et évaluation
+    </h3>
+    <p className="mt-3 leading-7 text-slate-600">
+      Diagnostic initial, plan individuel d'accompagnement,
+      exercices différenciés, évaluations régulières et ajustement
+      des interventions. Les indicateurs portent sur l'assiduité,
+      les devoirs, la maîtrise des compétences prioritaires
+      et les progrès scolaires constatés.
+    </p>
+  </div>
+
+  <div className="mt-6">
+    <h3 className="text-lg font-black text-blue-950">
+      Perspectives
+    </h3>
+    <p className="mt-3 leading-7 text-slate-600">
+      Renforcer les partenariats avec les familles, les établissements
+      scolaires et les acteurs associatifs, et développer progressivement
+      un réseau de lieux d'accompagnement accessibles aux jeunes de Verviers.
+    </p>
+  </div>
+
+  <p className="mt-7 rounded-2xl bg-blue-950 p-6 font-bold leading-8 text-white">
+    Notre ambition : rapprocher l'accompagnement éducatif des familles
+    et donner à chaque jeune de meilleures chances de réussir.
+  </p>
+</article>
+
         <article className="rounded-[2rem] border bg-white p-8 shadow-sm">
           <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
             En cours
