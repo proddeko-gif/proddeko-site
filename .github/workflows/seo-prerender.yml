@@ -1,0 +1,44 @@
+
+name: Verification du prerendu SEO
+
+on:
+  push:
+    branches:
+      - seo-prerender
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Installer les dependances
+        run: npm install
+
+      - name: Installer Chromium et ses dependances
+        run: npx playwright install --with-deps chromium
+
+      - name: Construire et prerendre les pages
+        run: npm run build
+
+      - name: Verifier les pages generees
+        run: |
+          test -f dist/index.html
+          test -f dist/projets/index.html
+          test -f dist/programmes/index.html
+          test -f dist/contact/index.html
+
+      - name: Verifier la balise canonique des projets
+        run: |
+          grep -q 'https://proddeko.online/projets/' dist/projets/index.html
