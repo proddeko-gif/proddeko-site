@@ -32,11 +32,18 @@ jobs:
       - name: Construire et prerendre les pages
         run: npm run build
 
+     
       - name: Verifier les pages generees
         run: |
+          echo "=== Fichiers HTML produits ==="
+          find dist -type f -name "*.html" -print
+          echo "=== Verification de la page d'accueil ==="
           test -f dist/index.html
+          echo "=== Verification des projets ==="
           test -f dist/projets/index.html
+          echo "=== Verification des programmes ==="
           test -f dist/programmes/index.html
+          echo "=== Verification du contact ==="
           test -f dist/contact/index.html
 
       - name: Verifier la balise canonique des projets
