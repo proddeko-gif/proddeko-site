@@ -30,7 +30,9 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Construire et prerendre les pages
-        run: npm run build
+  run: |
+    npm run build
+    node scripts/prerender.mjs
 
      
       - name: Verifier les pages generees
