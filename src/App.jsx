@@ -901,6 +901,48 @@ const go=(p)=>{
           </div>
         </article>
 
+<article className="rounded-[2rem] border bg-white p-8 shadow-sm lg:col-span-2">
+  <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-amber-800">
+    Projet à documenter
+  </span>
+
+  <h2 className="mt-5 text-2xl font-black text-blue-950">
+    JPN95 — Fertilomer
+  </h2>
+
+  <p className="mt-4 leading-7 text-slate-600">
+    Présentation photographique du projet JPN95 / Fertilomer.
+    Les informations relatives à ses objectifs, à sa localisation,
+    à ses réalisations et à son statut seront précisées après validation.
+  </p>
+
+  <div className="mt-8 border-t pt-6">
+    <h3 className="mb-5 text-xl font-black text-blue-950">
+      Galerie photographique — JPN95 / Fertilomer
+    </h3>
+
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {Array.from({ length: 11 }, (_, i) => {
+        const n = String(i + 1).padStart(2, "0");
+
+        return (
+          <figure key={n}>
+            <img
+              src={`/images/projects/jpn95/Fertilomer-JPN95-${n}.png`}
+              alt={`JPN95 / Fertilomer — photographie ${i + 1}`}
+              loading="lazy"
+              className="h-56 w-full rounded-xl object-cover shadow-sm"
+            />
+            <figcaption className="mt-2 text-sm text-slate-500">
+              JPN95 / Fertilomer — vue {i + 1}
+            </figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  </div>
+</article>
+
       </div>
 
       <div className="mt-14 rounded-[2rem] bg-blue-950 p-8 text-white sm:p-10">
