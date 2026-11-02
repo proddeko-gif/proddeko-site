@@ -707,7 +707,43 @@ const go=(p)=>{
             </p>
           </div>
         </article>
+<div className="mt-8 border-t pt-6">
+  <h3 className="text-xl font-black text-blue-950 mb-3">
+    Galerie photographique – Projet BOMA
+  </h3>
 
+  <p className="text-sm leading-7 text-slate-600 mb-5">
+    Illustrations du projet d'irrigation solaire et de résilience
+    maraîchère à Boma, en République démocratique du Congo.
+  </p>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {Array.from({ length: 8 }, (_, i) => {
+      const n = String(i + 1).padStart(2, "0");
+      return (
+        <img
+          key={n}
+          src={`/images/projects/boma/boma-${n}.jpg`}
+          alt={`Photographie du projet BOMA – illustration ${i + 1}`}
+          loading="lazy"
+          className="w-full h-52 object-cover rounded-xl shadow-sm"
+        />
+      );
+    })}
+  </div>
+
+  <figure className="mt-6">
+    <img
+      src="/images/projects/boma/boma-croquis-irrigation.jpg"
+      alt="Croquis technique du système d'irrigation du projet BOMA"
+      loading="lazy"
+      className="w-full max-w-3xl rounded-xl shadow-sm"
+    />
+    <figcaption className="mt-2 text-sm text-slate-500">
+      Croquis illustratif du dispositif d'irrigation.
+    </figcaption>
+  </figure>
+</div>
         <article className="rounded-[2rem] border bg-white p-8 shadow-sm">
           <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
             En développement
