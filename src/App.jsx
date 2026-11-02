@@ -903,18 +903,35 @@ const go=(p)=>{
 
 <article className="rounded-[2rem] border bg-white p-8 shadow-sm lg:col-span-2">
   <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-amber-800">
-    Projet à documenter
+    Partenariat prioritaire — Homologation en cours
   </span>
 
   <h2 className="mt-5 text-2xl font-black text-blue-950">
     JPN95 — Fertilomer
   </h2>
 
-  <p className="mt-4 leading-7 text-slate-600">
-    Présentation photographique du projet JPN95 / Fertilomer.
-    Les informations relatives à ses objectifs, à sa localisation,
-    à ses réalisations et à son statut seront précisées après validation.
-  </p>
+  
+<p className="mt-4 leading-7 text-slate-600">
+  Partenariat prioritaire entre TSI – Triple Sustain Impact
+  et Laguzze, productrice du fertilisant JPN95, pour
+  la Belgique et la République démocratique du Congo.
+  Cette collaboration concerne l'agriculture durable,
+  les démarches d'homologation en cours et les
+  expérimentations agricoles en RDC, en lien avec FSDI.
+</p>
+
+<div className="mt-6 rounded-2xl bg-slate-50 p-5">
+  <h3 className="font-bold text-blue-950">
+    Axes de collaboration
+  </h3>
+  <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
+    <li>Partenariat stratégique entre TSI et Laguzze.</li>
+    <li>Procédures d'homologation en cours.</li>
+    <li>Expérimentations agricoles en RDC en lien avec FSDI.</li>
+    <li>Suivi et documentation des résultats agronomiques.</li>
+    <li>Développement de la coopération Belgique–RDC.</li>
+  </ul>
+</div>
 
   <div className="mt-8 border-t pt-6">
     <h3 className="mb-5 text-xl font-black text-blue-950">
