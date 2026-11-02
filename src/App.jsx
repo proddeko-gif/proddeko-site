@@ -499,6 +499,87 @@ const go=(p)=>{
 
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
 
+<article className="rounded-[2rem] border border-orange-200 bg-white p-8 shadow-sm lg:col-span-2">
+  <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-amber-800">
+    En recherche de financement
+  </span>
+
+  <h2 className="mt-5 text-3xl font-black text-blue-950">
+    De la Vesdre à la Kalamu
+  </h2>
+
+  <h3 className="mt-3 text-xl font-bold text-blue-900">
+    Citoyens de l'eau, du climat et des territoires durables
+  </h3>
+
+  <p className="mt-3 font-bold text-slate-500">
+    Wallonie, Belgique — Boma, République démocratique du Congo
+  </p>
+
+  <p className="mt-5 leading-8 text-slate-600">
+    Ce projet d'éducation à la citoyenneté mondiale et aux
+    Objectifs de développement durable propose un parcours
+    participatif entre la Wallonie et Boma. Il vise à renforcer
+    la compréhension des liens entre eau, alimentation,
+    changement climatique, inégalités et participation citoyenne.
+  </p>
+
+  <div className="mt-7 grid gap-6 md:grid-cols-2">
+    <div className="rounded-2xl bg-slate-50 p-6">
+      <h3 className="text-lg font-black text-blue-950">
+        Activités envisagées
+      </h3>
+      <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-600">
+        <li>Ateliers sur l'eau, le climat et les ODD.</li>
+        <li>Cartographies citoyennes participatives.</li>
+        <li>Dialogues entre jeunes, femmes et acteurs locaux.</li>
+        <li>Échanges numériques Belgique–RDC.</li>
+        <li>Microactions citoyennes et restitutions publiques.</li>
+        <li>Production d'un kit pédagogique réutilisable.</li>
+      </ul>
+    </div>
+
+    <div className="rounded-2xl bg-blue-50 p-6">
+      <h3 className="text-lg font-black text-blue-950">
+        Objectifs prévisionnels
+      </h3>
+      <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+        <li>120 participants directs.</li>
+        <li>16 ateliers éducatifs.</li>
+        <li>8 microactions citoyennes.</li>
+        <li>4 productions conjointes Belgique–RDC.</li>
+        <li>Un kit pédagogique francophone.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div className="mt-7 border-t pt-6">
+    <h3 className="text-lg font-black text-blue-950">
+      Financement recherché
+    </h3>
+    <p className="mt-3 leading-8 text-slate-600">
+      Budget prévisionnel : 33 334 euros.
+      Financement externe recherché : 30 000 euros.
+      Cofinancement complémentaire à mobiliser : 3 334 euros.
+      Ces montants correspondent à un scénario de financement
+      et ne constituent pas des subventions acquises.
+    </p>
+  </div>
+
+  <p className="mt-6 rounded-2xl bg-blue-950 p-6 font-bold leading-8 text-white">
+    TSI recherche des partenaires techniques, pédagogiques,
+    institutionnels et financiers pour concrétiser cette
+    initiative de coopération citoyenne Belgique–RDC.
+  </p>
+
+  <a
+    href="mailto:admin@proddeko.online?subject=Partenariat%20-%20Projet%20Vesdre-Kalamu"
+    className="mt-6 inline-flex rounded-full bg-orange-500 px-6 py-3 font-black text-white transition hover:bg-orange-600"
+  >
+    Proposer un partenariat
+  </a>
+</article>
+
 <article className="rounded-[2rem] border bg-white p-8 shadow-sm lg:col-span-2">
   <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
     En cours — Année scolaire 2026-2027
