@@ -744,6 +744,60 @@ const go=(p)=>{
     </figcaption>
   </figure>
 </div>
+        
+<article className="rounded-[2rem] border bg-white p-8 shadow-sm lg:col-span-2">
+  <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-green-800">
+    Projet réalisé – 2019–2020
+  </span>
+
+  <h2 className="mt-5 text-2xl font-black text-blue-950">
+    Centre de santé de Kilengi – Énergie solaire, eau potable et réhabilitation
+  </h2>
+
+  <div className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-500">
+    <MapPin size={16} />
+    Kilengi, Kongo Central · RDC
+  </div>
+
+  <p className="mt-5 leading-7 text-slate-600">
+    Amélioration des conditions d'accueil et de soins au Centre de santé de Kilengi,
+    grâce à l'électrification solaire, à l'installation d'une pompe solaire
+    pour l'accès à l'eau potable et à la réhabilitation des infrastructures.
+  </p>
+
+  <div className="mt-6 rounded-2xl bg-slate-50 p-5">
+    <h3 className="font-bold text-blue-950">Réalisations et partenaires</h3>
+    <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
+      <li>2019 : électrification solaire et pompe solaire d'eau potable, avec Energy Assistance (Engie Electrabel).</li>
+      <li>2020 : réhabilitation du Centre de santé de Kilengi, avec la Fondation Roi Baudouin.</li>
+    </ul>
+  </div>
+
+  <div className="mt-8 border-t pt-6">
+    <h3 className="mb-3 text-xl font-black text-blue-950">
+      Galerie photographique – Kilengi
+    </h3>
+
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {Array.from({ length: 5 }, (_, i) => {
+        const n = String(i + 1).padStart(2, "0");
+        return (
+          <figure key={n}>
+            <img
+              src={`/images/projects/kilengi/kilengi-apres-${n}.png`}
+              alt={`Centre de santé de Kilengi – vue ${i + 1}`}
+              loading="lazy"
+              className="h-56 w-full rounded-xl object-cover shadow-sm"
+            />
+            <figcaption className="mt-2 text-sm text-slate-500">
+              Centre de santé de Kilengi – vue {i + 1}
+            </figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  </div>
+</article>
         <article className="rounded-[2rem] border bg-white p-8 shadow-sm">
           <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-black uppercase tracking-wider text-orange-700">
             En développement
